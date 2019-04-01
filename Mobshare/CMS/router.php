@@ -14,7 +14,8 @@ $modo = null;
 $id = null;
 
 //Import da classe de constantes
-require_once($_SERVER["DOCUMENT_ROOT"] . "/Mobshare/include.php");
+@session_start();
+require_once($_SESSION["importInclude"]); 
 
 if(isset($_GET["controller"])){
     //Sempre serão enviadas pela view
