@@ -1,0 +1,405 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+
+.principal {
+
+    width: 1000px;
+    height: 800px;
+    margin-top: 80px;
+    background-color: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #000000;
+    border-radius: 25px;
+}
+
+.logomarca {
+    width: 400px;
+    height: 200px;
+    margin-top: 50px;
+}
+
+
+.sistema {
+    width: 400px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 70px;
+    margin-top: 50px;
+    font-family: arial;
+    font-size: 18px;
+    margin-bottom: 200px;
+}
+
+.botao {
+    width: 100px;
+    height: 30px;
+    border-radius: 15px;
+    margin-top: 10px;
+    margin-right: 98px;
+    margin-left: 99px;
+}
+
+.label {
+    width: 243px;
+    height: 20px;
+    text-align: center;
+    margin-left: 50px;
+}
+
+
+.input {
+    width: 200px;
+    height: 20px;
+    margin-left: 50px;
+}
+
+#login, #logout {
+    margin-left: 22px;
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+}
+
+#logout{
+    margin-left: 75px;
+    margin-top: 20px;
+}
+
+.cabecalho {
+    width: 985px;
+    height: 90px;
+    background-color: #102840;
+    padding-top: 10px;
+    padding-left: 15px;
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
+
+}
+
+.logo {    
+    width: 200px;
+    height: 85px;
+    float: left;
+}
+.icone{
+    width: 32px;
+    height: 32px;
+    float: left;
+    margin-top: 9px;
+    margin-left: 25px;
+}
+
+.visualizar, .administrador{
+    width: 220px;
+    height: 50px;
+    float: right;
+    color: #cccccc;
+    margin-right: 10px;
+    margin-top: 15px;
+}
+
+.visualizar:hover{
+    background-color: #606e75;
+    transition: 0.8s;
+}
+
+.texto{
+    width: 150px;
+    height: 20px;
+    font-family: arial;
+    font-size: 20px;
+    float: right;
+    margin-top: 15px;
+}
+
+.texto2{
+    width: 350px;
+    height: 20px;
+    font-family: arial;
+    font-size: 15px;
+    margin-top: 5px;
+    color: #fff;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.conteudo {
+    width: 1000px;
+    height: 650px;
+}
+
+nav {
+    width: 300px;
+    height: 650px;
+    background-color: #3c506b;
+    float: left;
+}
+
+.link {
+    width: 260px;
+    height: 35px;
+    background-color: white;
+    border: 1px solid black;
+    font-family: arial;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #cccccc;
+    padding-top: 15px;
+}
+
+.link:hover{
+    background-color: #e0eee5;
+    transition: 0.8s;
+}
+
+.usuario {
+    width: 700px;
+    height: 170px;
+    float: right;
+}
+
+.infoUsuario{
+    width: 590px;
+    height: 150px;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.foto{
+    width: auto;
+    height: 140px;
+    float: left;
+}
+
+.selecao{
+    width: 200px;
+    height: 230px;
+    float: left;
+    margin-left: 70px;
+    margin-top: 50px;
+    border: 1px solid black;
+}
+
+.selecao:hover{
+    background-color: #cccccc;
+    transition: 1s;
+}
+
+.user{
+    width: 330px;
+    height: 250px;
+    float: left;
+}
+
+.nomeUser, .gerenciamento{
+    width: 300;
+    height: 30px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.botoes{
+    width: 600px;
+    height: 50px;
+    margin-top: 15px;
+}
+
+.listaDados{
+    width: 550px;
+    height: 75px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+}
+
+.listaDados2{
+    width: 550px;
+    height: 140px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+}
+
+.dados{
+    width: 100px;
+    height: 20px;
+    text-align: left;
+    margin-top: 12px;
+    float: left;
+    clear: both;
+    margin-left: 10px;
+}
+
+.infoDados {
+    width: 255px;
+    height: 20px;
+    float: left;
+    margin-top: 12px;
+    text-align: justify;
+}
+
+.opcao{
+    width: 89px;
+    height: 20px;
+    float: right;
+    margin-top: 10px;
+}
+
+.gerenciamento{
+    margin-top: 40px;
+}
+
+.emailUser{
+    width: 300;
+    height: 20px;
+    font-family: Arial;
+    font-size: 15px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.menu {
+    width: 700px;
+    height: 480px;
+    float: left;
+    
+}
+
+.informacao {
+    width: 600px;
+    height: 460px;
+    border: 1px solid black;
+    background-color: #ffffff;
+    margin: auto;
+    margin-top: 10px;
+    font-family: arial;
+    font-size: 20px;
+    text-align: center;
+    overflow: scroll;
+    overflow: auto;
+}
+
+.rodape {
+    width: 1000px;
+    height: 40px;
+    background-color: #102840;
+    padding-top: 10px;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+.titulo{
+    width: 600px;
+    height: 20px;
+    font-family: verdana;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.label2 {
+    width: 175px;
+    height: 20px;
+    text-align: left;
+    float: left;
+}
+
+.linha{
+    width: 365px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+}
+
+.label3{
+    width: 135px;
+    height: 20px;
+    float: left;
+    margin-top: 25px;
+    margin-left: 135px;
+    margin-right: -65px;
+}
+
+.input2 {
+    width: 187px;
+    height: 30px;
+    float: left;
+    text-align: left;
+}
+
+.botao2{
+    width: 70px;
+    height: 30px;
+    margin-top: 90px;
+    margin-left: 55px;
+}
+
+.botao3{
+    width: 70px;
+    height: 30px;
+    margin-top: 20px;
+}
+
+.botao4{
+    width: 70px;
+    height: 30px;
+    margin-left: -150px;
+}
+
+.mensagem{
+    width: 200px;
+    height: 75px;
+}
+
+.pgAdministracao{
+    font-size: 15px;
+    width: 155px;
+    height: 250px;
+    margin-left: 33px;
+    float: left;
+    margin-top: 20px;
+    border: 1px solid black;
+    
+}
+
+.pgAdministracao:hover{
+    background-color: palegreen;
+    transition: 1s;
+}
+
+.imagem{
+    width: 128px;
+    height: 128px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+
