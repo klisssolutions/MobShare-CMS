@@ -1,0 +1,1384 @@
+@charset "utf-8";
+
+body, h1, p{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+}
+
+@font-face{
+    font-family: Mont;
+    src: url(../fonts/Montserrat-Regular.ttf);
+}
+
+/********** CABEÇALHO ***********/
+header{
+    width: 100%;
+    height: 110px;
+    background-color: #102840;
+    position: fixed;
+    box-shadow: 1px 4px 6px 4px rgba(0, 0, 0, 0.2);
+    float: left;
+    
+}
+
+.logotipo{
+    width: 30%;
+    height: 100%;
+    float: left;
+}
+
+.img-logotipo{
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 100%;
+    z-index: 999;
+
+}
+
+.menu-header{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.menu-item{
+    width: 90%;
+    height: 100%;
+    margin-left: 100px;
+    margin-top: 45px;
+}
+
+.menu-item a{
+    padding: 10px 8px 10px 8px;
+    margin-right: 5px;
+    margin-top: 50px;
+    font-family: Mont;
+    color: #fff;
+    font-size: 18px;
+}
+
+.menu-item a:hover{
+    transition: 2s;
+    color: #5e85e1;
+    border-bottom: 1px solid #5e85e1;
+    cursor: pointer;
+}
+
+.box-login{
+    width: 20%;
+    height: 100%;
+    
+    float: left;
+}
+
+.botao-login{
+    width: 60px;
+    padding: 10px 10px 10px 10px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    font-family: Mont;
+    color: #fff;
+    font-size: 16px;
+    background-color: #002171;
+    align-content: center;
+    text-align: center;
+}
+
+.botao-login:hover{
+    background-color: #5e85e1;
+}
+
+.texto-cadastrar h1{
+    font-family: Mont;
+    color: #fff;
+    font-size: 12px;
+    align-content: center;
+    text-align: center; 
+    margin-top: 5px;
+}
+
+/******** CAIXA QUE FICA ABAIXO DO CABEÇALHO SEGURANDO AS INFORMAÇÕES *******/
+.content{
+    width: 100%;
+    min-height: 500px;
+    height: auto;
+    background-color: black;
+}
+
+/*********** RODAPÉ *******/
+footer{
+    width: 100%;
+    height: 200px;
+    float: left;
+    background-color:#102840;
+}
+
+.rodape{
+    width: 100%;
+    height: 100%;
+    
+    background-color: #102840;
+}
+
+.menu-rodape{
+    width: 33%;
+    height: 100%;
+    float: left;
+    
+}
+
+.titulo-menu-rodape{
+    height: 15%;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.titulo-menu-rodape h1{
+    width: 100px;
+    height: 75%;
+    margin-left: 120px;
+    font-family: Mont;
+    color: #ba3135;
+    margin-top: 0px;
+    font-size: 18px;
+    align-content: center;
+    text-align: left;
+}
+
+.menu-rodape-item{
+    height: 85%;
+    width: 100%;
+    
+}
+
+.menu-rodape-item a{
+    width: 170px;
+    height: 20px;
+    font-family: Mont;
+    color: #fff;
+    margin-left: 100px;
+    margin-top: 10px;
+    font-size: 16px;
+    align-content: center;
+    text-align: left;
+    padding: 5px 20px 0px 20px;
+    clear: both;
+    float: left;
+    cursor: pointer;
+}
+
+a:link 
+{ 
+text-decoration:none; 
+}
+
+.menu-rodape-item a:hover{
+    transition: 2s;
+    color: #5e85e1;
+}
+
+.logotipo-rodape{
+    width: 34%;
+    height: 100%;
+    float: left;
+}
+
+.img-logo-rodape{
+    width: 100%;
+    height: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+}
+
+.img-logo-rodape img{
+    margin-left: 100px;
+}
+
+.img-redes-sociais{
+    width: 50%;
+    height: 20%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.img-redes-sociais img{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.contato-rodape{
+    width: 33%;
+    height: 100%;
+    float: left;
+}
+
+.contato-menu-rodape{
+    height: 15%;
+    width: 100%;
+    margin-top: 20px;
+
+}
+
+.contato-menu-rodape h1{
+    width: 100px;
+    height: 75%;
+    margin-left: 90px;
+    font-family: Mont;
+    color: #ba3135;
+    margin-top: 0px;
+    font-size: 18px;
+    align-content: center;
+    text-align: center;
+}
+
+.contato-rodape-item{
+    height: 85%;
+    width: 100%;
+    
+}
+
+.contato-rodape-item a{
+    width: 280px;
+    height: 20px;
+    font-family: Mont;
+    color: #fff;
+    margin-bottom: 5px;
+    margin-left: 80px;
+    margin-top: 10px;
+    font-size: 16px;
+    align-content: center;
+    text-align: left;
+    padding: 5px 20px 0px 20px;
+    clear: both;
+    float: left;
+}
+
+.texto-direitos{
+    width: 100%;
+    padding-top: 80px;
+    height: 25px;
+    background-color: #102840;
+}
+
+.texto-direitos h1{
+    margin-top: 0;
+    font-family: Mont;
+    font-size: 12px;
+    color: #fff;
+    margin-left: -70px;
+    font-weight: normal;
+    text-align: center;
+    align-content: center;
+}
+
+/************* CONTEÚDO DA HOME ***************/
+.caixa-pesquisa-imagem{
+    width: 100%;
+    height: 700px;
+    background-image: url(../images/banner.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+
+
+
+.caixa-pesquisa-home{
+    width: 650px;
+    height: 60px;
+    border-radius: 50px;
+    border: none;
+    margin-left: 590px;
+    margin-top:300px;
+    font-size: 22px;
+    font-family: Mont;
+    background-image: url(../images/search.png);
+    background-repeat: no-repeat;
+    background-size: 35px;
+    background-position: 10px;
+}
+
+/*********************** CAIXA QUE SEGURA OS VEICULOS ***************************/
+.caixa-veiculos-home{
+    width: 100%;
+    height: 1200px;
+    background-color: #fff;
+}
+
+.caixa-itens-home{
+    width: 100%;
+    height: 10%;
+    float: left;
+}
+
+.menu-veiculos{
+    width: 100%;
+    height: 100%;
+    margin-left: 620px;
+    margin-top: 42px;
+    float: left;
+    
+}
+
+.menu-veiculos a{
+    width: 500px;
+    border-bottom: 1px solid #002171;;
+    margin-top: 40px;
+    font-family: Mont;
+    color: #002171;
+    font-size: 28px;
+    background-color: #002171;
+    align-content: center;
+    text-align: center;
+    padding: 5px 40px 0px 40px;
+    float: left;
+    /*border-top-right-radius: 20px;
+    border-top-left-radius: 20px;*/
+}
+
+.menu-veiculos .clicado{
+    background-color: #fff;
+}
+
+.caixa-veiculos{
+    width: 1300px;
+    height: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+}
+
+.box-veiculo{
+    width: 320px;
+    height: 390px;
+    /*box-shadow: 1px 4px 6px 4px rgba(0, 0, 0, 0.2); */
+    float: left;
+    margin-left: 60px;
+    margin-bottom: 50px;
+    background-color: #e9f0f6;
+    margin-top: 80px;
+}
+
+.img-veiculo{
+    height: 50%;
+    width: 100%;
+}
+
+.texto-modelo, .texto-km, .texto-regiao, .texto-avaliacao{
+    font-family: Mont;
+    font-size: 16px;
+    margin-top: 16px;
+    align-content: center;
+    text-align: left;
+    padding: 5px 20px 0px 20px;
+
+}
+
+.texto-modelo{
+    text-transform: uppercase;
+}
+
+.botao-veiculo{
+    width: 78px;
+    font-size: 16px;
+    background-color: #102840;
+    color: #fff;
+    align-content: center;
+    text-align: center;
+    padding: 05px 40px 05px 40px;
+    font-family: Mont;
+    font-size: 16px;
+    margin-left: 150px;
+    margin-top: -10px;
+    border-radius: 15px;
+}
+
+.botao-veiculo:hover{
+    background-color: #04070e;
+    cursor: pointer;
+}
+
+/*********** caixa como funciona ***************/
+.caixa-como-funciona{
+    width: 100%;
+    height: 700px;
+    background-color: #fff;
+}
+
+.img-como-funciona{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.img-como-funciona img{
+    margin-left: 0px;
+    margin-top: 10px;
+}
+
+.img-como-funciona img:hover{
+    filter: grayscale(100%0)
+}
+
+.texto-como-funciona{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+
+.texto-como-funciona h1{
+    margin-top: 150px;
+    font-family: Mont;
+    color: #102840;
+    margin-left: 450px;
+}
+
+.texto-como-funciona p{
+    font-family: Mont;
+    width: 500px;
+    text-align: right;
+    margin-left: 220px;
+    color: #000;
+}
+
+.texto-como-funciona h2{
+    width: 120px;
+    height: 30px;
+    margin-left: 520px;
+    font-family: Mont;
+    color: #fff;
+    margin-top: 35px;
+    font-size: 16px;
+    background-color: #102840;
+    align-content: center;
+    text-align: center;
+    padding: 5px 40px 0px 40px;
+}
+
+.texto-como-funciona h2:hover{
+    background-color: #5e85e1;
+}
+
+/* CAIXA QUE TEM A FOTO DO APP*/
+.caixa-app{
+    width: 100%;
+    height: 750px;
+    background-color: #fff;
+}
+
+.imagem-app{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.imagem-app img{
+    margin-left: 260px;
+    margin-top: 20px;
+}
+
+.texto-botao-app{
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+    float: left;
+}
+
+.texto-botao-app h1{
+    margin-top: 150px;
+    font-family: Mont;
+    color: #04070e;
+    text-transform: uppercase;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.texto-botao-app p{
+    font-family: Mont;
+    width: 500px;
+    font-size: 19px;
+    text-align: center;
+}
+
+.texto-botao-app h2{
+    width: 120px;
+    height: 40px;
+    margin-left: 180px;
+    font-family: Mont;
+    color: #fff;
+    margin-top: 45px;
+    font-size: 20px;
+    background-color: #102840;
+    align-content: center;
+    text-align: center;
+    padding: 5px 40px 10px 40px;
+    line-height: 40px;
+}
+
+.texto-botao-app h2:hover{
+    background-color: #5e85e1;
+    cursor: pointer;
+}
+
+/*************** PAGINA ANUNCIOS ************/
+/*box banner */
+.box-slider-banner-veiculo{
+    width: 100%;
+    height: 700px;
+    background-color: #fff;
+}
+
+.box-texto-anuncios{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.box-texto-anuncios h1{
+    font-family: Mont;
+    margin-top: 220px;
+    text-align: center;
+    width: 650px;
+    margin-left: 320px;
+    color: #102840;
+    margin-bottom: 10px;
+    font-size: 36px;
+}
+
+.box-texto-anuncios p{
+    width: 650px;
+    font-family: Mont;
+    font-size: 20px;
+    text-align: right;
+    margin-left: 150px;
+}
+
+.box-imagem-anuncios{
+    width: 50%;
+    height: 100%;
+    background-color:#fff;
+    float: left;
+}
+
+.box-imagem-anuncios img{
+    margin-top: 150px;
+    margin-left: -50px;
+}
+
+
+
+/* ANUNCIOS DE CARROS E TALS */
+.box-anuncios{
+    width: 100%;
+    height: 1800px;
+    background-color: darkred;
+    margin-top: 110px; 
+    float: left;
+}
+
+.box-pesquisa-anucios{
+    height: 7%;
+    width: 100%;
+    background-color: #e9f0f6;
+}
+
+.anuncios-pesquisa{
+    width: 600px;
+    height: 60px;
+    text-align: left;
+    align-content: center;
+    margin-left: 1100px;
+    margin-top: 25px;
+    background-image: url(../images/search.png);
+    background-size: 45px;
+    background-repeat: no-repeat;
+    background-position: right;
+    font-size: 30px;
+    border: none;
+}
+
+.box-anuncios-veiculos{
+    height: 95%;
+    width: 100%;
+}
+
+.box-filtros{
+    width: 20%;
+    height: 100%;
+    background-color: #fefefe;
+    float: left;
+}
+
+.filtros{
+    width: 100%;
+    height: 145px;
+}
+
+.filtros h1{
+    font-family: Mont;
+    margin-left: 90px;
+    margin-top: 20px;
+    float: left;
+    font-size: 24px;
+    border-bottom: 1px solid black;
+    width: 200px;
+}
+
+.filtros select{
+    border: none;
+    width: 200px;
+    height: 40px;
+    font-family: Mont;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-left: 90px;
+    background-color: #e9f0f6;
+}
+
+.box-veiculos{
+    width: 80%;
+    height: 100%;
+    background-color: #fff;
+    float: left;
+}
+
+.botao-filtrar{
+    width: 150px;
+    height: 20px;
+    padding: 10px 20px 10px 10px;
+    margin-left: 170px;
+    margin-top: px;
+    font-family: Mont;
+    color: #fff;
+    font-size: 16px;
+    background-color: #002171;
+    border-radius: 15px;
+    align-content: center;
+    text-align: center;
+}
+
+.box-veiculo-anuncio{
+    width: 400px;
+    height: 450px;
+    margin-left: 50px;
+    margin-top: 25px;   
+    background-color: #ecebeb;
+    float: left;
+}
+
+.box-veiculo-anuncio .texto-modelo{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+
+
+.imagem-anuncio{
+    height: 50%;
+    width: 100%;
+    background-color: brown;
+}
+
+.botao-veja{
+    width: 150px;
+    height: 20px;
+    padding: 10px 20px 10px 10px;
+    margin-left: 190px;
+    font-family: Mont;
+    color: #fff;
+    font-size: 16px;
+    background-color: #002171;
+    border-radius: 15px;
+    align-content: center;
+    text-align: center;
+}
+
+.botao-veja:hover{
+    background-color: #000;
+    cursor: pointer;
+}
+
+/***************** PAGINA COMO FUNCIONA *******************/
+.box-como-funciona-primeiro{
+    height: 700px;
+    width: 100%;
+    background-color:#fff;
+}
+
+.texto-como-funciona-pag{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.texto-como-funciona-pag p{
+    margin-top: 250px;
+    width: 500px;
+    font-family: Mont;
+    font-size: 20px;
+    margin-left: 280px;
+}
+
+.texto-como-funciona-pag h1{
+    width: 500px;
+    font-family: Mont;
+    font-size: 40px;
+    margin-left: 280px;
+    margin-top: 10px;
+    color: #002171;
+}
+
+.image-como-funciona-pag{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.image-como-funciona-pag img{
+    margin-top: 130px;
+}
+
+.box-como-funciona-segundo{
+    height: 700px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.texto-como-funciona2{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.texto-como-funciona2 h1{
+    width: 500px;
+    font-family: Mont;
+    font-size: 40px;
+    margin-left: 0px;
+    margin-top: 200px;
+    color: #002171;
+}
+
+.texto-como-funciona2 p{
+
+    width: 500px;
+    font-family: Mont;
+    font-size: 20px;
+}
+
+.image-como-funciona2{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.image-como-funciona2 img{
+    margin-top: 100px;
+    margin-left: 100px;
+}
+
+.box-como-funciona-terceiro{
+    height: 500px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.avaliacoes{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+}
+
+.avaliacoes h1{
+    width: 100px;
+    font-family: Mont;
+    font-size: 32px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 100px;
+    
+}
+.avaliacoes p{
+    width: 500px;
+    font-family: Mont;
+    font-size: 20px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.avaliacoes h2{
+    width: 200px;
+    font-family: Mont;
+    font-size: 20px;
+    color: #002171;
+    margin-right: auto;
+    margin-left: auto;
+}
+.box-como-funciona-quarto{
+    height: 500px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.image-como-funciona4{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+
+.texto-como-funciona4{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.texto-como-funciona4 h1{
+
+    font-family: Mont;
+    font-size: 32px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 150px;
+    margin-left: 300px;
+    color: #102840;
+}
+
+.texto-como-funciona4 p{
+    width: 500px;
+    font-family: Mont;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 300px;
+}
+
+
+
+/********** PAGINA: TERMOS DE USO ***********/
+.box-termos{
+    width: 100%;
+    height: 1800px;
+}
+
+.image-termos{
+    height: 20%;
+    width: 100%;
+    padding-top: 110px;
+    background-image: url(../images/nicole-baster-1178413-unsplash.jpg);
+    background-size: 100%;
+}
+
+.texto-sob-imagem{
+    height: 50px;
+    width: 400px;
+    float: left;
+    margin-left: 350px;
+    margin-top: 130px;
+    background-color: #102840;
+}
+
+.texto-sob-imagem h1{
+    font-family: Mont;
+    color: #fff;
+    text-align: center;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.texto-termos{
+    height: 60%;
+    width: 100%;
+    background-color: #fefefe;
+    padding-top: 20px;
+
+}
+
+.termo{
+    height: 10%;
+    width: 100%;
+    float: left;
+}
+
+.termo p{
+    width: 90%;
+    height: 90%;
+    font-family: Mont;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.box-cadastre{
+    height: 20%;
+    width: 100%;
+    background-image: url(../images/nicole-baster-1178413-unsplash.jpg);
+    background-size: 100%;
+    background-position-y: -300px;
+}
+
+.texto-cadastre{
+    width: 650px;
+    height: 60px;
+    background-color: #102840;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 15px;
+}
+
+.texto-cadastre h1{
+    font-family: Mont;
+    text-align: center;
+    color: #e9f0f6;
+}
+
+.txt-cad{
+    border-bottom: 1px solid #fff;
+}
+
+.txt-cad:hover{
+    color: #5e85e1;
+    border-bottom: 1px solid #5e85e1;
+    cursor: pointer;
+}
+
+/************* PÁGINA - DUVIDAS FREQUENTES *****************/
+.box-duvidas{
+    height: 1700px;
+    width: 100%;
+    background-color: #fff;
+ 
+}
+
+.duvidas-titulo{
+    height: 30%;
+    width: 100%;
+}
+
+.texto-duvidas{
+    height: 70%;
+    width: 100%;
+    float: left;
+}
+
+.titulo-duvidas{
+    height: 100%;
+    width: 50%;
+    float: left;
+}
+
+.titulo-duvidas h1{
+    font-family: Mont;
+    font-size: 38px;
+    color: #002171;
+    margin-top: 250px;
+    margin-left: 200px;
+    text-align: center; 
+}
+
+.image-duvidas{
+    height: 100%;
+    width: 50%;
+    float: left;
+}
+
+.image-faq{
+    width: 50%;
+    height: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(../images/problem.png);
+    background-repeat: no-repeat;
+    background-size: 250px;
+    margin-top: 150px;
+}
+
+.duvida{
+    height: 10%;
+    width: 90%;
+    background-color: #e9f0f6;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.duvida h2{
+    font-family: Mont;
+    margin-top: 10px;
+
+}
+
+.duvida p{
+    font-family: Mont;
+    font-size: 18px;
+}
+
+/********************* PÁG: FALE CONOSCO*******************/
+.box-fale-conosco{
+    width: 100%;
+    height: 1200px;
+    background-color: #e9f0f6;
+    background-image: url(../images/david-hellmann-433025-unsplash.jpg);
+    background-size: 100%;
+    
+}
+
+.fale-conosco{
+    width: 30%;
+    height: 65%;
+    background-color: #102840;
+    margin-right: auto;
+    margin-left: 200px;
+    float: left;
+    margin-top: 200px;
+}
+
+.titulo-fale-conosco, .nome-fale-conosco, .email-fale-conosco, .assunto-fale-conosco, .botao-fale-conosco{
+    height: 100px;
+    width: 100%;
+    margin-top: 5px;
+    float: left;
+    
+}
+
+.titulo-fale-conosco h1{
+    font-family: Mont;
+    font-size: 30px;
+    color: #5e85e1;
+    text-transform: uppercase;
+    border-bottom: 1px solid #102840;
+    margin-top: 40px;
+    width: 300px;
+    align-content: center;
+    align-items: center;
+    margin-left: 100px;
+}
+
+.nome-fale-conosco h1, .email-fale-conosco h1, .assunto-fale-conosco h1, .botao-fale-conosco h1, .mensagem-fale-conosco h1{
+    font-family: Mont;
+    margin-left: 100px;
+    color: #ecebeb;
+    font-weight: normal;
+}
+
+.txt-fale-conosco{
+    border: none;
+    margin-left: 100px;
+    width: 350px;
+    height: 30px;
+    margin-top: 10px;
+    font-size: 18px;
+    font-family: Mont;
+}
+
+
+.mensagem-fale-conosco{
+    width: 100%;
+    height: 350px;
+    float: left;
+}
+
+.mensagem-fale-conosco textarea{
+    width: 350px;
+    font-size: 18px;
+    font-family: Mont;
+    border: none;
+    margin-left: 100px;
+    height: 150px;
+    margin-top: 10px;
+}
+
+.btn-fale-conosco{
+    border: none;
+    width: 120px;
+    height: 50px;
+    padding: 10px 10px 10px 10px;
+    background-color: #002171;
+    float: left;
+    color: #ecebeb;
+    margin-top: -100px;
+    margin-left: 350px;
+    font-size: 15px;
+    font-family: Mont;
+    text-transform: uppercase;
+}
+
+.btn-fale-conosco:hover{
+    background-color: #5e85e1;
+    cursor: pointer;
+}
+
+/******************** PAG: AVALIAÇÃO DO MÊS ***********************/
+.box-avaliacoes{
+    width: 100%;
+    height: 1500px;
+    background-color: #ececec;
+    
+}
+
+.avaliacoes{
+    width: 100%;
+    height: 100%;
+    background-color: #ecebeb;
+    margin-top: 110px;
+    float: left;
+
+}
+
+.titulo-av{
+    height: 10%;
+    width: 100%;
+}
+
+.titulo-av h1{
+    width: 80%;
+    margin-top: -50px;
+    float: left;
+    text-align: right;
+    font-size: 38px;
+    color: #002171;
+}
+
+.box-avaliacao{
+    height: 90%;
+    width: 100%;
+    background-color: #ecebeb;
+
+}
+
+.caixa-avaliacao{
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    height: 100%;
+}
+
+.box-av{
+    width: 400px;
+    height: 460px;
+    background-color: #fff;
+    margin-left: 35px;
+    margin-top: 50px;
+    float: left;
+}
+
+.img-avaliacao{
+    height: 50%;
+    width: 100%;
+    background-color: aliceblue;
+}
+
+.titulo-veiculo, .texto-av, .botao-avaliacao{
+    height: 8%;
+    width: 100%;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+.titulo-veiculo h2{
+    font-family: Mont;
+    width: 400px;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.texto-av h2{
+    font-family: Mont;
+    text-align: left;
+    width: 400px;
+    margin-left: 5px;   
+}
+
+.btn-av{
+    border: none;
+    width: 120px;
+    height: 45px;
+    padding: 10px 10px 10px 10px;
+    background-color: #002171;
+    float: left;
+    color: #ecebeb;
+    font-size: 15px;
+    font-family: Mont;
+    text-transform: uppercase;  
+    margin-left: 140px;
+}
+
+/**************** PÁG: PARCEIROS ****************/
+
+.box-parceiros{
+    width: 100%;
+    height: 1600px;
+    float: left;
+    background-color: #ecebeb;
+    padding-bottom: 100px;
+  
+}
+
+.box-parceiro1{
+    height: 33%;
+    width: 100%;
+    margin-top: 100px;
+    
+}
+
+.box-parceiro{
+    height: 33%;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.box-texto-imagem{
+    height: 100%;
+    width: 50%;
+    float: left;
+}
+
+.txt-parceiro{
+    width: 60%;
+    height: 45%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 120px;
+}
+
+.txt-parceiro h1{
+    font-family: Mont;
+    font-size: 35px;
+    border-bottom: 2px solid #000;
+}
+
+.txt-parceiro p{
+    font-family: Mont;
+    font-size: 20px;
+    margin-top: 5px;
+
+}
+
+.img-parceiro{
+    width: 70%;
+    height: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 80px;
+}
+
+.slider-parceiros{
+    width: 40%;
+    height: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.slider-parceiros img{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.txt-slider-parceiros{
+    width: 40%;
+    height: 10%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.txt-slider-parceiros h1{
+    font-family: Mont;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 32px;
+    text-transform: uppercase;
+    
+}
+
+/******** PAG: LOGIN *************/
+.content-login{
+    width: 1920px;
+    height: 937px;
+    background-image: url(../images/david-hellmann-433025-unsplash.jpg);
+    background-size: 100%;
+    float: left;
+}
+
+.login{
+    width: 30%;
+    height: 60%;
+    background-color: #102840;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 190px;
+    
+}
+
+.img-login{
+    width: 30%;
+    height: 25%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.img-login img{
+    margin-left: -50px;
+    margin-top: 15px;
+}
+
+.txt-login{
+    width: 90%;
+    height: 20%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+}
+
+.txt-login h1{
+    font-family: Mont;
+    font-size: 26px;
+    color: #ecebeb;
+}
+
+.input-login{
+    border: none;
+    margin-top: 10px;
+    width: 520px;
+    height: 40px;;
+}
+
+.btn-login{
+    width: 90%;
+    height: 25%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+}
+
+.btn-login-form{
+    border: none;
+    width: 120px;
+    height: 45px;
+    padding: 10px 10px 10px 10px;
+    background-color: #5e85e1;
+    margin-left: 190px;
+    color: #000;
+    font-size: 15px;
+    font-family: Mont;
+    text-transform: uppercase;  
+    margin-top: 10px;
+
+}
+
+.btn-login p{
+    text-align: center;
+    margin-top: 10px;
+    font-family: Mont; 
+    color: #e9f0f6;
+}
