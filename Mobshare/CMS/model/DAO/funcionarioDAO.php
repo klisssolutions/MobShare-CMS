@@ -45,6 +45,7 @@ class funcionarioDAO{
         }else{
             //echo(ERRO_SCRIPT);
             //echo($sql);
+            echo("<script>alert('Email já usado.');</script>");
         }
 
         //Fecha a conexão com o BD
@@ -91,6 +92,7 @@ class funcionarioDAO{
         }else{
             //echo(ERRO_SCRIPT);
             //echo($sql);
+            echo("<script>alert('Email já usado.');</script>");
         }
 
         //Fecha a conexão com o BD
