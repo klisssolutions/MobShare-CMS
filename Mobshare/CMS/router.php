@@ -91,7 +91,6 @@ if(isset($_GET["controller"])){
                     $funcionario = $controllerFuncionario->buscarFuncionario();
 
                     require_once(IMPORT_CADASTRO_FUNCIONARIO);
-
                     break;
 
                 case "ATUALIZAR":
@@ -99,7 +98,6 @@ if(isset($_GET["controller"])){
 
                     echo("<script>funcionario();</script>");
                     break;
-
 
                 case "LOGAR":
                     $idFuncionario = $controllerFuncionario->logar();
@@ -109,7 +107,6 @@ if(isset($_GET["controller"])){
                     }
 
                     require_once(IMPORT_INDEX);
-
                     break;
 
             }

@@ -21,10 +21,10 @@ Nao é necessario ficar em uma pasta a parte
             <div class="sistema">
                 <form id="form" name="form">
                     
-                    <div class="label">Login: </div>
-                    <div class="input"><input type="text" name="txtnome" size="30"></div><br>
+                    <div class="label">E-mail: </div>
+                    <div class="input"><input type="email" name="txtemail" size="30" required></div><br>
                     <div class="label">Senha: </div>
-                    <div class="input"><input type="password" name="txtsenha" size="30"></div><br>
+                    <div class="input"><input type="password" name="txtsenha" size="30" required></div><br>
                     <div class="botao">
                         <input type="submit" value="Logar" id="login" onclick="logar()">
                     </div>

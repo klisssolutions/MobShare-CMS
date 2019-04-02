@@ -158,11 +158,11 @@ class funcionarioDAO{
     }
 
 
-    public function logar($nome, $senha){
+    public function logar($email, $senha){
 
         $idFuncionario = null;
 
-        $sql = "SELECT idUsuario_Web FROM " . TABELA_FUNCIONARIO . " WHERE nome='".$nome."' and senha = '".$senha."'";
+        $sql = "SELECT idUsuario_Web FROM " . TABELA_FUNCIONARIO . " WHERE email='".$email."' and senha = '".$senha."'";
 
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();

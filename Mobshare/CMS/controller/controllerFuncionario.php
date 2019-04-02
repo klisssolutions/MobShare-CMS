@@ -28,10 +28,10 @@ class controllerFuncionario{
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             $funcionarioDAO = new funcionarioDAO();
 
-            $nome = $_POST["txtnome"];
+            $email = $_POST["txtemail"];
             $senha = $_POST["txtsenha"];
 
-            return($funcionarioDAO->logar($nome, $senha));
+            return($funcionarioDAO->logar($email, $senha));
         }
 
     }
@@ -43,6 +43,7 @@ class controllerFuncionario{
         //Verifica qual metodo esta sendo requisitado do formulario(POST ou GET)
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             $nome = $_POST["txtnome"];
+            $email = $_POST["txtemail"];
             $senha = $_POST["txtsenha"];
             $nivel = $_POST["cbbnivel"];
 
@@ -52,11 +53,9 @@ class controllerFuncionario{
 
             //Guardando os dados do post no objeto da classe
             $funcionario->setNome($nome);
+            $funcionario->setEmail($email);
             $funcionario->setSenha($senha);
             $funcionario->setIdNivel($nivel);
-
-            //Itens não alteráveis pelo CMS
-            $funcionario->setEmail("sdasd@dsad");
 
             /* Chamada para o metodo de inserir no BD, passando como parâmetro o objeto
             contatoClass que tem todos os dados que serão inseridos no banco de dados */
@@ -80,6 +79,7 @@ class controllerFuncionario{
 
             $id = $_GET["id"];
             $nome = $_POST["txtnome"];
+            $email = $_POST["txtemail"];
             $senha = $_POST["txtsenha"];
             $idNivel = $_POST["cbbnivel"];
          
@@ -91,10 +91,10 @@ class controllerFuncionario{
             //Guardando os dados do post no objeto da classe
             $funcionario->setIdUsuarioWeb($id);
             $funcionario->setNome($nome);
+            $funcionario->setEmail($email);
             $funcionario->setSenha($senha);
             $funcionario->setIdNivel($idNivel);
             
-            $funcionario->setEmail("sdasd@dsad");
             
             /* Chamada para o metodo de inserir no BD, passando como parâmetro o objeto
             contatoClass que tem todos os dados que serão inseridos no banco de dados */
