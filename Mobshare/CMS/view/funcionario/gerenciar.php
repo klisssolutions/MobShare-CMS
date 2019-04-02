@@ -1,18 +1,19 @@
-<div class="titulo">SELECIONE O QUE GERENCIAR</div>
 
-<a href="#">
-<div class="selecao" onclick="funcionario();">
-    <div class="imagem">
-       <img src="view/imagens/employee.png">
+<di class="gerenciar">
+    <a href="#">
+    <div class="gerenciar-func" onclick="funcionario();">
+        <div class="imagem">
+        <img src="view/imagens/teamwork.png" width="128" heigth="128">
+        </div>
+        <div class="titulo-func">Funcionários</div>
     </div>
-    <div>FUNCIONARIOS</div>
-</div>
-</a>
-<a href="#" onclick="nivel();">
-<div class="selecao">
-    <div class="imagem">
-       <img src="view/imagens/level.png">
+    </a>
+    <a href="#" onclick="nivel();">
+    <div class="gerenciar-func">
+        <div class="imagem">
+        <img src="view/imagens/arrows.png" width="128" heigth="128">
+        </div>
+        <div class="titulo-func">Níveis</div>
     </div>
-    <div>NIVEIS</div>
+    </a>
 </div>
-</a>

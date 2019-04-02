@@ -28,22 +28,22 @@ class nivelDAO{
     //Inserir um registro no banco de dados.
     public function insert(Nivel $nivel){
         $sql = INSERT . TABELA_NIVEL . " 
-        (nome, descricao, permissao)
+        (nome, descricao, permissoes)
         VALUES (
         '".$nivel->getNome()."',
         '".$nivel->getDescricao()."',
-        '".$nivel->getPermissao()."')";
+        '".$nivel->getPermissoes()."')";
 
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
 
         //Executa no BD o script Insert e retorna verdadeiro/falso
         if($PDO_conex->query($sql)){
-            echo(SUCESSO_SCRIPT);
+            //echo(SUCESSO_SCRIPT);
             echo("<script>alert('Nível inserido com sucesso.');</script>");
         }else{
-            echo(ERRO_SCRIPT);
-            echo($sql);
+            //echo(ERRO_SCRIPT);
+            //echo($sql);
         }
 
         //Fecha a conexão com o BD
@@ -60,10 +60,10 @@ class nivelDAO{
         //Executa no BD o script Insert e retorna verdadeiro/falso
         if($PDO_conex->query($sql)){
             echo("<script>alert('Nível deletado com sucesso.');</script>");
-            echo(SUCESSO_SCRIPT);
+            //echo(SUCESSO_SCRIPT);
         }else{
-            echo(ERRO_SCRIPT);
-            echo($sql);
+            //echo(ERRO_SCRIPT);
+            //echo($sql);
             echo("<script>alert('Não é possiível deletar, tem funcionário associado ao nível.');</script>");
         }
 
@@ -76,7 +76,7 @@ class nivelDAO{
         $sql = UPDATE . TABELA_NIVEL . " 
         SET nome = '".$nivel->getNome()."',
             descricao = '".$nivel->getDescricao()."',
-            permissao = '".$nivel->getPermissao()."'
+            permissoes = '".$nivel->getPermissoes()."'
         WHERE idNivel = '".$nivel->getIdNivel()."';";
 
         //Abrindo conexão com o BD
@@ -84,12 +84,12 @@ class nivelDAO{
 
         //Executa no BD o script Insert e retorna verdadeiro/falso
         if($PDO_conex->query($sql)){
-            echo(SUCESSO_SCRIPT);
-            echo($sql);
+            //echo(SUCESSO_SCRIPT);
+            //echo($sql);
             echo("<script>alert('Nível atualizado com sucesso.');</script>");
         }else{
-            echo(ERRO_SCRIPT);
-            echo($sql);
+            //echo(ERRO_SCRIPT);
+            //echo($sql);
         }
 
         //Fecha a conexão com o BD
@@ -116,7 +116,7 @@ class nivelDAO{
             $listNiveis[$cont]->setIdNivel($rsNiveis["idNivel"]);
             $listNiveis[$cont]->setNome($rsNiveis["nome"]);
             $listNiveis[$cont]->setDescricao($rsNiveis["descricao"]);
-            $listNiveis[$cont]->setPermissao($rsNiveis["permissao"]);
+            $listNiveis[$cont]->setPermissoes($rsNiveis["permissoes"]);
             
             $cont++;
         }
@@ -146,7 +146,7 @@ class nivelDAO{
             $nivel->setIdNivel($rsNivel["idNivel"]);
             $nivel->setNome($rsNivel["nome"]);
             $nivel->setDescricao($rsNivel["descricao"]);
-            $nivel->setPermissao($rsNivel["permissao"]);
+            $nivel->setPermissoes($rsNivel["permissoes"]);
         }
 
         $this->conex->closeDataBase();

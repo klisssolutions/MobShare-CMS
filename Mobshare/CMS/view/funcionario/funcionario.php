@@ -22,32 +22,40 @@
     $senha = $funcionario->getSenha();
     $idNivel = $funcionario->getIdNivel();
 
-    $router = "router('funcionarios', 'atualizar', '".$funcionario->getIdFuncionario()."')";
+    $router = "router('funcionarios', 'atualizar', '".$funcionario->getIdUsuarioWeb()."')";
 
   }
 
 
 ?>
 
-<div class="titulo">GERENCIAMENTO DE FUNCIONARIO</div>
+<div class="titulo-func-lista">GERENCIAMENTO DE FUNCIONARIO</div>
 
 <form id="form" method="post">
 
-    <table>
+    <table class="func-cad">
         <tr>
-            <td class="label2">
+            <td class="titulo-func-cad">
             Nome:
             </td>
-            <td class="input2">
-              <input type="text" name="txtnome" maxlength="15" value="<?php echo($nome)?>" size="20" required>
+            <td class="txt-func">
+              <input type="text" class="input-func" name="txtnome" maxlength="15" value="<?php echo($nome)?>" size="20" required>
             </td>
         </tr>
         <tr>
-            <td class="label2">
+            <td class="titulo-func-cad">
+                Senha
+            </td>
+            <td class="txt-func">
+              <input type="password"  class="input-func" name="txtsenha" maxlength="10" value="<?php echo($senha)?>" size="20" required>
+            </td>
+        </tr>
+        <tr>
+            <td class="titulo-func-cad">
             Nivel:
             </td>
-            <td class="input2">
-              <select name="cbbnivel"required>
+            <td class="txt-func">
+              <select   class="slt-func" name="cbbnivel"required>
                 <option value="">Selecione um nível</option>
                 <?php foreach($niveis as $nivel){ 
                         $selected = ($idNivel == $nivel->getIdNivel() ? "selected" : null);
@@ -58,20 +66,13 @@
               </select>
             </td>
         </tr>
+        
         <tr>
-            <td class="label2">
-                Senha
+            <td class="titulo-func-cad">
+            <input type="button" value="Voltar" class="btn-fun" onclick="gerenciarFuncionario();">
             </td>
-            <td class="input2">
-              <input type="password" name="txtsenha" maxlength="10" value="<?php echo($senha)?>" size="20" required>
-            </td>
-        </tr>
-        <tr>
-            <td class="label2">
-            <input type="button" value="Voltar" class="botao2" onclick="gerenciarFuncionario();">
-            </td>
-            <td class="input2">
-              <input type="submit" value="Enviar" class="botao2" onclick="<?php echo($router)?>">
+            <td class="titulo-func-cad">
+              <input type="submit" value="Enviar" class="btn-fun" onclick="<?php echo($router)?>">
             </td>
         </tr>
     </table>

@@ -12,7 +12,7 @@ class Nivel{
     private $idNivel;
     private $nome;
     private $descricao;
-    private $permissao;
+    private $permissoes;
 
     public function __construct(){    
     }
@@ -42,12 +42,12 @@ class Nivel{
         $this->descricao = $descricao;
     }
 
-    public function getPermissao(){
-        return $this->permissao;
+    public function getPermissoes(){
+        return $this->permissoes;
     }
 
-    public function setPermissao($permissao){
-        $this->permissao = $permissao;
+    public function setPermissoes($permissoes){
+        $this->permissoes = $permissoes;
     }
     //------------Fim dos GETTERS e SETTERS------------
 

@@ -3,9 +3,9 @@
     Projeto: Mobshare
     Autor: Igor
     Data Criação: 23/03/2019
-    Data Modificação:29/03/2019
-    Conteudo Modificação: Fazer login
-    Autor da Modificação:Leonardo
+    Data Modificação: 01/04/2019
+    Conteudo Modificação: Mudança da tabela
+    Autor da Modificação: Igor
     Objetivo da classe: CRUD da classe de Funcionario
 */
 
@@ -28,31 +28,23 @@ class funcionarioDAO{
     //Inserir um registro no banco de dados.
     public function insert(Funcionario $funcionario){
         $sql = INSERT . TABELA_FUNCIONARIO . " 
-        (email, nome, cpf, rg, senha, dataAdmissao, dataDemissao, salario, cargo, setor, idNivel, permissoesDesktop)
+        (email, nome, senha, idNivel)
         VALUES (
         '".$funcionario->getEmail()."',
         '".$funcionario->getNome()."',
-        '".$funcionario->getCpf()."',
-        '".$funcionario->getRg()."',
         '".$funcionario->getSenha()."',
-        '".$funcionario->getDataAdmissao()."',
-        '".$funcionario->getDataDemissao()."',
-        '".$funcionario->getSalario()."',
-        '".$funcionario->getCargo()."',
-        '".$funcionario->getSetor()."',
-        '".$funcionario->getIdNivel()."',
-        '".$funcionario->getPermissoesDesktop()."')";
+        '".$funcionario->getIdNivel()."')";
 
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
 
         //Executa no BD o script Insert e retorna verdadeiro/falso
         if($PDO_conex->query($sql)){
-            echo(SUCESSO_SCRIPT);
+            //echo(SUCESSO_SCRIPT);
             echo("<script>alert('Funcionário adicionado com sucesso.');</script>");
         }else{
-            echo(ERRO_SCRIPT);
-            echo($sql);
+            //echo(ERRO_SCRIPT);
+            //echo($sql);
         }
 
         //Fecha a conexão com o BD
@@ -61,18 +53,18 @@ class funcionarioDAO{
 
     //Deletar um registro no banco de dados.
     public function delete($id){
-        $sql = DELETE . TABELA_FUNCIONARIO . " where idFuncionario =".$id;
+        $sql = DELETE . TABELA_FUNCIONARIO . " where idUsuario_Web =".$id;
 
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
 
         //Executa no BD o script Insert e retorna verdadeiro/falso
         if($PDO_conex->query($sql)){
-            echo(SUCESSO_SCRIPT);
+            //echo(SUCESSO_SCRIPT);
             echo("<script>alert('Funcionário excluído com sucesso.');</script>");
         }else{
-            echo(ERRO_SCRIPT);
-            echo($sql);
+            //echo(ERRO_SCRIPT);
+            //echo($sql);
         }
 
         //Fecha a conexão com o BD
@@ -84,29 +76,21 @@ class funcionarioDAO{
         $sql = UPDATE . TABELA_FUNCIONARIO . " 
         SET email = '".$funcionario->getEmail()."',
             nome = '".$funcionario->getNome()."',
-            cpf = '".$funcionario->getCpf()."',
-            rg = '".$funcionario->getRg()."',
             senha = '".$funcionario->getSenha()."',
-            dataAdmissao = '".$funcionario->getDataAdmissao()."',
-            dataDemissao = '".$funcionario->getDataDemissao()."',
-            salario = '".$funcionario->getSalario()."',
-            cargo = '".$funcionario->getCargo()."',
-            setor = '".$funcionario->getSetor()."',
-            idNivel = '".$funcionario->getIdNivel()."',
-            permissoesDesktop = '".$funcionario->getPermissoesDesktop()."'
-        WHERE idFuncionario = '".$funcionario->getIdFuncionario()."';";
+            idNivel = '".$funcionario->getIdNivel()."'
+        WHERE idUsuario_Web = '".$funcionario->getidUsuarioWeb()."';";
 
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
 
         //Executa no BD o script Insert e retorna verdadeiro/falso
         if($PDO_conex->query($sql)){
-            echo(SUCESSO_SCRIPT);
-            echo($sql);
+            //echo(SUCESSO_SCRIPT);
+            //echo($sql);
             echo("<script>alert('Funcionário atualizado com sucesso.');</script>");
         }else{
-            echo(ERRO_SCRIPT);
-            echo($sql);
+            //echo(ERRO_SCRIPT);
+            //echo($sql);
         }
 
         //Fecha a conexão com o BD
@@ -130,19 +114,11 @@ class funcionarioDAO{
         EX: PDO::FETCH_ASSOC, PDO::FETCH_ARRAY etc. */
         while($rsFuncionarios=$select->fetch(PDO::FETCH_ASSOC)){
             $listFuncionarios[] = new Funcionario();
-            $listFuncionarios[$cont]->setIdFuncionario($rsFuncionarios["idFuncionario"]);
+            $listFuncionarios[$cont]->setIdUsuarioWeb($rsFuncionarios["idUsuario_Web"]);
             $listFuncionarios[$cont]->setEmail($rsFuncionarios["email"]);
             $listFuncionarios[$cont]->setNome($rsFuncionarios["nome"]);
-            $listFuncionarios[$cont]->setCpf($rsFuncionarios["cpf"]);
-            $listFuncionarios[$cont]->setRg($rsFuncionarios["rg"]);
             $listFuncionarios[$cont]->setSenha($rsFuncionarios["senha"]);
-            $listFuncionarios[$cont]->setDataAdmissao($rsFuncionarios["dataAdmissao"]);
-            $listFuncionarios[$cont]->setDataDemissao($rsFuncionarios["dataDemissao"]);
-            $listFuncionarios[$cont]->setSalario($rsFuncionarios["salario"]);
-            $listFuncionarios[$cont]->setCargo($rsFuncionarios["cargo"]);
-            $listFuncionarios[$cont]->setSetor($rsFuncionarios["setor"]);
             $listFuncionarios[$cont]->setIdNivel($rsFuncionarios["idNivel"]);
-            $listFuncionarios[$cont]->setPermissoesDesktop($rsFuncionarios["permissoesDesktop"]);
             
             $cont++;
         }
@@ -155,7 +131,7 @@ class funcionarioDAO{
 
     //Seleciona um registro pelo ID.
     public function selectById($id){
-        $sql = SELECT . TABELA_FUNCIONARIO . " WHERE idFuncionario=".$id;
+        $sql = SELECT . TABELA_FUNCIONARIO . " WHERE idUsuario_Web=".$id;
 
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
@@ -169,19 +145,11 @@ class funcionarioDAO{
         EX: PDO::FETCH_ASSOC, PDO::FETCH_ARRAY etc. */
         if($rsFuncionario=$select->fetch(PDO::FETCH_ASSOC)){
             $funcionario = new Funcionario();
-            $funcionario->setIdFuncionario($rsFuncionario["idFuncionario"]);
+            $funcionario->setidUsuarioWeb($rsFuncionario["idUsuario_Web"]);
             $funcionario->setEmail($rsFuncionario["email"]);
             $funcionario->setNome($rsFuncionario["nome"]);
-            $funcionario->setCpf($rsFuncionario["cpf"]);
-            $funcionario->setRg($rsFuncionario["rg"]);
             $funcionario->setSenha($rsFuncionario["senha"]);
-            $funcionario->setDataAdmissao($rsFuncionario["dataAdmissao"]);
-            $funcionario->setDataDemissao($rsFuncionario["dataDemissao"]);
-            $funcionario->setSalario($rsFuncionario["salario"]);
-            $funcionario->setCargo($rsFuncionario["cargo"]);
-            $funcionario->setSetor($rsFuncionario["setor"]);
             $funcionario->setIdNivel($rsFuncionario["idNivel"]);
-            $funcionario->setPermissoesDesktop($rsFuncionario["permissoesDesktop"]);
         }
 
         $this->conex->closeDataBase();
@@ -194,7 +162,7 @@ class funcionarioDAO{
 
         $idFuncionario = null;
 
-        $sql = "SELECT idFuncionario FROM " . TABELA_FUNCIONARIO . " WHERE nome='".$nome."' and senha = '".$senha."'";
+        $sql = "SELECT idUsuario_Web FROM " . TABELA_FUNCIONARIO . " WHERE nome='".$nome."' and senha = '".$senha."'";
 
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
@@ -203,7 +171,7 @@ class funcionarioDAO{
         $select = $PDO_conex->query($sql);
 
         if($rsId=$select->fetch(PDO::FETCH_ASSOC)){
-            $idFuncionario = $rsId['idFuncionario'];            
+            $idFuncionario = $rsId['idUsuario_Web'];            
         }
 
         return($idFuncionario);

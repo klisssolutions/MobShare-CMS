@@ -30,41 +30,41 @@ class controllerNivel{
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             $nome = $_POST["txtnome"];
             $descricao = $_POST["txtdescricao"];
-            $permissao = 0;
+            $permissoes = 0;
 
-            //Checa se a permissao de funcionario foi marcada
+            //Checa se a permissoes de funcionario foi marcada
             if(isset($_POST['chkfuncionario'])){
-                $permissao += MODULO_FUNCIONARIO;
+                $permissoes += MODULO_FUNCIONARIO;
             }
 
-            //Checa se a permissao de marketing foi marcada
+            //Checa se a permissoes de marketing foi marcada
             if(isset($_POST['chkmarketing'])){
-                $permissao += MODULO_MARKETING;
+                $permissoes += MODULO_MARKETING;
             }
 
-            //Checa se a permissao de locacao foi marcada
+            //Checa se a permissoes de locacao foi marcada
             if(isset($_POST['chklocacao'])){
-                $permissao += MODULO_LOCACAO;
+                $permissoes += MODULO_LOCACAO;
             }
 
-            //Checa se a permissao de pagina foi marcada
+            //Checa se a permissoes de pagina foi marcada
             if(isset($_POST['chkpagina'])){
-                $permissao += MODULO_PAGINA;
+                $permissoes += MODULO_PAGINA;
             }
 
-            //Checa se a permissao de aprovacao foi marcada
+            //Checa se a permissoes de aprovacao foi marcada
             if(isset($_POST['chkaprovacao'])){
-                $permissao += MODULO_APROVACAO;
+                $permissoes += MODULO_APROVACAO;
             }
 
-            //Checa se a permissao de contato foi marcada
+            //Checa se a permissoes de contato foi marcada
             if(isset($_POST['chkcontato'])){
-                $permissao += MODULO_CONTATO;
+                $permissoes += MODULO_CONTATO;
             }
 
-            //Checa se a permissao de relatorio foi marcada
+            //Checa se a permissoes de relatorio foi marcada
             if(isset($_POST['chkrelatorio'])){
-                $permissao += MODULO_RELATORIO;
+                $permissoes += MODULO_RELATORIO;
             }
 
             //Instancia da classe
@@ -73,7 +73,7 @@ class controllerNivel{
             //Guardando os dados do post no objeto da classe
             $nivel->setNome($nome);
             $nivel->setDescricao($descricao);
-            $nivel->setPermissao($permissao);
+            $nivel->setPermissoes($permissoes);
 
             /* Chamada para o metodo de inserir no BD, passando como parâmetro o objeto
             contatoClass que tem todos os dados que serão inseridos no banco de dados */
@@ -100,41 +100,41 @@ class controllerNivel{
             $id = $_GET["id"];
             $nome = $_POST["txtnome"];
             $descricao = $_POST["txtdescricao"];
-            $permissao = 0;
+            $permissoes = 0;
 
-            //Checa se a permissao de funcionario foi marcada
+            //Checa se a permissoes de funcionario foi marcada
             if(isset($_POST['chkfuncionario'])){
-                $permissao += MODULO_FUNCIONARIO;
+                $permissoes += MODULO_FUNCIONARIO;
             }
 
-            //Checa se a permissao de marketing foi marcada
+            //Checa se a permissoes de marketing foi marcada
             if(isset($_POST['chkmarketing'])){
-                $permissao += MODULO_MARKETING;
+                $permissoes += MODULO_MARKETING;
             }
 
-            //Checa se a permissao de locacao foi marcada
+            //Checa se a permissoes de locacao foi marcada
             if(isset($_POST['chklocacao'])){
-                $permissao += MODULO_LOCACAO;
+                $permissoes += MODULO_LOCACAO;
             }
 
-            //Checa se a permissao de pagina foi marcada
+            //Checa se a permissoes de pagina foi marcada
             if(isset($_POST['chkpagina'])){
-                $permissao += MODULO_PAGINA;
+                $permissoes += MODULO_PAGINA;
             }
 
-            //Checa se a permissao de aprovacao foi marcada
+            //Checa se a permissoes de aprovacao foi marcada
             if(isset($_POST['chkaprovacao'])){
-                $permissao += MODULO_APROVACAO;
+                $permissoes += MODULO_APROVACAO;
             }
 
-            //Checa se a permissao de contato foi marcada
+            //Checa se a permissoes de contato foi marcada
             if(isset($_POST['chkcontato'])){
-                $permissao += MODULO_CONTATO;
+                $permissoes += MODULO_CONTATO;
             }
 
-            //Checa se a permissao de relatorio foi marcada
+            //Checa se a permissoes de relatorio foi marcada
             if(isset($_POST['chkrelatorio'])){
-                $permissao += MODULO_RELATORIO;
+                $permissoes += MODULO_RELATORIO;
             }
 
             //Instancia da classe
@@ -144,7 +144,7 @@ class controllerNivel{
             $nivel->setIdNivel($id);
             $nivel->setNome($nome);
             $nivel->setDescricao($descricao);
-            $nivel->setPermissao($permissao);
+            $nivel->setPermissoes($permissoes);
 
             /* Chamada para o metodo de inserir no BD, passando como parâmetro o objeto
             contatoClass que tem todos os dados que serão inseridos no banco de dados */

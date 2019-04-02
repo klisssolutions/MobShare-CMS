@@ -3,9 +3,9 @@
     Projeto: MobShare
     Autor: Igor
     Data Criação: 23/03/2019
-    Data Modificação:28/03/2019
-    Conteudo Modificação: Criação de outras const
-    Autor da Modificação: Leonardo
+    Data Modificação: 01/04/2019
+    Conteudo Modificação: Mudança da tabela
+    Autor da Modificação: Igor
     Objetivo: Arquivo com constantes e funções para ser incluído em outros arquivos
 */
 
@@ -25,7 +25,7 @@ if(!isset($incluso)){
     define("SUCESSO_SCRIPT","Script executado com sucesso.<br>");
 
     //Constantes com o nome das tabelas
-    define("TABELA_FUNCIONARIO", "Funcionario");
+    define("TABELA_FUNCIONARIO", "usuario_web");
     define("TABELA_NIVEL", "Nivel");
 
     //Permissao de modulos cada módulo. Cada módulo terá 1 bit, se estiver ligado
@@ -68,12 +68,12 @@ if(!isset($incluso)){
 
     //Essa função recebe o número de permissão e o número do módulo para
     //verificar se tem acesso ao módulo
-    function acessoModulo($permissao, $modulo){
+    function acessoModulo($permissoes, $modulo){
         //Retira as permissões dos módulos anteriores para comparar
-        $permissaoModulo = $permissao % ($modulo*2);
+        $permissoesModulo = $permissoes % ($modulo*2);
         //Verificar se a permissão é maior ou igual ao módulo se for
         //ele tem acesso ao módulo(bit ligado)
-        if($permissaoModulo >= $modulo){
+        if($permissoesModulo >= $modulo){
             return true;
         }else{
             return false;

@@ -10,12 +10,12 @@
     $funcionarios = $controllerFuncionario->listarFuncionario();
 ?>
 
-<div class="titulo">GERENCIAMENTO DE FUNCIONARIO</div>
+<div class="titulo-func-lista">GERENCIAMENTO DE FUNCIONARIOS</div>
 
-<div class="botoes">
+<div class="botoes-func">
 
-    <input type="button" value="Novo" class="botao" onclick="cadastrarFunc();">
-    <input type="button" value="Voltar" class="botao" onclick="gerenciarFuncionario();">
+    <input type="button" value="Novo" class="btn-fun"  onclick="cadastrarFunc();">
+    <input type="button" value="Voltar" class="btn-fun" onclick="gerenciarFuncionario();">
 
 </div>
 
@@ -23,37 +23,40 @@
     foreach($funcionarios as $funcionario){
 ?>
 
-<div class="listaDados">
+<div class="listaDadosFunc">
 
-    <div class="dados">
+    <div class="dados-func">
     
         Matricula:
         
     </div>
-    <div class="infoDados">
+    <div class="dados-resp-func">
     
-        <?php echo($funcionario->getIdFuncionario());?>
+        <?php echo($funcionario->getIdUsuarioWeb());?>
     
     </div>
-    <div class="dados">
+    <div class="dados-func">
     
         Nome:
         
     </div>
-    <div class="infoDados">
+    <div class="dados-resp-func">
     
     <?php echo($funcionario->getNome());?>
     
     </div>
-    
     <div class="opcao">
     
-        <a href="#" onclick="selectRouter('funcionarios', 'buscar', <?php echo($funcionario->getIdFuncionario());?>)">Editar</a>
+    <a href="#" onclick="selectRouter('funcionarios', 'excluir', <?php echo($funcionario->getIdUsuarioWeb());?>)">
+        <img src="view/imagens/delete.png" width="28" heigth="28">
+    </a>
     
     </div>
     <div class="opcao">
     
-        <a href="#" onclick="selectRouter('funcionarios', 'excluir', <?php echo($funcionario->getIdFuncionario());?>)">Apagar</a>
+        <a href="#" onclick="selectRouter('funcionarios', 'buscar', <?php echo($funcionario->getIdUsuarioWeb());?>)">
+         <img src="view/imagens/pencil.png" width="25" heigth="28">
+        </a>
     
     </div>
     
