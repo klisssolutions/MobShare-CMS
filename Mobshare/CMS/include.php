@@ -38,6 +38,10 @@ if(!isset($incluso)){
     define("MODULO_CONTATO",    0b0000010);
     define("MODULO_RELATORIO",  0b0000001);
 
+    //Constantes de pendencia
+    define("PENDENCIA_ABERTA",  0b1);
+    define("PENDENCIA_FECHADA", 0b0);
+
     //Constantes com endereço da pasta para importar
     define("PASTA_RAIZ" , $_SERVER["DOCUMENT_ROOT"]);
     define("PASTA_PROJETO", "/Mobshare/CMS");
@@ -54,6 +58,11 @@ if(!isset($incluso)){
     define("IMPORT_FUNCIONARIO", PASTA_RAIZ . PASTA_PROJETO . "/model/funcionarioClass.php");
     define("IMPORT_FUNCIONARIO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/funcionarioDAO.php");
     define("IMPORT_FUNCIONARIO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerfuncionario.php");
+
+    //Imports de pendencia
+    define("IMPORT_PENDENCIA", PASTA_RAIZ . PASTA_PROJETO . "/model/pendenciaClass.php");
+    define("IMPORT_PENDENCIA_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/pendenciaDAO.php");
+    define("IMPORT_PENDENCIA_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerPendencia.php");
 
     //Imports de páginas
     define("IMPORT_HOME", PASTA_RAIZ . PASTA_PROJETO . "/view/home.php");
