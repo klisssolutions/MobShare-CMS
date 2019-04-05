@@ -53,17 +53,17 @@
                 </a>
                 <a href="#" onclick="admPaginas();">
                     <div class="link">
-                        Administração das Paginas do Site
+                        Gerenciamento de Marcas e Modelos
                     </div>
                 </a>
                 <a href="#" onclick="aprovacao();">
                     <div class="link" >
-                        Aprovação de Cadastro
+                    Administração das Paginas do Site
                     </div>
                 </a>
                 <a href="#" onclick="faleConosco();">
                     <div class="link">
-                        Fale Conosco
+                        Aprovação de Cadastro
                     </div>
                 </a>
                 <a href="#" onclick="relatorio();">
