@@ -7,6 +7,7 @@ body, h1, p{
 
 body{
     width: 100%;
+    background-color: #102840;
 }
 
 @font-face{
@@ -868,7 +869,7 @@ text-decoration:none;
 /********** PAGINA: TERMOS DE USO ***********/
 .box-termos{
     width: 100%;
-    height: 1800px;
+    height: 1600px;
 }
 
 .image-termos{
@@ -897,10 +898,12 @@ text-decoration:none;
 }
 
 .texto-termos{
-    height: 60%;
+    min-height: 80%;
     width: 100%;
     background-color: #fefefe;
     padding-top: 20px;
+    margin-bottom: 20px;
+    float: left;
 
 }
 
@@ -920,38 +923,6 @@ text-decoration:none;
     font-size: 18px;
 }
 
-.box-cadastre{
-    height: 20%;
-    width: 100%;
-    background-image: url(../images/nicole-baster-1178413-unsplash.jpg);
-    background-size: 100%;
-    background-position-y: -300px;
-}
-
-.texto-cadastre{
-    width: 650px;
-    height: 60px;
-    background-color: #102840;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 15px;
-}
-
-.texto-cadastre h1{
-    font-family: Mont;
-    text-align: center;
-    color: #e9f0f6;
-}
-
-.txt-cad{
-    border-bottom: 1px solid #fff;
-}
-
-.txt-cad:hover{
-    color: #5e85e1;
-    border-bottom: 1px solid #5e85e1;
-    cursor: pointer;
-}
 
 /************* PÁGINA - DUVIDAS FREQUENTES *****************/
 .box-duvidas{
@@ -1381,4 +1352,99 @@ text-decoration:none;
     margin-top: 10px;
     font-family: Mont; 
     color: #e9f0f6;
+}
+
+/*********** PAGINA CADASTRO **************/
+.content-cadastro{
+    width: 1920px;
+    height: 937px;
+    background-size: 100%;
+    float: left;
+}
+
+
+.cadastro{
+    width: 30%;
+    height: 80%;
+    background-color: #102840;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 90px;
+    box-shadow: 0px 0px 6px -1px rgba(0,0,0,0.75);
+    
+}
+
+.img-cadastro{
+    width: 30%;
+    height: 170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+}
+
+.img-cadastro img{
+}
+
+.txt-cadastro{
+    width: 100%;
+    height: 70px;
+    float: left;
+}
+
+.aceite-termo{
+    width: 100%;
+    height: 50px;
+    clear: both;
+    font-family: Mont;
+    font-size: 14px;
+    text-align: center;
+    color: #fefefe;
+    
+}
+.txt-div-cadastro{
+    width: 50%;
+    height: 70px;
+    float: left;
+}
+
+.txt-cadastro h1, .txt-div-cadastro h1{
+    font-family: Mont;
+    font-size: 16px;
+    color: #ecebeb;
+    margin-left: 20px;
+}
+
+.input-cadastro{
+    border: none;
+    margin-top: 10px;
+    width: 520px;
+    height: 25px;;
+}
+
+.ipt-cad{
+    border: none;
+    margin-top: 10px;
+    width: 520px;
+    height: 25px;
+    font-family: Mont;
+    font-size: 16px;
+}
+
+.ipt-cads{
+    border: none;
+    margin-top: 10px;
+    width: 220px;
+    height: 25px;
+    font-family: Mont;
+    font-size: 16px;
+}
+.btn-cad{
+    border: none;
+    background-color: #ba3135;
+    color: #fefefe;
+    width: 100px;
+    height: 30px;
+    margin-bottom: 10px;
+    font-family: Mont;
+    font-weight: bold;
 }
