@@ -51,12 +51,12 @@
                         Gerenciamento Histórico de Locação
                     </div>
                 </a>
-                <a href="#" onclick="admPaginas();">
+                <a href="#" onclick="">
                     <div class="link">
                         Gerenciamento de Marcas e Modelos
                     </div>
                 </a>
-                <a href="#" onclick="aprovacao();">
+                <a href="#" onclick="admPaginas();">
                     <div class="link" >
                     Administração das Paginas do Site
                     </div>
