@@ -19,9 +19,7 @@ class controllerParceiro{
         require_once(IMPORT_PARCEIRO);
 
         //Import da classe parceiroDAO, para inserir no BD
-        require_once(IMPORT_PARCEIRO_DAO);
-
-        
+        require_once(IMPORT_PARCEIRO_DAO);   
         
     }
 
@@ -29,15 +27,13 @@ class controllerParceiro{
         //Instancia do DAO
         $parceiroDAO = new parceiroDAO();
 
-        require_once('function.php');
-
         //Verifica qual metodo esta sendo requisitado do formulario(POST ou GET)
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             $nome = $_POST["txtNome"];
             $email = $_POST["txtEmail"];
             $site = $_POST["txtSite"];
             $descricao = $_POST["txtDescricao"];
-            $logo = imagens($_FILES['imgLogo']);
+            $logo = enviarImagem($_FILES['imgLogo']);
             
             //Instancia da classe
             $parceiro = new Parceiro();
@@ -69,15 +65,13 @@ class controllerParceiro{
         //Instancia do DAO
         $parceiroDAO = new parceiroDAO();
 
-        require_once('function.php');
-
         //Verifica qual metodo esta sendo requisitado do formulario(POST ou GET)
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             $id = $_GET["id"];
             $nome = $_POST["txtNome"];
             $email = $_POST["txtEmail"];
             $site = $_POST["txtSite"];
-            $logo = ($_FILES['imgLogo']["size"] ? imagens($_FILES['imgLogo']) : null);
+            $logo = ($_FILES['imgLogo']["size"] ? enviarImagem($_FILES['imgLogo']) : null);
             $descricao = $_POST["txtDescricao"];
 
            

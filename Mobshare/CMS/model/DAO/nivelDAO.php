@@ -106,6 +106,8 @@ class nivelDAO{
         //executa o script de select no bd
         $select = $PDO_conex->query($sql);
         $cont = 0;
+
+        $listNiveis;
         
         /* $select->fetch no formado pdo retorna os dados do BD
         também retorna com característica do PDO como o fetch

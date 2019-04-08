@@ -26,13 +26,11 @@ class controllerFuncionamento{
         //Instancia do DAO
         $funcionamentoDAO = new funcionamentoDAO();
 
-        require_once('function.php');
-
         //Verifica qual metodo esta sendo requisitado do formulario(POST ou GET)
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             $titulo = $_POST["txtTitulo"];
             $descricao = $_POST["txtDescricao"];
-            $foto = imagens($_FILES['imgFoto']);
+            $foto = enviarImagem($_FILES['imgFoto']);
 
             //Instancia da classe
             $funcionamento = new Funcionamento();
@@ -61,13 +59,11 @@ class controllerFuncionamento{
     public function atualizarFuncionamento(){
         $funcionamentoDAO = new funcionamentoDAO();
 
-        require_once('function.php');
-
         //Verifica qual metodo esta sendo requisitado do formulario(POST ou GET)
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             $id = $_GET["id"];
             $titulo = $_POST["txtTitulo"];
-            $foto = ($_FILES['imgFoto']["size"] ? imagens($_FILES['imgFoto']) : null);
+            $foto = ($_FILES['imgFoto']["size"] ? enviarImagem($_FILES['imgFoto']) : null);
             $descricao = $_POST["txtDescricao"];
 
            

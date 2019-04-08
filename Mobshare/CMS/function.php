@@ -1,8 +1,6 @@
 <?php
-    
-    //PUXANDO A FOTO
-
-    function imagens($item){
+    //Função para tratar a imagem recebida do upload
+    function enviarImagem($item){
         $foto = $item['name'];
         $tamanho_foto = $item['size'];
         $tamanho_foto = round($tamanho_foto/1024);
@@ -19,20 +17,13 @@
                 
                 if(move_uploaded_file($foto_tmp, $arquivo)){
                     return $arquivo;
-                    
-                    
                 }else{
                     $arquivo = null;
                     return $arquivo;
-                    
                 }
                 return $arquivo;
             }
         }
-
         return $arquivo;
     }
-        
-        
-
 ?>

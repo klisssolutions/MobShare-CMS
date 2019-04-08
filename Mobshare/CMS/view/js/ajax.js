@@ -225,19 +225,43 @@ function cadastrarParceiro() {
     });
 }
 
+function comoFunciona() {
+    $.ajax({
+        type: "POST",
+        url: "view/comoFunciona/listaComoFunciona.php",
+        success: function (dados) {
+            $("#informacao").html(dados);
+        }
+    });
+}
+
+function cadastrarComoFunciona() {
+    $.ajax({
+        type: "POST",
+        url: "view/comoFunciona/comoFunciona.php",
+        success: function (dados) {
+            $("#informacao").html(dados);
+        }
+    });
+}
+
 //Essa função pega o controller e o modo e passa o form pro router realizar as acoes de insert e update
 function router(controller, modo, id){
-    let form = $('#form');
-    checkForm = document.getElementById("form").reportValidity();
+    let form = document.getElementById("form");
+    let checkForm = form.reportValidity();
+    let data = new FormData(form);
     if(checkForm){
         $('#form').submit(function(event) {
             event.preventDefault();
             $.ajax({
                 type: "POST",
+                processData: false,
+                contentType: false,
+                cache: false,
                 url: `router.php?controller=${controller}&modo=${modo}&id=${id}`,
-                data: form.serialize(),
-                success: function (dados) {
-                    $("#informacao").html(dados);
+                data: data,
+                success: function (data) {
+                    $("#informacao").html(data);
                 }
             });
         });
@@ -255,7 +279,7 @@ function selectRouter(controller, modo, id){
     });
 }
 
-//Função para lofar
+//Função para logar
 function logar(){
     let form = $('#form');
     checkForm = document.getElementById("form").reportValidity();

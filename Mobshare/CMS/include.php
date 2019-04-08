@@ -3,8 +3,8 @@
     Projeto: MobShare
     Autor: Igor
     Data Criação: 23/03/2019
-    Data Modificação: 01/04/2019
-    Conteudo Modificação: Mudança da tabela
+    Data Modificação: 08/04/2019
+    Conteudo Modificação: Separação por parte para ficar melhor
     Autor da Modificação: Igor
     Objetivo: Arquivo com constantes e funções para ser incluído em outros arquivos
 */
@@ -14,6 +14,10 @@ if(!isset($incluso)){
     
     //Set uma variável para verificar se o arquivo foi importado
     $incluso = true;
+
+    /*----------------------------------------------------------------------*/
+    /*--------------------------- BANCO DE DADOS ---------------------------*/
+    /*----------------------------------------------------------------------*/
 
     //Constantes de Banco de dados
     define("SELECT","SELECT * FROM ");
@@ -26,7 +30,13 @@ if(!isset($incluso)){
 
     //Constantes com o nome das tabelas
     define("TABELA_FUNCIONARIO", "usuario_web");
-    define("TABELA_NIVEL", "Nivel");
+    define("TABELA_NIVEL", "nivel");
+    define("TABELA_PARCEIRO", "parceiro");
+    define("TABELA_FUNCIONAMENTO", "funcionamento");
+
+    /*---------------------------------------------------------------*/
+    /*--------------------------- NÚMEROS ---------------------------*/
+    /*---------------------------------------------------------------*/
 
     //Permissao de modulos cada módulo. Cada módulo terá 1 bit, se estiver ligado
     //significa que ele terá acesso ao módulo
@@ -41,6 +51,10 @@ if(!isset($incluso)){
     //Constantes de pendencia
     define("PENDENCIA_ABERTA",  0b1);
     define("PENDENCIA_FECHADA", 0b0);
+
+    /*---------------------------------------------------------------*/
+    /*--------------------------- CLASSES ---------------------------*/
+    /*---------------------------------------------------------------*/
 
     //Constantes com endereço da pasta para importar
     define("PASTA_RAIZ" , $_SERVER["DOCUMENT_ROOT"]);
@@ -64,6 +78,20 @@ if(!isset($incluso)){
     define("IMPORT_PENDENCIA_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/pendenciaDAO.php");
     define("IMPORT_PENDENCIA_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerPendencia.php");
 
+    //Imports de Parceiros
+    define("IMPORT_PARCEIRO", PASTA_RAIZ . PASTA_PROJETO . "/model/parceiroClass.php");
+    define("IMPORT_PARCEIRO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/parceiroDAO.php");
+    define("IMPORT_PARCEIRO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerParceiro.php");
+
+    //Imports de Funcionamento
+    define("IMPORT_FUNCIONAMENTO", PASTA_RAIZ . PASTA_PROJETO . "/model/funcionamentoClass.php");
+    define("IMPORT_FUNCIONAMENTO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/funcionamentoDAO.php");
+    define("IMPORT_FUNCIONAMENTO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerFuncionamento.php");
+
+    /*---------------------------------------------------------------*/
+    /*--------------------------- PÁGINAS ---------------------------*/
+    /*---------------------------------------------------------------*/
+
     //Imports de páginas
     define("IMPORT_HOME", PASTA_RAIZ . PASTA_PROJETO . "/view/home.php");
     define("IMPORT_LOGIN", PASTA_RAIZ . PASTA_PROJETO . "/view/login.php");
@@ -74,6 +102,16 @@ if(!isset($incluso)){
 
     //Import páginas de funcionario
     define("IMPORT_CADASTRO_FUNCIONARIO", PASTA_RAIZ . PASTA_PROJETO . "/view/funcionario/funcionario.php");
+
+    //Import páginas de parceiro
+    define("IMPORT_CADASTRO_PARCEIRO", PASTA_RAIZ . PASTA_PROJETO . "/view/parceiro/parceiro.php");
+
+    //Import páginas de funcionamento
+    define("IMPORT_CADASTRO_FUNCIONAMENTO", PASTA_RAIZ . PASTA_PROJETO . "/view/comoFunciona/comoFunciona.php");
+
+    /*---------------------------------------------------------------*/
+    /*--------------------------- FUNÇÕES ---------------------------*/
+    /*---------------------------------------------------------------*/
 
     //Essa função recebe o número de permissão e o número do módulo para
     //verificar se tem acesso ao módulo
@@ -87,6 +125,34 @@ if(!isset($incluso)){
         }else{
             return false;
         }
+    }
+
+    //Função para tratar a imagem recebida do upload
+    function enviarImagem($item){
+        $foto = $item['name'];
+        $tamanho_foto = $item['size'];
+        $tamanho_foto = round($tamanho_foto/1024);
+        $ext_foto = strrchr($foto, ".");
+        $nome_foto = pathinfo($foto, PATHINFO_FILENAME);
+        $nome_foto = md5(uniqid(time()).$nome_foto);
+        $diretorio = "upload/";
+        $extensao = array(".jpg",".png",".jpeg");
+
+        if(in_array($ext_foto, $extensao)){
+            if($tamanho_foto<=2000){
+                $foto_tmp = $item['tmp_name'];
+                $arquivo = $diretorio.$nome_foto.$ext_foto;
+                
+                if(move_uploaded_file($foto_tmp, $arquivo)){
+                    return $arquivo;
+                }else{
+                    $arquivo = null;
+                    return $arquivo;
+                }
+                return $arquivo;
+            }
+        }
+        return $arquivo;
     }
 }
 ?>

@@ -31,69 +31,78 @@
             ";
 
             //Abrindo conexão com o BD
-        $PDO_conex = $this->conex->connectDataBase();
+            $PDO_conex = $this->conex->connectDataBase();
 
-        //Executa no BD o script Insert e retorna verdadeiro/falso
-        if($PDO_conex->query($sql)){
-            //echo(SUCESSO_SCRIPT);
-            echo("<script>alert('Inserido com sucesso.');</script>");
-        }else{
-            //echo(ERRO_SCRIPT);
-            echo($sql);
-        }
+            //Executa no BD o script Insert e retorna verdadeiro/falso
+            if($PDO_conex->query($sql)){
+                //echo(SUCESSO_SCRIPT);
+                echo("<script>alert('Inserido com sucesso.');</script>");
+            }else{
+                //echo(ERRO_SCRIPT);
+                echo($sql);
+            }
 
-        //Fecha a conexão com o BD
-        $this->conex->closeDataBase();
-        }
-        //apagar um registro no banco
-        public function delete($id){
-            $sql = DELETE . TABELA_FUNCIONAMENTO . " where idFuncionamento =".$id;
+            //Fecha a conexão com o BD
+            $this->conex->closeDataBase();
+            }
+            //apagar um registro no banco
+            public function delete($id){
+                $sql = DELETE . TABELA_FUNCIONAMENTO . " where idFuncionamento =".$id;
 
-        //Abrindo conexão com o BD
-        $PDO_conex = $this->conex->connectDataBase();
+            //Abrindo conexão com o BD
+            $PDO_conex = $this->conex->connectDataBase();
 
-        //Executa no BD o script Insert e retorna verdadeiro/falso
-        if($PDO_conex->query($sql)){
-            //echo(SUCESSO_SCRIPT);
-            echo("<script>alert('Funcionário excluído com sucesso.');</script>");
-        }else{
-            //echo(ERRO_SCRIPT);
-            //echo($sql);
-        }
+            //Executa no BD o script Insert e retorna verdadeiro/falso
+            if($PDO_conex->query($sql)){
+                //echo(SUCESSO_SCRIPT);
+                echo("<script>alert('Funcionário excluído com sucesso.');</script>");
+            }else{
+                //echo(ERRO_SCRIPT);
+                //echo($sql);
+            }
 
-        //Fecha a conexão com o BD
-        $this->conex->closeDataBase();
+            //Fecha a conexão com o BD
+            $this->conex->closeDataBase();
         }
 
         //atualizar um registro no banco de dados
 
         public function update(Funcionamento $funcionamento){
 
-            $sql = UPDATE . TABELA_FUNCIONAMENTO . "
+            if($funcionamento->getFoto()){
+                $sql = UPDATE . TABELA_FUNCIONAMENTO . "
                 SET titulo = '".$funcionamento->getTitulo()."',
                 foto = '".$funcionamento->getFoto()."',
                 descricao = '".$funcionamento->getDescricao()."'
                 
                 WHERE idFuncionamento = '".$funcionamento->getIdFuncionamento()."';";
+            }else{
+                $sql = UPDATE . TABELA_FUNCIONAMENTO . "
+                SET titulo = '".$funcionamento->getTitulo()."',
+                descricao = '".$funcionamento->getDescricao()."'
+                
+                WHERE idFuncionamento = '".$funcionamento->getIdFuncionamento()."';";
+            }
+            
             
             
 
             //Abrindo conexão com o BD
-        $PDO_conex = $this->conex->connectDataBase();
+            $PDO_conex = $this->conex->connectDataBase();
 
-        //Executa no BD o script Insert e retorna verdadeiro/falso
-        if($PDO_conex->query($sql)){
-            //echo(SUCESSO_SCRIPT);
-            echo($sql);
-            echo("<script>alert('Parceiro atualizado com sucesso.');</script>");
-        }else{
-            //echo(ERRO_SCRIPT);
-            echo($sql);
-            echo("<script>alert('Email já usado.');</script>");
-        }
+            //Executa no BD o script Insert e retorna verdadeiro/falso
+            if($PDO_conex->query($sql)){
+                //echo(SUCESSO_SCRIPT);
+                echo($sql);
+                echo("<script>alert('Parceiro atualizado com sucesso.');</script>");
+            }else{
+                //echo(ERRO_SCRIPT);
+                echo($sql);
+                echo("<script>alert('Email já usado.');</script>");
+            }
 
-        //Fecha a conexão com o BD
-        $this->conex->closeDataBase();
+            //Fecha a conexão com o BD
+            $this->conex->closeDataBase();
 
         }
 

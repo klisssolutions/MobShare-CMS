@@ -51,7 +51,7 @@
         </div>
     </div>
 </a>
-<a href="#" onclick="parceiro();">
+<a href="#" onclick="comoFunciona();">
     <div class="pgAdministracao">
         <div class="imagem-adm">
         <img src="view/Imagens/com.png" width="110" heitgh="110">

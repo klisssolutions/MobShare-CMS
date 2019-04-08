@@ -74,32 +74,40 @@
 
         public function update(Parceiro $parceiro){
 
-            $sql = UPDATE . TABELA_PARCEIRO . "
+            if($parceiro->getLogo()){
+                $sql = UPDATE . TABELA_PARCEIRO . "
                 SET nome = '".$parceiro->getNome()."',
                 email = '".$parceiro->getEmail()."',
                 foto = '".$parceiro->getLogo()."',
                 descricaoParceiro = '".$parceiro->getDescricao()."',
                 site = '".$parceiro->getSite()."'
                 WHERE idParceiro = '".$parceiro->getIdParceiro()."';";
+            }else{
+                $sql = UPDATE . TABELA_PARCEIRO . "
+                SET nome = '".$parceiro->getNome()."',
+                email = '".$parceiro->getEmail()."',
+                descricaoParceiro = '".$parceiro->getDescricao()."',
+                site = '".$parceiro->getSite()."'
+                WHERE idParceiro = '".$parceiro->getIdParceiro()."';";
+            }
             
             
-
             //Abrindo conexão com o BD
-        $PDO_conex = $this->conex->connectDataBase();
+            $PDO_conex = $this->conex->connectDataBase();
 
-        //Executa no BD o script Insert e retorna verdadeiro/falso
-        if($PDO_conex->query($sql)){
-            //echo(SUCESSO_SCRIPT);
-            //echo($sql);
-            echo("<script>alert('Parceiro atualizado com sucesso.');</script>");
-        }else{
-            //echo(ERRO_SCRIPT);
-            echo($sql);
-            echo("<script>alert('Email já usado.');</script>");
-        }
+            //Executa no BD o script Insert e retorna verdadeiro/falso
+            if($PDO_conex->query($sql)){
+                //echo(SUCESSO_SCRIPT);
+                //echo($sql);
+                echo("<script>alert('Parceiro atualizado com sucesso.');</script>");
+            }else{
+                //echo(ERRO_SCRIPT);
+                echo($sql);
+                echo("<script>alert('Email já usado.');</script>");
+            }
 
-        //Fecha a conexão com o BD
-        $this->conex->closeDataBase();
+            //Fecha a conexão com o BD
+            $this->conex->closeDataBase();
 
         }
 

@@ -111,6 +111,83 @@ if(isset($_GET["controller"])){
 
             }
             break;
+            case "PARCEIROS":
+
+            require_once(IMPORT_PARCEIRO_CONTROLLER);
+
+            $controllerParceiro = new controllerParceiro();
+
+            switch ($modo){
+                case "INSERIR":
+                    //Chamando o método de inserir um novo funcionario
+                    $controllerParceiro->inserirParceiro();
+
+                    //Encaminha para a pagina de funcionario
+                    echo("<script>parceiro();</script>");
+                break;
+
+                case "EXCLUIR":
+                    //Chama o método para excluir o funcionario
+                    $controllerParceiro->excluirParceiro();
+
+                    //Encaminha para a pagina de funcionario
+                    echo("<script>parceiro();</script>");
+                break;
+
+                case "BUSCAR":
+                    $parceiro = $controllerParceiro->buscarParceiro();
+
+                    require_once(IMPORT_CADASTRO_PARCEIRO);
+
+                break;
+
+                case "ATUALIZAR":
+                    $controllerParceiro->atualizarParceiro();
+
+                    echo("<script>parceiro();</script>");
+                break;
+            }
+
+            break;
+            
+
+        case "FUNCIONAMENTO":
+
+            require_once(IMPORT_FUNCIONAMENTO_CONTROLLER);
+
+            $controllerFuncionamento = new controllerFuncionamento();
+
+            switch ($modo){
+                case "INSERIR":
+                    //Chamando o método de inserir um novo funcionario
+                    $controllerFuncionamento->inserirFuncionamento();
+
+                    //Encaminha para a pagina de funcionario
+                    echo("<script>comoFunciona();</script>");
+                break;
+
+                case "EXCLUIR":
+                    //Chama o método para excluir o funcionario
+                    $controllerFuncionamento->excluirFuncionamento();
+
+                    //Encaminha para a pagina de funcionario
+                    echo("<script>comoFunciona();</script>");
+                break;
+
+                case "BUSCAR":
+                    $funcionamento = $controllerFuncionamento->buscarFuncionamento();
+
+                    require_once(IMPORT_CADASTRO_FUNCIONAMENTO);
+
+                break;
+
+                case "ATUALIZAR":
+                    $controllerFuncionamento->atualizarFuncionamento();
+
+                    echo("<script>comoFunciona();</script>");
+                break;
+            }       
+         break;
     }
 }
 ?>
