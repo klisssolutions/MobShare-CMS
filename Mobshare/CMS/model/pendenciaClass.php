@@ -8,8 +8,10 @@
     Autor da Modificação:
     Objetivo da classe: Classe de Pendencias
 */
-class Nivel{
+class Pendencia{
     private $idPendencia;
+    private $nome;
+    private $id;
     private $motivo;
     private $aberto;
 
@@ -23,6 +25,22 @@ class Nivel{
 
     public function setIdPendencia($idPendencia){
         $this->idPendencia = $idPendencia;
+    }
+
+    public function getNome(){
+        return $this->nome;
+    }
+
+    public function setNome($nome){
+        $this->nome = $nome;
+    }
+
+    public function getId(){
+        return $this->id;
+    }
+
+    public function setId($id){
+        $this->id = $id;
     }
 
     public function getMotivo(){

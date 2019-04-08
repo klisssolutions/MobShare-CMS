@@ -2,11 +2,11 @@
 /*
     Projeto: Mobshare
     Autor: Igor
-    Data Criação: 23/03/2019
-    Data Modificação: 28/03/2019
-    Conteudo Modificação: Mudar as constantes para outro arquivo
-    Autor da Modificação: Igor
-    Objetivo da classe: CRUD da classe de Nivel
+    Data Criação: 06/04/2019
+    Data Modificação:
+    Conteudo Modificação:
+    Autor da Modificação:
+    Objetivo da classe:
 */
 
 //Import do arquivo de constantes
@@ -25,54 +25,9 @@ class pendenciaDAO{
         $this->conex = new conexaoMySQL();
     }
 
-    //Inserir um registro no banco de dados.
-    public function insert(Nivel $nivel){
-        $sql = INSERT . TABELA_NIVEL . " 
-        (nome, descricao, permissoes)
-        VALUES (
-        '".$nivel->getNome()."',
-        '".$nivel->getDescricao()."',
-        '".$nivel->getPermissoes()."')";
-
-        //Abrindo conexão com o BD
-        $PDO_conex = $this->conex->connectDataBase();
-
-        //Executa no BD o script Insert e retorna verdadeiro/falso
-        if($PDO_conex->query($sql)){
-            //echo(SUCESSO_SCRIPT);
-            echo("<script>alert('Nível inserido com sucesso.');</script>");
-        }else{
-            //echo(ERRO_SCRIPT);
-            //echo($sql);
-        }
-
-        //Fecha a conexão com o BD
-        $this->conex->closeDataBase();
-    }
-
-    //Deletar um registro no banco de dados.
-    public function delete($id){
-        $sql = DELETE . TABELA_NIVEL . " where idNivel =".$id;
-
-        //Abrindo conexão com o BD
-        $PDO_conex = $this->conex->connectDataBase();
-
-        //Executa no BD o script Insert e retorna verdadeiro/falso
-        if($PDO_conex->query($sql)){
-            echo("<script>alert('Nível deletado com sucesso.');</script>");
-            //echo(SUCESSO_SCRIPT);
-        }else{
-            //echo(ERRO_SCRIPT);
-            //echo($sql);
-            echo("<script>alert('Não é possiível deletar, tem funcionário associado ao nível.');</script>");
-        }
-
-        //Fecha a conexão com o BD
-        $this->conex->closeDataBase();
-    }
 
     //Atualiza um registro no banco de dados.
-    public function update(Nivel $nivel){
+    public function update(Pendencia $pendencia){
         $sql = UPDATE . TABELA_NIVEL . " 
         SET nome = '".$nivel->getNome()."',
             descricao = '".$nivel->getDescricao()."',
@@ -98,7 +53,7 @@ class pendenciaDAO{
 
     //Lista todos os registros do banco de dados.
     public function selectAll(){
-        $sql = SELECT.TABELA_NIVEL;
+        $sql = SELECT.VIEW_USUARIO;
 
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
@@ -111,25 +66,30 @@ class pendenciaDAO{
         também retorna com característica do PDO como o fetch
         é necessário especificar o modelo de conversão.
         EX: PDO::FETCH_ASSOC, PDO::FETCH_ARRAY etc. */
-        while($rsNiveis=$select->fetch(PDO::FETCH_ASSOC)){
-            $listNiveis[] = new Nivel();
-            $listNiveis[$cont]->setIdNivel($rsNiveis["idNivel"]);
-            $listNiveis[$cont]->setNome($rsNiveis["nome"]);
-            $listNiveis[$cont]->setDescricao($rsNiveis["descricao"]);
-            $listNiveis[$cont]->setPermissoes($rsNiveis["permissoes"]);
+        $listPendencias[] = new Pendencia();
+        $listPendencias = null;
+        while($rsPendencia=$select->fetch(PDO::FETCH_ASSOC)){
+            $pendencia = new Pendencia();
+            $pendencia->setIdPendencia($rsPendencias["idPendencia"]);
+            $pendencia->setNome($rsPendencias["nome"]);
+            $pendencia->setId($rsPendencias["id"]);
+            $pendencia->setMotivo($rsPendencias["motivo"]);
+            $pendencia->setAberto($rsPendencias["aberto"]);
             
+            $listPendencias[$cont] = $pendencia;
+
             $cont++;
         }
 
         $this->conex->closeDataBase();
 
-        return($listNiveis);
-
+        return($listPendencias);
+        //var_dump($select);
     }
 
     //Seleciona um registro pelo ID.
     public function selectById($id){
-        $sql = SELECT . TABELA_NIVEL . " WHERE idNivel=".$id;
+        $sql = SELECT . VIEW_USUARIO . " WHERE idPendencia=".$id;
 
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
@@ -141,17 +101,18 @@ class pendenciaDAO{
         também retorna com característica do PDO como o fetch
         é necessário especificar o modelo de conversão.
         EX: PDO::FETCH_ASSOC, PDO::FETCH_ARRAY etc. */
-        if($rsNivel=$select->fetch(PDO::FETCH_ASSOC)){
-            $nivel = new Nivel();
-            $nivel->setIdNivel($rsNivel["idNivel"]);
-            $nivel->setNome($rsNivel["nome"]);
-            $nivel->setDescricao($rsNivel["descricao"]);
-            $nivel->setPermissoes($rsNivel["permissoes"]);
+        if($rsPendencia=$select->fetch(PDO::FETCH_ASSOC)){
+            $pendencias = new Pendencia();
+            $pendencias->setIdPendencia($rsPendencia["idPendencia"]);
+            $pendencias->setNome($rsPendencia["nome"]);
+            $pendencias->setId($rsPendencia["id"]);
+            $pendencias->setMotivo($rsPendencia["motivo"]);
+            $listPendencias->setAberto($rsPendencia["aberto"]);
         }
 
         $this->conex->closeDataBase();
 
-        return($nivel);
+        return($pendencias);
     }
 }
 ?>

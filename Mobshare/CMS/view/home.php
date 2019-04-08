@@ -51,7 +51,7 @@
                         Gerenciamento Histórico de Locação
                     </div>
                 </a>
-                <a href="#" onclick="">
+                <a href="#" onclick="faleConosco();">
                     <div class="link">
                         Gerenciamento de Marcas e Modelos
                     </div>
@@ -61,7 +61,7 @@
                     Administração das Paginas do Site
                     </div>
                 </a>
-                <a href="#" onclick="faleConosco();">
+                <a href="#" onclick="aprovacao();">
                     <div class="link">
                         Aprovação de Cadastro
                     </div>
