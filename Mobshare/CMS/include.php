@@ -34,6 +34,10 @@ if(!isset($incluso)){
     define("TABELA_PARCEIRO", "parceiro");
     define("TABELA_FUNCIONAMENTO", "funcionamento");
 
+    //Constantes com o nome das views
+    define("VIEW_VEICULO", "VPendencia_Veiculo");
+    define("VIEW_USUARIO", "VPendencia_Cliente");
+
     /*---------------------------------------------------------------*/
     /*--------------------------- NÚMEROS ---------------------------*/
     /*---------------------------------------------------------------*/
