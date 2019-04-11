@@ -1,29 +1,19 @@
 USE mydb;
 
-SELECT * FROM Nivel;
-
-
-SELECT * FROM funcionario;
-
-SELECT * FROM cliente;
-
-SELECT * FROM usuario_Web;
-
 SELECT * FROM pendencia;
 
-SELECT * FROM veiculo;
-
-SELECT * FROM endereco;
-
+SELECT * FROM veiculo; 
 SELECT * FROM categoria_Veiculo;
 SELECT * FROM tipo_Veiculo;
 SELECT * FROM pendencia_veiculo;
 
+SELECT * FROM cliente;
+SELECT * FROM endereco;
+SELECT * FROM pendencia_cliente;
 
-
-create view VPendencia_Cliente as SELECT p.idPendencia, c.nome, c.idCliente AS id, p.motivo, p.aberto AS pendente from  pendencia_cliente as pc join cliente as c on pc.idCliente = c.idCliente join pendencia as p on p.idpendencia = pc.idPendencia;
+create view VPendencia_Cliente as SELECT p.idPendencia, c.nome, c.idCliente AS id, p.motivo, p.aberto from  pendencia_cliente as pc join cliente as c on pc.idCliente = c.idCliente join pendencia as p on p.idpendencia = pc.idPendencia;
     
-create view VPendencia_Veiculo as SELECT p.idPendencia, concat(v.marca, " ", v.modelo) AS nome, v.idVeiculo as id, p.motivo as motivo, p.aberto as pendente from pendencia_veiculo as pv join veiculo as v on pv.idVeiculo = v.idVeiculo join pendencia as p on p.idpendencia = pv.idPendencia;	 
+create view VPendencia_Veiculo as SELECT p.idPendencia, concat(v.marca, " ", v.modelo) AS nome, v.idVeiculo as id, p.motivo as motivo, p.aberto from pendencia_veiculo as pv join veiculo as v on pv.idVeiculo = v.idVeiculo join pendencia as p on p.idpendencia = pv.idPendencia;	 
 
 /*
 delimiter #

@@ -57,7 +57,7 @@ if(isset($_GET["controller"])){
                     $nivel = $controllerNivel->buscarNivel();
 
                     //Pega a pagina de cadastro de niveis para editar o nivel escolhido
-                    require_once(IMPORT_CADASTRO_NIVEL);
+                    require_once(IMPORT_CMS_CADASTRO_NIVEL);
                     break;
             }
             break;
@@ -90,7 +90,7 @@ if(isset($_GET["controller"])){
                 case "BUSCAR":
                     $funcionario = $controllerFuncionario->buscarFuncionario();
 
-                    require_once(IMPORT_CADASTRO_FUNCIONARIO);
+                    require_once(IMPORT_CMS_CADASTRO_FUNCIONARIO);
                     break;
 
                 case "ATUALIZAR":
@@ -106,7 +106,7 @@ if(isset($_GET["controller"])){
                         echo("<script>alert('Login ou senha inválidos.');</script>");
                     }
 
-                    require_once(IMPORT_INDEX);
+                    require_once(IMPORT_CMS_INDEX);
                     break;
 
             }
@@ -137,7 +137,7 @@ if(isset($_GET["controller"])){
                 case "BUSCAR":
                     $parceiro = $controllerParceiro->buscarParceiro();
 
-                    require_once(IMPORT_CADASTRO_PARCEIRO);
+                    require_once(IMPORT_CMS_CADASTRO_PARCEIRO);
 
                 break;
 
@@ -177,7 +177,7 @@ if(isset($_GET["controller"])){
                 case "BUSCAR":
                     $funcionamento = $controllerFuncionamento->buscarFuncionamento();
 
-                    require_once(IMPORT_CADASTRO_FUNCIONAMENTO);
+                    require_once(IMPORT_CMS_CADASTRO_FUNCIONAMENTO);
 
                 break;
 

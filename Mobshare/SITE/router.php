@@ -106,7 +106,7 @@ if(isset($_GET["controller"])){
                         echo("<script>alert('Login ou senha inválidos.');</script>");
                     }
 
-                    require_once(IMPORT_INDEX);
+                    require_once(IMPORT_SITE_INDEX);
                     break;
 
             }
@@ -121,7 +121,7 @@ if(isset($_GET["controller"])){
             case "LOGAR":
                 $idCliente = $controllerCliente->logar();
 
-                require_once(IMPORT_INDEX);
+                require_once(IMPORT_SITE_INDEX);
                 break;
             break;
         
