@@ -102,7 +102,7 @@ if(!isset($incluso)){
     /*--------------------------- PÁGINAS ---------------------------*/
     /*---------------------------------------------------------------*/
 
-    //Imports de páginas do cms
+    //Imports de páginas do CMS
     define("IMPORT_CMS_HOME", PASTA_RAIZ . PASTA_PROJETO . "/CMS/view/home.php");
     define("IMPORT_CMS_LOGIN", PASTA_RAIZ . PASTA_PROJETO . "/CMS/view/login.php");
     define("IMPORT_CMS_INDEX", PASTA_RAIZ . PASTA_PROJETO . "/CMS/index.php");
@@ -119,7 +119,7 @@ if(!isset($incluso)){
     //Import páginas de funcionamento
     define("IMPORT_CMS_CADASTRO_FUNCIONAMENTO", PASTA_RAIZ . PASTA_PROJETO . "/CMS/view/comoFunciona/comoFunciona.php");
 
-    //Imports de páginas do site
+    //Imports de páginas do SITE
     define("IMPORT_SITE_HOME", PASTA_RAIZ . PASTA_PROJETO . "/SITE/view/home.php");
     define("IMPORT_SITE_LOGIN", PASTA_RAIZ . PASTA_PROJETO . "/SITE/view/login.php");
     define("IMPORT_SITE_INDEX", PASTA_RAIZ . PASTA_PROJETO . "/SITE/index.php");
