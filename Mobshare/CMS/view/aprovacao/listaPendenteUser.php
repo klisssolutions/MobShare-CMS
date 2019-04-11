@@ -27,31 +27,23 @@
     </div>
     <div class="infoDados">
     
-        Charlie Harper
+        <?php echo($pendencia->getNome()); ?>
     
     </div>
     <div class="dados">
     
-        E-mail:
+        ID:
         
     </div>
     <div class="infoDados">
     
-        charlie@gmail.com
+    <?php echo($pendencia->getId()); ?>
     
     </div>
 
-    
-    
     <div class="opcao">
     
-        <a href="#">Recusar</a>
-    
-    </div>
-    <div class="opcao">
-    
-        <a href="#">Aceitar</a>
-
+        <a href="#">Editar</a>
     
     </div>
 

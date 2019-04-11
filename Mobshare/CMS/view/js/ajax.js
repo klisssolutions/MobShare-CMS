@@ -107,7 +107,7 @@ function admPaginas() {
 function aprovacao() {
     $.ajax({
         type: "POST",
-        url: "view/aprovacao/listaPendente.php",
+        url: "view/aprovacao/listaPendenteUser.php",
         success: function (dados) {
             $("#informacao").html(dados);
         }
