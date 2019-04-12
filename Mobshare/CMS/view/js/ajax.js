@@ -107,7 +107,27 @@ function admPaginas() {
 function aprovacao() {
     $.ajax({
         type: "POST",
+        url: "view/aprovacao/gerenciar.php",
+        success: function (dados) {
+            $("#informacao").html(dados);
+        }
+    });
+}
+
+function aprovacaoUsuario() {
+    $.ajax({
+        type: "POST",
         url: "view/aprovacao/listaPendenteUser.php",
+        success: function (dados) {
+            $("#informacao").html(dados);
+        }
+    });
+}
+
+function aprovacaoVeiculo() {
+    $.ajax({
+        type: "POST",
+        url: "view/aprovacao/listaPendenteVeic.php",
         success: function (dados) {
             $("#informacao").html(dados);
         }
