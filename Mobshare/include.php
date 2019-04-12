@@ -34,6 +34,8 @@ if(!isset($incluso)){
     define("TABELA_PARCEIRO", "parceiro");
     define("TABELA_FUNCIONAMENTO", "funcionamento");
     define("TABELA_CLIENTE", "Cliente");
+    define("TABELA_VEICULO", "Veiculo");
+    define("TABELA_FOTO_VEICULO", "Foto_Veiculo");    
 
     //Constantes com o nome das views
     define("VIEW_VEICULO", "VPendencia_Veiculo");
@@ -98,11 +100,41 @@ if(!isset($incluso)){
     define("IMPORT_CLIENTE_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/clienteDAO.php");
     define("IMPORT_CLIENTE_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllercliente.php");
 
+    //Imports de veiculo
+    define("IMPORT_VEICULO", PASTA_RAIZ . PASTA_PROJETO . "/model/veiculoClass.php");
+    define("IMPORT_VEICULO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/veiculoDAO.php");
+    define("IMPORT_VEICULO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerVeiculo.php");    
+
+
+
+    //Imports de foto veiculo
+    define("IMPORT_FOTO_VEICULO", PASTA_RAIZ . PASTA_PROJETO . "/model/foto_veiculoClass.php");
+    define("IMPORT_FOTO_VEICULO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/foto_veiculoDAO.php");
+    define("IMPORT_FOTO_VEICULO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerFoto_Veiculo.php"); 
+    
+
+
+    //Imports de foto veiculo
+    define("IMPORT_BANNER", PASTA_RAIZ . PASTA_PROJETO . "/model/bannerClass.php");
+    define("IMPORT_BANNER_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/bannerDAO.php");
+    define("IMPORT_BANNER_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerBanner.php");     
+
+
+    //Imports de foto marca
+    define("IMPORT_MARCA", PASTA_RAIZ . PASTA_PROJETO . "/model/marcaClass.php");
+    define("IMPORT_MARCA_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/marcaDAO.php");
+    define("IMPORT_MARCA_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerMarca.php"); 
+    
+    //Imports de foto marca
+    define("IMPORT_MODELO", PASTA_RAIZ . PASTA_PROJETO . "/model/modeloClass.php");
+    define("IMPORT_MODELO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/modeloDAO.php");
+    define("IMPORT_MODELO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerModelo.php");     
+
     /*---------------------------------------------------------------*/
     /*--------------------------- PÁGINAS ---------------------------*/
     /*---------------------------------------------------------------*/
 
-    //Imports de páginas do CMS
+    //Imports de páginas do cms
     define("IMPORT_CMS_HOME", PASTA_RAIZ . PASTA_PROJETO . "/CMS/view/home.php");
     define("IMPORT_CMS_LOGIN", PASTA_RAIZ . PASTA_PROJETO . "/CMS/view/login.php");
     define("IMPORT_CMS_INDEX", PASTA_RAIZ . PASTA_PROJETO . "/CMS/index.php");
@@ -119,7 +151,10 @@ if(!isset($incluso)){
     //Import páginas de funcionamento
     define("IMPORT_CMS_CADASTRO_FUNCIONAMENTO", PASTA_RAIZ . PASTA_PROJETO . "/CMS/view/comoFunciona/comoFunciona.php");
 
-    //Imports de páginas do SITE
+    //Import páginas de banner
+    define("IMPORT_CADASTRO_BANNER", PASTA_RAIZ . PASTA_PROJETO . "/view/banner/banner.php");
+
+    //Imports de páginas do site
     define("IMPORT_SITE_HOME", PASTA_RAIZ . PASTA_PROJETO . "/SITE/view/home.php");
     define("IMPORT_SITE_LOGIN", PASTA_RAIZ . PASTA_PROJETO . "/SITE/view/login.php");
     define("IMPORT_SITE_INDEX", PASTA_RAIZ . PASTA_PROJETO . "/SITE/index.php");
@@ -143,22 +178,23 @@ if(!isset($incluso)){
     }
 
     //Função para tratar a imagem recebida do upload
+    //Função para tratar a imagem recebida do upload
     function enviarImagem($item){
+        
         $foto = $item['name'];
         $tamanho_foto = $item['size'];
         $tamanho_foto = round($tamanho_foto/1024);
         $ext_foto = strrchr($foto, ".");
         $nome_foto = pathinfo($foto, PATHINFO_FILENAME);
         $nome_foto = md5(uniqid(time()).$nome_foto);
-        $diretorio = "upload/";
+        $diretorio = "C:/xampp/htdocs/Mobshare/arquivos/";
         $extensao = array(".jpg",".png",".jpeg");
-
         if(in_array($ext_foto, $extensao)){
             if($tamanho_foto<=2000){
                 $foto_tmp = $item['tmp_name'];
-                $arquivo = $diretorio.$nome_foto.$ext_foto;
+                $arquivo = $nome_foto.$ext_foto;
                 
-                if(move_uploaded_file($foto_tmp, $arquivo)){
+                if(move_uploaded_file($foto_tmp, $diretorio.$arquivo)){
                     return $arquivo;
                 }else{
                     $arquivo = null;

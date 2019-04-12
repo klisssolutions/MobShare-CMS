@@ -68,3 +68,13 @@
     </div>
 </a>
 
+
+<a href="#" onclick="banner();">
+    <div class="pgAdministracao">
+        <div class="imagem-adm">
+        <img src="view/Imagens/chatting.png" width="110" heitgh="110">
+        <h1>Banner</h1>
+        </div>
+    </div>
+</a>
+

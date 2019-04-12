@@ -1,8 +1,48 @@
+<?php
+
+@session_start();
+@$_SESSION["importInclude"] = $_SERVER["DOCUMENT_ROOT"] . "/Mobshare/include.php";
+require_once($_SESSION["importInclude"]); 
+
+require_once(IMPORT_VEICULO);
+require_once(IMPORT_VEICULO_CONTROLLER);
+
+require_once(IMPORT_FOTO_VEICULO_CONTROLLER);
+require_once(IMPORT_FOTO_VEICULO);
+
+require_once(IMPORT_MODELO_CONTROLLER);
+require_once(IMPORT_MODELO);
+
+require_once(IMPORT_MARCA_CONTROLLER);
+require_once(IMPORT_MARCA);
+
+require_once(IMPORT_BANNER_CONTROLLER);
+require_once(IMPORT_BANNER);
+
+$controllerVeiculo = new controllerVeiculo();
+$controllerFoto_veiculo = new controllerFoto_Veiculo();
+$controllerMarca = new controllerMarca();
+$controllerModelo = new controllerModelo();
+$controllerBanner = new controllerBanner();
+
+
+
+$veiculos[] = new Veiculo();
+
+$banners[] = new Banner();
+
+$banners = $controllerBanner->listarBanners();
+$veiculos = $controllerVeiculo->listarVeiculos();
+
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="view/css/style.css">
-    <meta http-equiv="Content-Type" content="view/text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="shortcut icon" href="images/anuncios.png" />
     <title>Home | Mob'Share</title>
 </head>
@@ -18,18 +58,16 @@
         <!-- menu de navegação do cabeçalho -->
         <div class="menu-header">
             <nav class="menu-item">
-                <a href="anuncios/anuncios.html">Anuncios</a>
-                <a href="comofunciona/comofunciona.html">Como funciona</a>
-                <a href="avaliacoesdomes/avaliacoesdomes.html">Melhores do Mês</a>
+                <a href="anuncios/anuncios.php">Anuncios</a>
+                <a href="comofunciona.html">Como funciona</a>
+                <a href="avaliacoesdomes.html">Melhores do Mês</a>
             </nav>
         </div>
         <!-- caixa onde ficará o botão de login-->
         <div class="box-login">
-            <a href="index.php?destroy">
-                <div class="botao-login">
-                    Login
-                </div>
-            </a>
+            <div class="botao-login">
+                   Login
+            </div>
             <div class="texto-cadastrar">
                 <h1>ou faça seu Cadastro!</h1>
             </div>
@@ -46,17 +84,34 @@
                     <a class="clicado">Em Destaque</a>
                 </nav>
             </div>
+
+            <?php
+                $i= 0;
+                 while($i < count($veiculos)){
+
+                    $foto_veiculo = new Foto_Veiculo();
+                    $marca = new Marca();
+                    $modelo = new Modelo();
+
+
+                    $modelo = $controllerModelo->buscarModelo($veiculos[$i]->getIdModelo());
+                    //$marca = $controllerMarca->buscarMarca();
+                    $foto_veiculo = $controllerFoto_veiculo->listarFotoFrontal($veiculos[$i]->getIdVeiculo());
+                     
+                 
+            ?>
+
             <div class="caixa-veiculos">
                 <!-- caixa onde fica a informaçao do veiculo -->
                 <div class="box-veiculo">
                     <div class="img-veiculo">
-                            <img src="images/carro.jpeg" width="320" height="185" alt="veiculo">
+                        <img src="<?php echo('/Mobshare/arquivos/'.$foto_veiculo->getFotoVeiculo()) ?>" width="400" height="225" alt="veiculo">
                     </div>
                     <div class="texto-modelo">
-                        Modelo
+                        
                     </div>
                     <div class="texto-km">
-                        200Km
+                    <?php echo($veiculos[$i]->getQuilometragem())?>
                     </div>
                     <div class="texto-regiao">
                         Capital
@@ -68,141 +123,44 @@
                         Veja mais
                     </div>
                 </div>
-    <!-- caixa onde fica a informaçao do veiculo -->
-                <div class="box-veiculo">
-                    <div class="img-veiculo">
-                            <img src="images/carro2.jpg" width="320" height="185" alt="veiculo">
-                    </div>
-                    <div class="texto-modelo">
-                        Modelo
-                    </div>
-                    <div class="texto-km">
-                        200Km
-                    </div>
-                    <div class="texto-regiao">
-                        Capital
-                    </div>
-                    <div class="texto-avaliacao">
-                        *****
-                    </div>
-                    <div class="botao-veiculo">
-                        Veja mais
-                    </div>
-                </div>
-<!-- caixa onde fica a informaçao do veiculo -->
-                <div class="box-veiculo">
-                    <div class="img-veiculo">
-                            <img src="images/carro3.jpg" width="320" height="185" alt="veiculo">
-                    </div>
-                    <div class="texto-modelo">
-                        Modelo
-                    </div>
-                    <div class="texto-km">
-                        200Km
-                    </div>
-                    <div class="texto-regiao">
-                        Capital
-                    </div>
-                    <div class="texto-avaliacao">
-                        *****
-                    </div>
-                    <div class="botao-veiculo">
-                        Veja mais
-                    </div>
-                </div>
-<!-- caixa onde fica a informaçao do veiculo -->
-                <div class="box-veiculo">
-                    <div class="img-veiculo">
-                            <img src="images/carro4.jpg" width="320" height="185" alt="veiculo">
-                    </div>
-                    <div class="texto-modelo">
-                        Modelo
-                    </div>
-                    <div class="texto-km">
-                        200Km
-                    </div>
-                    <div class="texto-regiao">
-                        Capital
-                    </div>
-                    <div class="texto-avaliacao">
-                        *****
-                    </div>
-                    <div class="botao-veiculo">
-                        Veja mais
-                    </div>
-                </div>
-<!-- caixa onde fica a informaçao do veiculo -->
-                <div class="box-veiculo">
-                    <div class="img-veiculo">
-                        <img src="images/carro5.jpg" width="320" height="185" alt="veiculo">
-                    </div>
-                    <div class="texto-modelo">
-                        Modelo
-                    </div>
-                    <div class="texto-km">
-                        200Km
-                    </div>
-                    <div class="texto-regiao">
-                        Capital
-                    </div>
-                    <div class="texto-avaliacao">
-                        *****
-                    </div>
-                    <div class="botao-veiculo">
-                        Veja mais
-                    </div>
-                </div>
-<!-- caixa onde fica a informaçao do veiculo -->
-                <div class="box-veiculo">
-                    <div class="img-veiculo">
-                            <img src="images/carro6.jpg" width="320" height="185" alt="veiculo">
-                    </div>
-                    <div class="texto-modelo">
-                        Modelo
-                    </div>
-                    <div class="texto-km">
-                        200Km
-                    </div>
-                    <div class="texto-regiao">
-                        Capital
-                    </div>
-                    <div class="texto-avaliacao">
-                        *****
-                    </div>
-                    <div class="botao-veiculo">
-                        Veja mais
-                    </div>
-                </div>
-            </div>
+
+                <?php
+                
+                    $i++;
+
+                }
+
+                ?>
 
         </div>
+        <?php
+            $i = 0;
+            while($i < count($banners)){
+
+                
+        ?>
         <div class="caixa-como-funciona">
             
             <div class="texto-como-funciona">
-                    <h1>Como funciona?</h1>
-                    <p>A MobShare traz inovação quanto o assunto é alugar carro.
-                        Faça seu cadastro, busque por um carro, moto ou bicicleta na sua região,
-                        converse com o quem que alugaro próprio carro para ter mais facilidade do encontro!
-                        Sem conta que você também pode colocar seu carro, se tiver, para alugar!
-                    </p>
-                    <h2>Saiba Mais</h2>
+                    <h1><?php echo($banners[$i]->getTitulo())?></h1>
+                    <p><?php echo($banners[$i]->getTexto())?></p>
+                    <a href="<?php echo($banners[$i]->getHref())?>"><h2><?php echo($banners[$i]->getNomeBotao())?></h2></a>
             </div>
             <div class="img-como-funciona">
-                    <img src="images/funciona.png" width="650" height="600"  alt="App da MobShare">
+            
+            
+                    <img src="<?php echo('/Mobshare/arquivos/'.$banners[$i]->getImagem())?>" width="650" height="600"  alt="App da MobShare">
+                    
             </div>
-        </div>
-        <div class="caixa-app">
-            <div class="imagem-app">
-                    <img src="images/APPCine.png" width="610" height="620"  alt="App da MobShare">
-            </div>
-            <div class="texto-botao-app">
-                <h1>Baixe o aplicativo da MobShare!</h1>
-                <p>Com o aplicativo no seu celular, você tem mais mobilidade
-                    para fazer a locação do seu veículo! Rápido, fácil e seguro!
-                </p>
-                <h2>Download</h2>
-            </div>
-        </div>
+        </div> 
+
+        <?php
+        
+                $i++;
+            }
+        
+        ?>
+
         
 
     </div>
@@ -215,10 +173,10 @@
                 <h1>Páginas:</h1>
             </div>
             <nav class="menu-rodape-item">
-                    <a href="termosdeuso/termosdeuso.html">Termos de Uso</a>
-                    <a href="duvidasfreq/duvidasfreq.html">Duvidas Frequentes</a>
-                    <a href="parceiros/parceiros.html">Parceiros</a>
-                    <a href="faleconosco/faleconosco.html">Fale Conosco</a>
+                    <a href="termosdeuso.html">Termos de Uso</a>
+                    <a href="duvidasfreq.html">Duvidas Frequentes</a>
+                    <a href="parceiros.html">Parceiros</a>
+                    <a href="faleconosco.html">Fale Conosco</a>
             </nav>
         </div>
         <div class="logotipo-rodape">

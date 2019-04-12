@@ -18,6 +18,9 @@ $id = null;
 require_once($_SESSION["importInclude"]); 
 
 if(isset($_GET["controller"])){
+
+    
+    
     //Sempre serão enviadas pela view
     $controller = strtoupper($_GET["controller"]);
     $modo = strtoupper($_GET["modo"]);
@@ -61,6 +64,10 @@ if(isset($_GET["controller"])){
                     break;
             }
             break;
+
+            //FIM NIVEIS
+
+
 
         case "FUNCIONARIOS":
 
@@ -112,6 +119,8 @@ if(isset($_GET["controller"])){
             }
             break;
 
+            //FIM FUNCIONARIO
+
             case "PARCEIROS":
 
             require_once(IMPORT_PARCEIRO_CONTROLLER);
@@ -151,17 +160,23 @@ if(isset($_GET["controller"])){
 
             break;
 
+
+            //FIM PARCEIROS
+
             case "CLIENTES":
             //Import da controller de cliente
             require_once(IMPORT_CLIENTE_CONTROLLER);
 
             //Instancia da controller de cliente
-            $controllerCliente = new controllerCliente();
-            case "LOGAR":
-                $idCliente = $controllerCliente->logar();
+                $controllerCliente = new controllerCliente();
+                switch ($modo){
+                    
+                    case "LOGAR":
+                    $idCliente = $controllerCliente->logar();
 
-                require_once(IMPORT_INDEX);
-                break;
+                    require_once(IMPORT_INDEX);
+                    break;
+                }
             break;
             
 
@@ -201,7 +216,66 @@ if(isset($_GET["controller"])){
                     echo("<script>comoFunciona();</script>");
                 break;
             }       
-         break;
+        break;
+
+
+
+        // case "VEICULOS":
+        
+        //  require_once(IMPORT_VEICULO_CONTROLLER);
+
+        //  $controllerVeiculo = new controllerVeiculo();
+
+                            
+        // break;
+
+     case "BANNER":
+     
+            
+         require_once(IMPORT_BANNER_CONTROLLER);
+
+         $controllerBanner= new controllerBanner();
+
+         
+         switch($modo){
+
+             case "INSERIR":
+
+                $controllerBanner->inserir();
+             
+                echo("<script>banner();</script>");
+             break;
+
+             case "EXCLUIR":
+
+             $controllerBanner->excluir();
+             
+             echo("<script>banner();</script>");
+             break;    
+             
+             case "BUSCAR":
+
+             $banner = new Banner();
+             $banner = $controllerBanner->buscarBanner();
+             
+             require_once(IMPORT_CADASTRO_BANNER);
+             break;   
+
+             case "ATUALIZAR":
+
+            
+                 $controllerBanner->atualizar();
+                 
+                 echo("<script>banner();</script>");
+             break;                  
+
+         }  
+         
+     
+     break;         
+
+
+         
 
          
     }

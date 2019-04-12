@@ -107,27 +107,7 @@ function admPaginas() {
 function aprovacao() {
     $.ajax({
         type: "POST",
-        url: "view/aprovacao/gerenciar.php",
-        success: function (dados) {
-            $("#informacao").html(dados);
-        }
-    });
-}
-
-function aprovacaoUsuario() {
-    $.ajax({
-        type: "POST",
         url: "view/aprovacao/listaPendenteUser.php",
-        success: function (dados) {
-            $("#informacao").html(dados);
-        }
-    });
-}
-
-function aprovacaoVeiculo() {
-    $.ajax({
-        type: "POST",
-        url: "view/aprovacao/listaPendenteVeic.php",
         success: function (dados) {
             $("#informacao").html(dados);
         }
@@ -265,12 +245,34 @@ function cadastrarComoFunciona() {
     });
 }
 
+function banner() {
+    $.ajax({
+        type: "POST",
+        url: "view/banner/listaBanner.php",
+        success: function (dados) {
+            $("#informacao").html(dados);
+        }
+    });
+}
+
+function cadastroBanner() {
+    $.ajax({
+        type: "POST",
+        url: "view/banner/banner.php",
+        success: function (dados) {
+            $("#informacao").html(dados);
+        }
+    });
+}
+
 //Essa função pega o controller e o modo e passa o form pro router realizar as acoes de insert e update
 function router(controller, modo, id){
+    
     let form = document.getElementById("form");
     let checkForm = form.reportValidity();
     let data = new FormData(form);
     if(checkForm){
+        
         $('#form').submit(function(event) {
             event.preventDefault();
             $.ajax({
@@ -281,6 +283,7 @@ function router(controller, modo, id){
                 url: `router.php?controller=${controller}&modo=${modo}&id=${id}`,
                 data: data,
                 success: function (data) {
+                    
                     $("#informacao").html(data);
                 }
             });
