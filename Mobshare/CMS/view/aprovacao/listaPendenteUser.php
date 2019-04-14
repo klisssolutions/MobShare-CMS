@@ -8,7 +8,7 @@
 
     $controllerPendencia = new controllerPendencia();
     $pendencias[] = new Pendencia();
-    $pendencias = $controllerPendencia->listarPendencia();
+    $pendencias = $controllerPendencia->listarPendencia("USUARIO");
 
 ?>
 

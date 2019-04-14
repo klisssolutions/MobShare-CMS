@@ -52,8 +52,8 @@ class pendenciaDAO{
     }
 
     //Lista todos os registros do banco de dados.
-    public function selectAll(){
-        $sql = SELECT.VIEW_USUARIO;
+    public function selectAll($tipoPendencia){
+        $sql = ($tipoPendencia == "USUARIO" ? SELECT.VIEW_USUARIO : SELECT.VIEW_VEICULO);
 
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();

@@ -47,10 +47,10 @@ class controllerPendencia{
         }
     }
 
-    public function listarPendencia(){
+    public function listarPendencia($tipoPendencia){
         //Instancia do DAO
         $pendenciaDAO = new pendenciaDAO();
-        return($pendenciaDAO->selectAll());
+        return($pendenciaDAO->selectAll(strtoupper($tipoPendencia)));
     }
 
     public function buscarPendencia(){

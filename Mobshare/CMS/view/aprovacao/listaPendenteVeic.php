@@ -8,7 +8,7 @@
 
     $controllerPendencia = new controllerPendencia();
     $pendencias[] = new Pendencia();
-    $pendencias = $controllerPendencia->listarPendencia();
+    $pendencias = $controllerPendencia->listarPendencia("VEICULO");
 
 ?>
 
@@ -22,39 +22,31 @@
 
     <div class="dados">
     
-        Proprietario:
+        Nome:
         
     </div>
     <div class="infoDados">
     
-        Charlie Harper
+        <?php echo($pendencia->getNome()); ?>
     
     </div>
     <div class="dados">
     
-        Marca:
+        ID:
         
     </div>
     <div class="infoDados">
     
-        Jaguar
+    <?php echo($pendencia->getId()); ?>
     
     </div>
 
-    
-    
     <div class="opcao">
     
-        <a href="#">Recusar</a>
-    
-    </div>
-    <div class="opcao">
-    
-        <a href="#">Aceitar</a>
-
+        <a href="#">Editar</a>
     
     </div>
 
 </div>
 
-<?php }?>
+    <?php }?>
