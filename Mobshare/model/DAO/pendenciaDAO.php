@@ -27,12 +27,19 @@ class pendenciaDAO{
 
 
     //Atualiza um registro no banco de dados.
-    public function update(Pendencia $pendencia){
-        $sql = UPDATE . TABELA_NIVEL . " 
-        SET nome = '".$nivel->getNome()."',
-            descricao = '".$nivel->getDescricao()."',
-            permissoes = '".$nivel->getPermissoes()."'
-        WHERE idNivel = '".$nivel->getIdNivel()."';";
+    public function update(Pendencia $pendencia, $tipoPendencia){
+        if($tipoPendencia == "USUARIO"){
+            $sql = UPDATE . VIEW_USUARIO . " 
+                SET motivo = '".$pendencia->getMotivo()."',
+                    aberto = '".$pendencia->getAberto()."'
+                WHERE idPendencia = '".$pendencia->getIdPendencia()."';";
+        }else{
+            $sql = UPDATE . VIEW_VEICULO . " 
+                SET motivo = '".$pendencia->getMotivo()."',
+                    aberto = '".$pendencia->getAberto()."'
+                WHERE idPendencia = '".$pendencia->getIdPendencia()."';";
+        }
+        
 
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
@@ -41,7 +48,7 @@ class pendenciaDAO{
         if($PDO_conex->query($sql)){
             //echo(SUCESSO_SCRIPT);
             //echo($sql);
-            echo("<script>alert('Nível atualizado com sucesso.');</script>");
+            echo("<script>alert('Pendência atualizado com sucesso.');</script>");
         }else{
             //echo(ERRO_SCRIPT);
             //echo($sql);
@@ -88,9 +95,12 @@ class pendenciaDAO{
     }
 
     //Seleciona um registro pelo ID.
-    public function selectById($id){
-        $sql = SELECT . VIEW_USUARIO . " WHERE idPendencia=".$id;
-
+    public function selectById($id, $tipoPendencia){
+        if($tipoPendencia == "USUARIO"){
+            $sql = SELECT . VIEW_USUARIO . " WHERE idPendencia=".$id;
+        }else{
+            $sql = SELECT . VIEW_VEICULO . " WHERE idPendencia=".$id;
+        }
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
 
@@ -102,17 +112,17 @@ class pendenciaDAO{
         é necessário especificar o modelo de conversão.
         EX: PDO::FETCH_ASSOC, PDO::FETCH_ARRAY etc. */
         if($rsPendencia=$select->fetch(PDO::FETCH_ASSOC)){
-            $pendencias = new Pendencia();
-            $pendencias->setIdPendencia($rsPendencia["idPendencia"]);
-            $pendencias->setNome($rsPendencia["nome"]);
-            $pendencias->setId($rsPendencia["id"]);
-            $pendencias->setMotivo($rsPendencia["motivo"]);
-            $listPendencias->setAberto($rsPendencia["aberto"]);
+            $pendencia = new Pendencia();
+            $pendencia->setIdPendencia($rsPendencia["idPendencia"]);
+            $pendencia->setNome($rsPendencia["nome"]);
+            $pendencia->setId($rsPendencia["id"]);
+            $pendencia->setMotivo($rsPendencia["motivo"]);
+            $pendencia->setAberto($rsPendencia["aberto"]);
         }
 
         $this->conex->closeDataBase();
 
-        return($pendencias);
+        return($pendencia);
     }
 }
 ?>

@@ -134,6 +134,26 @@ function aprovacaoVeiculo() {
     });
 }
 
+function pendenciaUsuario() {
+    $.ajax({
+        type: "POST",
+        url: "view/aprovacao/aprovacaoUsuario.php",
+        success: function (dados) {
+            $("#informacao").html(dados);
+        }
+    });
+}
+
+function pendenciaVeiculo() {
+    $.ajax({
+        type: "POST",
+        url: "view/aprovacao/aprovacaoVeiculo.php",
+        success: function (dados) {
+            $("#informacao").html(dados);
+        }
+    });
+}
+
 function verCadastro() {
     $.ajax({
         type: "POST",

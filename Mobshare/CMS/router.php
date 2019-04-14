@@ -188,6 +188,50 @@ if(isset($_GET["controller"])){
                 break;
             }       
          break;
+
+        case "PENDENCIAUSUARIO":
+
+            require_once(IMPORT_PENDENCIA_CONTROLLER);
+
+            $controllerPendencia = new controllerPendencia();
+
+            switch ($modo){
+                case "BUSCAR":
+                    $pendencia = $controllerPendencia->buscarPendencia("USUARIO");
+
+                    require_once(IMPORT_CMS_CADASTRO_PENDENCIA_USUARIO);
+
+                break;
+
+                case "ATUALIZAR":
+                    $controllerPendencia->atualizarPendencia("USUARIO");
+
+                    echo("<script>aprovacaoUsuario();</script>");
+                break;
+            }       
+        break;
+
+        case "PENDENCIAVEICULO":
+
+            require_once(IMPORT_PENDENCIA_CONTROLLER);
+
+            $controllerPendencia = new controllerPendencia();
+
+            switch ($modo){
+                case "BUSCAR":
+                    $pendencia = $controllerPendencia->buscarPendencia("VEICULO");
+
+                    require_once(IMPORT_CMS_CADASTRO_PENDENCIA_VEICULO);
+
+                break;
+
+                case "ATUALIZAR":
+                    $controllerPendencia->atualizarPendencia("VEICULO");
+
+                    echo("<script>aprovacaoVeiculo();</script>");
+                break;
+            }       
+        break;
     }
 }
 ?>

@@ -18,7 +18,7 @@
     foreach($pendencias as $pendencia){
 ?>
 
-<div class="listaDados" onclick="verCadastro();">
+<div class="listaDados">
 
     <div class="dados">
     
@@ -43,7 +43,7 @@
 
     <div class="opcao">
     
-        <a href="#">Editar</a>
+    <a href="#" onclick="selectRouter('pendenciaveiculo', 'buscar', <?php echo($pendencia->getIdPendencia());?>);">Editar</a>
     
     </div>
 

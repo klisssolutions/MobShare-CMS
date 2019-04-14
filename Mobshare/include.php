@@ -35,7 +35,7 @@ if(!isset($incluso)){
     define("TABELA_FUNCIONAMENTO", "funcionamento");
     define("TABELA_CLIENTE", "Cliente");
     define("TABELA_VEICULO", "Veiculo");
-    define("TABELA_FOTO_VEICULO", "Foto_Veiculo");    
+    define("TABELA_FOTO_VEICULO", "Foto_Veiculo");  
 
     //Constantes com o nome das views
     define("VIEW_VEICULO", "VPendencia_Veiculo");
@@ -105,27 +105,22 @@ if(!isset($incluso)){
     define("IMPORT_VEICULO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/veiculoDAO.php");
     define("IMPORT_VEICULO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerVeiculo.php");    
 
-
-
     //Imports de foto veiculo
     define("IMPORT_FOTO_VEICULO", PASTA_RAIZ . PASTA_PROJETO . "/model/foto_veiculoClass.php");
     define("IMPORT_FOTO_VEICULO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/foto_veiculoDAO.php");
     define("IMPORT_FOTO_VEICULO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerFoto_Veiculo.php"); 
     
-
-
-    //Imports de foto veiculo
+    //Imports de banner
     define("IMPORT_BANNER", PASTA_RAIZ . PASTA_PROJETO . "/model/bannerClass.php");
     define("IMPORT_BANNER_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/bannerDAO.php");
     define("IMPORT_BANNER_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerBanner.php");     
 
-
-    //Imports de foto marca
+    //Imports de marca
     define("IMPORT_MARCA", PASTA_RAIZ . PASTA_PROJETO . "/model/marcaClass.php");
     define("IMPORT_MARCA_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/marcaDAO.php");
     define("IMPORT_MARCA_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerMarca.php"); 
     
-    //Imports de foto marca
+    //Imports de modelo de veiculo
     define("IMPORT_MODELO", PASTA_RAIZ . PASTA_PROJETO . "/model/modeloClass.php");
     define("IMPORT_MODELO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/modeloDAO.php");
     define("IMPORT_MODELO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerModelo.php");     
@@ -154,6 +149,10 @@ if(!isset($incluso)){
     //Import páginas de banner
     define("IMPORT_CADASTRO_BANNER", PASTA_RAIZ . PASTA_PROJETO . "/view/banner/banner.php");
 
+    //Import páginas de pendencia
+    define("IMPORT_CMS_CADASTRO_PENDENCIA_USUARIO", PASTA_RAIZ . PASTA_PROJETO . "/CMS/view/aprovacao/aprovacaoUsuario.php");
+    define("IMPORT_CMS_CADASTRO_PENDENCIA_VEICULO", PASTA_RAIZ . PASTA_PROJETO . "/CMS/view/aprovacao/aprovacaoVeiculo.php");
+
     //Imports de páginas do site
     define("IMPORT_SITE_HOME", PASTA_RAIZ . PASTA_PROJETO . "/SITE/view/home.php");
     define("IMPORT_SITE_LOGIN", PASTA_RAIZ . PASTA_PROJETO . "/SITE/view/login.php");
@@ -177,7 +176,6 @@ if(!isset($incluso)){
         }
     }
 
-    //Função para tratar a imagem recebida do upload
     //Função para tratar a imagem recebida do upload
     function enviarImagem($item){
         

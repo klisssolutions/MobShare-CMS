@@ -22,28 +22,31 @@ class controllerPendencia{
         require_once(IMPORT_PENDENCIA_DAO);
     }
 
-    public function atualizarPendencia(){
+    public function atualizarPendencia($tipoPendencia){
         //Instancia do DAO
         $pendenciaDAO = new pendenciaDAO();
 
         //Verifica qual metodo esta sendo requisitado do formulario(POST ou GET)
         if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-            // pessoa veiculo aberto motivo foto rg cpf placa idpendencia idVeiculo idUsuario
-
-
             //Instancia da classe
             $pendencia = new Pendencia();
 
+            $id = $_GET["id"];
+            $motivo = $_POST["txtmotivo"];
+            $aberto = 0;
+            //Checa se a permissoes de contato foi marcada
+            if(isset($_POST['chkaberto'])){
+                $aberto += PENDENCIA_ABERTA;
+            }
             //Guardando os dados do post no objeto da classe
-            $nivel->setIdNivel($id);
-            $nivel->setNome($nome);
-            $nivel->setDescricao($descricao);
-            $nivel->setPermissoes($permissoes);
+            $pendencia->setIdPendencia($id);
+            $pendencia->setMotivo($motivo);
+            $pendencia->setAberto($aberto);
 
             /* Chamada para o metodo de inserir no BD, passando como parâmetro o objeto
             contatoClass que tem todos os dados que serão inseridos no banco de dados */
-            $nivelDAO->update($nivel);
+            $pendenciaDAO->update($pendencia, strtoupper($tipoPendencia));
         }
     }
 
@@ -53,7 +56,7 @@ class controllerPendencia{
         return($pendenciaDAO->selectAll(strtoupper($tipoPendencia)));
     }
 
-    public function buscarPendencia(){
+    public function buscarPendencia($tipoPendencia){
         //Instancia do DAO
         $pendenciaDAO = new pendenciaDAO();
 
@@ -61,7 +64,7 @@ class controllerPendencia{
         $id = $_GET["id"];
 
         $pendencia = new Pendencia();
-        $pendencia = $pendenciaDAO->selectById($id);
+        $pendencia = $pendenciaDAO->selectById($id, strtoupper($tipoPendencia));
         return $pendencia;
     }
 }
