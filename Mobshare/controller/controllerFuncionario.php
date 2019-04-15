@@ -22,8 +22,6 @@ class controllerFuncionario{
         require_once(IMPORT_FUNCIONARIO_DAO);
     }
 
-
-
     public function logar(){
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             $funcionarioDAO = new funcionarioDAO();
@@ -46,7 +44,6 @@ class controllerFuncionario{
             $email = $_POST["txtemail"];
             $senha = $_POST["txtsenha"];
             $nivel = $_POST["cbbnivel"];
-
 
             //Instancia da classe
             $funcionario = new Funcionario();
@@ -83,7 +80,6 @@ class controllerFuncionario{
             $senha = $_POST["txtsenha"];
             $idNivel = $_POST["cbbnivel"];
          
-
             //Instancia da classe
             $funcionario = new Funcionario();
             $funcionarioDAO = new FuncionarioDAO();
@@ -114,8 +110,6 @@ class controllerFuncionario{
         $funcionarioDAO = new funcionarioDAO();
 
         return $funcionarioDAO->selectById($id);
-
-    
     }
 }
 ?>

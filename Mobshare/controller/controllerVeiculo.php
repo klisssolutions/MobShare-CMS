@@ -158,16 +158,16 @@ class controllerVeiculo{
         return($veiculoDAO->selectAll());
     }
 
-    public function buscarNivel(){
+    public function buscarVeiculo(){
         //Instancia do DAO
-        $nivelDAO = new nivelDAO();
+        $veiculoDAO = new veiculoDAO();
 
         //Pega o ID para realizar a busca
         $id = $_GET["id"];
 
-        $nivel = new Nivel();
-        $nivel = $nivelDAO->selectById($id);
-        return $nivel;
+        $veiculo = new Veiculo();
+        $veiculo = $veiculoDAO->selectById($id);
+        return $veiculo;
     }
 
 

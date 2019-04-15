@@ -141,7 +141,7 @@ class veiculoDAO{
 
     //Seleciona um registro pelo ID.
     public function selectById($id){
-        $sql = SELECT . TABELA_NIVEL . " WHERE idNivel=".$id;
+        $sql = SELECT . TABELA_VEICULO . " WHERE idVeiculo=".$id;
 
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
@@ -153,17 +153,15 @@ class veiculoDAO{
         também retorna com característica do PDO como o fetch
         é necessário especificar o modelo de conversão.
         EX: PDO::FETCH_ASSOC, PDO::FETCH_ARRAY etc. */
-        if($rsNivel=$select->fetch(PDO::FETCH_ASSOC)){
-            $nivel = new Nivel();
-            $nivel->setIdNivel($rsNivel["idNivel"]);
-            $nivel->setNome($rsNivel["nome"]);
-            $nivel->setDescricao($rsNivel["descricao"]);
-            $nivel->setPermissoes($rsNivel["permissoes"]);
+        if($rsVeiculo = $select->fetch(PDO::FETCH_ASSOC)){
+            $veiculo = new Veiculo();
+            $veiculo->setIdVeiculo($rsVeiculo["idVeiculo"]);
+            $veiculo->setIdEndereco($rsVeiculo["idEndereco"]);
         }
 
         $this->conex->closeDataBase();
 
-        return($nivel);
+        return($veiculo);
     }
 
 

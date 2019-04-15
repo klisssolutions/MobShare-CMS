@@ -128,7 +128,6 @@ class funcionarioDAO{
         $this->conex->closeDataBase();
 
         return($listFuncionarios);
-
     }
 
     //Seleciona um registro pelo ID.

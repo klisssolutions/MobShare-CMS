@@ -14,8 +14,6 @@ class Foto_Veiculo{
     private $fotoVeiculo;
     private $perfil;
 
-
-
     public function __construct(){    
     }
     

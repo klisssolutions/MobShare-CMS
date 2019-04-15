@@ -1,0 +1,4 @@
+
+http://localhost/Mobshare/api/veiculo.php?modo=lista
+
+http://localhost/Mobshare/api/veiculo.php?modo=buscar&id=1

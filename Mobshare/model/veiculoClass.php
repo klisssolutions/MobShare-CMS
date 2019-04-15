@@ -291,11 +291,5 @@ class veiculo{
         return $this;
     }
 
-
-
-
-
-
-
 }
 ?>
