@@ -52,7 +52,7 @@ class veiculoDAO{
 
     //Deletar um registro no banco de dados.
     public function delete($id){
-        $sql = DELETE . TABELA_NIVEL . " where idNivel =".$id;
+        $sql = DELETE . TABELA_VEICULO . " where idVeiculo =".$id;
 
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
@@ -73,7 +73,7 @@ class veiculoDAO{
 
     //Atualiza um registro no banco de dados.
     public function update(Nivel $nivel){
-        $sql = UPDATE . TABELA_NIVEL . " 
+        $sql = UPDATE . TABELA_VEICULO . " 
         SET nome = '".$nivel->getNome()."',
             descricao = '".$nivel->getDescricao()."',
             permissoes = '".$nivel->getPermissoes()."'
@@ -156,6 +156,17 @@ class veiculoDAO{
         if($rsVeiculo = $select->fetch(PDO::FETCH_ASSOC)){
             $veiculo = new Veiculo();
             $veiculo->setIdVeiculo($rsVeiculo["idVeiculo"]);
+            $veiculo->setIdCategoriaVeiculo($rsVeiculo["idCategoria_Veiculo"]);
+            $veiculo->setIdCliente($rsVeiculo["idCliente"]);
+            $veiculo->setIdModelo($rsVeiculo["idModelo"]);
+            $veiculo->setCor($rsVeiculo["cor"]);
+            $veiculo->setAltura($rsVeiculo["altura"]);
+            $veiculo->setComprimento($rsVeiculo["comprimento"]);
+            $veiculo->setLargura($rsVeiculo["largura"]);
+            $veiculo->setValorHora($rsVeiculo["valorHora"]);
+            $veiculo->setAno($rsVeiculo["ano"]);
+            $veiculo->setQuilometragem($rsVeiculo["quilometragem"]);
+            $veiculo->setValorVenda($rsVeiculo["valorVenda"]);
             $veiculo->setIdEndereco($rsVeiculo["idEndereco"]);
         }
 

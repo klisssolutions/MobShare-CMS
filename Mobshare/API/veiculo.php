@@ -49,17 +49,17 @@ if($modo == "LISTA"){
 
         $array = array(
             "idVeiculo" => $veiculo->getIdVeiculo(),
-            // "idCategoriaVeiculo" => $veiculo->getIdCategoriaVeiculo(),
-            // "idCliente" => $veiculo->getIdCliente(),
-            // "idModelo" => $veiculo->getIdModelo(),
-            // "cor" => $veiculo->getCor(),
-            // "altura" => $veiculo->getAltura(),
-            // "comprimento" => $veiculo->getComprimento(),
-            // "largura" => $veiculo->getLargura(),
-            // "valorHora" => $veiculo->getValorHora(),
-            // "ano" => $veiculo->getAno(),
-            // "quilometragem" => $veiculo->getQuilometragem(),
-            // "valorVenda" => $veiculo->getValorVenda(),
+            "idCategoriaVeiculo" => $veiculo->getIdCategoriaVeiculo(),
+            "idCliente" => $veiculo->getIdCliente(),
+            "idModelo" => $veiculo->getIdModelo(),
+            "cor" => $veiculo->getCor(),
+            "altura" => $veiculo->getAltura(),
+            "comprimento" => $veiculo->getComprimento(),
+            "largura" => $veiculo->getLargura(),
+            "valorHora" => $veiculo->getValorHora(),
+            "ano" => $veiculo->getAno(),
+            "quilometragem" => $veiculo->getQuilometragem(),
+            "valorVenda" => $veiculo->getValorVenda(),
             "idEndereco" => $veiculo->getIdEndereco()
         );
         array_push($result, $array);
