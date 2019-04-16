@@ -81,14 +81,14 @@ class controllerVeiculo{
         }
     }
 
-    public function excluirNivel(){
+    public function excluirVeiculo(){
         //Instancia do DAO
-        $nivelDAO = new nivelDAO();
+        $veiculoDAO = new veiculoDAO();
         //Esse id foi enviado pela view no href, o arquivo de rota é quem chamou este método
         $id = $_GET["id"];
 
         //Chamada para o método de excluir um nivel
-        $nivelDAO->delete($id);
+        $veiculoDAO->delete($id);
     }
 
     public function atualizarNivel(){

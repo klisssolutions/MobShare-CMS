@@ -13,6 +13,9 @@ require_once(IMPORT_VEICULO_CONTROLLER);
 $modo = (isset($_GET["modo"]) ? strtoupper($_GET["modo"]) : null);
 $id = (isset($_GET["id"]) ? strtoupper($_GET["id"]) : null);
 
+//Inicia a controller
+$veiculoController = new controllerVeiculo();
+
 if($modo == "LISTA"){
     $veiculoController = new controllerVeiculo();
     $veiculos = $veiculoController->listarVeiculos();
@@ -41,7 +44,6 @@ if($modo == "LISTA"){
     }
 
 }else if($modo == "BUSCAR"){
-    $veiculoController = new controllerVeiculo();
     $veiculo = $veiculoController->buscarVeiculo();
 
     $result = array();
@@ -63,6 +65,9 @@ if($modo == "LISTA"){
             "idEndereco" => $veiculo->getIdEndereco()
         );
         array_push($result, $array);
+}else if($modo == "EXCLUIR"){
+    $veiculoController->excluirVeiculo();
+    $result = "Excluído";
 }
 
 echo(json_encode($result));

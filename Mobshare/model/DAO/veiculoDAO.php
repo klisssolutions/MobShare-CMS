@@ -63,8 +63,8 @@ class veiculoDAO{
             //echo(SUCESSO_SCRIPT);
         }else{
             //echo(ERRO_SCRIPT);
-            //echo($sql);
-            echo("<script>alert('Não é possiível deletar, tem funcionário associado ao nível.');</script>");
+            // echo($sql);
+            echo("<script>alert('Não é possível deletar, tem funcionário associado ao nível.');</script>");
         }
 
         //Fecha a conexão com o BD
