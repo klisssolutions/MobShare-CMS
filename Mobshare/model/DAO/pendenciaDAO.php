@@ -25,7 +25,6 @@ class pendenciaDAO{
         $this->conex = new conexaoMySQL();
     }
 
-
     //Atualiza um registro no banco de dados.
     public function update(Pendencia $pendencia, $tipoPendencia){
         if($tipoPendencia == "USUARIO"){
@@ -40,7 +39,6 @@ class pendenciaDAO{
                 WHERE idPendencia = '".$pendencia->getIdPendencia()."';";
         }
         
-
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
 
@@ -121,7 +119,6 @@ class pendenciaDAO{
         }
 
         $this->conex->closeDataBase();
-
         return($pendencia);
     }
 }

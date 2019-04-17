@@ -1,4 +1,8 @@
-
+Listar todos os veículos
 http://localhost/Mobshare/api/veiculo.php?modo=lista
 
+Mostrar veículo especifíco
 http://localhost/Mobshare/api/veiculo.php?modo=buscar&id=1
+
+Apagar veículo
+http://localhost/Mobshare/api/veiculo.php?modo=excluir&id=1

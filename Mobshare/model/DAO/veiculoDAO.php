@@ -30,9 +30,9 @@ class veiculoDAO{
         $sql = INSERT . TABELA_VEICULO . " 
         (nome, descricao, permissoes)
         VALUES (
-        '".$nivel->getNome()."',
-        '".$nivel->getDescricao()."',
-        '".$nivel->getPermissoes()."')";
+        '".$veiculo->getNome()."',
+        '".$veiculo->getDescricao()."',
+        '".$veiculo->getPermissoes()."')";
 
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
@@ -59,12 +59,12 @@ class veiculoDAO{
 
         //Executa no BD o script Insert e retorna verdadeiro/falso
         if($PDO_conex->query($sql)){
-            echo("<script>alert('Nível deletado com sucesso.');</script>");
+            //echo("<script>alert('Nível deletado com sucesso.');</script>");
             //echo(SUCESSO_SCRIPT);
         }else{
             //echo(ERRO_SCRIPT);
-            // echo($sql);
-            echo("<script>alert('Não é possível deletar, tem funcionário associado ao nível.');</script>");
+            //echo($sql);
+            //echo("<script>alert('Não é possível deletar, tem funcionário associado ao nível.');</script>");
         }
 
         //Fecha a conexão com o BD
@@ -127,17 +127,12 @@ class veiculoDAO{
             $listVeiculos[$cont]->setValorVenda($rsVeiculos["valorVenda"]);
             $listVeiculos[$cont]->setIdEndereco($rsVeiculos["idEndereco"]);
             
-
-            
             $cont++;
         }
 
         $this->conex->closeDataBase();
-
         return($listVeiculos);
-
     }
-
 
     //Seleciona um registro pelo ID.
     public function selectById($id){
@@ -171,15 +166,10 @@ class veiculoDAO{
         }
 
         $this->conex->closeDataBase();
-
         return($veiculo);
     }
 
-
-
     public function filtrarVeiculos($marca, $modelo, $KM, $avaliacao){
-        
-
         $sql = SELECT.TABELA_VEICULO;
 
         if($modelo != "0"){
@@ -187,7 +177,6 @@ class veiculoDAO{
         }else{
             $sql = $sql . " where idModelo <>" . $modelo ;
         }
-
         if($marca != "0"){
             $sql = $sql . " and idModelo in(select idModelo from modelo where idMarca = ".$marca.")"  ;    
         }
@@ -196,18 +185,13 @@ class veiculoDAO{
             if($KM = "500000"){
                 $sql = $sql . " and quilometragem > ".$KM  ;
             }else if($KM = "0"){
-                $sql = $sql . " and quilometragem = ".$KM  ;
-
-                
+                $sql = $sql . " and quilometragem = ".$KM  ;   
             }else{
                 $sql = $sql . " and quilometragem < ".$KM  ;
             }
-
             echo($KM);
-                
         }
 
-        
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
 
@@ -238,7 +222,6 @@ class veiculoDAO{
             $veiculo->setValorVenda($rsVeiculos["valorVenda"]);
             $veiculo->setIdEndereco($rsVeiculos["idEndereco"]);
             
-
             $listVeiculos[$cont] = $veiculo;
             
             $cont++;
@@ -247,7 +230,6 @@ class veiculoDAO{
         $this->conex->closeDataBase();
 
         return($listVeiculos);
-
     }
 }
 ?>

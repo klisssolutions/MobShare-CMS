@@ -1,4 +1,5 @@
 <?php
+
 header("Content-Type: application/json; charset=UTF-8");
 @session_start();
 $_SESSION["importInclude"] = $_SERVER["DOCUMENT_ROOT"] . "/Mobshare/include.php";
@@ -46,9 +47,6 @@ if($modo == "LISTA"){
 }else if($modo == "BUSCAR"){
     $veiculo = $veiculoController->buscarVeiculo();
 
-    $result = array();
-    echo("dsadadasdas");
-
         $array = array(
             "idVeiculo" => $veiculo->getIdVeiculo(),
             "idCategoriaVeiculo" => $veiculo->getIdCategoriaVeiculo(),
@@ -64,10 +62,12 @@ if($modo == "LISTA"){
             "valorVenda" => $veiculo->getValorVenda(),
             "idEndereco" => $veiculo->getIdEndereco()
         );
-        array_push($result, $array);
+
+        $result = (object) $array;
+
 }else if($modo == "EXCLUIR"){
     $veiculoController->excluirVeiculo();
-    $result = "Excluído";
+    $result["mensagem"] = "Veículo ".$id." excluído.";
 }
 
 echo(json_encode($result));

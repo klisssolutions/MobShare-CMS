@@ -102,41 +102,6 @@ class controllerVeiculo{
             $descricao = $_POST["txtdescricao"];
             $permissoes = 0;
 
-            //Checa se a permissoes de funcionario foi marcada
-            if(isset($_POST['chkfuncionario'])){
-                $permissoes += MODULO_FUNCIONARIO;
-            }
-
-            //Checa se a permissoes de marketing foi marcada
-            if(isset($_POST['chkmarketing'])){
-                $permissoes += MODULO_MARKETING;
-            }
-
-            //Checa se a permissoes de locacao foi marcada
-            if(isset($_POST['chklocacao'])){
-                $permissoes += MODULO_LOCACAO;
-            }
-
-            //Checa se a permissoes de pagina foi marcada
-            if(isset($_POST['chkpagina'])){
-                $permissoes += MODULO_PAGINA;
-            }
-
-            //Checa se a permissoes de aprovacao foi marcada
-            if(isset($_POST['chkaprovacao'])){
-                $permissoes += MODULO_APROVACAO;
-            }
-
-            //Checa se a permissoes de contato foi marcada
-            if(isset($_POST['chkcontato'])){
-                $permissoes += MODULO_CONTATO;
-            }
-
-            //Checa se a permissoes de relatorio foi marcada
-            if(isset($_POST['chkrelatorio'])){
-                $permissoes += MODULO_RELATORIO;
-            }
-
             //Instancia da classe
             $nivel = new Nivel();
 
@@ -170,20 +135,14 @@ class controllerVeiculo{
         return $veiculo;
     }
 
-
     public function filtrarVeiculos(){
-        
         $marca = $_GET['cbMarca'];
         $modelo = $_GET['cbModelo'];
         $KM = $_GET['cbKM'];
         $avaliacao = $_GET['cbAvaliacao'];
 
-        
         $veiculoDAO = new veiculoDAO();
-       return($veiculoDAO->filtrarVeiculos($marca, $modelo, $KM, $avaliacao));
+        return($veiculoDAO->filtrarVeiculos($marca, $modelo, $KM, $avaliacao));
     }
-
-
-
 }
 ?>
