@@ -41,15 +41,13 @@ class bannerDAO{
 
         //Executa no BD o script Insert e retorna verdadeiro/falso
         if($PDO_conex->query($sql)){
-            //echo(SUCESSO_SCRIPT);
-            echo("<script>alert('Banner inserido com sucesso.');</script>");
+            $erro = false;
         }else{
-            //echo(ERRO_SCRIPT);
-            //echo($sql);
+            $erro = true;
         }
-
         //Fecha a conexão com o BD
         $this->conex->closeDataBase();
+        return $erro;
     }
 
     //Deletar um registro no banco de dados.
@@ -61,21 +59,17 @@ class bannerDAO{
 
         //Executa no BD o script Insert e retorna verdadeiro/falso
         if($PDO_conex->query($sql)){
-            echo("<script>alert('Banner deletado com sucesso.');</script>");
-            //echo(SUCESSO_SCRIPT);
+            $erro = false;
         }else{
-            //echo(ERRO_SCRIPT);
-            //echo($sql);
-            echo("<script>alert('Erro ao deletar.');</script>");
+            $erro = true;
         }
-
         //Fecha a conexão com o BD
         $this->conex->closeDataBase();
+        return $erro;
     }
 
     //Atualiza um registro no banco de dados.
     public function update(Banner $banner){
-
         if($banner->getImagem()){
             $sql = UPDATE . " Banner" . " 
             SET titulo = '".$banner->getTitulo()."',
@@ -94,23 +88,19 @@ class bannerDAO{
                 href = '".$banner->getHref()."'
             WHERE idBanner = '".$banner->getIdBanner()."';";
         }
-
-
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
 
         //Executa no BD o script Insert e retorna verdadeiro/falso
         if($PDO_conex->query($sql)){
-            //echo(SUCESSO_SCRIPT);
-            //echo($sql);
-            echo("<script>alert('Banner atualizado com sucesso.');</script>");
+            $erro = false;
         }else{
-            echo(ERRO_SCRIPT);
-            //echo($sql);
+            $erro = true;
         }
 
         //Fecha a conexão com o BD
         $this->conex->closeDataBase();
+        return $erro;
     }
 
     //Lista todos os registros do banco de dados.
@@ -146,11 +136,8 @@ class bannerDAO{
 
             $cont++;
         }
-
         $this->conex->closeDataBase();
-
         return($listBanners);
-
     }
 
 

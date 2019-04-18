@@ -44,15 +44,13 @@ class clienteDAO{
 
         //Executa no BD o script Insert e retorna verdadeiro/falso
         if($PDO_conex->query($sql)){
-            //echo(SUCESSO_SCRIPT);
-            echo("<script>alert('Cliente inserido com sucesso.');</script>");
+            $erro = false;
         }else{
-            //echo(ERRO_SCRIPT);
-            //echo($sql);
+            $erro = true;
         }
-
         //Fecha a conexão com o BD
         $this->conex->closeDataBase();
+        return $erro;
     }
 
     //Deletar um registro no banco de dados.
@@ -64,15 +62,13 @@ class clienteDAO{
 
         //Executa no BD o script Insert e retorna verdadeiro/falso
         if($PDO_conex->query($sql)){
-            echo("<script>alert('Cliente deletado com sucesso.');</script>");
-            //echo(SUCESSO_SCRIPT);
+            $erro = false;
         }else{
-            //echo(ERRO_SCRIPT);
-            //echo($sql);
+            $erro = true;
         }
-
         //Fecha a conexão com o BD
         $this->conex->closeDataBase();
+        return $erro;
     }
 
     //Atualiza um registro no banco de dados.
@@ -94,16 +90,13 @@ class clienteDAO{
 
         //Executa no BD o script Insert e retorna verdadeiro/falso
         if($PDO_conex->query($sql)){
-            //echo(SUCESSO_SCRIPT);
-            //echo($sql);
-            echo("<script>alert('Cliente atualizado com sucesso.');</script>");
+            $erro = false;
         }else{
-            //echo(ERRO_SCRIPT);
-            //echo($sql);
+            $erro = true;
         }
-
         //Fecha a conexão com o BD
         $this->conex->closeDataBase();
+        return $erro;
     }
 
     //Lista todos os registros do banco de dados.
