@@ -22,9 +22,9 @@ class controllerVeiculo{
         require_once(IMPORT_VEICULO_DAO);
     }
 
-    public function inserirNivel(){
+    public function inserirVeiculo(){
         //Instancia do DAO
-        $nivelDAO = new nivelDAO();
+        $veiculoDAO = new veiculoDAO();
 
         //Verifica qual metodo esta sendo requisitado do formulario(POST ou GET)
         if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -42,7 +42,7 @@ class controllerVeiculo{
 
             /* Chamada para o metodo de inserir no BD, passando como parâmetro o objeto
             contatoClass que tem todos os dados que serão inseridos no banco de dados */
-            return $nivelDAO->insert($nivel);
+            return $veiculoDAO->insert($veiculo);
         }
     }
 

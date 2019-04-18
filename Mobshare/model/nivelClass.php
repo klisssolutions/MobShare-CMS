@@ -49,22 +49,5 @@ class Nivel{
     public function setPermissoes($permissoes){
         $this->permissoes = $permissoes;
     }
-    //------------Fim dos GETTERS e SETTERS------------
-
-    //FUNÇÕES PARA TRANSFORMAR O OBJETO EM JSON
-    /*
-    public function getProperties(){
-        return get_object_vars($this);
-    }
-    public function _toJson(){
-        $properties = $this->getProperties();
-        $object     = new StdClass();
-        $object->_class      = get_class($this);
-        foreach ($properties as $name => $value) {
-            $object->$name = $value;
-        }
-        return json_encode($object);
-    }
-    */
 }
 ?>

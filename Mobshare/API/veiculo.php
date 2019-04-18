@@ -18,7 +18,6 @@ $id = (isset($_GET["id"]) ? strtoupper($_GET["id"]) : null);
 $veiculoController = new controllerVeiculo();
 
 if($modo == "LISTA"){
-    $veiculoController = new controllerVeiculo();
     $veiculos = $veiculoController->listarVeiculos();
 
     $result = array();
@@ -72,6 +71,8 @@ if($modo == "LISTA"){
     }else{
         $result["mensagem"] = "Veículo ".$id." excluído.";
     }
+}else{
+    $result["mensagem"] = "Modo inválido.";
 }
 
 echo(json_encode($result));
