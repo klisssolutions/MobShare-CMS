@@ -66,8 +66,12 @@ if($modo == "LISTA"){
         $result = (object) $array;
 
 }else if($modo == "EXCLUIR"){
-    $veiculoController->excluirVeiculo();
-    $result["mensagem"] = "Veículo ".$id." excluído.";
+    $erro = $veiculoController->excluirVeiculo();
+    if($erro){
+        $result["mensagem"] = "Erro ao excluir veículo.";
+    }else{
+        $result["mensagem"] = "Veículo ".$id." excluído.";
+    }
 }
 
 echo(json_encode($result));
