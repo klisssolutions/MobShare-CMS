@@ -39,15 +39,13 @@ class marcaDAO{
 
         //Executa no BD o script Insert e retorna verdadeiro/falso
         if($PDO_conex->query($sql)){
-            //echo(SUCESSO_SCRIPT);
-            echo("<script>alert('Nível inserido com sucesso.');</script>");
+            $erro = false;
         }else{
-            //echo(ERRO_SCRIPT);
-            //echo($sql);
+            $erro = true;
         }
-
         //Fecha a conexão com o BD
         $this->conex->closeDataBase();
+        return $erro;
     }
 
     //Deletar um registro no banco de dados.
@@ -59,16 +57,13 @@ class marcaDAO{
 
         //Executa no BD o script Insert e retorna verdadeiro/falso
         if($PDO_conex->query($sql)){
-            echo("<script>alert('Nível deletado com sucesso.');</script>");
-            //echo(SUCESSO_SCRIPT);
+            $erro = false;
         }else{
-            //echo(ERRO_SCRIPT);
-            //echo($sql);
-            echo("<script>alert('Não é possiível deletar, tem funcionário associado ao nível.');</script>");
+            $erro = true;
         }
-
         //Fecha a conexão com o BD
         $this->conex->closeDataBase();
+        return $erro;
     }
 
     //Atualiza um registro no banco de dados.
@@ -84,16 +79,13 @@ class marcaDAO{
 
         //Executa no BD o script Insert e retorna verdadeiro/falso
         if($PDO_conex->query($sql)){
-            //echo(SUCESSO_SCRIPT);
-            //echo($sql);
-            echo("<script>alert('Nível atualizado com sucesso.');</script>");
+            $erro = false;
         }else{
-            //echo(ERRO_SCRIPT);
-            //echo($sql);
+            $erro = true;
         }
-
         //Fecha a conexão com o BD
         $this->conex->closeDataBase();
+        return $erro;
     }
 
 
@@ -118,17 +110,11 @@ class marcaDAO{
             $listMarcas[$cont]->setIdMarca($rsMarcas["idMarca"]);
             $listMarcas[$cont]->setNomeMarca($rsMarcas["nomeMarca"]);
             
- 
-            
-
-            
             $cont++;
         }
 
         $this->conex->closeDataBase();
-
         return($listMarcas);
-
     }
 
     //Seleciona um registro pelo ID.
@@ -150,10 +136,7 @@ class marcaDAO{
         $marca->setIdMarca($rsMarca["idMarca"]);
         $marca->setNomeMarca($rsMarca["nomeMarca"]);
 
-       
-
         $this->conex->closeDataBase();
-
         return($marca);
     }
 }

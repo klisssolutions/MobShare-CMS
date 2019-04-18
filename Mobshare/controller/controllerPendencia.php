@@ -46,7 +46,7 @@ class controllerPendencia{
 
             /* Chamada para o metodo de inserir no BD, passando como parâmetro o objeto
             contatoClass que tem todos os dados que serão inseridos no banco de dados */
-            $pendenciaDAO->update($pendencia, strtoupper($tipoPendencia));
+            return $pendenciaDAO->update($pendencia, strtoupper($tipoPendencia));
         }
     }
 

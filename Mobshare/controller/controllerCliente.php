@@ -44,41 +44,6 @@ class controllerCliente{
             $descricao = $_POST["txtdescricao"];
             $permissoes = 0;
 
-            //Checa se a permissoes de funcionario foi marcada
-            if(isset($_POST['chkfuncionario'])){
-                $permissoes += MODULO_FUNCIONARIO;
-            }
-
-            //Checa se a permissoes de marketing foi marcada
-            if(isset($_POST['chkmarketing'])){
-                $permissoes += MODULO_MARKETING;
-            }
-
-            //Checa se a permissoes de locacao foi marcada
-            if(isset($_POST['chklocacao'])){
-                $permissoes += MODULO_LOCACAO;
-            }
-
-            //Checa se a permissoes de pagina foi marcada
-            if(isset($_POST['chkpagina'])){
-                $permissoes += MODULO_PAGINA;
-            }
-
-            //Checa se a permissoes de aprovacao foi marcada
-            if(isset($_POST['chkaprovacao'])){
-                $permissoes += MODULO_APROVACAO;
-            }
-
-            //Checa se a permissoes de contato foi marcada
-            if(isset($_POST['chkcontato'])){
-                $permissoes += MODULO_CONTATO;
-            }
-
-            //Checa se a permissoes de relatorio foi marcada
-            if(isset($_POST['chkrelatorio'])){
-                $permissoes += MODULO_RELATORIO;
-            }
-
             //Instancia da classe
             $nivel = new Nivel();
 
@@ -89,7 +54,7 @@ class controllerCliente{
 
             /* Chamada para o metodo de inserir no BD, passando como parâmetro o objeto
             contatoClass que tem todos os dados que serão inseridos no banco de dados */
-            $nivelDAO->insert($nivel);
+            return $nivelDAO->insert($nivel);
         }
     }
 
@@ -100,7 +65,7 @@ class controllerCliente{
         $id = $_GET["id"];
 
         //Chamada para o método de excluir um nivel
-        $nivelDAO->delete($id);
+        return $nivelDAO->delete($id);
     }
 
     public function atualizarNivel(){
@@ -114,41 +79,6 @@ class controllerCliente{
             $descricao = $_POST["txtdescricao"];
             $permissoes = 0;
 
-            //Checa se a permissoes de funcionario foi marcada
-            if(isset($_POST['chkfuncionario'])){
-                $permissoes += MODULO_FUNCIONARIO;
-            }
-
-            //Checa se a permissoes de marketing foi marcada
-            if(isset($_POST['chkmarketing'])){
-                $permissoes += MODULO_MARKETING;
-            }
-
-            //Checa se a permissoes de locacao foi marcada
-            if(isset($_POST['chklocacao'])){
-                $permissoes += MODULO_LOCACAO;
-            }
-
-            //Checa se a permissoes de pagina foi marcada
-            if(isset($_POST['chkpagina'])){
-                $permissoes += MODULO_PAGINA;
-            }
-
-            //Checa se a permissoes de aprovacao foi marcada
-            if(isset($_POST['chkaprovacao'])){
-                $permissoes += MODULO_APROVACAO;
-            }
-
-            //Checa se a permissoes de contato foi marcada
-            if(isset($_POST['chkcontato'])){
-                $permissoes += MODULO_CONTATO;
-            }
-
-            //Checa se a permissoes de relatorio foi marcada
-            if(isset($_POST['chkrelatorio'])){
-                $permissoes += MODULO_RELATORIO;
-            }
-
             //Instancia da classe
             $nivel = new Nivel();
 
@@ -160,7 +90,7 @@ class controllerCliente{
 
             /* Chamada para o metodo de inserir no BD, passando como parâmetro o objeto
             contatoClass que tem todos os dados que serão inseridos no banco de dados */
-            $nivelDAO->update($nivel);
+            return $nivelDAO->update($nivel);
         }
     }
 

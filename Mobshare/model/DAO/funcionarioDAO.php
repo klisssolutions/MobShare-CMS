@@ -40,16 +40,13 @@ class funcionarioDAO{
 
         //Executa no BD o script Insert e retorna verdadeiro/falso
         if($PDO_conex->query($sql)){
-            //echo(SUCESSO_SCRIPT);
-            echo("<script>alert('Funcionário adicionado com sucesso.');</script>");
+            $erro = false;
         }else{
-            //echo(ERRO_SCRIPT);
-            //echo($sql);
-            echo("<script>alert('Email já usado.');</script>");
+            $erro = true;
         }
-
         //Fecha a conexão com o BD
         $this->conex->closeDataBase();
+        return $erro;
     }
 
     //Deletar um registro no banco de dados.
@@ -61,15 +58,13 @@ class funcionarioDAO{
 
         //Executa no BD o script Insert e retorna verdadeiro/falso
         if($PDO_conex->query($sql)){
-            //echo(SUCESSO_SCRIPT);
-            echo("<script>alert('Funcionário excluído com sucesso.');</script>");
+            $erro = false;
         }else{
-            //echo(ERRO_SCRIPT);
-            //echo($sql);
+            $erro = true;
         }
-
         //Fecha a conexão com o BD
         $this->conex->closeDataBase();
+        return $erro;
     }
 
     //Atualiza um registro no banco de dados.
@@ -86,17 +81,13 @@ class funcionarioDAO{
 
         //Executa no BD o script Insert e retorna verdadeiro/falso
         if($PDO_conex->query($sql)){
-            //echo(SUCESSO_SCRIPT);
-            //echo($sql);
-            echo("<script>alert('Funcionário atualizado com sucesso.');</script>");
+            $erro = false;
         }else{
-            //echo(ERRO_SCRIPT);
-            //echo($sql);
-            echo("<script>alert('Email já usado.');</script>");
+            $erro = true;
         }
-
         //Fecha a conexão com o BD
         $this->conex->closeDataBase();
+        return $erro;
     }
 
     //Lista todos os registros do banco de dados.

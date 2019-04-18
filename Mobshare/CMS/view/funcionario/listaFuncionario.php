@@ -37,12 +37,12 @@
     </div>
     <div class="dados-func">
     
-        Nome:
+        E-mail:
         
     </div>
     <div class="dados-resp-func">
     
-    <?php echo($funcionario->getNome());?>
+    <?php echo($funcionario->getEmail());?>
     
     </div>
     <div class="opcao">

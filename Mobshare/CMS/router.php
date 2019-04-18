@@ -33,21 +33,42 @@ if(isset($_GET["controller"])){
             switch($modo){
                 case "INSERIR":
                     //Chamando o método de inserir um novo nivel
-                    $controllerNivel->inserirNivel();
+                    $erro = $controllerNivel->inserirNivel();
+
+                    //Mostra mensagem de erro ou sucesso
+                    if($erro){
+                        echo("<script>alert('Não foi possível criar o nível.');</script>");
+                    }else{
+                        echo("<script>alert('Nível adicionado.');</script>");
+                    }
 
                     //Encaminha para a pagina de nivel
                     echo("<script>nivel();</script>");
                     break;
                 case "ATUALIZAR":
                     //Chamando o método de atualizar nivel
-                    $controllerNivel->atualizarNivel();
+                    $erro = $controllerNivel->atualizarNivel();
+
+                    //Mostra mensagem de erro ou sucesso
+                    if($erro){
+                        echo("<script>alert('Não foi possível atualizar o nível.');</script>");
+                    }else{
+                        echo("<script>alert('Nível atualizado.');</script>");
+                    }
 
                     //Encaminha para a pagina de nivel
                     echo("<script>nivel();</script>");
                     break;
                 case "EXCLUIR":
                     //Chama o método para excluir o nivel
-                    $controllerNivel->excluirNivel();
+                    $erro = $controllerNivel->excluirNivel();
+
+                    //Mostra mensagem de erro ou sucesso
+                    if($erro){
+                        echo("<script>alert('Não foi possível apagar o nível. Existe um funcionário associado ao nível.');</script>");
+                    }else{
+                        echo("<script>alert('Nível apagado.');</script>");
+                    }
 
                     //Encaminha para a pagina de nivel
                     echo("<script>nivel();</script>");
@@ -73,7 +94,13 @@ if(isset($_GET["controller"])){
             switch($modo){
                 case "INSERIR":
                     //Chamando o método de inserir um novo funcionario
-                    $controllerFuncionario->inserirFuncionario();
+                    $erro = $controllerFuncionario->inserirFuncionario();
+
+                    if($erro){
+                        echo("<script>alert('Não foi possível criar o Funcionário.');</script>");
+                    }else{
+                        echo("<script>alert('Funcionário criado.');</script>");
+                    }
 
                     //Encaminha para a pagina de funcionario
                     echo("<script>funcionario();</script>");
@@ -81,7 +108,13 @@ if(isset($_GET["controller"])){
 
                 case "EXCLUIR":
                     //Chama o método para excluir o funcionario
-                    $controllerFuncionario->excluirFuncionario();
+                    $erro = $controllerFuncionario->excluirFuncionario();
+
+                    if($erro){
+                        echo("<script>alert('Não foi possível excluir o funcionário.');</script>");
+                    }else{
+                        echo("<script>alert('Funcionário apagado.');</script>");
+                    }
 
                     //Encaminha para a pagina de funcionario
                     echo("<script>funcionario();</script>");
@@ -94,7 +127,13 @@ if(isset($_GET["controller"])){
                     break;
 
                 case "ATUALIZAR":
-                    $controllerFuncionario->atualizarFuncionario();
+                    $erro = $controllerFuncionario->atualizarFuncionario();
+
+                    if($erro){
+                        echo("<script>alert('Não foi possível atualizar o funcionário.');</script>");
+                    }else{
+                        echo("<script>alert('Funcionário atualizado.');</script>");
+                    }
 
                     echo("<script>funcionario();</script>");
                     break;
@@ -120,7 +159,13 @@ if(isset($_GET["controller"])){
             switch ($modo){
                 case "INSERIR":
                     //Chamando o método de inserir um novo funcionario
-                    $controllerParceiro->inserirParceiro();
+                    $erro = $controllerParceiro->inserirParceiro();
+
+                    if($erro){
+                        echo("<script>alert('Não foi possível adicionar o parceiro.');</script>");
+                    }else{
+                        echo("<script>alert('Parceiro adicionado.');</script>");
+                    }
 
                     //Encaminha para a pagina de funcionario
                     echo("<script>parceiro();</script>");
@@ -128,7 +173,13 @@ if(isset($_GET["controller"])){
 
                 case "EXCLUIR":
                     //Chama o método para excluir o funcionario
-                    $controllerParceiro->excluirParceiro();
+                    $erro = $controllerParceiro->excluirParceiro();
+
+                    if($erro){
+                        echo("<script>alert('Não foi possível excluir o parceiro.');</script>");
+                    }else{
+                        echo("<script>alert('Parceiro apagado.');</script>");
+                    }
 
                     //Encaminha para a pagina de funcionario
                     echo("<script>parceiro();</script>");
@@ -142,7 +193,13 @@ if(isset($_GET["controller"])){
                 break;
 
                 case "ATUALIZAR":
-                    $controllerParceiro->atualizarParceiro();
+                    $erro = $controllerParceiro->atualizarParceiro();
+
+                    if($erro){
+                        echo("<script>alert('Não foi possível atualizar o parceiro.');</script>");
+                    }else{
+                        echo("<script>alert('Parceiro atualizado.');</script>");
+                    }
 
                     echo("<script>parceiro();</script>");
                 break;
@@ -160,7 +217,13 @@ if(isset($_GET["controller"])){
             switch ($modo){
                 case "INSERIR":
                     //Chamando o método de inserir um novo funcionario
-                    $controllerFuncionamento->inserirFuncionamento();
+                    $erro = $controllerFuncionamento->inserirFuncionamento();
+
+                    if($erro){
+                        echo("<script>alert('Não foi possível adicionar o funcionamento.');</script>");
+                    }else{
+                        echo("<script>alert('Funcionamento adicionado.');</script>");
+                    }
 
                     //Encaminha para a pagina de funcionario
                     echo("<script>comoFunciona();</script>");
@@ -168,7 +231,13 @@ if(isset($_GET["controller"])){
 
                 case "EXCLUIR":
                     //Chama o método para excluir o funcionario
-                    $controllerFuncionamento->excluirFuncionamento();
+                    $erro = $controllerFuncionamento->excluirFuncionamento();
+
+                    if($erro){
+                        echo("<script>alert('Não foi possível excluir o funcionamento.');</script>");
+                    }else{
+                        echo("<script>alert('Funcionamento apagado.');</script>");
+                    }
 
                     //Encaminha para a pagina de funcionario
                     echo("<script>comoFunciona();</script>");
@@ -182,7 +251,13 @@ if(isset($_GET["controller"])){
                 break;
 
                 case "ATUALIZAR":
-                    $controllerFuncionamento->atualizarFuncionamento();
+                    $erro = $controllerFuncionamento->atualizarFuncionamento();
+
+                    if($erro){
+                        echo("<script>alert('Não foi possível atualizar o funcionamento.');</script>");
+                    }else{
+                        echo("<script>alert('Funcionamento atualizado.');</script>");
+                    }
 
                     echo("<script>comoFunciona();</script>");
                 break;
@@ -204,7 +279,13 @@ if(isset($_GET["controller"])){
                 break;
 
                 case "ATUALIZAR":
-                    $controllerPendencia->atualizarPendencia("USUARIO");
+                    $erro = $controllerPendencia->atualizarPendencia("USUARIO");
+
+                    if($erro){
+                        echo("<script>alert('Não foi possível atualizar a pendência.');</script>");
+                    }else{
+                        echo("<script>alert('Pendência atualizada.');</script>");
+                    }
 
                     echo("<script>aprovacaoUsuario();</script>");
                 break;
@@ -226,7 +307,13 @@ if(isset($_GET["controller"])){
                 break;
 
                 case "ATUALIZAR":
-                    $controllerPendencia->atualizarPendencia("VEICULO");
+                    $erro = $controllerPendencia->atualizarPendencia("VEICULO");
+
+                    if($erro){
+                        echo("<script>alert('Não foi possível atualizar a pendência.');</script>");
+                    }else{
+                        echo("<script>alert('Pendência atualizada.');</script>");
+                    }
 
                     echo("<script>aprovacaoVeiculo();</script>");
                 break;

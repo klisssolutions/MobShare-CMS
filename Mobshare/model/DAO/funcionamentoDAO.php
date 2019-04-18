@@ -35,16 +35,15 @@
 
             //Executa no BD o script Insert e retorna verdadeiro/falso
             if($PDO_conex->query($sql)){
-                //echo(SUCESSO_SCRIPT);
-                echo("<script>alert('Inserido com sucesso.');</script>");
+                $erro = false;
             }else{
-                //echo(ERRO_SCRIPT);
-                echo($sql);
+                $erro = true;
             }
-
             //Fecha a conexão com o BD
             $this->conex->closeDataBase();
-            }
+            return $erro;
+        }
+
             //apagar um registro no banco
             public function delete($id){
                 $sql = DELETE . TABELA_FUNCIONAMENTO . " where idFuncionamento =".$id;
@@ -54,15 +53,13 @@
 
             //Executa no BD o script Insert e retorna verdadeiro/falso
             if($PDO_conex->query($sql)){
-                //echo(SUCESSO_SCRIPT);
-                echo("<script>alert('Funcionário excluído com sucesso.');</script>");
+                $erro = false;
             }else{
-                //echo(ERRO_SCRIPT);
-                //echo($sql);
+                $erro = true;
             }
-
             //Fecha a conexão com o BD
             $this->conex->closeDataBase();
+            return $erro;
         }
 
         //atualizar um registro no banco de dados
@@ -83,23 +80,19 @@
                 
                 WHERE idFuncionamento = '".$funcionamento->getIdFuncionamento()."';";
             }
-            
-            
-            
 
             //Abrindo conexão com o BD
             $PDO_conex = $this->conex->connectDataBase();
 
             //Executa no BD o script Insert e retorna verdadeiro/falso
             if($PDO_conex->query($sql)){
-                //echo(SUCESSO_SCRIPT);
-                echo($sql);
-                echo("<script>alert('Parceiro atualizado com sucesso.');</script>");
+                $erro = false;
             }else{
-                //echo(ERRO_SCRIPT);
-                echo($sql);
-                echo("<script>alert('Email já usado.');</script>");
+                $erro = true;
             }
+            //Fecha a conexão com o BD
+            $this->conex->closeDataBase();
+            return $erro;
 
             //Fecha a conexão com o BD
             $this->conex->closeDataBase();
@@ -131,7 +124,6 @@
         }
 
         $this->conex->closeDataBase();
-
         return($listFuncionamento);
 
         }
@@ -139,30 +131,29 @@
         //seleciona o registro pelo ID
 
         public function selectById($id){
-            
             $sql = SELECT . TABELA_FUNCIONAMENTO . " WHERE idFuncionamento=".$id;
 
-        //Abrindo conexão com o BD
-        $PDO_conex = $this->conex->connectDataBase();
+            //Abrindo conexão com o BD
+            $PDO_conex = $this->conex->connectDataBase();
 
-        //executa o script de select no bd
-        $select = $PDO_conex->query($sql);
+            //executa o script de select no bd
+            $select = $PDO_conex->query($sql);
 
-        /* $select->fetch no formado pdo retorna os dados do BD
-        também retorna com característica do PDO como o fetch
-        é necessário especificar o modelo de conversão.
-        EX: PDO::FETCH_ASSOC, PDO::FETCH_ARRAY etc. */
-        if($rsFuncionamento=$select->fetch(PDO::FETCH_ASSOC)){
-            $funcionamento = new Funcionamento();
-            $funcionamento->setIdFuncionamento($rsFuncionamento["idFuncionamento"]);
-            $funcionamento->setTitulo($rsFuncionamento["titulo"]);
-            $funcionamento->setDescricao($rsFuncionamento["descricao"]);
-            $funcionamento->setFoto($rsFuncionamento["foto"]);
-        }
+            /* $select->fetch no formado pdo retorna os dados do BD
+            também retorna com característica do PDO como o fetch
+            é necessário especificar o modelo de conversão.
+            EX: PDO::FETCH_ASSOC, PDO::FETCH_ARRAY etc. */
+            if($rsFuncionamento=$select->fetch(PDO::FETCH_ASSOC)){
+                $funcionamento = new Funcionamento();
+                $funcionamento->setIdFuncionamento($rsFuncionamento["idFuncionamento"]);
+                $funcionamento->setTitulo($rsFuncionamento["titulo"]);
+                $funcionamento->setDescricao($rsFuncionamento["descricao"]);
+                $funcionamento->setFoto($rsFuncionamento["foto"]);
+            }
 
-        $this->conex->closeDataBase();
+            $this->conex->closeDataBase();
 
-        return($funcionamento);
+            return($funcionamento);
         }
 
     }

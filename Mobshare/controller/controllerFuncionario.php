@@ -56,7 +56,7 @@ class controllerFuncionario{
 
             /* Chamada para o metodo de inserir no BD, passando como parâmetro o objeto
             contatoClass que tem todos os dados que serão inseridos no banco de dados */
-            $funcionarioDAO->insert($funcionario);
+            return $funcionarioDAO->insert($funcionario);
         }
     }
 
@@ -68,7 +68,7 @@ class controllerFuncionario{
         $id = $_GET["id"];
 
         //Chamada para o método de excluir um contato
-        $funcionarioDAO->delete($id);
+        return $funcionarioDAO->delete($id);
     }
 
     public function atualizarFuncionario(){
@@ -94,7 +94,7 @@ class controllerFuncionario{
             
             /* Chamada para o metodo de inserir no BD, passando como parâmetro o objeto
             contatoClass que tem todos os dados que serão inseridos no banco de dados */
-            $funcionarioDAO->update($funcionario);
+            return $funcionarioDAO->update($funcionario);
         }
     }
 

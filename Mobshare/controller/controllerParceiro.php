@@ -47,7 +47,7 @@ class controllerParceiro{
 
             /* Chamada para o metodo de inserir no BD, passando como parâmetro o objeto
             contatoClass que tem todos os dados que serão inseridos no banco de dados */
-            $parceiroDAO->insert($parceiro);
+            return $parceiroDAO->insert($parceiro);
         }
     }
 
@@ -58,7 +58,7 @@ class controllerParceiro{
         $id = $_GET["id"];
 
         //Chamada para o método de excluir um parceiro
-        $parceiroDAO->delete($id);
+        return $parceiroDAO->delete($id);
     }
 
     public function atualizarParceiro(){
@@ -88,7 +88,7 @@ class controllerParceiro{
 
             /* Chamada para o metodo de inserir no BD, passando como parâmetro o objeto
             contatoClass que tem todos os dados que serão inseridos no banco de dados */
-            $parceiroDAO->update($parceiro);
+            return $parceiroDAO->update($parceiro);
         }
     }
 

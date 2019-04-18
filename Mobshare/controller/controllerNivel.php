@@ -77,7 +77,7 @@ class controllerNivel{
 
             /* Chamada para o metodo de inserir no BD, passando como parâmetro o objeto
             contatoClass que tem todos os dados que serão inseridos no banco de dados */
-            $nivelDAO->insert($nivel);
+            return $nivelDAO->insert($nivel);
         }
     }
 
@@ -88,7 +88,7 @@ class controllerNivel{
         $id = $_GET["id"];
 
         //Chamada para o método de excluir um nivel
-        $nivelDAO->delete($id);
+        return $nivelDAO->delete($id);
     }
 
     public function atualizarNivel(){
@@ -148,7 +148,7 @@ class controllerNivel{
 
             /* Chamada para o metodo de inserir no BD, passando como parâmetro o objeto
             contatoClass que tem todos os dados que serão inseridos no banco de dados */
-            $nivelDAO->update($nivel);
+            return $nivelDAO->update($nivel);
         }
     }
 

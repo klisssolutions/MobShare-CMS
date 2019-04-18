@@ -44,16 +44,13 @@ class pendenciaDAO{
 
         //Executa no BD o script Insert e retorna verdadeiro/falso
         if($PDO_conex->query($sql)){
-            //echo(SUCESSO_SCRIPT);
-            //echo($sql);
-            echo("<script>alert('Pendência atualizado com sucesso.');</script>");
+            $erro = false;
         }else{
-            //echo(ERRO_SCRIPT);
-            //echo($sql);
+            $erro = true;
         }
-
         //Fecha a conexão com o BD
         $this->conex->closeDataBase();
+        return $erro;
     }
 
     //Lista todos os registros do banco de dados.
@@ -87,9 +84,7 @@ class pendenciaDAO{
         }
 
         $this->conex->closeDataBase();
-
         return($listPendencias);
-        //var_dump($select);
     }
 
     //Seleciona um registro pelo ID.

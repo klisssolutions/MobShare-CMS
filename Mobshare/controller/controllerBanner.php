@@ -35,8 +35,6 @@ class controllerBanner{
             $nomebotao = $_POST["txtnomebotao"];
             $imagem = enviarImagem($_FILES["imgBanner"]);
 
-            
-
             $banner = new Banner();
 
             $banner->setTitulo($titulo);
@@ -45,11 +43,9 @@ class controllerBanner{
             $banner->setNomebotao($nomebotao);
             $banner->setImagem($imagem);
 
-
             $bannerDAO = new bannerDAO();
 
-            $bannerDAO->insert($banner);
-
+            return $bannerDAO->insert($banner);
         }
     }
 
@@ -60,7 +56,7 @@ class controllerBanner{
         $id = $_GET["id"];
 
         //Chamada para o método de excluir um nivel
-        $bannerDAO->delete($id);
+        return $bannerDAO->delete($id);
     }
 
     public function atualizar(){
@@ -76,12 +72,8 @@ class controllerBanner{
             $nomebotao = $_POST["txtnomebotao"];
             $imagem = ($_FILES['imgBanner']["size"] ? enviarImagem($_FILES['imgBanner']) : null);
             
-
-            
-
             $banner = new Banner();
             
-
             $banner->setIdBanner($_GET["id"]);
             $banner->setTitulo($titulo);
             $banner->setTexto($texto);
@@ -89,10 +81,9 @@ class controllerBanner{
             $banner->setNomebotao($nomebotao);
             $banner->setImagem($imagem);
 
-
             $bannerDAO = new bannerDAO();
 
-            $bannerDAO->update($banner);
+            return $bannerDAO->update($banner);
         }
     }
 
@@ -108,8 +99,6 @@ class controllerBanner{
 
         //Pega o ID para realizar a busca
         $id = $_GET["id"];
-
-       
         
         return $bannerDAO->selectById($id);
     }
