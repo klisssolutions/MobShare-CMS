@@ -3,8 +3,8 @@
     Projeto: Mobshare
     Autor: Igor
     Data Criação: 23/03/2019
-    Data Modificação:28/03/2019
-    Conteudo Modificação: Uso do arquivo de constantes
+    Data Modificação:20/04/2019
+    Conteudo Modificação: Constante de alert
     Autor da Modificação:Igor
     Objetivo: Arquivo de rota que realiza ações
 */
@@ -37,9 +37,9 @@ if(isset($_GET["controller"])){
 
                     //Mostra mensagem de erro ou sucesso
                     if($erro){
-                        echo("<script>alert('Não foi possível criar o nível.');</script>");
+                        echo(ALERT_INSERIR_NIVEL_ERRO);
                     }else{
-                        echo("<script>alert('Nível adicionado.');</script>");
+                        echo(ALERT_INSERIR_NIVEL_SUCESSO);
                     }
 
                     //Encaminha para a pagina de nivel
@@ -51,9 +51,9 @@ if(isset($_GET["controller"])){
 
                     //Mostra mensagem de erro ou sucesso
                     if($erro){
-                        echo("<script>alert('Não foi possível atualizar o nível.');</script>");
+                        echo(ALERT_ATUALIZAR_NIVEL_ERRO);
                     }else{
-                        echo("<script>alert('Nível atualizado.');</script>");
+                        echo(ALERT_ATUALIZAR_NIVEL_SUCESSO);
                     }
 
                     //Encaminha para a pagina de nivel
@@ -65,9 +65,9 @@ if(isset($_GET["controller"])){
 
                     //Mostra mensagem de erro ou sucesso
                     if($erro){
-                        echo("<script>alert('Não foi possível apagar o nível. Existe um funcionário associado ao nível.');</script>");
+                        echo(ALERT_EXCLUIR_NIVEL_ERRO);
                     }else{
-                        echo("<script>alert('Nível apagado.');</script>");
+                        echo(ALERT_EXCLUIR_NIVEL_SUCESSO);
                     }
 
                     //Encaminha para a pagina de nivel
@@ -97,9 +97,9 @@ if(isset($_GET["controller"])){
                     $erro = $controllerFuncionario->inserirFuncionario();
 
                     if($erro){
-                        echo("<script>alert('Não foi possível criar o Funcionário.');</script>");
+                        echo(ALERT_INSERIR_FUNCIONARIO_ERRO);
                     }else{
-                        echo("<script>alert('Funcionário criado.');</script>");
+                        echo(ALERT_INSERIR_FUNCIONARIO_SUCESSO);
                     }
 
                     //Encaminha para a pagina de funcionario
@@ -111,9 +111,9 @@ if(isset($_GET["controller"])){
                     $erro = $controllerFuncionario->excluirFuncionario();
 
                     if($erro){
-                        echo("<script>alert('Não foi possível excluir o funcionário.');</script>");
+                        echo(ALERT_EXCLUIR_FUNCIONARIO_ERRO);
                     }else{
-                        echo("<script>alert('Funcionário apagado.');</script>");
+                        echo(ALERT_EXCLUIR_FUNCIONARIO_SUCESSO);
                     }
 
                     //Encaminha para a pagina de funcionario
@@ -130,9 +130,9 @@ if(isset($_GET["controller"])){
                     $erro = $controllerFuncionario->atualizarFuncionario();
 
                     if($erro){
-                        echo("<script>alert('Não foi possível atualizar o funcionário.');</script>");
+                        echo(ALERT_ATUALIZAR_FUNCIONARIO_ERRO);
                     }else{
-                        echo("<script>alert('Funcionário atualizado.');</script>");
+                        echo(ALERT_ATUALIZAR_FUNCIONARIO_SUCESSO);
                     }
 
                     echo("<script>funcionario();</script>");
@@ -142,7 +142,7 @@ if(isset($_GET["controller"])){
                     $idFuncionario = $controllerFuncionario->logar();
                     //Verifica se retornou um funcionário corretamente para mostrar um erro
                     if(!$idFuncionario){
-                        echo("<script>alert('Login ou senha inválidos.');</script>");
+                        echo(ALERT_LOGIN_ERRO);
                     }
 
                     require_once(IMPORT_CMS_INDEX);
@@ -162,9 +162,9 @@ if(isset($_GET["controller"])){
                     $erro = $controllerParceiro->inserirParceiro();
 
                     if($erro){
-                        echo("<script>alert('Não foi possível adicionar o parceiro.');</script>");
+                        echo(ALERT_INSERIR_PARCEIRO_ERRO);
                     }else{
-                        echo("<script>alert('Parceiro adicionado.');</script>");
+                        echo(ALERT_INSERIR_PARCEIRO_SUCESSO);
                     }
 
                     //Encaminha para a pagina de funcionario
@@ -176,9 +176,9 @@ if(isset($_GET["controller"])){
                     $erro = $controllerParceiro->excluirParceiro();
 
                     if($erro){
-                        echo("<script>alert('Não foi possível excluir o parceiro.');</script>");
+                        echo(ALERT_EXCLUIR_PARCEIRO_ERRO);
                     }else{
-                        echo("<script>alert('Parceiro apagado.');</script>");
+                        echo(ALERT_EXCLUIR_PARCEIRO_SUCESSO);
                     }
 
                     //Encaminha para a pagina de funcionario
@@ -196,9 +196,9 @@ if(isset($_GET["controller"])){
                     $erro = $controllerParceiro->atualizarParceiro();
 
                     if($erro){
-                        echo("<script>alert('Não foi possível atualizar o parceiro.');</script>");
+                        echo(ALERT_ATUALIZAR_PARCEIRO_ERRO);
                     }else{
-                        echo("<script>alert('Parceiro atualizado.');</script>");
+                        echo(ALERT_ATUALIZAR_PARCEIRO_SUCESSO);
                     }
 
                     echo("<script>parceiro();</script>");
@@ -220,9 +220,9 @@ if(isset($_GET["controller"])){
                     $erro = $controllerFuncionamento->inserirFuncionamento();
 
                     if($erro){
-                        echo("<script>alert('Não foi possível adicionar o funcionamento.');</script>");
+                        echo(ALERT_INSERIR_FUNCIONAMENTO_ERRO);
                     }else{
-                        echo("<script>alert('Funcionamento adicionado.');</script>");
+                        echo(ALERT_INSERIR_FUNCIONAMENTO_SUCESSO);
                     }
 
                     //Encaminha para a pagina de funcionario
@@ -234,9 +234,9 @@ if(isset($_GET["controller"])){
                     $erro = $controllerFuncionamento->excluirFuncionamento();
 
                     if($erro){
-                        echo("<script>alert('Não foi possível excluir o funcionamento.');</script>");
+                        echo(ALERT_EXCLUIR_FUNCIONAMENTO_ERRO);
                     }else{
-                        echo("<script>alert('Funcionamento apagado.');</script>");
+                        echo(ALERT_EXCLUIR_FUNCIONAMENTO_ERRO);
                     }
 
                     //Encaminha para a pagina de funcionario
@@ -254,9 +254,9 @@ if(isset($_GET["controller"])){
                     $erro = $controllerFuncionamento->atualizarFuncionamento();
 
                     if($erro){
-                        echo("<script>alert('Não foi possível atualizar o funcionamento.');</script>");
+                        echo(ALERT_ATUALIZAR_FUNCIONAMENTO_ERRO);
                     }else{
-                        echo("<script>alert('Funcionamento atualizado.');</script>");
+                        echo(ALERT_ATUALIZAR_FUNCIONAMENTO_SUCESSO);
                     }
 
                     echo("<script>comoFunciona();</script>");
@@ -282,9 +282,9 @@ if(isset($_GET["controller"])){
                     $erro = $controllerPendencia->atualizarPendencia("USUARIO");
 
                     if($erro){
-                        echo("<script>alert('Não foi possível atualizar a pendência.');</script>");
+                        echo(ALERT_ATUALIZAR_PENDENCIA_ERRO);
                     }else{
-                        echo("<script>alert('Pendência atualizada.');</script>");
+                        echo(ALERT_ATUALIZAR_PENDENCIA_SUCESSO);
                     }
 
                     echo("<script>aprovacaoUsuario();</script>");
@@ -310,9 +310,9 @@ if(isset($_GET["controller"])){
                     $erro = $controllerPendencia->atualizarPendencia("VEICULO");
 
                     if($erro){
-                        echo("<script>alert('Não foi possível atualizar a pendência.');</script>");
+                        echo(ALERT_ATUALIZAR_PENDENCIA_ERRO);
                     }else{
-                        echo("<script>alert('Pendência atualizada.');</script>");
+                        echo(ALERT_ATUALIZAR_PENDENCIA_SUCESSO);
                     }
 
                     echo("<script>aprovacaoVeiculo();</script>");

@@ -3,10 +3,10 @@
     Projeto: MobShare
     Autor: Igor
     Data Criação: 23/03/2019
-    Data Modificação: 08/04/2019
+    Data Modificação: 20/04/2019
     Conteudo Modificação: Separação por parte para ficar melhor
     Autor da Modificação: Igor
-    Objetivo: Arquivo com constantes e funções para ser incluído em outros arquivos
+    Objetivo: Constantes de alert
 */
 
 //Verificaa se o arquivo já foi importado
@@ -14,6 +14,57 @@ if(!isset($incluso)){
     
     //Set uma variável para verificar se o arquivo foi importado
     $incluso = true;
+
+    /*---------------------------------------------------------------*/
+    /*--------------------------- FUNÇÕES ---------------------------*/
+    /*---------------------------------------------------------------*/
+
+    //Essa função recebe o número de permissão e o número do módulo para
+    //verificar se tem acesso ao módulo
+    function acessoModulo($permissoes, $modulo){
+        //Retira as permissões dos módulos anteriores para comparar
+        $permissoesModulo = $permissoes % ($modulo*2);
+        //Verificar se a permissão é maior ou igual ao módulo se for
+        //ele tem acesso ao módulo(bit ligado)
+        if($permissoesModulo >= $modulo){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    //Função para tratar a imagem recebida do upload
+    function enviarImagem($item){
+        
+        $foto = $item['name'];
+        $tamanho_foto = $item['size'];
+        $tamanho_foto = round($tamanho_foto/1024);
+        $ext_foto = strrchr($foto, ".");
+        $nome_foto = pathinfo($foto, PATHINFO_FILENAME);
+        $nome_foto = md5(uniqid(time()).$nome_foto);
+        $diretorio = "C:/xampp/htdocs/Mobshare/arquivos/";
+        $extensao = array(".jpg",".png",".jpeg");
+        if(in_array($ext_foto, $extensao)){
+            if($tamanho_foto<=2000){
+                $foto_tmp = $item['tmp_name'];
+                $arquivo = $nome_foto.$ext_foto;
+                
+                if(move_uploaded_file($foto_tmp, $diretorio.$arquivo)){
+                    return $arquivo;
+                }else{
+                    $arquivo = null;
+                    return $arquivo;
+                }
+                return $arquivo;
+            }
+        }
+        return $arquivo;
+    }
+
+    //Função para gerar um alert no JS
+    function alert($texto){
+        return "<script>alert('".$texto."');</script>";
+    }
 
     /*----------------------------------------------------------------------*/
     /*--------------------------- BANCO DE DADOS ---------------------------*/
@@ -159,49 +210,47 @@ if(!isset($incluso)){
     define("IMPORT_SITE_INDEX", PASTA_RAIZ . PASTA_PROJETO . "/SITE/index.php");
 
     /*---------------------------------------------------------------*/
-    /*--------------------------- FUNÇÕES ---------------------------*/
+    /*--------------------------- ALERTAS ---------------------------*/
     /*---------------------------------------------------------------*/
 
-    //Essa função recebe o número de permissão e o número do módulo para
-    //verificar se tem acesso ao módulo
-    function acessoModulo($permissoes, $modulo){
-        //Retira as permissões dos módulos anteriores para comparar
-        $permissoesModulo = $permissoes % ($modulo*2);
-        //Verificar se a permissão é maior ou igual ao módulo se for
-        //ele tem acesso ao módulo(bit ligado)
-        if($permissoesModulo >= $modulo){
-            return true;
-        }else{
-            return false;
-        }
-    }
+    //Alerta de Login
+    define("ALERT_LOGIN_ERRO", alert("Login ou senha inválidos."));
 
-    //Função para tratar a imagem recebida do upload
-    function enviarImagem($item){
-        
-        $foto = $item['name'];
-        $tamanho_foto = $item['size'];
-        $tamanho_foto = round($tamanho_foto/1024);
-        $ext_foto = strrchr($foto, ".");
-        $nome_foto = pathinfo($foto, PATHINFO_FILENAME);
-        $nome_foto = md5(uniqid(time()).$nome_foto);
-        $diretorio = "C:/xampp/htdocs/Mobshare/arquivos/";
-        $extensao = array(".jpg",".png",".jpeg");
-        if(in_array($ext_foto, $extensao)){
-            if($tamanho_foto<=2000){
-                $foto_tmp = $item['tmp_name'];
-                $arquivo = $nome_foto.$ext_foto;
-                
-                if(move_uploaded_file($foto_tmp, $diretorio.$arquivo)){
-                    return $arquivo;
-                }else{
-                    $arquivo = null;
-                    return $arquivo;
-                }
-                return $arquivo;
-            }
-        }
-        return $arquivo;
-    }
+    //Alertas de nível
+    define("ALERT_INSERIR_NIVEL_ERRO", alert("Não foi possível inserir o nível."));
+    define("ALERT_INSERIR_NIVEL_SUCESSO", alert("Nível inserido."));
+    define("ALERT_ATUALIZAR_NIVEL_ERRO", alert("Não foi possível atualizar o nível."));
+    define("ALERT_ATUALIZAR_NIVEL_SUCESSO", alert("Nível atualizado."));
+    define("ALERT_EXCLUIR_NIVEL_ERRO", alert("Não foi possível excluir o nível."));
+    define("ALERT_EXCLUIR_NIVEL_SUCESSO", alert("Nível excluído."));
+
+    //Alertas de funcionários
+    define("ALERT_INSERIR_FUNCIONARIO_ERRO", alert("Não foi possível inserir o funcionário."));
+    define("ALERT_INSERIR_FUNCIONARIO_SUCESSO", alert("Funcionário inserido."));
+    define("ALERT_ATUALIZAR_FUNCIONARIO_ERRO", alert("Não foi possível atualizar o funcionário."));
+    define("ALERT_ATUALIZAR_FUNCIONARIO_SUCESSO", alert("Funcionário atualizado."));
+    define("ALERT_EXCLUIR_FUNCIONARIO_ERRO", alert("Não foi possível excluir o funcionário."));
+    define("ALERT_EXCLUIR_FUNCIONARIO_SUCESSO", alert("Funcionário excluído."));
+
+    //Alertas de parceiros
+    define("ALERT_INSERIR_PARCEIRO_ERRO", alert("Não foi possível inserir o parceiro."));
+    define("ALERT_INSERIR_PARCEIRO_SUCESSO", alert("Parceiro inserido."));
+    define("ALERT_ATUALIZAR_PARCEIRO_ERRO", alert("Não foi possível atualizar o parceiro."));
+    define("ALERT_ATUALIZAR_PARCEIRO_SUCESSO", alert("Parceiro atualizado."));
+    define("ALERT_EXCLUIR_PARCEIRO_ERRO", alert("Não foi possível excluir o parceiro."));
+    define("ALERT_EXCLUIR_PARCEIRO_SUCESSO", alert("Parceiro excluído."));
+
+    //Alertas de funcionamento
+    define("ALERT_INSERIR_FUNCIONAMENTO_ERRO", alert("Não foi possível inserir o funcionamento."));
+    define("ALERT_INSERIR_FUNCIONAMENTO_SUCESSO", alert("Funcionamento inserido."));
+    define("ALERT_ATUALIZAR_FUNCIONAMENTO_ERRO", alert("Não foi possível atualizar o funcionamento."));
+    define("ALERT_ATUALIZAR_FUNCIONAMENTO_SUCESSO", alert("Funcionamento atualizado."));
+    define("ALERT_EXCLUIR_FUNCIONAMENTO_ERRO", alert("Não foi possível excluir o funcionamento."));
+    define("ALERT_EXCLUIR_FUNCIONAMENTO_SUCESSO", alert("Funcionamento excluído."));
+
+    //Alertas de pendência
+    define("ALERT_ATUALIZAR_PENDENCIA_ERRO", alert("Não foi possível atualizar a pendência."));
+    define("ALERT_ATUALIZAR_PENDENCIA_SUCESSO", alert("Pendência atualizado."));
+
 }
 ?>
