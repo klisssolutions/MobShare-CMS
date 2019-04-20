@@ -13,72 +13,47 @@ class Modelo{
     private $idMarca;
     private $nomeModelo;
 
-
-
     public function __construct(){    
     }
     
     //------------Começo dos GETTERS e SETTERS------------
-
-    
-    /**
-     * Get the value of idVeiculo
-     */ 
-    public function getIdModelo()
-    {
+    public function getIdModelo(){
         return $this->idModelo;
     }
 
-    /**
-     * Set the value of idVeiculo
-     *
-     * @return  self
-     */ 
-    public function setIdModelo($idModelo)
-    {
+    public function setIdModelo($idModelo){
         $this->idModelo = $idModelo;
-
-        return $this;
     }
 
-    public function getIdMarca()
-    {
+    public function getIdMarca(){
         return $this->idMarca;
     }
 
-    /**
-     * Set the value of idVeiculo
-     *
-     * @return  self
-     */ 
-    public function setIdMarca($idMarca)
-    {
+    public function setIdMarca($idMarca){
         $this->idMarca = $idMarca;
-
-        return $this;
     }
 
-    public function getNomeModelo()
-    {
+    public function getNomeModelo(){
         return $this->nomeModelo;
     }
 
-    /**
-     * Set the value of idVeiculo
-     *
-     * @return  self
-     */ 
-    public function setNomeModelo($nomeModelo)
-    {
+    public function setNomeModelo($nomeModelo){
         $this->nomeModelo = $nomeModelo;
+    }
+    //------------Fim dos GETTERS e SETTERS------------
 
-        return $this;
+    //Funções para converter o objeto em um formato compatível com JSON
+    public function getProperties(){
+        return get_object_vars($this);
     }
 
-
-
-
-
-
+    public function _toJson(){
+        $properties = $this->getProperties();
+        $object = new StdClass();
+        foreach ($properties as $name => $value) {
+            $object->$name = $value;
+        }
+        return $object;
+    }
 }
 ?>

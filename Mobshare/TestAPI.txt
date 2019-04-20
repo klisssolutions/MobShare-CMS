@@ -6,3 +6,25 @@ http://localhost/Mobshare/api/veiculo.php?modo=buscar&id=1
 
 Apagar veículo
 http://localhost/Mobshare/api/veiculo.php?modo=excluir&id=1
+
+
+
+Listar níveis
+http://localhost/Mobshare/api/nivel.php?modo=lista
+
+Mostrar um nível
+http://localhost/Mobshare/api/nivel.php?modo=buscar&id=1
+
+Apagar nível
+http://localhost/Mobshare/api/nivel.php?modo=excluir&id=1
+
+Atualizar nível use POST para mandar dados
+http://localhost/Mobshare/api/nivel.php?modo=atualizar&id=4
+
+txtnome
+txtdescricao
+
+e checkboxes
+
+Atualizar nível use POST para mandar dados
+http://localhost/Mobshare/api/nivel.php?modo=inserir

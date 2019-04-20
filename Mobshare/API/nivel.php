@@ -24,53 +24,49 @@ if($modo == "INSERIR"){
 
     //Trata o erro que vem lá da DAO
     if($erro){
-        $result["mensagem"] = "Erro ao inserir nível.";
+        $result["mensagem"] = MSG_INSERIR_NIVEL_ERRO;
     }else{
-        $result["mensagem"] = "Nível inserido";
+        $result["mensagem"] = MSG_INSERIR_NIVEL_SUCESSO;
     }
 }else if($modo == "ATUALIZAR"){
     //Usa os dados do get e post para atualizar
     $erro = $nivelController->atualizarNivel();
     if($erro){
-        $result["mensagem"] = "Erro ao atualizar nível.";
+        $result["mensagem"] = MSG_ATUALIZAR_NIVEL_ERRO;
     }else{
-        $result["mensagem"] = "Nível atualizado";
+        $result["mensagem"] = MSG_ATUALIZAR_NIVEL_SUCESSO;
     }
 }else if($modo == "LISTA"){
     $niveis = $nivelController->listarNiveis();
 
-    $result = array();
     //Cria uma array com nome para o JSON
     $result["niveis"] = array();
 
     //Popula a array com os dados do banco para retornar os objetos no JSON
     foreach($niveis as $nivel){
-        $array = array(
-            "idNivel" => $nivel->getIdNivel(),
-            "nome" => $nivel->getNome(),
-            "descricao" => $nivel->getdescricao(),
-            "permissoes" => $nivel->getPermissoes()
-        );
+        $jsonObject = $nivel->_toJson();
 
-        array_push($result["niveis"], $array);
+        array_push($result["niveis"], $jsonObject);
     }
 
 }else if($modo == "BUSCAR"){
     $nivel = $nivelController->buscarNivel();
 
-        //Cria uma array para converter em objeto e mostrar o JSON corretamente
-        $array = array(
-            "idNivel" => $nivel->getIdNivel(),
-            "nome" => $nivel->getNome(),
-            "descricao" => $nivel->getdescricao(),
-            "permissoes" => $nivel->getPermissoes()
-        );
+    //Retorna o objeto convertido para json
+    $result = $nivel->_toJson();
 
-        $result = (object) $array;
+}else if($modo == "EXCLUIR"){
+    $erro = $nivelController->excluirNivel();
+
+    if($erro){
+        $result["mensagem"] = MSG_EXCLUIR_NIVEL_ERRO;
+    }else{
+        $result["mensagem"] = MSG_EXCLUIR_NIVEL_SUCESSO;
+    }
 
 }else{
     //Mensagem de erro caso use o modo errado
-    $result["mensagem"] = "Modo inválido.";
+    $result["mensagem"] = MSG_MODO_ERRO;
 }
 
 //Converter para o JSON a variavel result q é gerada pelas ações

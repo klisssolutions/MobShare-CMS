@@ -210,47 +210,94 @@ if(!isset($incluso)){
     define("IMPORT_SITE_INDEX", PASTA_RAIZ . PASTA_PROJETO . "/SITE/index.php");
 
     /*---------------------------------------------------------------*/
+    /*--------------------------- ERROS -----------------------------*/
+    /*---------------------------------------------------------------*/
+    
+    //Erro de modo API
+    define("MSG_MODO_ERRO", "Modo inválido.");
+
+    //Mensagens de login
+    define("MSG_LOGIN_ERRO", "Login ou senha inválidos.");
+
+    //Mensagens de nível
+    define("MSG_INSERIR_NIVEL_ERRO", "Não foi possível inserir o nível.");
+    define("MSG_INSERIR_NIVEL_SUCESSO", "Nível inserido.");
+    define("MSG_ATUALIZAR_NIVEL_ERRO", "Não foi possível atualizar o nível.");
+    define("MSG_ATUALIZAR_NIVEL_SUCESSO", "Nível atualizado.");
+    define("MSG_EXCLUIR_NIVEL_ERRO", "Não foi possível excluir o nível.");
+    define("MSG_EXCLUIR_NIVEL_SUCESSO", "Nível excluído.");
+
+    //Mensagens de funcionários
+    define("MSG_INSERIR_FUNCIONARIO_ERRO", "Não foi possível inserir o funcionário.");
+    define("MSG_INSERIR_FUNCIONARIO_SUCESSO", "Funcionário inserido.");
+    define("MSG_ATUALIZAR_FUNCIONARIO_ERRO", "Não foi possível atualizar o funcionário.");
+    define("MSG_ATUALIZAR_FUNCIONARIO_SUCESSO", "Funcionário atualizado.");
+    define("MSG_EXCLUIR_FUNCIONARIO_ERRO", "Não foi possível excluir o funcionário.");
+    define("MSG_EXCLUIR_FUNCIONARIO_SUCESSO", "Funcionário excluído.");
+
+    //Mensagens de parceiros
+    define("MSG_INSERIR_PARCEIRO_ERRO", "Não foi possível inserir o parceiro.");
+    define("MSG_INSERIR_PARCEIRO_SUCESSO", "Parceiro inserido.");
+    define("MSG_ATUALIZAR_PARCEIRO_ERRO", "Não foi possível atualizar o parceiro.");
+    define("MSG_ATUALIZAR_PARCEIRO_SUCESSO", "Parceiro atualizado.");
+    define("MSG_EXCLUIR_PARCEIRO_ERRO", "Não foi possível excluir o parceiro.");
+    define("MSG_EXCLUIR_PARCEIRO_SUCESSO", "Parceiro excluído.");
+
+    //Mensagens de funcionamento
+    define("MSG_INSERIR_FUNCIONAMENTO_ERRO", "Não foi possível inserir o funcionamento.");
+    define("MSG_INSERIR_FUNCIONAMENTO_SUCESSO", "Funcionamento inserido.");
+    define("MSG_ATUALIZAR_FUNCIONAMENTO_ERRO", "Não foi possível atualizar o funcionamento.");
+    define("MSG_ATUALIZAR_FUNCIONAMENTO_SUCESSO", "Funcionamento atualizado.");
+    define("MSG_EXCLUIR_FUNCIONAMENTO_ERRO", "Não foi possível excluir o funcionamento.");
+    define("MSG_EXCLUIR_FUNCIONAMENTO_SUCESSO", "Funcionamento excluído.");
+
+    //Mensagens de pendência
+    define("MSG_ATUALIZAR_PENDENCIA_ERRO", "Não foi possível atualizar a pendência.");
+    define("MSG_ATUALIZAR_PENDENCIA_SUCESSO", "Pendência atualizado.");
+    
+
+    /*---------------------------------------------------------------*/
     /*--------------------------- ALERTAS ---------------------------*/
     /*---------------------------------------------------------------*/
 
     //Alerta de Login
-    define("ALERT_LOGIN_ERRO", alert("Login ou senha inválidos."));
+    define("ALERT_LOGIN_ERRO", alert(MSG_LOGIN_ERRO));
 
     //Alertas de nível
-    define("ALERT_INSERIR_NIVEL_ERRO", alert("Não foi possível inserir o nível."));
-    define("ALERT_INSERIR_NIVEL_SUCESSO", alert("Nível inserido."));
-    define("ALERT_ATUALIZAR_NIVEL_ERRO", alert("Não foi possível atualizar o nível."));
-    define("ALERT_ATUALIZAR_NIVEL_SUCESSO", alert("Nível atualizado."));
-    define("ALERT_EXCLUIR_NIVEL_ERRO", alert("Não foi possível excluir o nível."));
-    define("ALERT_EXCLUIR_NIVEL_SUCESSO", alert("Nível excluído."));
+    define("ALERT_INSERIR_NIVEL_ERRO", alert(MSG_INSERIR_NIVEL_ERRO));
+    define("ALERT_INSERIR_NIVEL_SUCESSO", alert(MSG_INSERIR_NIVEL_SUCESSO));
+    define("ALERT_ATUALIZAR_NIVEL_ERRO", alert(MSG_ATUALIZAR_NIVEL_ERRO));
+    define("ALERT_ATUALIZAR_NIVEL_SUCESSO", alert(MSG_ATUALIZAR_NIVEL_SUCESSO));
+    define("ALERT_EXCLUIR_NIVEL_ERRO", alert(MSG_EXCLUIR_NIVEL_ERRO));
+    define("ALERT_EXCLUIR_NIVEL_SUCESSO", alert(MSG_EXCLUIR_NIVEL_SUCESSO));
 
     //Alertas de funcionários
-    define("ALERT_INSERIR_FUNCIONARIO_ERRO", alert("Não foi possível inserir o funcionário."));
-    define("ALERT_INSERIR_FUNCIONARIO_SUCESSO", alert("Funcionário inserido."));
-    define("ALERT_ATUALIZAR_FUNCIONARIO_ERRO", alert("Não foi possível atualizar o funcionário."));
-    define("ALERT_ATUALIZAR_FUNCIONARIO_SUCESSO", alert("Funcionário atualizado."));
-    define("ALERT_EXCLUIR_FUNCIONARIO_ERRO", alert("Não foi possível excluir o funcionário."));
-    define("ALERT_EXCLUIR_FUNCIONARIO_SUCESSO", alert("Funcionário excluído."));
+    define("ALERT_INSERIR_FUNCIONARIO_ERRO", alert(MSG_INSERIR_FUNCIONARIO_ERRO));
+    define("ALERT_INSERIR_FUNCIONARIO_SUCESSO", alert(MSG_INSERIR_FUNCIONARIO_SUCESSO));
+    define("ALERT_ATUALIZAR_FUNCIONARIO_ERRO", alert(MSG_ATUALIZAR_FUNCIONARIO_ERRO));
+    define("ALERT_ATUALIZAR_FUNCIONARIO_SUCESSO", alert(MSG_ATUALIZAR_FUNCIONARIO_SUCESSO));
+    define("ALERT_EXCLUIR_FUNCIONARIO_ERRO", alert(MSG_EXCLUIR_FUNCIONARIO_ERRO));
+    define("ALERT_EXCLUIR_FUNCIONARIO_SUCESSO", alert(MSG_EXCLUIR_FUNCIONARIO_SUCESSO));
 
     //Alertas de parceiros
-    define("ALERT_INSERIR_PARCEIRO_ERRO", alert("Não foi possível inserir o parceiro."));
-    define("ALERT_INSERIR_PARCEIRO_SUCESSO", alert("Parceiro inserido."));
-    define("ALERT_ATUALIZAR_PARCEIRO_ERRO", alert("Não foi possível atualizar o parceiro."));
-    define("ALERT_ATUALIZAR_PARCEIRO_SUCESSO", alert("Parceiro atualizado."));
-    define("ALERT_EXCLUIR_PARCEIRO_ERRO", alert("Não foi possível excluir o parceiro."));
-    define("ALERT_EXCLUIR_PARCEIRO_SUCESSO", alert("Parceiro excluído."));
+    define("ALERT_INSERIR_PARCEIRO_ERRO", alert(MSG_INSERIR_PARCEIRO_ERRO));
+    define("ALERT_INSERIR_PARCEIRO_SUCESSO", alert(MSG_INSERIR_PARCEIRO_SUCESSO));
+    define("ALERT_ATUALIZAR_PARCEIRO_ERRO", alert(MSG_ATUALIZAR_PARCEIRO_ERRO));
+    define("ALERT_ATUALIZAR_PARCEIRO_SUCESSO", alert(MSG_ATUALIZAR_PARCEIRO_SUCESSO));
+    define("ALERT_EXCLUIR_PARCEIRO_ERRO", alert(MSG_EXCLUIR_PARCEIRO_ERRO));
+    define("ALERT_EXCLUIR_PARCEIRO_SUCESSO", alert(MSG_EXCLUIR_PARCEIRO_SUCESSO));
 
     //Alertas de funcionamento
-    define("ALERT_INSERIR_FUNCIONAMENTO_ERRO", alert("Não foi possível inserir o funcionamento."));
-    define("ALERT_INSERIR_FUNCIONAMENTO_SUCESSO", alert("Funcionamento inserido."));
-    define("ALERT_ATUALIZAR_FUNCIONAMENTO_ERRO", alert("Não foi possível atualizar o funcionamento."));
-    define("ALERT_ATUALIZAR_FUNCIONAMENTO_SUCESSO", alert("Funcionamento atualizado."));
-    define("ALERT_EXCLUIR_FUNCIONAMENTO_ERRO", alert("Não foi possível excluir o funcionamento."));
-    define("ALERT_EXCLUIR_FUNCIONAMENTO_SUCESSO", alert("Funcionamento excluído."));
+    define("ALERT_INSERIR_FUNCIONAMENTO_ERRO", alert(MSG_INSERIR_FUNCIONAMENTO_ERRO));
+    define("ALERT_INSERIR_FUNCIONAMENTO_SUCESSO", alert(MSG_INSERIR_FUNCIONAMENTO_SUCESSO));
+    define("ALERT_ATUALIZAR_FUNCIONAMENTO_ERRO", alert(MSG_ATUALIZAR_FUNCIONAMENTO_ERRO));
+    define("ALERT_ATUALIZAR_FUNCIONAMENTO_SUCESSO", alert(MSG_ATUALIZAR_FUNCIONAMENTO_SUCESSO));
+    define("ALERT_EXCLUIR_FUNCIONAMENTO_ERRO", alert(MSG_EXCLUIR_FUNCIONAMENTO_ERRO));
+    define("ALERT_EXCLUIR_FUNCIONAMENTO_SUCESSO", alert(MSG_EXCLUIR_FUNCIONAMENTO_SUCESSO));
 
     //Alertas de pendência
-    define("ALERT_ATUALIZAR_PENDENCIA_ERRO", alert("Não foi possível atualizar a pendência."));
-    define("ALERT_ATUALIZAR_PENDENCIA_SUCESSO", alert("Pendência atualizado."));
+    define("ALERT_ATUALIZAR_PENDENCIA_ERRO", alert(MSG_ATUALIZAR_PENDENCIA_ERRO));
+    define("ALERT_ATUALIZAR_PENDENCIA_SUCESSO", alert(MSG_ATUALIZAR_PENDENCIA_SUCESSO));
 
 }
 ?>

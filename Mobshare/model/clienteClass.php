@@ -3,9 +3,9 @@
     Projeto: MobShare
     Autor: Igor
     Data Criação: 03/04/2019
-    Data Modificação:
-    Conteudo Modificação:
-    Autor da Modificação:
+    Data Modificação: 20/04/2019
+    Conteudo Modificação: Método de converter para arquivo JSON
+    Autor da Modificação: Igor
     Objetivo da classe: Classe de clientes
 */
 class Cliente{
@@ -24,7 +24,6 @@ class Cliente{
     }
     
     //------------Começo dos GETTERS e SETTERS------------
-
     public function getIdCliente(){
         return $this->idCliente;
     }
@@ -103,6 +102,22 @@ class Cliente{
 
     public function setDataCadastro($dataCadastro){
         $this->dataCadastro = $dataCadastro;
+    }
+
+    //------------Fim dos GETTERS e SETTERS------------
+
+    //Funções para converter o objeto em um formato compatível com JSON
+    public function getProperties(){
+        return get_object_vars($this);
+    }
+
+    public function _toJson(){
+        $properties = $this->getProperties();
+        $object = new StdClass();
+        foreach ($properties as $name => $value) {
+            $object->$name = $value;
+        }
+        return $object;
     }
 }
 ?>
