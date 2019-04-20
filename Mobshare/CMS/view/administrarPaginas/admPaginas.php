@@ -1,5 +1,3 @@
-<script type="text/javascript" src="../js/ajax.js"></script>
-
 <div class="titulo-func-lista">ADMINISTRAÇÃO DAS PAGINAS DO SITE</div>
 <a href="#" onclick="parceiro();">
     <div class="pgAdministracao">

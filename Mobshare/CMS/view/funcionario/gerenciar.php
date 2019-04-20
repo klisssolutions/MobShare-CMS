@@ -1,5 +1,5 @@
 
-<di class="gerenciar">
+<div class="gerenciar-funcionario">
     <a href="#">
     <div class="gerenciar-func" onclick="funcionario();">
         <div class="imagem">

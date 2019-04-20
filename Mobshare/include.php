@@ -4,9 +4,9 @@
     Autor: Igor
     Data Criação: 23/03/2019
     Data Modificação: 20/04/2019
-    Conteudo Modificação: Separação por parte para ficar melhor
+    Conteudo Modificação: Constantes de alert
     Autor da Modificação: Igor
-    Objetivo: Constantes de alert
+    Objetivo: Arquivo com constantes para usar em outras classes
 */
 
 //Verificaa se o arquivo já foi importado
@@ -86,11 +86,17 @@ if(!isset($incluso)){
     define("TABELA_FUNCIONAMENTO", "funcionamento");
     define("TABELA_CLIENTE", "Cliente");
     define("TABELA_VEICULO", "Veiculo");
-    define("TABELA_FOTO_VEICULO", "Foto_Veiculo");  
+    define("TABELA_FOTO_VEICULO", "Foto_Veiculo");
+    define("TABELA_TERMOS", "termo");  
+    define("TABELA_AVALIACAO_VEICULO", "avaliacao_veiculo");
+    define("TABELA_AVALIACAO", "avaliacao");
+    define("TABELA_MARCA", "marca");
+    define("TABELA_MODELO","modelo");
 
     //Constantes com o nome das views
     define("VIEW_VEICULO", "VPendencia_Veiculo");
     define("VIEW_USUARIO", "VPendencia_Cliente");
+    define("VIEW_AVALIACAO_VEICULO", "VAvaliacao_Veiculo");
 
     /*---------------------------------------------------------------*/
     /*--------------------------- NÚMEROS ---------------------------*/
@@ -176,6 +182,21 @@ if(!isset($incluso)){
     define("IMPORT_MODELO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/modeloDAO.php");
     define("IMPORT_MODELO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerModelo.php");     
 
+    //Imports de termos
+    define("IMPORT_TERMOS", PASTA_RAIZ . PASTA_PROJETO . "/model/termosClass.php");
+    define("IMPORT_TERMOS_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/termosDAO.php");
+    define("IMPORT_TERMOS_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerTermos.php");
+
+    //Imports da avaliação do veiculo
+    define("IMPORT_AVALIACAO_VEICULO", PASTA_RAIZ . PASTA_PROJETO . "/model/avaliacaoVeiculoClass.php");
+    define("IMPORT_AVALIACAO_VEICULO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/avaliacaoVeiculoDAO.php");
+    define("IMPORT_AVALIACAO_VEICULO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerAvaliacaoVeiculo.php"); 
+
+    //imports da avaliacao
+    define("IMPORT_AVALIACAO", PASTA_RAIZ . PASTA_PROJETO . "/model/avaliacaoClass.php");
+    define("IMPORT_AVALIACAO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/avaliacaoDAO.php");
+    define("IMPORT_AVALIACAO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerAvaliacao.php"); 
+    
     /*---------------------------------------------------------------*/
     /*--------------------------- PÁGINAS ---------------------------*/
     /*---------------------------------------------------------------*/
@@ -199,6 +220,15 @@ if(!isset($incluso)){
 
     //Import páginas de banner
     define("IMPORT_CADASTRO_BANNER", PASTA_RAIZ . PASTA_PROJETO . "/view/banner/banner.php");
+
+    //Import da página de marcas
+    define("IMPORT_CADASTRO_MARCAS", PASTA_RAIZ . PASTA_PROJETO . "/CMS/view/marcasemodelos/marcas.php");
+
+    //Import da página de modelos
+    define("IMPORT_CADASTRO_MODELOS", PASTA_RAIZ . PASTA_PROJETO . "/CMS/view/marcasemodelos/modelos.php");
+
+    //Import das paginas de termo
+    define("IMPORT_CADASTRO_TERMO", PASTA_RAIZ . PASTA_PROJETO . "/CMS/view/termos/termos.php");
 
     //Import páginas de pendencia
     define("IMPORT_CMS_CADASTRO_PENDENCIA_USUARIO", PASTA_RAIZ . PASTA_PROJETO . "/CMS/view/aprovacao/aprovacaoUsuario.php");
@@ -251,6 +281,30 @@ if(!isset($incluso)){
     define("MSG_EXCLUIR_FUNCIONAMENTO_ERRO", "Não foi possível excluir o funcionamento.");
     define("MSG_EXCLUIR_FUNCIONAMENTO_SUCESSO", "Funcionamento excluído.");
 
+    //Mensagens de termo
+    define("MSG_INSERIR_TERMO_ERRO", "Não foi possível inserir o termo.");
+    define("MSG_INSERIR_TERMO_SUCESSO", "Termo inserido.");
+    define("MSG_ATUALIZAR_TERMO_ERRO", "Não foi possível atualizar o termo.");
+    define("MSG_ATUALIZAR_TERMO_SUCESSO", "Termo atualizado.");
+    define("MSG_EXCLUIR_TERMO_ERRO", "Não foi possível excluir o termo.");
+    define("MSG_EXCLUIR_TERMO_SUCESSO", "Termo excluído.");
+
+    //Mensagens de marca
+    define("MSG_INSERIR_MARCA_ERRO", "Não foi possível inserir a marca.");
+    define("MSG_INSERIR_MARCA_SUCESSO", "Marca inserida.");
+    define("MSG_ATUALIZAR_MARCA_ERRO", "Não foi possível atualizar a marca.");
+    define("MSG_ATUALIZAR_MARCA_SUCESSO", "Marca atualizada.");
+    define("MSG_EXCLUIR_MARCA_ERRO", "Não foi possível excluir a marca.");
+    define("MSG_EXCLUIR_MARCA_SUCESSO", "Marca excluída.");
+
+    //Mensagens de modelo
+    define("MSG_INSERIR_MODELO_ERRO", "Não foi possível inserir o modelo.");
+    define("MSG_INSERIR_MODELO_SUCESSO", "Modelo inserido.");
+    define("MSG_ATUALIZAR_MODELO_ERRO", "Não foi possível atualizar o modelo.");
+    define("MSG_ATUALIZAR_MODELO_SUCESSO", "Modelo atualizado.");
+    define("MSG_EXCLUIR_MODELO_ERRO", "Não foi possível excluir o modelo.");
+    define("MSG_EXCLUIR_MODELO_SUCESSO", "Modelo excluído.");
+
     //Mensagens de pendência
     define("MSG_ATUALIZAR_PENDENCIA_ERRO", "Não foi possível atualizar a pendência.");
     define("MSG_ATUALIZAR_PENDENCIA_SUCESSO", "Pendência atualizado.");
@@ -287,17 +341,32 @@ if(!isset($incluso)){
     define("ALERT_EXCLUIR_PARCEIRO_ERRO", alert(MSG_EXCLUIR_PARCEIRO_ERRO));
     define("ALERT_EXCLUIR_PARCEIRO_SUCESSO", alert(MSG_EXCLUIR_PARCEIRO_SUCESSO));
 
-    //Alertas de funcionamento
-    define("ALERT_INSERIR_FUNCIONAMENTO_ERRO", alert(MSG_INSERIR_FUNCIONAMENTO_ERRO));
-    define("ALERT_INSERIR_FUNCIONAMENTO_SUCESSO", alert(MSG_INSERIR_FUNCIONAMENTO_SUCESSO));
-    define("ALERT_ATUALIZAR_FUNCIONAMENTO_ERRO", alert(MSG_ATUALIZAR_FUNCIONAMENTO_ERRO));
-    define("ALERT_ATUALIZAR_FUNCIONAMENTO_SUCESSO", alert(MSG_ATUALIZAR_FUNCIONAMENTO_SUCESSO));
-    define("ALERT_EXCLUIR_FUNCIONAMENTO_ERRO", alert(MSG_EXCLUIR_FUNCIONAMENTO_ERRO));
-    define("ALERT_EXCLUIR_FUNCIONAMENTO_SUCESSO", alert(MSG_EXCLUIR_FUNCIONAMENTO_SUCESSO));
+    //Alertas de termo
+    define("ALERT_INSERIR_TERMO_ERRO", alert(MSG_INSERIR_TERMO_ERRO));
+    define("ALERT_INSERIR_TERMO_SUCESSO", alert(MSG_INSERIR_TERMO_SUCESSO));
+    define("ALERT_ATUALIZAR_TERMO_ERRO", alert(MSG_ATUALIZAR_TERMO_ERRO));
+    define("ALERT_ATUALIZAR_TERMO_SUCESSO", alert(MSG_ATUALIZAR_TERMO_SUCESSO));
+    define("ALERT_EXCLUIR_TERMO_ERRO", alert(MSG_EXCLUIR_TERMO_ERRO));
+    define("ALERT_EXCLUIR_TERMO_SUCESSO", alert(MSG_EXCLUIR_TERMO_SUCESSO));
+
+    //Alertas de marca
+    define("ALERT_INSERIR_MARCA_ERRO", alert(MSG_INSERIR_MARCA_ERRO));
+    define("ALERT_INSERIR_MARCA_SUCESSO", alert(MSG_INSERIR_MARCA_SUCESSO));
+    define("ALERT_ATUALIZAR_MARCA_ERRO", alert(MSG_ATUALIZAR_MARCA_ERRO));
+    define("ALERT_ATUALIZAR_MARCA_SUCESSO", alert(MSG_ATUALIZAR_MARCA_SUCESSO));
+    define("ALERT_EXCLUIR_MARCA_ERRO", alert(MSG_EXCLUIR_MARCA_ERRO));
+    define("ALERT_EXCLUIR_MARCA_SUCESSO", alert(MSG_EXCLUIR_MARCA_SUCESSO));
+
+    //Alertas de modelo
+    define("ALERT_INSERIR_MODELO_ERRO", alert(MSG_INSERIR_MODELO_ERRO));
+    define("ALERT_INSERIR_MODELO_SUCESSO", alert(MSG_INSERIR_MODELO_SUCESSO));
+    define("ALERT_ATUALIZAR_MODELO_ERRO", alert(MSG_ATUALIZAR_MODELO_ERRO));
+    define("ALERT_ATUALIZAR_MODELO_SUCESSO", alert(MSG_ATUALIZAR_MODELO_SUCESSO));
+    define("ALERT_EXCLUIR_MODELO_ERRO", alert(MSG_EXCLUIR_MODELO_ERRO));
+    define("ALERT_EXCLUIR_MODELO_SUCESSO", alert(MSG_EXCLUIR_MODELO_SUCESSO));
 
     //Alertas de pendência
     define("ALERT_ATUALIZAR_PENDENCIA_ERRO", alert(MSG_ATUALIZAR_PENDENCIA_ERRO));
     define("ALERT_ATUALIZAR_PENDENCIA_SUCESSO", alert(MSG_ATUALIZAR_PENDENCIA_SUCESSO));
-
 }
 ?>

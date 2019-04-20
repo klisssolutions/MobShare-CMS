@@ -41,7 +41,7 @@ $veiculos = $controllerVeiculo->listarVeiculos();
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="view/css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="shortcut icon" href="images/anuncios.png" />
     <title>Home | Mob'Share</title>
@@ -133,6 +133,7 @@ $veiculos = $controllerVeiculo->listarVeiculos();
                 ?>
 
         </div>
+
         <?php
             $i = 0;
             while($i < count($banners)){
@@ -149,7 +150,7 @@ $veiculos = $controllerVeiculo->listarVeiculos();
             <div class="img-como-funciona">
             
             
-                    <img src="<?php echo('/Mobshare/arquivos/'.$banners[$i]->getImagem())?>" width="650" height="600"  alt="App da MobShare">
+                    <img src="<?php echo('/Mobshare/'.$banners[$i]->getImagem())?>" width="650" height="600"  alt="App da MobShare">
                     
             </div>
         </div> 
@@ -158,11 +159,7 @@ $veiculos = $controllerVeiculo->listarVeiculos();
         
                 $i++;
             }
-        
         ?>
-
-        
-
     </div>
     <!-- RODAPÉ-->
     <footer>

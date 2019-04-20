@@ -351,7 +351,7 @@ text-decoration:none;
 
 .caixa-veiculos{
     width: 1300px;
-    height: 90%;
+    height: 1000px;
     margin-left: auto;
     margin-right: auto;
     background-color: #fff;
@@ -410,8 +410,9 @@ text-decoration:none;
 /*********** caixa como funciona ***************/
 .caixa-como-funciona{
     width: 100%;
+    float: left;
     height: 700px;
-    background-color: #fff;
+    background-color: yellow;
 }
 
 .img-como-funciona{

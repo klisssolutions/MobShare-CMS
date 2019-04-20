@@ -1,0 +1,493 @@
+@charset "utf-8";
+
+body, h1, p{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+    background-color: #102840;
+}
+
+@font-face{
+    font-family: Mont;
+    src: url(../fonts/Montserrat-Regular.ttf);
+}
+
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+} 
+
+/********** CABEÇALHO ***********/
+header{
+    width: 100%;
+    height: 110px;
+    background-color: #102840;
+    position: fixed;
+    box-shadow: 1px 4px 6px 4px rgba(0, 0, 0, 0.2);
+    float: left;
+    
+}
+
+.logotipo{
+    width: 30%;
+    height: 100%;
+    float: left;
+}
+
+.img-logotipo{
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 100%;
+    z-index: 999;
+
+}
+
+.menu-header{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.menu-item{
+    width: 90%;
+    height: 100%;
+    margin-left: 100px;
+    margin-top: 45px;
+}
+
+.menu-item a{
+    padding: 10px 8px 10px 8px;
+    margin-right: 5px;
+    margin-top: 50px;
+    font-family: Mont;
+    color: #fff;
+    font-size: 18px;
+}
+
+.menu-item a:hover{
+    transition: 2s;
+    color: #5e85e1;
+    border-bottom: 1px solid #5e85e1;
+    cursor: pointer;
+}
+
+.box-login{
+    width: 20%;
+    height: 100%;
+    
+    float: left;
+}
+
+.botao-login{
+    width: 60px;
+    padding: 10px 10px 10px 10px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    font-family: Mont;
+    color: #fff;
+    font-size: 16px;
+    background-color: #002171;
+    align-content: center;
+    text-align: center;
+}
+
+.botao-login:hover{
+    background-color: #5e85e1;
+}
+
+.texto-cadastrar h1{
+    font-family: Mont;
+    color: #fff;
+    font-size: 12px;
+    align-content: center;
+    text-align: center; 
+    margin-top: 5px;
+}
+
+/******** CAIXA QUE FICA ABAIXO DO CABEÇALHO SEGURANDO AS INFORMAÇÕES *******/
+.content{
+    width: 100%;
+    min-height: 500px;
+    height: auto;
+    background-color: black;
+}
+
+/*********** RODAPÉ *******/
+footer{
+    width: 100%;
+    height: 200px;
+    float: left;
+    background-color:#102840;
+}
+
+.rodape{
+    width: 100%;
+    height: 100%;
+    
+    background-color: #102840;
+}
+
+.menu-rodape{
+    width: 33%;
+    height: 100%;
+    float: left;
+    
+}
+
+.titulo-menu-rodape{
+    height: 15%;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.titulo-menu-rodape h1{
+    width: 100px;
+    height: 75%;
+    margin-left: 120px;
+    font-family: Mont;
+    color: #ba3135;
+    margin-top: 0px;
+    font-size: 18px;
+    align-content: center;
+    text-align: left;
+}
+
+.menu-rodape-item{
+    height: 85%;
+    width: 100%;
+    
+}
+
+.menu-rodape-item a{
+    width: 170px;
+    height: 20px;
+    font-family: Mont;
+    color: #fff;
+    margin-left: 100px;
+    margin-top: 10px;
+    font-size: 16px;
+    align-content: center;
+    text-align: left;
+    padding: 5px 20px 0px 20px;
+    clear: both;
+    float: left;
+    cursor: pointer;
+}
+
+a:link 
+{ 
+text-decoration:none; 
+}
+
+.menu-rodape-item a:hover{
+    transition: 2s;
+    color: #5e85e1;
+}
+
+.logotipo-rodape{
+    width: 34%;
+    height: 100%;
+    float: left;
+}
+
+.img-logo-rodape{
+    width: 100%;
+    height: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+}
+
+.img-logo-rodape img{
+    margin-left: 100px;
+}
+
+.img-redes-sociais{
+    width: 50%;
+    height: 20%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.img-redes-sociais img{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.contato-rodape{
+    width: 33%;
+    height: 100%;
+    float: left;
+}
+
+.contato-menu-rodape{
+    height: 15%;
+    width: 100%;
+    margin-top: 20px;
+
+}
+
+.contato-menu-rodape h1{
+    width: 100px;
+    height: 75%;
+    margin-left: 90px;
+    font-family: Mont;
+    color: #ba3135;
+    margin-top: 0px;
+    font-size: 18px;
+    align-content: center;
+    text-align: center;
+}
+
+.contato-rodape-item{
+    height: 85%;
+    width: 100%;
+    
+}
+
+.contato-rodape-item a{
+    width: 280px;
+    height: 20px;
+    font-family: Mont;
+    color: #fff;
+    margin-bottom: 5px;
+    margin-left: 80px;
+    margin-top: 10px;
+    font-size: 16px;
+    align-content: center;
+    text-align: left;
+    padding: 5px 20px 0px 20px;
+    clear: both;
+    float: left;
+}
+
+.texto-direitos{
+    width: 100%;
+    padding-top: 80px;
+    height: 25px;
+    background-color: #102840;
+}
+
+.texto-direitos h1{
+    margin-top: 0;
+    font-family: Mont;
+    font-size: 12px;
+    color: #fff;
+    margin-left: -70px;
+    font-weight: normal;
+    text-align: center;
+    align-content: center;
+}
+
+/********** FORMATAÇÃO PADRONIZADA FINAL ************/
+.box-painel-usuario{
+    height: 1000px;
+    width: 100%;
+    background-color: #cecece;
+}
+
+.menu-lateral-usuario{
+    width: 20%;
+    height: 100%;
+    background-color: #102840;
+    float: left;
+}
+
+.conteudo-usuario{
+    width: 80%;
+    height: 100%;
+    background-color: #cecece;
+    float: left;
+}
+
+.img-usuario-menu{
+    height: 20%;
+    width: 100%;
+    margin-top: 145px;
+}
+
+.imagem-usuario{
+    width: 50%;
+    height: 90%;
+    background-image: url(../images/user.png);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 85px;
+}
+
+.imagem-usuario img{
+    border-radius: 85px;
+}
+
+.nome-usuario-menu{
+    height: 10%;
+    width: 100%;
+    margin-top: 05px;
+    float: left;
+    margin-bottom: 20px;
+}
+
+.nome-usuario-menu h1{
+    font-family: Mont;
+    color: #fff;
+    font-size: 26px;
+    text-align: center;
+}
+
+.nav-menu-usuario, .nav-menu-usuario-clicado, .nav-menu-usuario-button{
+    height: 70px;
+    width: 100%;
+    margin-top: 10px;
+    float: left;
+}
+
+.nav-menu-usuario-clicado{
+    background-color: #cecece;
+}
+
+.nav-menu-usuario:hover{
+    z-index: 20;
+    width: 110%; /*ajusta a largura do zoom*/
+    cursor: pointer;
+}
+
+.nav-menu-usuario h2, .nav-menu-usuario-clicado h2{
+    font-family: Mont;
+    text-align: left;
+    margin-top: 20px;
+    color: #aca9a9;
+    font-size: 22px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.nav-menu-usuario-button h3{
+    background-color: #5e85e1;
+    width: 100px;
+    font-family: Mont;
+    text-align: center;
+    margin-top: 40px;
+    padding: 5px 5px 5px 5px;
+    float: right;
+    margin-right: 20px;
+    font-family: Mont;
+}
+
+.nav-menu-usuario-button h3:hover{
+background-color: #aca9a9;
+color: black;
+cursor: pointer;
+}
+
+.nav-menu-usuario h2 img, .nav-menu-usuario-clicado h2 img{
+
+    margin-right: 10px;
+}
+
+/******************* PAGINA EDIÇÃO DO PEFIL DO USUÁRIO **************/
+.edit-usuario{
+    width: 100%;
+    height: 100%;
+    /*background-color: yellow;*/   
+    float: left;
+    margin-top: 110px;
+}
+
+.info-perfil{
+    width: 100%;
+    height: 420px;
+    margin-bottom: 5px; 
+    float: left;
+}
+.titulo-perfil{
+    margin-top: 10px;
+    width: 30%;
+    height: 10%;
+    margin-left: auto;
+    margin-right: auto; 
+    font-family: Mont;
+    font-size: 26px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;    
+}
+.foto-perfil{
+    width: 310px;
+    height: 310px;
+    background-color: violet;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dados-perfil{
+    width: 60%;
+    height: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.dados{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.dados h1{
+    font-family: Mont;
+    margin-left: 40px;
+    font-size: 20px;
+}
+
+.dados p{
+    font-family: Mont;
+    margin-left: 40px;
+    font-size: 20px;
+}
+
+.input-usuario{
+    width: 280px;
+    height: 30px;
+    text-decoration: none;
+    font-family: Mont;
+    margin-left: 40px;
+    font-size: 20px;
+}
+
+.btn-usuario, .btn-usuario-visu, .btn-usuario-canc{
+    height: 40px;
+    width: 100px;
+    border: none;
+    background-color: #102840;
+    margin-top: 20px;
+    color: #aca9a9;
+    font-weight: bold;
+    font-family: Mont;  
+    font-size: 18px;
+}
+
+.btn-usuario:hover , .btn-usuario-visu:hover , .btn-usuario-canc:hover {
+    background-color: #ba3135;
+    color: #fff;
+    cursor: pointer; 
+}
+.btn-usuario-visu{
+    /*background-color: green;*/
+    margin-left: 750px;
+}
+.btn-usuario-canc{
+    margin-left: 290px;
+    
+}
+
+/****************** PÁGINA: EDICÃO DO ENDEREÇO *********************/

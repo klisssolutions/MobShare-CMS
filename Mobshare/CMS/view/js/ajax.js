@@ -204,6 +204,56 @@ function relatorioAbrir() {
     });
 }
 
+function marcaModelo() {
+    $.ajax({
+        type: "POST",
+        url: "view/marcasemodelos/listarmarcasmodelos.php",
+        success: function (dados) {
+            $("#informacao").html(dados);
+        }
+    });
+}
+
+function listaMarcas() {
+    $.ajax({
+        type: "POST",
+        url: "view/marcasemodelos/listarmarcas.php",
+        success: function (dados) {
+            $("#informacao").html(dados);
+        }
+    });
+}
+
+function marcas() {
+    $.ajax({
+        type: "POST",
+        url: "view/marcasemodelos/marcas.php",
+        success: function (dados) {
+            $("#informacao").html(dados);
+        }
+    });
+}
+
+function listaModelos() {
+    $.ajax({
+        type: "POST",
+        url: "view/marcasemodelos/listarmodelos.php",
+        success: function (dados) {
+            $("#informacao").html(dados);
+        }
+    });
+}
+
+function modelos() {
+    $.ajax({
+        type: "POST",
+        url: "view/marcasemodelos/modelos.php",
+        success: function (dados) {
+            $("#informacao").html(dados);
+        }
+    });
+}
+
 
 function termo() {
     $.ajax({

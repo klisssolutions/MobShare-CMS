@@ -25,72 +25,71 @@ class modeloDAO{
         $this->conex = new conexaoMySQL();
     }
 
-    //Inserir um registro no banco de dados.
-    public function insert(Veiculo $veiculo){
-        $sql = INSERT . TABELA_VEICULO . " 
-        (nome, descricao, permissoes)
-        VALUES (
-        '".$nivel->getNome()."',
-        '".$nivel->getDescricao()."',
-        '".$nivel->getPermissoes()."')";
+//Inserir um registro no banco de dados.
+public function insert(Modelo $modelo){
+    $sql = INSERT . TABELA_MODELO . " 
+    (idMarca, nomeModelo)
+    VALUES (
+        '".$modelo->getIdMarca()."',
+        '".$modelo->getNomeModelo()."')";
 
-        //Abrindo conexão com o BD
-        $PDO_conex = $this->conex->connectDataBase();
+    //Abrindo conexão com o BD
+    $PDO_conex = $this->conex->connectDataBase();
 
-        //Executa no BD o script Insert e retorna verdadeiro/falso
-        if($PDO_conex->query($sql)){
-            $erro = false;
-        }else{
-            $erro = true;
-        }
-        //Fecha a conexão com o BD
-        $this->conex->closeDataBase();
-        return $erro;
+    //Executa no BD o script Insert e retorna verdadeiro/falso
+    if($PDO_conex->query($sql)){
+        $erro = false;
+    }else{
+        $erro = true;
     }
+    //Fecha a conexão com o BD
+    $this->conex->closeDataBase();
+    return $erro;
+}
 
-    //Deletar um registro no banco de dados.
-    public function delete($id){
-        $sql = DELETE . TABELA_NIVEL . " where idNivel =".$id;
+//Deletar um registro no banco de dados.
+public function delete($id){
+    $sql = DELETE . TABELA_MODELO . " WHERE idModelo = ".$id;
 
-        //Abrindo conexão com o BD
-        $PDO_conex = $this->conex->connectDataBase();
+    
+    //Abrindo conexão com o BD
+    $PDO_conex = $this->conex->connectDataBase();
 
-        //Executa no BD o script Insert e retorna verdadeiro/falso
-        if($PDO_conex->query($sql)){
-            $erro = false;
-        }else{
-            $erro = true;
-        }
-        //Fecha a conexão com o BD
-        $this->conex->closeDataBase();
-        return $erro;
+    //Executa no BD o script Insert e retorna verdadeiro/falso
+    if($PDO_conex->query($sql)){
+        $erro = false;
+    }else{
+        $erro = true;
     }
+    //Fecha a conexão com o BD
+    $this->conex->closeDataBase();
+    return $erro;
+}
 
-    //Atualiza um registro no banco de dados.
-    public function update(Nivel $nivel){
-        $sql = UPDATE . TABELA_NIVEL . " 
-        SET nome = '".$nivel->getNome()."',
-            descricao = '".$nivel->getDescricao()."',
-            permissoes = '".$nivel->getPermissoes()."'
-        WHERE idNivel = '".$nivel->getIdNivel()."';";
-
-        //Abrindo conexão com o BD
-        $PDO_conex = $this->conex->connectDataBase();
-
-        //Executa no BD o script Insert e retorna verdadeiro/falso
-        if($PDO_conex->query($sql)){
-            $erro = false;
-        }else{
-            $erro = true;
-        }
-        //Fecha a conexão com o BD
-        $this->conex->closeDataBase();
-        return $erro;
+//Atualiza um registro no banco de dados.
+public function update(Modelo $modelo){
+    $sql = UPDATE . TABELA_MODELO . "
+    SET idMarca = '".$modelo->getIdMarca()."', 
+    nomeModelo = '".$modelo->getNomeModelo()."'
+    WHERE idModelo = '".$modelo->getIdModelo()."';";
+    
+    //Abrindo conexão com o BD
+    $PDO_conex = $this->conex->connectDataBase();
+    
+    //Executa no BD o script Insert e retorna verdadeiro/falso
+    if($PDO_conex->query($sql)){
+        $erro = false;
+    }else{
+        $erro = true;
     }
+    //Fecha a conexão com o BD
+    $this->conex->closeDataBase();
+    return $erro;
+}
 
     //Lista todos os registros do banco de dados.
     public function selectAll(){
-        $sql = SELECT.' Modelo';
+        $sql = SELECT. TABELA_MODELO;
 
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
@@ -113,13 +112,17 @@ class modeloDAO{
         }
 
         $this->conex->closeDataBase();
+
         return($listModelos);
+
     }
 
 
     //Seleciona um registro pelo ID.
     public function selectById($id){
-        $sql = SELECT.' Modelo where idModelo = '.$id;
+        $sql = SELECT. TABELA_MODELO. " where idModelo=".$id;
+
+        
 
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
@@ -137,7 +140,10 @@ class modeloDAO{
         $modelo->setIdMarca($rsModelo["idMarca"]);
         $modelo->setNomeModelo($rsModelo["nomeModelo"]);
 
+       
+
         $this->conex->closeDataBase();
+
         return($modelo);
     }
 }

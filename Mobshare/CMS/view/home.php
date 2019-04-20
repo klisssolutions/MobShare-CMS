@@ -51,7 +51,7 @@
                         Gerenciamento Histórico de Locação
                     </div>
                 </a>
-                <a href="#" onclick="faleConosco();">
+                <a href="#" onclick="marcaModelo();">
                     <div class="link">
                         Gerenciamento de Marcas e Modelos
                     </div>
@@ -66,11 +66,7 @@
                         Aprovação de Cadastro
                     </div>
                 </a>
-                <a href="#" onclick="relatorio();">
-                    <div class="link">
-                        Relatório
-                    </div>
-                </a>
+                
                 <div class="botao">
                     <a href="index.php?destroy"><input class="btn-sair" type="button" value="Logout" id="logout"></a>
                 </div>

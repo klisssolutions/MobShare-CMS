@@ -7,6 +7,11 @@ body {
     padding: 0px;
     margin: 0px;
     background-color: #102840;
+    font-family: Mont;
+}
+
+b{
+    font-family: Mont;
 }
 
 .principal {
@@ -493,9 +498,14 @@ a{
     margin-bottom: 20px;
 }
 
+.gerenciar-funcionario{
+    margin-left: 120px;
+    margin-top: 80px;
+}
+
 .gerenciar-func{
     width: 200px;
-    height: 230px;
+    height: 250px;
     float: left;
     margin-left: 150px;
     margin-top: 150px;
@@ -625,4 +635,141 @@ a{
 .imagem-adm img{
     margin-top: -15px;
     margin-left: 8px;
+}
+
+/* PAG: TERMOS */
+
+.caixa-listagem{
+    height: auto;
+    width: 50%;
+    margin-left: 250px;
+}
+
+.listaDadosTermo{
+    width: 550px;
+    height: 75px;
+    margin-top: 15px;
+    margin-left: 300px;
+    background-color: yellows;
+}
+.listar-dados-termos{
+    width: 550px;
+    height: 75px;
+    margin-top: 24px;
+    background-color: #cccccc;
+    float: left;
+}
+
+.botoes-termos-novo{
+    width: 110px;
+    height: 50px;
+    background-color: #102840;
+    float: left;
+    margin-left: 430px;
+    margin-top: 20px;
+}
+
+.botoes-termos-voltar{
+    width: 110px;
+    height: 50px;
+    background-color: #102840;
+    float: left;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.btn-termo{
+    height: 50px;
+    width: 100%;
+    border: none;
+    font-family: Mont;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.btn-termo:hover{
+    background-color: #8ab1d8;
+    color: #102840;
+    cursor: pointer;
+}
+
+.img-termo{
+    width: 20%;
+    height: 100%;
+    float: left;
+}
+
+.img-termo img{
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.info-termo{
+    width: 100%;
+    font-family: Mont;
+    margin-left: 100px;
+    margin-top: -85px;
+}
+
+.info-termo h1{
+    font-size: 26px;
+}
+
+.info-termo p{
+    font-size: 16px;
+    margin-top: -10px;
+    
+}
+
+.opcoes-termo{
+    margin-left: 430px;
+    width: 100%;
+    margin-top: -55px;
+}
+
+.caixa-cad-termo{
+    margin-top: 150px;
+    margin-left: 360px;
+}
+.titulo-termos-cad{
+    width: 500px;
+    height: 20px;
+    font-family: Mont;
+    font-weight: bold;
+    text-align: center;
+    font-size: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.titulo-termo-cad{
+    font-family: Mont;
+    font-size: 20px;
+}
+
+.input-termo{
+    height: 25px;
+    width: 200px;
+    font-family: Mont;
+    font-size: 14px;
+    border: none;
+    margin-left: 10px;
+    border-radius: 15px;
+    margin-top: 10px;
+    background-color: #cfd9e4;
+}
+
+.input-status{
+    height: 30px;
+    width: 200px;
+    font-family: Mont;
+    border-radius: 15px;
+    font-size: 14px;
+    border: none;
+    margin-top: 10px;
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+    background-color: #cfd9e4;
 }

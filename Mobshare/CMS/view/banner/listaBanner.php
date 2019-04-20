@@ -7,18 +7,15 @@
 
     $controllerBanner = new controllerBanner();
 
-  $banners[] = new Banner();
+    $banners[] = new Banner();
 
-  $banners = $controllerBanner->listarBanners();
-    
-
+    $banners = $controllerBanner->listarBanners();
 ?>
 
 <div class="titulo-func-lista">GERENCIAMENTO DE NIVEIS</div>
 
 <div class="botoes-func">
 
-    <!-- <input type="button" value="Novo" class="btn-fun" onclick="cadastrarNivel(0);"> -->
     <input type="button" value="Novo" class="btn-fun" onclick="cadastroBanner();">
     <input type="button" value="Voltar" class="btn-fun" onclick="gerenciarFuncionario();">
 

@@ -18,6 +18,9 @@ $id = null;
 require_once($_SESSION["importInclude"]); 
 
 if(isset($_GET["controller"])){
+
+    
+    
     //Sempre serão enviadas pela view
     $controller = strtoupper($_GET["controller"]);
     $modo = strtoupper($_GET["modo"]);
@@ -61,6 +64,10 @@ if(isset($_GET["controller"])){
                     break;
             }
             break;
+
+            //FIM NIVEIS
+
+
 
         case "FUNCIONARIOS":
 
@@ -106,25 +113,264 @@ if(isset($_GET["controller"])){
                         echo("<script>alert('Login ou senha inválidos.');</script>");
                     }
 
-                    require_once(IMPORT_SITE_INDEX);
+                    require_once(IMPORT_INDEX);
                     break;
 
             }
             break;
 
-        case "CLIENTES":
+            //FIM FUNCIONARIO
+
+            case "PARCEIROS":
+
+            require_once(IMPORT_PARCEIRO_CONTROLLER);
+
+            $controllerParceiro = new controllerParceiro();
+
+            switch ($modo){
+                case "INSERIR":
+                    //Chamando o método de inserir um novo funcionario
+                    $controllerParceiro->inserirParceiro();
+
+                    //Encaminha para a pagina de funcionario
+                    echo("<script>parceiro();</script>");
+                break;
+
+                case "EXCLUIR":
+                    //Chama o método para excluir o funcionario
+                    $controllerParceiro->excluirParceiro();
+
+                    //Encaminha para a pagina de funcionario
+                    echo("<script>parceiro();</script>");
+                break;
+
+                case "BUSCAR":
+                    $parceiro = $controllerParceiro->buscarParceiro();
+
+                    require_once(IMPORT_CADASTRO_PARCEIRO);
+
+                break;
+
+                case "ATUALIZAR":
+                    $controllerParceiro->atualizarParceiro();
+
+                    echo("<script>parceiro();</script>");
+                break;
+            }
+
+            break;
+
+
+            //FIM PARCEIROS
+
+            case "CLIENTES":
             //Import da controller de cliente
             require_once(IMPORT_CLIENTE_CONTROLLER);
 
             //Instancia da controller de cliente
-            $controllerCliente = new controllerCliente();
-            case "LOGAR":
-                $idCliente = $controllerCliente->logar();
+                $controllerCliente = new controllerCliente();
+                switch ($modo){
+                    
+                    case "LOGAR":
+                    $idCliente = $controllerCliente->logar();
 
-                require_once(IMPORT_SITE_INDEX);
-                break;
+                    require_once(IMPORT_INDEX);
+                    break;
+                }
             break;
+            
+
+        case "FUNCIONAMENTO":
+
+            require_once(IMPORT_FUNCIONAMENTO_CONTROLLER);
+
+            $controllerFuncionamento = new controllerFuncionamento();
+
+            switch ($modo){
+                case "INSERIR":
+                    //Chamando o método de inserir um novo funcionario
+                    $controllerFuncionamento->inserirFuncionamento();
+
+                    //Encaminha para a pagina de funcionario
+                    echo("<script>comoFunciona();</script>");
+                break;
+
+                case "EXCLUIR":
+                    //Chama o método para excluir o funcionario
+                    $controllerFuncionamento->excluirFuncionamento();
+
+                    //Encaminha para a pagina de funcionario
+                    echo("<script>comoFunciona();</script>");
+                break;
+
+                case "BUSCAR":
+                    $funcionamento = $controllerFuncionamento->buscarFuncionamento();
+
+                    require_once(IMPORT_CADASTRO_FUNCIONAMENTO);
+
+                break;
+
+                case "ATUALIZAR":
+                    $controllerFuncionamento->atualizarFuncionamento();
+
+                    echo("<script>comoFunciona();</script>");
+                break;
+            }       
+        break;
+
+        case "TERMOS":
+
+        //Import da controller de TERMOS
+        require_once(IMPORT_TERMOS_CONTROLLER);
+                
+        //Instancia da controller de TERMOS
+        $controllerTermos = new controllerTermos();
+
+        switch($modo){
+            case "INSERIR":
+                //Chamando o método de inserir um novo TERMO
+                $controllerTermos->inserirTermos();
+
+                //Encaminha para a pagina de TERMOS
+                echo("<script>termos();</script>");
+                break;
+
+            case "EXCLUIR":
+                $controllerTermos->excluirTermos();
+
+                //Encaminha para a pagina de TERMOS
+                echo("<script>termos();</script>");
+                break;
+
+            case "BUSCAR":
+                $termo = $controllerTermos->buscarTermo();
+
+                require_once(IMPORT_CADASTRO_TERMO);
+                break;
+
+            case "ATUALIZAR":
+                $controllerTermos->atualizarTermos();
+
+                echo("<script>termos();</script>");
+                break;
+        }
+        break;
+
+/*        case "MARCAS":
+
+        //Import da controller de TERMOS
+        require_once(IMPORT_MARCAS_CONTROLLER);
+                
+        //Instancia da controller de TERMOS
+        $controllerMarca = new controllerMarca();
+
+        switch($modo){
+            case "INSERIR":
+                //Chamando o método de inserir um novo TERMO
+                $controllerMarca->inserirMarcas();
+
+                //Encaminha para a pagina de TERMOS
+                echo("<script>marcas();</script>");
+                break;
+
+            case "EXCLUIR":
+                $controllerMarca->excluirMarcas();
+
+                //Encaminha para a pagina de TERMOS
+                echo("<script>marcas();</script>");
+                break;
+
+            case "BUSCAR":
+                $marca = $controllerMarca->buscarMarcas();
+
+                require_once(IMPORT_CADASTRO_MARCAS);
+                break;
+
+            case "ATUALIZAR":
+                $controllerMarca->atualizarMarcas();
+
+                echo("<script>marcas();</script>");
+                break;
+        }
+        break;
+
+*/
+
+        // case "VEICULOS":
         
+        //  require_once(IMPORT_VEICULO_CONTROLLER);
+
+        //  $controllerVeiculo = new controllerVeiculo();
+
+                            
+        // break;
+
+     case "BANNER":
+     
+            
+         require_once(IMPORT_BANNER_CONTROLLER);
+
+         $controllerBanner= new controllerBanner();
+
+         
+         switch($modo){
+
+             case "INSERIR":
+
+                $controllerBanner->inserir();
+             
+                echo("<script>banner();</script>");
+             break;
+
+             case "EXCLUIR":
+
+             $controllerBanner->excluir();
+             
+             echo("<script>banner();</script>");
+             break;    
+             
+             case "BUSCAR":
+
+             $banner = new Banner();
+             $banner = $controllerBanner->buscarBanner();
+             
+             require_once(IMPORT_CADASTRO_BANNER);
+             break;   
+
+             case "ATUALIZAR":
+
+            
+                 $controllerBanner->atualizar();
+                 
+                 echo("<script>banner();</script>");
+             break;                  
+
+         }  
+         
+     break;   
+     
+     case "AVALIACAO_VEICULO":
+
+            require_once(IMPORT_AVALIACAO_VEICULO_CONTROLLER);
+
+            $controllerAvaliacaoVeiculo= new controllerAvaliacaoVeiculo();
+
+            
+            switch($modo){    
+                
+                case "BUSCAR":
+
+                $avaliacaoVeiculo = new AvalicaoVeiculo();
+                $avaliacaoVeiculo = $controllerAvaliacaoVeiculo->buscarAvaliacaoVeiculos();
+                
+                //require_once(IMPORT_CADASTRO_BANNER);
+                break;   
+                 
+
+            }  
+            
+    break;
+
     }
 }
 ?>
