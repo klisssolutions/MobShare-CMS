@@ -366,10 +366,83 @@ if(isset($_GET["controller"])){
                 //require_once(IMPORT_CADASTRO_BANNER);
                 break;   
                  
-
             }  
             
     break;
+            case "DUVIDAS":
+            
+            //Import da controller de DuvidasFrequentes
+            require_once(IMPORT_DUVIDAS_FREQUENTES_CONTROLLER);
+                    
+            //Instancia da controller de DuvidasFrequentes
+            $controllerDuvidasFrequentes = new controllerDuvidasFrequentes();  
+            
+            switch($modo){
+                case "INSERIR":
+                    //Chamando o método de inserir um novo Duvidas Frequentes
+                    $controllerDuvidasFrequentes->inserirDuvida();
+                    //Encaminha para a pagina de Duvidas Frequentes
+                    echo("<script>duvida();</script>");
+                    break;
+                     
+                case "EXCLUIR":
+                    //Chama o método para excluir o funcionario
+                    $controllerDuvidasFrequentes->excluirDuvida();
+                    //Encaminha para a pagina de funcionario
+                    
+                    echo("<script>duvida();</script>");
+                    break;
+                    
+                    
+                 case "ATUALIZAR":
+                    $controllerDuvidasFrequentes->atualizarLista();
+                    echo("<script>duvida();</script>");
+                    break;        
+            
+                case "BUSCAR":
+                    
+                    $duvidasFrequentes = $controllerDuvidasFrequentes->buscarDuvidas();
+                    require_once(IMPORT_CADASTRO_DUVIDAS);
+                    
+                    break;    
+            }
+           break; 
+        
+            case"FALE_CONOSCO":
+        
+            
+              //Import da controller de DuvidasFrequentes
+                require_once(IMPORT_FALE_CONOSCO_CONTROLLER);
+
+                //Instancia da controller de DuvidasFrequentes
+                $controllerFaleConosco = new controllerFaleConosco();  
+            
+            switch($modo){
+                case "INSERIR":
+                    //Chamando o método de inserir um novo Duvidas Frequentes
+                    $controllerFaleConosco->inserirFaleConosco();
+                    //Encaminha para a pagina de Duvidas Frequentes
+                    echo("<script>faleConosco();</script>");
+                   
+                    break;
+                     
+                case "EXCLUIR":
+                    //Chama o método para excluir o funcionario
+                    $controllerFaleConosco->excluirDuvida();
+                    //Encaminha para a pagina de funcionario
+                    
+                    echo("<script>faleConosco();</script>");
+                    break;
+                    
+                    
+                 case "ATUALIZAR":
+                    $controllerFaleConosco->atualizarLista();
+                    echo("<script>faleConosco();</script>");
+                    break; 
+      
+    }
+            
+    break;  
 
     }
 }

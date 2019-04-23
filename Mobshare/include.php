@@ -305,6 +305,20 @@ if(!isset($incluso)){
     define("MSG_EXCLUIR_MODELO_ERRO", "Não foi possível excluir o modelo.");
     define("MSG_EXCLUIR_MODELO_SUCESSO", "Modelo excluído.");
 
+    //Mensagens de duvidas
+    define("MSG_INSERIR_DUVIDA_ERRO", "Não foi possível inserir a duvida.");
+    define("MSG_INSERIR_DUVIDA_SUCESSO", "Duvida inserida.");
+    define("MSG_ATUALIZAR_DUVIDA_ERRO", "Não foi possível atualizar a duvida.");
+    define("MSG_ATUALIZAR_DUVIDA_SUCESSO", "Duvida atualizada.");
+    define("MSG_EXCLUIR_DUVIDA_ERRO", "Não foi possível excluir a duvida.");
+    define("MSG_EXCLUIR_DUVIDA_SUCESSO", "Duvida excluída.");
+
+    //Mensagens de fale
+    define("MSG_INSERIR_FALE_ERRO", "Não foi possível inserir o fale.");
+    define("MSG_INSERIR_FALE_SUCESSO", "Fale inserido.");
+    define("MSG_EXCLUIR_FALE_ERRO", "Não foi possível excluir o fale.");
+    define("MSG_EXCLUIR_FALE_SUCESSO", "Fale excluído.");
+
     //Mensagens de pendência
     define("MSG_ATUALIZAR_PENDENCIA_ERRO", "Não foi possível atualizar a pendência.");
     define("MSG_ATUALIZAR_PENDENCIA_SUCESSO", "Pendência atualizado.");
@@ -364,6 +378,20 @@ if(!isset($incluso)){
     define("ALERT_ATUALIZAR_MODELO_SUCESSO", alert(MSG_ATUALIZAR_MODELO_SUCESSO));
     define("ALERT_EXCLUIR_MODELO_ERRO", alert(MSG_EXCLUIR_MODELO_ERRO));
     define("ALERT_EXCLUIR_MODELO_SUCESSO", alert(MSG_EXCLUIR_MODELO_SUCESSO));
+
+    //Alertas de fale
+    define("ALERT_INSERIR_DUVIDA_ERRO", alert(MSG_INSERIR_DUVIDA_ERRO));
+    define("ALERT_INSERIR_DUVIDA_SUCESSO", alert(MSG_INSERIR_DUVIDA_SUCESSO));
+    define("ALERT_ATUALIZAR_DUVIDA_ERRO", alert(MSG_ATUALIZAR_DUVIDA_ERRO));
+    define("ALERT_ATUALIZAR_DUVIDA_SUCESSO", alert(MSG_ATUALIZAR_DUVIDA_SUCESSO));
+    define("ALERT_EXCLUIR_DUVIDA_ERRO", alert(MSG_EXCLUIR_DUVIDA_ERRO));
+    define("ALERT_EXCLUIR_DUVIDA_SUCESSO", alert(MSG_EXCLUIR_DUVIDA_SUCESSO));
+
+    //Alertas de duvida
+    define("ALERT_INSERIR_FALE_ERRO", alert(MSG_INSERIR_FALE_ERRO));
+    define("ALERT_INSERIR_FALE_SUCESSO", alert(MSG_INSERIR_FALE_SUCESSO));
+    define("ALERT_EXCLUIR_FALE_ERRO", alert(MSG_EXCLUIR_FALE_ERRO));
+    define("ALERT_EXCLUIR_FALE_SUCESSO", alert(MSG_EXCLUIR_FALE_SUCESSO));
 
     //Alertas de pendência
     define("ALERT_ATUALIZAR_PENDENCIA_ERRO", alert(MSG_ATUALIZAR_PENDENCIA_ERRO));

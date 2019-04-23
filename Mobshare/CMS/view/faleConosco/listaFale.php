@@ -1,10 +1,29 @@
-<div class="titulo">GERENCIAMENTO DE E-MAIL MARKETING</div>
+<?php
+    @session_start();
+    require_once($_SESSION["importInclude"]); 
 
-<div class="botoes">
+    require_once(IMPORT_FALE_CONOSCO);
+    require_once(IMPORT_FALE_CONOSCO_CONTROLLER);
 
-    <input type="button" value="Novo" class="botao" onclick="verFaleConosco();">
+    $controllerFaleConosco = new controllerFaleConosco();
+    $FaleConosco[] = new FaleConosco();
+    $FaleConosco = $controllerFaleConosco->listarFaleConosco();
+   
 
-</div>
+?>
+
+<div class="titulo">GERENCIAMENTO DE FALE CONOSCO</div>
+
+
+
+
+
+<?php
+    foreach($FaleConosco as $Fale_Conosco){
+?>
+
+
+
 
 <div class="listaDados">
 
@@ -15,67 +34,49 @@
     </div>
     <div class="infoDados">
     
-        Jack Sparrow
-    
+        <?php echo($Fale_Conosco->getNome());?>
     </div>
     <div class="dados">
     
         Email:
         
     </div>
+    
     <div class="infoDados">
     
-        perola.negra@email.com
+        <?php echo($Fale_Conosco->getEmail());?>
     
     </div>
+        <div class="dados">
     
-    <div class="opcao">
+        Assunto:
+        
+    </div>
+        <div class="infoDados">
     
-        <a href="#">Editar</a>
+        <?php echo($Fale_Conosco->getAssunto());?>
+    
+    </div>
+        <div class="dados">
+    
+        Mensagem:
+        
+    </div>
+        <div class="infoDados">
+    
+        <?php echo($Fale_Conosco->getMensagem());?>
     
     </div>
     <div class="opcao">
+        
     
-        <a href="#">Apagar</a>
+        <a href="#" onclick="selectRouter('Fale_Conosco','excluir',<?php
+        echo($Fale_Conosco->getIdFale_Conosco());?>)">Apagar</a>
 
     
     </div>
     
 </div>
-
-<div class="listaDados">
-
-    <div class="dados">
-    
-        Nome:
-        
-    </div>
-    <div class="infoDados">
-    
-        Edward Kenway
-    
-    </div>
-    <div class="dados">
-    
-        E-mail:
-        
-    </div>
-    <div class="infoDados">
-    
-        ordem_secreta@email.com
-    
-    </div>
-    
-    <div class="opcao">
-    
-        <a href="#">Editar</a>
-    
-    </div>
-    <div class="opcao">
-    
-        <a href="#">Apagar</a>
-
-    
-    </div>
-    
-</div>
+<?php
+    }
+?>

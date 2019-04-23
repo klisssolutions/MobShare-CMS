@@ -488,6 +488,104 @@ if(isset($_GET["controller"])){
                 break;
             }
         break;
+
+        case "DUVIDAS":
+            
+            //Import da controller de DuvidasFrequentes
+            require_once(IMPORT_DUVIDAS_FREQUENTES_CONTROLLER);
+                    
+            //Instancia da controller de DuvidasFrequentes
+            $controllerDuvidasFrequentes = new controllerDuvidasFrequentes();  
+            
+            switch($modo){
+                case "INSERIR":
+                    //Chamando o método de inserir um novo Duvidas Frequentes
+                    $erro = $controllerDuvidasFrequentes->inserirDuvida();
+
+                    if($erro){
+                        echo(ALERT_INSERIR_DUVIDA_ERRO);
+                    }else{
+                        echo(ALERT_INSERIR_DUVIDA_SUCESSO);
+                    }
+
+                    //Encaminha para a pagina de Duvidas Frequentes
+                    echo("<script>duvida();</script>");
+                    break;
+                     
+                case "EXCLUIR":
+                    //Chama o método para excluir o funcionario
+                    $erro = $controllerDuvidasFrequentes->excluirDuvida();
+
+                    if($erro){
+                        echo(ALERT_EXCLUIR_DUVIDA_ERRO);
+                    }else{
+                        echo(ALERT_EXCLUIR_DUVIDA_SUCESSO);
+                    }
+
+                    //Encaminha para a pagina de funcionario
+                    echo("<script>duvida();</script>");
+                    break;
+                       
+                case "ATUALIZAR":
+                    $erro = $controllerDuvidasFrequentes->atualizarLista();
+
+                    if($erro){
+                        echo(ALERT_ATUALIZAR_DUVIDA_ERRO);
+                    }else{
+                        echo(ALERT_ATUALIZAR_DUVIDA_SUCESSO);
+                    }
+
+                    echo("<script>duvida();</script>");
+                    break;        
+            
+                case "BUSCAR":
+                    $duvidasFrequentes = $controllerDuvidasFrequentes->buscarDuvidas();
+                    require_once(IMPORT_CADASTRO_DUVIDAS);
+                    
+                    break;    
+            }
+           break; 
+            
+            case"FALE_CONOSCO":
+              //Import da controller de DuvidasFrequentes
+                require_once(IMPORT_FALE_CONOSCO_CONTROLLER);
+
+                //Instancia da controller de DuvidasFrequentes
+                $controllerFaleConosco = new controllerFaleConosco();  
+            
+            switch($modo){
+                case "INSERIR":
+                    //Chamando o método de inserir um novo Duvidas Frequentes
+                    $erro = $controllerFaleConosco->inserirFaleConosco();
+
+                    if($erro){
+                        echo(ALERT_INSERIR_FALE_ERRO);
+                    }else{
+                        echo(ALERT_INSERIR_FALE_SUCESSO);
+                    }
+
+                    //Encaminha para a pagina de Duvidas Frequentes
+                    echo("<script>faleConosco();</script>");
+                    break;
+                     
+                case "EXCLUIR":
+                    //Chama o método para excluir o funcionario
+                    $erro = $controllerFaleConosco->excluirFaleConosco();
+
+                    if($erro){
+                        echo(ALERT_EXCLUIR_FALE_ERRO);
+                    }else{
+                        echo(ALERT_EXCLUIR_FALE_SUCESSO);
+                    }
+
+                    //Encaminha para a pagina de funcionario
+                    echo("<script>faleConosco();</script>");
+                    break;
+                    
+        }
+            
+    break; 
+
     }
 }
 ?>

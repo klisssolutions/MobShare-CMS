@@ -57,7 +57,7 @@
         </div>
     </div>
 </a>
-<a href="#" onclick="parceiro();">
+<a href="#" onclick="faleConosco();">
     <div class="pgAdministracao">
         <div class="imagem-adm">
         <img src="view/Imagens/chatting.png" width="110" heitgh="110">

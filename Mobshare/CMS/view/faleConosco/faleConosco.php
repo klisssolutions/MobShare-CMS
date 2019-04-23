@@ -8,7 +8,7 @@
 
             </td>
             <td class="input2">
-              Kaio
+              
             </td>
         </tr>
         <tr>
@@ -18,7 +18,7 @@
 
             </td>
             <td class="input2">
-              kaio.wesley074@gmail.com
+              
             </td>
         </tr>
         <tr>
@@ -28,18 +28,20 @@
 
             </td>
             <td class="input2">
-              Primeiro Commit
+              
             </td>
         </tr>
+        <tr>
             <td class="label2">
             
             Descrição:
 
             </td>
             <td class="input2">
-              Hello World
+             
             </td>
         </tr>
+
         <tr>
             <td class="label2">
               <input type="button" value="Voltar" class="botao2" onclick="faleConosco();"> 

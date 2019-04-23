@@ -25,16 +25,12 @@ $controllerMarca = new controllerMarca();
 $controllerModelo = new controllerModelo();
 $controllerBanner = new controllerBanner();
 
-
-
 $veiculos[] = new Veiculo();
 
 $banners[] = new Banner();
 
 $banners = $controllerBanner->listarBanners();
 $veiculos = $controllerVeiculo->listarVeiculos();
-
-
 
 ?>
 
@@ -94,11 +90,10 @@ $veiculos = $controllerVeiculo->listarVeiculos();
                     $modelo = new Modelo();
 
 
-                    $modelo = $controllerModelo->buscarModelo($veiculos[$i]->getIdModelo());
+                    $modelo = $controllerModelo->buscarModelos($veiculos[$i]->getIdModelo());
                     //$marca = $controllerMarca->buscarMarca();
                     $foto_veiculo = $controllerFoto_veiculo->listarFotoFrontal($veiculos[$i]->getIdVeiculo());
-                     
-                 
+                      
             ?>
 
             <div class="caixa-veiculos">
