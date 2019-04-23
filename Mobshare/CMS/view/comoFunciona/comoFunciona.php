@@ -18,40 +18,52 @@
 
   }
 ?>
-<div class="titulo">COMO FUNCIONA</div>
+<div class="titulo-func-lista">COMO FUNCIONA</div>
   <form id="form" method="post" enctype="multipart/form-data">
-    <table>
+    <table class="func-cad">
 
       <tr>
-              <td class="label2">
+              <td class="titulo-func-cad">
                   Titulo:
               </td>
-              <td class="input2">
-                <input type="text" size="25" name="txtTitulo" required value="<?php echo($titulo)?>">
+              <td class="txt-func">
+                <input type="text" size="25" class="input-func" name="txtTitulo" required value="<?php echo($titulo)?>">
               </td>
           </tr>
           <tr>
-              <td class="label2">
+              <td class="titulo-func-cad">
                   Foto:
               </td>
-              <td class="input2">
+              <td class="txt-func">
                 <input type="file" name="imgFoto" id="foto" accept="image/*" value="<?php echo($foto)?>">
               </td>
           </tr>
           <tr>
-              <td class="label2">
+              <td class="titulo-func-cad">
                   Descrição:
               </td>
-              <td class="input2">
-                <textarea name="txtDescricao" required><?php echo($descricao)?></textarea>
+              <td class="txt-func">
+                <textarea name="txtDescricao" class="input-func" required><?php echo($descricao)?></textarea>
               </td>
           </tr>
           <tr>
-              <td class="label2">
-                <input type="submit" value="Voltar" class="botao2" onclick="admPaginas();">
+              <td class="titulo-func-cad">
+                  Status:
               </td>
-              <td class="input2">
-                <input type="submit" value="Enviar" class="botao2" onclick="<?php echo($router); ?>">
+              <td class="resp-termo">
+                <select class="slt-func" name="sltAtivo">
+                    <option>Selecione um modo</option>
+                    <option value="1">Ativado</option>
+                    <option value="0">Desativado</option>
+                </select>
+              </td>
+          </tr>
+          <tr>
+              <td class="titulo-func-cad">
+                <input type="submit" value="Voltar" class="btn-fun" onclick="admPaginas();">
+              </td>
+              <td class="titulo-func-cad">
+                <input type="submit" value="Enviar" class="btn-fun" onclick="<?php echo($router); ?>">
               </td>
           </tr>
   </table>

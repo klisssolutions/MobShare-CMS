@@ -14,7 +14,8 @@ class Funcionamento{
     private $idFuncionamento;
     private $titulo;
     private $descricao;
-    private $foto;
+	private $foto;
+	private $ativo;
 
 	public function __construct(){
 	}
@@ -49,6 +50,14 @@ class Funcionamento{
 
 	public function setFoto($foto) {
 		$this->foto = $foto;
+	}
+
+	public function getAtivo() {
+		return $this->ativo;
+	}
+
+	public function setAtivo($ativo) {
+		$this->ativo = $ativo;
 	}
 	//------------Fim dos GETTERS e SETTERS------------
 

@@ -16,7 +16,8 @@ class Parceiro{
         private $descricao;
         private $site;
         private $logo;
-        private $email;
+		private $email;
+		private $ativo;
 
     public function __construct(){
 	}
@@ -68,6 +69,14 @@ class Parceiro{
 
 	public function setEmail($email) {
 		$this->email = $email;
+	}
+
+	public function getAtivo() {
+		return $this->ativo;
+	}
+
+	public function setAtivo($ativo) {
+		$this->ativo = $ativo;
 	}
 	//------------Fim dos GETTERS e SETTERS------------
 

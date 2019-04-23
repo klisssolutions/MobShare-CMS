@@ -57,16 +57,6 @@ function cadastrarNivel(id){
 function emailMarketing() {
     $.ajax({
         type: "POST",
-        url: "view/email/listaEmail.php",
-        success: function (dados) {
-            $("#informacao").html(dados);
-        }
-    });
-}
-
-function novoEmail() {
-    $.ajax({
-        type: "POST",
         url: "view/email/email.php",
         success: function (dados) {
             $("#informacao").html(dados);

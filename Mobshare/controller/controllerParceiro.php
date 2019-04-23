@@ -20,7 +20,6 @@ class controllerParceiro{
 
         //Import da classe parceiroDAO, para inserir no BD
         require_once(IMPORT_PARCEIRO_DAO);   
-        
     }
 
     public function inserirParceiro(){
@@ -34,6 +33,7 @@ class controllerParceiro{
             $site = $_POST["txtSite"];
             $descricao = $_POST["txtDescricao"];
             $logo = enviarImagem($_FILES['imgLogo']);
+            $ativo = $_POST["sltAtivo"];
             
             //Instancia da classe
             $parceiro = new Parceiro();
@@ -44,6 +44,7 @@ class controllerParceiro{
             $parceiro->setSite($site);
             $parceiro->setDescricao($descricao);
             $parceiro->setLogo($logo);
+            $parceiro->setAtivo($ativo);
 
             /* Chamada para o metodo de inserir no BD, passando como parâmetro o objeto
             contatoClass que tem todos os dados que serão inseridos no banco de dados */
@@ -73,6 +74,7 @@ class controllerParceiro{
             $site = $_POST["txtSite"];
             $logo = ($_FILES['imgLogo']["size"] ? enviarImagem($_FILES['imgLogo']) : null);
             $descricao = $_POST["txtDescricao"];
+            $ativo = $_POST["sltAtivo"];
 
            
             //Instancia da classe
@@ -85,6 +87,7 @@ class controllerParceiro{
             $parceiro->setSite($site);
             $parceiro->setDescricao($descricao);
             $parceiro->setLogo($logo);
+            $parceiro->setAtivo($ativo);
 
             /* Chamada para o metodo de inserir no BD, passando como parâmetro o objeto
             contatoClass que tem todos os dados que serão inseridos no banco de dados */

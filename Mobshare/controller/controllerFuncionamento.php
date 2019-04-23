@@ -31,6 +31,7 @@ class controllerFuncionamento{
             $titulo = $_POST["txtTitulo"];
             $descricao = $_POST["txtDescricao"];
             $foto = enviarImagem($_FILES['imgFoto']);
+            $ativo = $_POST["sltAtivo"];
 
             //Instancia da classe
             $funcionamento = new Funcionamento();
@@ -39,6 +40,7 @@ class controllerFuncionamento{
             $funcionamento->setTitulo($titulo);
             $funcionamento->setDescricao($descricao);
             $funcionamento->setFoto($foto);
+            $funcionamento->setAtivo($ativo);
 
             /* Chamada para o metodo de inserir no BD, passando como parâmetro o objeto
             contatoClass que tem todos os dados que serão inseridos no banco de dados */
@@ -65,6 +67,7 @@ class controllerFuncionamento{
             $titulo = $_POST["txtTitulo"];
             $foto = ($_FILES['imgFoto']["size"] ? enviarImagem($_FILES['imgFoto']) : null);
             $descricao = $_POST["txtDescricao"];
+            $ativo = $_POST["sltAtivo"];
 
            
             //Instancia da classe
@@ -75,6 +78,7 @@ class controllerFuncionamento{
             $funcionamento->setTitulo($titulo);
             $funcionamento->setDescricao($descricao);
             $funcionamento->setFoto($foto);
+            $funcionamento->setAtivo($ativo);
 
             /* Chamada para o metodo de inserir no BD, passando como parâmetro o objeto
             contatoClass que tem todos os dados que serão inseridos no banco de dados */

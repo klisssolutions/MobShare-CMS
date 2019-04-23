@@ -64,6 +64,13 @@ if($modo == "LISTA"){
 
         $result = (object) $array;
 
+}else if($modo == "COMPRA"){
+    $erro = $veiculoController->excluirVeiculo();
+    if($erro){
+        $result["mensagem"] = "Erro ao excluir veículo.";
+    }else{
+        $result["mensagem"] = "Veículo ".$id." excluído.";
+    }
 }else if($modo == "EXCLUIR"){
     $erro = $veiculoController->excluirVeiculo();
     if($erro){

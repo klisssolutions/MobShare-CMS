@@ -23,48 +23,60 @@
 
   }
 ?>
-<div class="titulo">SEJA UM PARCEIRO</div>
+<div class="titulo-func-lista">SEJA UM PARCEIRO</div>
   <form id="form" method="post" enctype="multipart/form-data">
-    <table>
+    <table class="func-cad">
 
       <tr>
-              <td class="label2">
+              <td class="titulo-func-cad">
                   Nome:
               </td>
-              <td class="input2">
-                <input type="text" size="25" name="txtNome" required value="<?php echo($nome)?>">
+              <td class="txt-func">
+                <input type="text" size="25" class="input-func" name="txtNome" required value="<?php echo($nome)?>">
               </td>
           </tr>
           <tr>
-              <td class="label2">
+              <td class="titulo-func-cad">
                   Site:
               </td>
-              <td class="input2">
-                <input type="text" size="25" name="txtSite" value="<?php echo($site)?>">
+              <td class="txt-func">
+                <input type="text" size="25" class="input-func" name="txtSite" value="<?php echo($site)?>">
               </td>
           </tr>
           <tr>
-              <td class="label2">
+              <td class="titulo-func-cad">
                   Email:
               </td>
-              <td class="input2">
-                <input type="email" size="25" name="txtEmail" required value="<?php echo($email)?>">
+              <td class="txt-func">
+                <input type="email" size="25" class="input-func" name="txtEmail" required value="<?php echo($email)?>">
               </td>
           </tr>
           <tr>
-              <td class="label2">
+              <td class="titulo-func-cad">
                   Logo:
               </td>
-              <td class="input2">
+              <td class="txt-func">
                 <input type="file" name="imgLogo" id="foto" accept="image/*" value="<?php echo($logo)?>">
               </td>
           </tr>
           <tr>
-              <td class="label2">
+              <td class="titulo-func-cad">
                   Descrição:
               </td>
-              <td class="input2">
-                <textarea name="txtDescricao" required><?php echo($descricao)?></textarea>
+              <td class="txt-func">
+                <textarea name="txtDescricao" maxlength="250" required><?php echo($descricao)?></textarea>
+              </td>
+          </tr>
+          <tr>
+              <td class="titulo-func-cad">
+                  Status:
+              </td>
+              <td class="resp-termo">
+                <select class="slt-func" name="sltAtivo">
+                    <option>Selecione um modo</option>
+                    <option value="1">Ativado</option>
+                    <option value="0">Desativado</option>
+                </select>
               </td>
           </tr>
           <tr>
