@@ -208,6 +208,21 @@ if(!isset($incluso)){
     define("IMPORT_DUVIDAS_FREQUENTES", PASTA_RAIZ . PASTA_PROJETO . "/model/duvidasFrequentesClass.php");
     define("IMPORT_DUVIDAS_FREQUENTES_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/duvidasFrequentesDAO.php");
     define("IMPORT_DUVIDAS_FREQUENTES_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO ."/controller/controllerDuvidasFrequentes.php");
+
+    //Imports de cancelamento
+    define("IMPORT_CANCELAMENTO", PASTA_RAIZ . PASTA_PROJETO . "/model/cancelamentoClass.php");
+    define("IMPORT_CANCELAMENTO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/cancelamentoDAO.php");
+    define("IMPORT_CANCELAMENTO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerCancelamento.php");  
+
+    //Imports de foto Vvisualizacao_cancelamento
+    define("IMPORT_VVISUALIZACAO_CANCELAMENTO", PASTA_RAIZ . PASTA_PROJETO . "/model/vvisualizacao_cancelamentoClass.php");
+    define("IMPORT_VVISUALIZACAO_CANCELAMENTO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/vvisualizacao_cancelamentoDAO.php");
+    //define("IMPORT_CANCELAMENTO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerCancelamento.php");      
+
+    //Imports de foto v_detalhes_locacao
+    define("IMPORT_V_DETALHES_LOCACAO", PASTA_RAIZ . PASTA_PROJETO . "/model/v_detalhes_locacaoClass.php");
+    define("IMPORT_V_DETALHES_LOCACAO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/v_detalhes_locacaoDAO.php");
+    define("IMPORT_V_DETALHES_LOCACAO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerV_detalhes_locacao.php"); 
     
     /*---------------------------------------------------------------*/
     /*--------------------------- PÁGINAS ---------------------------*/
@@ -341,6 +356,12 @@ if(!isset($incluso)){
     define("MSG_ATUALIZAR_PENDENCIA_ERRO", "Não foi possível atualizar a pendência.");
     define("MSG_ATUALIZAR_PENDENCIA_SUCESSO", "Pendência atualizado.");
     
+    //Mensagens de cancelamento
+    define("MSG_ACEITAR_ERRO", "Não foi possível aceitar o cancelamento.");
+    define("MSG_ACEITAR_SUCESSO", "Cancelamento aceito.");
+    define("MSG_RECUSAR_ERRO", "Não foi possível recusar o cancelamento.");
+    define("MSG_RECUSAR_SUCESSO", "Cancelamento recusado.");
+
 
     /*---------------------------------------------------------------*/
     /*--------------------------- ALERTAS ---------------------------*/
@@ -414,5 +435,11 @@ if(!isset($incluso)){
     //Alertas de pendência
     define("ALERT_ATUALIZAR_PENDENCIA_ERRO", alert(MSG_ATUALIZAR_PENDENCIA_ERRO));
     define("ALERT_ATUALIZAR_PENDENCIA_SUCESSO", alert(MSG_ATUALIZAR_PENDENCIA_SUCESSO));
+
+    //Alertas de cancelamento
+    define("ALERT_ACEITAR_ERRO", alert(MSG_ACEITAR_ERRO));
+    define("ALERT_ACEITAR_SUCESSO", alert(MSG_ACEITAR_SUCESSO));
+    define("ALERT_RECUSAR_ERRO", alert(MSG_RECUSAR_ERRO));
+    define("ALERT_RECUSAR_SUCESSO", alert(MSG_RECUSAR_SUCESSO));
 }
 ?>

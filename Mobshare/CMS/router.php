@@ -547,7 +547,7 @@ if(isset($_GET["controller"])){
            break; 
             
             case"FALE_CONOSCO":
-              //Import da controller de DuvidasFrequentes
+                //Import da controller de DuvidasFrequentes
                 require_once(IMPORT_FALE_CONOSCO_CONTROLLER);
 
                 //Instancia da controller de DuvidasFrequentes
@@ -581,11 +581,49 @@ if(isset($_GET["controller"])){
                     //Encaminha para a pagina de funcionario
                     echo("<script>faleConosco();</script>");
                     break;
-                    
-        }
-            
-    break; 
+                }
+                
+                
+                case "CANCELAMENTO":
+                    require_once(IMPORT_CANCELAMENTO_CONTROLLER);
+        
+                    $controllerCancelamento= new controllerCancelamento();
+        
+                    switch($modo){
+        
+                        case "ACEITAR":
+        
+                            $erro = $controllerCancelamento->aceitarCancelamento();
 
-    }
-}
+                            if($erro){
+                                echo(ALERT_ACEITAR_ERRO);
+                            }else{
+                                echo(ALERT_ACEITAR_SUCESSO);
+                            }
+                        
+                            echo("<script>cancelamento();</script>");
+                        break;  
+                        
+                        
+                        case "RECUSAR":
+        
+                            $erro = $controllerCancelamento->recusarCancelamento();
+
+                            if($erro){
+                                echo(ALERT_RECUSAR_ERRO);
+                            }else{
+                                echo(ALERT_RECUSAR_SUCESSO);
+                            }
+                        
+                            echo("<script>cancelamento();</script>");
+                        break;                  
+        
+                    }
+                 
+                 break;          
+        
+        
+            }
+        }
+        
 ?>

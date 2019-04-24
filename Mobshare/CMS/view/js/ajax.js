@@ -345,6 +345,26 @@ function cadastroBanner() {
     });
 }
 
+function aprovacaoCancelamento() {
+    $.ajax({
+        type: "POST",
+        url: "view/aprovacaoCancelamento/listCancelamento.php",
+        success: function (dados) {
+            $("#informacao").html(dados);
+        }
+    });
+}
+
+function cancelamento() {
+    $.ajax({
+        type: "POST",
+        url: "view/aprovacaoCancelamento/listCancelamento.php",
+        success: function (dados) {
+            $("#informacao").html(dados);
+        }
+    });
+}
+
 //Essa função pega o controller e o modo e passa o form pro router realizar as acoes de insert e update
 function router(controller, modo, id){
     

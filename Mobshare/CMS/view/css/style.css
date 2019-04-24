@@ -773,3 +773,34 @@ a{
     outline: 0;
     background-color: #cfd9e4;
 }
+
+.opcaoConfirm{
+    width: 40px;
+    height: 30px;
+    float: right;
+}
+
+.caixaDadosCancelamento{
+    width: 550px;
+    height: 75px;
+    height: auto;
+    overflow: hidden;    
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #eeeeee;
+}
+
+.dados-cancelamento{
+    width: 150px;
+    min-height: 20px;
+    height: auto;
+    overflow: auto;
+    text-align: left;
+    margin-top: 12px;
+    float: left;
+    clear: both;
+    margin-left: 10px;
+    font-family: Mont;
+    font-weight: bold;
+}

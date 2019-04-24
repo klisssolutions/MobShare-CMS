@@ -1,17 +1,40 @@
+<?php
+    @session_start();
+    require_once($_SESSION["importInclude"]); 
+
+    require_once(IMPORT_V_DETALHES_LOCACAO);
+    require_once(IMPORT_V_DETALHES_LOCACAO_CONTROLLER);
+
+    $controllerV_detalhes_locacao = new controllerV_detalhes_locacao();
+    $locacoes[] = new V_detalhes_locacao();
+    $locacoes = $controllerV_detalhes_locacao->listarLocacoes();
+
+
+    //var_dump($locacoes);
+?>
+
+
 <div class="titulo">GERENCIAMENTO DO HSTORICO DE LOCAÇÃO</div>
 
+<?php
+
+    foreach($locacoes as $locacao){
+
+    
+
+?>
 
 
 <div class="listaDados2" onclick="historicoAbrir();">
 
     <div class="dados">
     
-        Id:
+        ID Locação:
         
     </div>
     <div class="infoDados">
     
-        9
+        <?php echo($locacao->getIdLocacao()) ?>
     
     </div>
     <div class="dados">
@@ -21,7 +44,7 @@
     </div>
     <div class="infoDados">
     
-        Adam Sandler
+        <?php echo($locacao->getLocador()) ?>
     
     </div>
 
@@ -32,7 +55,7 @@
     </div>
     <div class="infoDados">
     
-        Kevin James
+    <?php echo($locacao->getLocatario()) ?>
     
     </div>
 
@@ -43,79 +66,18 @@
     </div>
     <div class="infoDados">
     
-        Audi R8
+        <?php echo($locacao->getVeiculo()) ?>
     
     </div>
     
-    <div class="opcao">
-    
-        <a href="#">Editar</a>
-    
-    </div>
-    <div class="opcao">
-    
-        <a href="#">Apagar</a>
-
-    
-    </div>
     
 </div>
 
-<div class="listaDados2" onclick="historicoAbrir();">
+<?php
 
-    <div class="dados">
-    
-        Id:
-        
-    </div>
-    <div class="infoDados">
-    
-        11
-    
-    </div>
-    <div class="dados">
-    
-        Locador:
-        
-    </div>
-    <div class="infoDados">
-    
-        Marlon Wayans
-    
-    </div>
-
-    <div class="dados">
-    
-        Locatario:
-        
-    </div>
-    <div class="infoDados">
-    
-        Damon Wayans
-    
-    </div>
-
-    <div class="dados">
-    
-        Veiculo:
-        
-    </div>
-    <div class="infoDados">
-    
-        Monza
-    
-    </div>
-    
-    <div class="opcao">
-    
-        <a href="#">Editar</a>
-    
-    </div>
-    <div class="opcao">
-    
-        <a href="#">Apagar</a>
+    }
 
     
-    </div>
-    
-</div>
+
+?>
+

@@ -66,7 +66,11 @@
                         Aprovação de Cadastro
                     </div>
                 </a>
-                
+                <a href="#" onclick="aprovacaoCancelamento();">
+                    <div class="link">
+                        Aprovação de Cancelamento
+                    </div>
+                </a>                               
                 <div class="botao">
                     <a href="index.php?destroy"><input class="btn-sair" type="button" value="Logout" id="logout"></a>
                 </div>
