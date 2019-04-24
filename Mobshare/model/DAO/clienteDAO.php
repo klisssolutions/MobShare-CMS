@@ -25,19 +25,38 @@ class clienteDAO{
     }
 
     //Inserir um registro no banco de dados.
-    public function insert(Cliente $cliente){
-        $sql = INSERT . TABELA_CLIENTE . " 
-        (nome, cpf, dtnasc, cnh, categoriaCnh, email, senha, fotoPerfil, dataCadastro)
-        VALUES (
-        '".$cliente->getNome()."',
-        '".$cliente->getCpf()."',
-        '".$cliente->getDtNasc()."',
-        '".$cliente->getCnh()."',
-        '".$cliente->getCategoriaCnh()."',
-        '".$cliente->getEmail()."',
-        '".$cliente->getSenha()."',
-        '".$cliente->getFotoPerfil()."',
-        '".$cliente->getDataCadastro()."')";
+    public function insert(Cliente $cliente, $tipoInsercao){
+
+
+        if($tipoInsercao == 1){
+            //tipoInsercao = 1 quando é pwlo site
+            $sql = INSERT . TABELA_CLIENTE . " 
+            (nome, cpf, dtnasc, cnh, categoriaCnh, email, senha, fotoPerfil, dataCadastro)
+            VALUES (
+            '".$cliente->getNome()."',
+            '".$cliente->getCpf()."',
+            '".$cliente->getDtNasc()."',
+            '".$cliente->getCnh()."',
+            '".$cliente->getCategoriaCnh()."',
+            '".$cliente->getEmail()."',
+            '".$cliente->getSenha()."',
+            '".$cliente->getFotoPerfil()."',
+            '".$cliente->getDataCadastro()."')";
+        }else{   
+            
+            $sql = " insert into Cliente
+            (nome, cpf, cnh, categoriaCnh, email, senha, dataCadastro)
+            VALUES (
+            '".$cliente->getNome()."',
+            '".$cliente->getCpf()."',
+            '".$cliente->getCnh()."',
+            '".$cliente->getCategoriaCnh()."',
+            '".$cliente->getEmail()."',
+            '".$cliente->getSenha()."',        
+            '".$cliente->getDataCadastro()."')";               
+        }
+
+
 
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
