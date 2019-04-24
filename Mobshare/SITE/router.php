@@ -408,22 +408,23 @@ if(isset($_GET["controller"])){
             }
            break; 
         
-            case"FALE_CONOSCO":
+            case "FALE_CONOSCO":
         
-            
-              //Import da controller de DuvidasFrequentes
-                require_once(IMPORT_FALE_CONOSCO_CONTROLLER);
+            //Import da controller de DuvidasFrequentes
+            require_once(IMPORT_FALE_CONOSCO_CONTROLLER);
 
-                //Instancia da controller de DuvidasFrequentes
-                $controllerFaleConosco = new controllerFaleConosco();  
+            //Instancia da controller de DuvidasFrequentes
+            $controllerFaleConosco = new controllerFaleConosco();  
             
             switch($modo){
                 case "INSERIR":
                     //Chamando o método de inserir um novo Duvidas Frequentes
-                    $controllerFaleConosco->inserirFaleConosco();
+                    $erro = $controllerFaleConosco->inserirFaleConosco();
                     //Encaminha para a pagina de Duvidas Frequentes
-                    echo("<script>faleConosco();</script>");
-                   
+                   if(!$erro){
+                       echo("<script>alert('dasdasd');</script>");
+                   }
+                    header("Location: view/faleconosco/faleconosco.php");
                     break;
                      
                 case "EXCLUIR":
@@ -438,8 +439,7 @@ if(isset($_GET["controller"])){
                  case "ATUALIZAR":
                     $controllerFaleConosco->atualizarLista();
                     echo("<script>faleConosco();</script>");
-                    break; 
-      
+                    break;   
     }
             
     break;  

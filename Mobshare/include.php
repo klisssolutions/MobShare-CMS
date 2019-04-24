@@ -3,8 +3,8 @@
     Projeto: MobShare
     Autor: Igor
     Data Criação: 23/03/2019
-    Data Modificação: 20/04/2019
-    Conteudo Modificação: Constantes de alert
+    Data Modificação: 24/04/2019
+    Conteudo Modificação: Junção com as constantes criadas pelos outros
     Autor da Modificação: Igor
     Objetivo: Arquivo com constantes para usar em outras classes
 */
@@ -92,6 +92,8 @@ if(!isset($incluso)){
     define("TABELA_AVALIACAO", "avaliacao");
     define("TABELA_MARCA", "marca");
     define("TABELA_MODELO","modelo");
+    define("TABELA_FALE_CONOSCO","fale_conosco");
+    define("TABELA_DUVIDAS_FREQUENTES","pergunta_frequente");
 
     //Constantes com o nome das views
     define("VIEW_VEICULO", "VPendencia_Veiculo");
@@ -195,7 +197,17 @@ if(!isset($incluso)){
     //imports da avaliacao
     define("IMPORT_AVALIACAO", PASTA_RAIZ . PASTA_PROJETO . "/model/avaliacaoClass.php");
     define("IMPORT_AVALIACAO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/avaliacaoDAO.php");
-    define("IMPORT_AVALIACAO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerAvaliacao.php"); 
+    define("IMPORT_AVALIACAO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerAvaliacao.php");
+
+    //Imports Fale Conosco 
+    define("IMPORT_FALE_CONOSCO", PASTA_RAIZ . PASTA_PROJETO . "/model/faleConoscoClass.php");
+    define("IMPORT_FALE_CONOSCO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/faleConoscoDAO.php");
+    define("IMPORT_FALE_CONOSCO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerFaleConosco.php");
+   
+    // Imports Dúvidas Frequentes 
+    define("IMPORT_DUVIDAS_FREQUENTES", PASTA_RAIZ . PASTA_PROJETO . "/model/duvidasFrequentesClass.php");
+    define("IMPORT_DUVIDAS_FREQUENTES_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/duvidasFrequentesDAO.php");
+    define("IMPORT_DUVIDAS_FREQUENTES_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO ."/controller/controllerDuvidasFrequentes.php");
     
     /*---------------------------------------------------------------*/
     /*--------------------------- PÁGINAS ---------------------------*/
@@ -238,6 +250,12 @@ if(!isset($incluso)){
     define("IMPORT_SITE_HOME", PASTA_RAIZ . PASTA_PROJETO . "/SITE/view/home.php");
     define("IMPORT_SITE_LOGIN", PASTA_RAIZ . PASTA_PROJETO . "/SITE/view/login.php");
     define("IMPORT_SITE_INDEX", PASTA_RAIZ . PASTA_PROJETO . "/SITE/index.php");
+
+    //Import páginas de Fale Conosco 
+    define("IMPORT_CADASTRO_FALE_CONOSCO", PASTA_RAIZ . PASTA_PROJETO . "/CMS/view/faleConosco/faleConosco.php");
+    
+    //Import páginas de Duvidas Frequentes
+    define("IMPORT_CADASTRO_DUVIDAS", PASTA_RAIZ . PASTA_PROJETO . "/CMS/view/duvidasFrequentes/duvidas.php");
 
     /*---------------------------------------------------------------*/
     /*--------------------------- ERROS -----------------------------*/
