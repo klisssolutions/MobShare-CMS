@@ -23,7 +23,7 @@ class controllerCliente{
     }
 
     public function logar(){
-        if($_SERVER["REQUEST_METHOD"] == "POST"){
+        
             $clienteDAO = new clienteDAO();
 
             $email = $_POST["txtemail"];
@@ -31,30 +31,51 @@ class controllerCliente{
 
             return($clienteDAO->logar($email, $senha));
         }
+    
 
-    }
-
-    public function inserirNivel(){
+    public function inserir($tipoInsercao){
         //Instancia do DAO
         $clienteDAO = new clienteDAO();
 
         //Verifica qual metodo esta sendo requisitado do formulario(POST ou GET)
         if($_SERVER["REQUEST_METHOD"] == "POST"){
-            $nome = $_POST["txtnome"];
-            $descricao = $_POST["txtdescricao"];
-            $permissoes = 0;
 
             //Instancia da classe
-            $nivel = new Nivel();
+            $cliente = new Cliente();            
 
-            //Guardando os dados do post no objeto da classe
-            $nivel->setNome($nome);
-            $nivel->setDescricao($descricao);
-            $nivel->setPermissoes($permissoes);
+            if($tipoInsercao == 1){
+
+            }else{
+                $nome = $_POST["txtnome"];
+                $cpf = $_POST["txtcpf"];            
+                $cnh = $_POST["txtcnh"];
+                $categoriacnh = $_POST["txtcategoriacnh"];
+                $email = $_POST["txtemail"];
+                $senha = $_POST["txtsenha"];
+                $datacadastro = $_POST["txtdatacadastro"];
+
+                //Guardando os dados do post no objeto da classe
+                $cliente->setNome($nome);
+                $cliente->setCpf($cpf);                
+                $cliente->setCnh($cnh);
+                $cliente->setCategoriaCnh($categoriacnh);
+                $cliente->setEmail($email);
+                $cliente->setSenha($senha);
+                $cliente->setDataCadastro($datacadastro);
+           
+                               
+            }
+
+            
+
+            $clienteDAO = new clienteDAO();
+
+
+            
 
             /* Chamada para o metodo de inserir no BD, passando como parâmetro o objeto
             contatoClass que tem todos os dados que serão inseridos no banco de dados */
-            return $nivelDAO->insert($nivel);
+            return $clienteDAO->insert($cliente, $tipoInsercao);
         }
     }
 
