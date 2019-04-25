@@ -29,6 +29,7 @@
     //         }
     //     }
     // }
-
-    require_once(IMPORT_SITE_HOME);
+    
+    header("location: view/home.php");
+    //require_once(IMPORT_SITE_HOME);
 ?>

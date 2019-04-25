@@ -420,3 +420,28 @@ function logar(){
         });
     }
 }
+
+function envio(){
+    
+    let form = document.getElementById("form");
+    let checkForm = form.reportValidity();
+    let data = new FormData(form);
+    if(checkForm){
+        
+        $('#form').submit(function(event) {
+            event.preventDefault();
+            $.ajax({
+                type: "POST",
+                processData: false,
+                contentType: false,
+                cache: false,
+                url: `envio.php`,
+                data: data,
+                success: function (data) {
+                    
+                    $("#informacao").html(data);
+                }
+            });
+        });
+    }
+}

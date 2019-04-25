@@ -41,7 +41,7 @@
                 </select>
               </td>
               <td class="txt-func">
-                <input type="submit" value="Enviar" class="botao2">
+                <input type="submit" value="Enviar" class="btn-fun" onclick="envio();">
               </td>
           </tr>
       </table>
