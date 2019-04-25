@@ -189,9 +189,10 @@ class clienteDAO{
     }
 
     public function logar($email, $senha){
-        $idCliente = null;
+        //$cliente = array();
+        $cliente = null;
 
-        $sql = "SELECT idCliente FROM " . TABELA_CLIENTE . " WHERE email='".$email."' and senha = '".$senha."'";
+        $sql = "SELECT idCliente, nome FROM " . TABELA_CLIENTE . " WHERE email='".$email."' and senha = '".$senha."'";
 
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
@@ -199,11 +200,15 @@ class clienteDAO{
         //executa o script de select no bd
         $select = $PDO_conex->query($sql);
 
-        if($rsId=$select->fetch(PDO::FETCH_ASSOC)){
-            $idCliente = $rsId['idCliente'];            
+        if($rsCliente=$select->fetch(PDO::FETCH_ASSOC)){
+            //criamos um array, pois um objeto oculparia muito espaço em memória, e só precisamos de dois atributos
+            $cliente = array(
+                "idCliente" => $rsCliente['idCliente'],
+                "nomeCliente" => $rsCliente['nome']
+            );           
         }
 
-        return($idCliente);
+        return($cliente);
     }
 }
 ?>
