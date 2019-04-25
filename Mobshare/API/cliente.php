@@ -28,13 +28,10 @@ $result = array(
 );
 
 if($modo == "LOGAR"){
-    $idCliente = $controllerCliente->logar();
 
-    //Retorna o objeto convertido para json
-    //$result = $cliente->_toJson();
-    $result = array(
-        "id" => $idCliente
-    );
+    //Já recebe um array com id e nome do cliente
+    $result = $controllerCliente->logar();
+
 }else if($modo == "INSERIR"){
     $status = $controllerCliente->inserir(2);
 
