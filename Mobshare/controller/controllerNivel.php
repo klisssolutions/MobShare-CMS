@@ -58,13 +58,13 @@ class controllerNivel{
             }
 
             //Checa se a permissoes de contato foi marcada
-            if(isset($_POST['chkcontato'])){
-                $permissoes += MODULO_CONTATO;
+            if(isset($_POST['chkcancelamento'])){
+                $permissoes += MODULO_CANCELAMENTO;
             }
 
             //Checa se a permissoes de relatorio foi marcada
-            if(isset($_POST['chkrelatorio'])){
-                $permissoes += MODULO_RELATORIO;
+            if(isset($_POST['chkmodelo'])){
+                $permissoes += MODULO_MODELO;
             }
 
             //Instancia da classe
@@ -128,13 +128,13 @@ class controllerNivel{
             }
 
             //Checa se a permissoes de contato foi marcada
-            if(isset($_POST['chkcontato'])){
-                $permissoes += MODULO_CONTATO;
+            if(isset($_POST['chkcancelamento'])){
+                $permissoes += MODULO_CANCELAMENTO;
             }
 
             //Checa se a permissoes de relatorio foi marcada
-            if(isset($_POST['chkrelatorio'])){
-                $permissoes += MODULO_RELATORIO;
+            if(isset($_POST['chkmodelo'])){
+                $permissoes += MODULO_MODELO;
             }
 
             //Instancia da classe

@@ -106,13 +106,13 @@ if(!isset($incluso)){
 
     //Permissao de modulos cada módulo. Cada módulo terá 1 bit, se estiver ligado
     //significa que ele terá acesso ao módulo
-    define("MODULO_FUNCIONARIO",0b1000000);
-    define("MODULO_MARKETING",  0b0100000);
-    define("MODULO_LOCACAO",    0b0010000);
-    define("MODULO_PAGINA",     0b0001000);
-    define("MODULO_APROVACAO",  0b0000100);
-    define("MODULO_CONTATO",    0b0000010);
-    define("MODULO_RELATORIO",  0b0000001);
+    define("MODULO_FUNCIONARIO",    0b1000000);
+    define("MODULO_MARKETING",      0b0100000);
+    define("MODULO_LOCACAO",        0b0010000);
+    define("MODULO_PAGINA",         0b0001000);
+    define("MODULO_APROVACAO",      0b0000100);
+    define("MODULO_CANCELAMENTO",   0b0000010);
+    define("MODULO_MODELO",         0b0000001);
 
     //Constantes de pendencia
     define("PENDENCIA_ABERTA",  0b1);

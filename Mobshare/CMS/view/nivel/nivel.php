@@ -12,8 +12,8 @@
   $chkLocacao = null;
   $chkPagina = null;
   $chkAprovacao = null;
-  $chkContato = null;
-  $chkRelatorio = null;
+  $chkCancelamento = null;
+  $chkModelo = null;
 
 
   //Função do onclick para saber qual ação chama o router
@@ -32,8 +32,8 @@
     $chkLocacao = (acessoModulo($permissoes, MODULO_LOCACAO) ? MARCADO : null);
     $chkPagina = (acessoModulo($permissoes, MODULO_PAGINA) ? MARCADO : null);
     $chkAprovacao = (acessoModulo($permissoes, MODULO_APROVACAO) ? MARCADO : null);
-    $chkContato = (acessoModulo($permissoes, MODULO_CONTATO) ? MARCADO : null);
-    $chkRelatorio = (acessoModulo($permissoes, MODULO_RELATORIO) ? MARCADO : null);
+    $chkCancelamento = (acessoModulo($permissoes, MODULO_CANCELAMENTO) ? MARCADO : null);
+    $chkModelo = (acessoModulo($permissoes, MODULO_MODELO) ? MARCADO : null);
   }
 ?>
 <div class="titulo-func-lista">GERENCIAMENTO DE NIVEIS</div>
@@ -82,15 +82,15 @@
         </div>
         <div class="linha">
             <div class="texto-niveis-check">
-              <input type="checkbox" name="chkcontato" value="1"<?php echo($chkContato); ?>>Fale Conosco<br>
+              <input type="checkbox" name="chkcancelamento" value="1"<?php echo($chkCancelamento); ?>>Cancelamento<br>
             </div>
             <div class="texto-niveis-check">
-              <input type="checkbox" name="chkrelatorio" value="1"<?php echo($chkRelatorio); ?>>Relatórios<br>
+              <input type="checkbox" name="chkmodelo" value="1"<?php echo($chkModelo); ?>>Marcas e modelos<br>
             </div>
         </div>
         <div class="linha">
             <div class="texto-niveis-check">
-            <input type="button" value="Voltar" class="btn-fun" onclick="gerenciarFuncionario();">
+            <input type="button" value="Voltar" class="btn-fun" onclick="nivel();">
             </div>
             <div class="texto-niveis-check">
               <input type="submit" value="Salvar" class="btn-fun" onclick="<?php echo($router);?>">

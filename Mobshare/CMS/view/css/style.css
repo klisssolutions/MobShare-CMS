@@ -15,7 +15,6 @@ b{
 }
 
 .principal {
- 
 
     width: 1400px;
     height: 840px;
@@ -32,20 +31,17 @@ input{
     outline: 0;
 }
 .principal-login{
- 
-
     width: 1920px;
     height: 937px;
     background-color: #102840;
     float: left;
-    
 }
+
 .logomarca {
     width: 400px;
     height: 200px;
     margin-top: 50px;
 }
-
 
 .box-login{
     width: 500px;
@@ -142,9 +138,8 @@ input{
 .icone{
     width: 32px;
     height: 32px;
-    float: left;
-    margin-top: 9px;
-
+    float: right;
+    margin-top: 17px;
 }
 
 .icone img{
@@ -167,7 +162,7 @@ input{
 .texto{
     width: 300px;
     height: 20px;
-    margin-left: 20px;
+    text-align: right;
 }
 
 .texto p{
@@ -181,7 +176,7 @@ input{
 .texto h1{
     font-family: Mont;
     font-size: 20px;
-    margin-left: 30px;
+    margin-right: 50px;
 }
 
 .rodape{

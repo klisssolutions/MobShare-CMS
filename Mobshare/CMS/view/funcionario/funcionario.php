@@ -70,7 +70,6 @@
                 <?php foreach($niveis as $nivel){ 
                         $selected = ($idNivel == $nivel->getIdNivel() ? "selected" : null);
                 ?>
-                  
                   <option value="<?php echo($nivel->getIdNivel()); ?>" <?php echo($selected); ?>><?php echo($nivel->getNome()); ?></option>
                 <?php } ?>
               </select>
@@ -79,7 +78,7 @@
         
         <tr>
             <td class="titulo-func-cad">
-            <input type="button" value="Voltar" class="btn-fun" onclick="gerenciarFuncionario();">
+            <input type="button" value="Voltar" class="btn-fun" onclick="funcionario();">
             </td>
             <td class="titulo-func-cad">
               <input type="submit" value="Enviar" class="btn-fun" onclick="<?php echo($router)?>">

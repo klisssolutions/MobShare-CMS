@@ -586,29 +586,21 @@ if(isset($_GET["controller"])){
                 
                 case "CANCELAMENTO":
                     require_once(IMPORT_CANCELAMENTO_CONTROLLER);
-        
                     $controllerCancelamento= new controllerCancelamento();
         
                     switch($modo){
-        
                         case "ACEITAR":
-        
                             $erro = $controllerCancelamento->aceitarCancelamento();
-
                             if($erro){
                                 echo(ALERT_ACEITAR_ERRO);
                             }else{
                                 echo(ALERT_ACEITAR_SUCESSO);
                             }
-                        
                             echo("<script>cancelamento();</script>");
                         break;  
                         
-                        
                         case "RECUSAR":
-        
                             $erro = $controllerCancelamento->recusarCancelamento();
-
                             if($erro){
                                 echo(ALERT_RECUSAR_ERRO);
                             }else{
