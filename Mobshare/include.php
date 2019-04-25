@@ -118,159 +118,169 @@ if(!isset($incluso)){
     define("PENDENCIA_ABERTA",  0b1);
     define("PENDENCIA_FECHADA", 0b0);
 
-    /*---------------------------------------------------------------*/
-    /*--------------------------- CLASSES ---------------------------*/
-    /*---------------------------------------------------------------*/
+    /*--------------------------------------------------------------*/
+    /*--------------------------- PASTAS ---------------------------*/
+    /*--------------------------------------------------------------*/
 
     //Constantes com endereço da pasta para importar
     define("PASTA_RAIZ" , $_SERVER["DOCUMENT_ROOT"]);
     define("PASTA_PROJETO", "/Mobshare");
+    define("PASTA_LINK", "http://localhost");
+    define("RAIZ_IMPORT", PASTA_RAIZ . PASTA_PROJETO);
+    define("RAIZ_LINK", PASTA_LINK . PASTA_PROJETO);
+
+    /*---------------------------------------------------------------*/
+    /*--------------------------- CLASSES ---------------------------*/
+    /*---------------------------------------------------------------*/
 
     //Import de conexão com o banco
-    define("IMPORT_CONEXAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/conexaoMySQL.php");
+    define("IMPORT_CONEXAO", RAIZ_IMPORT . "/model/DAO/conexaoMySQL.php");
 
     //Imports de nível
-    define("IMPORT_NIVEL", PASTA_RAIZ . PASTA_PROJETO . "/model/nivelClass.php");
-    define("IMPORT_NIVEL_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/nivelDAO.php");
-    define("IMPORT_NIVEL_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerNivel.php");
+    define("IMPORT_NIVEL", RAIZ_IMPORT . "/model/nivelClass.php");
+    define("IMPORT_NIVEL_DAO", RAIZ_IMPORT . "/model/DAO/nivelDAO.php");
+    define("IMPORT_NIVEL_CONTROLLER", RAIZ_IMPORT . "/controller/controllerNivel.php");
 
     //Imports de funcionario
-    define("IMPORT_FUNCIONARIO", PASTA_RAIZ . PASTA_PROJETO . "/model/funcionarioClass.php");
-    define("IMPORT_FUNCIONARIO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/funcionarioDAO.php");
-    define("IMPORT_FUNCIONARIO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerfuncionario.php");
+    define("IMPORT_FUNCIONARIO", RAIZ_IMPORT . "/model/funcionarioClass.php");
+    define("IMPORT_FUNCIONARIO_DAO", RAIZ_IMPORT . "/model/DAO/funcionarioDAO.php");
+    define("IMPORT_FUNCIONARIO_CONTROLLER", RAIZ_IMPORT . "/controller/controllerfuncionario.php");
 
     //Imports de pendencia
-    define("IMPORT_PENDENCIA", PASTA_RAIZ . PASTA_PROJETO . "/model/pendenciaClass.php");
-    define("IMPORT_PENDENCIA_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/pendenciaDAO.php");
-    define("IMPORT_PENDENCIA_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerPendencia.php");
+    define("IMPORT_PENDENCIA", RAIZ_IMPORT . "/model/pendenciaClass.php");
+    define("IMPORT_PENDENCIA_DAO", RAIZ_IMPORT . "/model/DAO/pendenciaDAO.php");
+    define("IMPORT_PENDENCIA_CONTROLLER", RAIZ_IMPORT . "/controller/controllerPendencia.php");
 
     //Imports de Parceiros
-    define("IMPORT_PARCEIRO", PASTA_RAIZ . PASTA_PROJETO . "/model/parceiroClass.php");
-    define("IMPORT_PARCEIRO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/parceiroDAO.php");
-    define("IMPORT_PARCEIRO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerParceiro.php");
+    define("IMPORT_PARCEIRO", RAIZ_IMPORT . "/model/parceiroClass.php");
+    define("IMPORT_PARCEIRO_DAO", RAIZ_IMPORT . "/model/DAO/parceiroDAO.php");
+    define("IMPORT_PARCEIRO_CONTROLLER", RAIZ_IMPORT . "/controller/controllerParceiro.php");
 
     //Imports de Funcionamento
-    define("IMPORT_FUNCIONAMENTO", PASTA_RAIZ . PASTA_PROJETO . "/model/funcionamentoClass.php");
-    define("IMPORT_FUNCIONAMENTO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/funcionamentoDAO.php");
-    define("IMPORT_FUNCIONAMENTO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerFuncionamento.php");
+    define("IMPORT_FUNCIONAMENTO", RAIZ_IMPORT . "/model/funcionamentoClass.php");
+    define("IMPORT_FUNCIONAMENTO_DAO", RAIZ_IMPORT . "/model/DAO/funcionamentoDAO.php");
+    define("IMPORT_FUNCIONAMENTO_CONTROLLER", RAIZ_IMPORT . "/controller/controllerFuncionamento.php");
 
     //Imports de clientes
-    define("IMPORT_CLIENTE", PASTA_RAIZ . PASTA_PROJETO . "/model/clienteClass.php");
-    define("IMPORT_CLIENTE_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/clienteDAO.php");
-    define("IMPORT_CLIENTE_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllercliente.php");
+    define("IMPORT_CLIENTE", RAIZ_IMPORT . "/model/clienteClass.php");
+    define("IMPORT_CLIENTE_DAO", RAIZ_IMPORT . "/model/DAO/clienteDAO.php");
+    define("IMPORT_CLIENTE_CONTROLLER", RAIZ_IMPORT . "/controller/controllercliente.php");
 
     //Imports de veiculo
-    define("IMPORT_VEICULO", PASTA_RAIZ . PASTA_PROJETO . "/model/veiculoClass.php");
-    define("IMPORT_VEICULO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/veiculoDAO.php");
-    define("IMPORT_VEICULO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerVeiculo.php");    
+    define("IMPORT_VEICULO", RAIZ_IMPORT . "/model/veiculoClass.php");
+    define("IMPORT_VEICULO_DAO", RAIZ_IMPORT . "/model/DAO/veiculoDAO.php");
+    define("IMPORT_VEICULO_CONTROLLER", RAIZ_IMPORT . "/controller/controllerVeiculo.php");    
 
     //Imports de foto veiculo
-    define("IMPORT_FOTO_VEICULO", PASTA_RAIZ . PASTA_PROJETO . "/model/foto_veiculoClass.php");
-    define("IMPORT_FOTO_VEICULO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/foto_veiculoDAO.php");
-    define("IMPORT_FOTO_VEICULO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerFoto_Veiculo.php"); 
+    define("IMPORT_FOTO_VEICULO", RAIZ_IMPORT . "/model/foto_veiculoClass.php");
+    define("IMPORT_FOTO_VEICULO_DAO", RAIZ_IMPORT . "/model/DAO/foto_veiculoDAO.php");
+    define("IMPORT_FOTO_VEICULO_CONTROLLER", RAIZ_IMPORT . "/controller/controllerFoto_Veiculo.php"); 
     
     //Imports de banner
-    define("IMPORT_BANNER", PASTA_RAIZ . PASTA_PROJETO . "/model/bannerClass.php");
-    define("IMPORT_BANNER_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/bannerDAO.php");
-    define("IMPORT_BANNER_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerBanner.php");     
+    define("IMPORT_BANNER", RAIZ_IMPORT . "/model/bannerClass.php");
+    define("IMPORT_BANNER_DAO", RAIZ_IMPORT . "/model/DAO/bannerDAO.php");
+    define("IMPORT_BANNER_CONTROLLER", RAIZ_IMPORT . "/controller/controllerBanner.php");     
 
     //Imports de marca
-    define("IMPORT_MARCA", PASTA_RAIZ . PASTA_PROJETO . "/model/marcaClass.php");
-    define("IMPORT_MARCA_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/marcaDAO.php");
-    define("IMPORT_MARCA_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerMarca.php"); 
+    define("IMPORT_MARCA", RAIZ_IMPORT . "/model/marcaClass.php");
+    define("IMPORT_MARCA_DAO", RAIZ_IMPORT . "/model/DAO/marcaDAO.php");
+    define("IMPORT_MARCA_CONTROLLER", RAIZ_IMPORT . "/controller/controllerMarca.php"); 
     
     //Imports de modelo de veiculo
-    define("IMPORT_MODELO", PASTA_RAIZ . PASTA_PROJETO . "/model/modeloClass.php");
-    define("IMPORT_MODELO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/modeloDAO.php");
-    define("IMPORT_MODELO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerModelo.php");     
+    define("IMPORT_MODELO", RAIZ_IMPORT . "/model/modeloClass.php");
+    define("IMPORT_MODELO_DAO", RAIZ_IMPORT . "/model/DAO/modeloDAO.php");
+    define("IMPORT_MODELO_CONTROLLER", RAIZ_IMPORT . "/controller/controllerModelo.php");     
 
     //Imports de termos
-    define("IMPORT_TERMOS", PASTA_RAIZ . PASTA_PROJETO . "/model/termosClass.php");
-    define("IMPORT_TERMOS_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/termosDAO.php");
-    define("IMPORT_TERMOS_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerTermos.php");
+    define("IMPORT_TERMOS", RAIZ_IMPORT . "/model/termosClass.php");
+    define("IMPORT_TERMOS_DAO", RAIZ_IMPORT . "/model/DAO/termosDAO.php");
+    define("IMPORT_TERMOS_CONTROLLER", RAIZ_IMPORT . "/controller/controllerTermos.php");
 
     //Imports da avaliação do veiculo
-    define("IMPORT_AVALIACAO_VEICULO", PASTA_RAIZ . PASTA_PROJETO . "/model/avaliacaoVeiculoClass.php");
-    define("IMPORT_AVALIACAO_VEICULO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/avaliacaoVeiculoDAO.php");
-    define("IMPORT_AVALIACAO_VEICULO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerAvaliacaoVeiculo.php"); 
+    define("IMPORT_AVALIACAO_VEICULO", RAIZ_IMPORT . "/model/avaliacaoVeiculoClass.php");
+    define("IMPORT_AVALIACAO_VEICULO_DAO", RAIZ_IMPORT . "/model/DAO/avaliacaoVeiculoDAO.php");
+    define("IMPORT_AVALIACAO_VEICULO_CONTROLLER", RAIZ_IMPORT . "/controller/controllerAvaliacaoVeiculo.php"); 
 
     //imports da avaliacao
-    define("IMPORT_AVALIACAO", PASTA_RAIZ . PASTA_PROJETO . "/model/avaliacaoClass.php");
-    define("IMPORT_AVALIACAO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/avaliacaoDAO.php");
-    define("IMPORT_AVALIACAO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerAvaliacao.php");
+    define("IMPORT_AVALIACAO", RAIZ_IMPORT . "/model/avaliacaoClass.php");
+    define("IMPORT_AVALIACAO_DAO", RAIZ_IMPORT . "/model/DAO/avaliacaoDAO.php");
+    define("IMPORT_AVALIACAO_CONTROLLER", RAIZ_IMPORT . "/controller/controllerAvaliacao.php");
 
     //Imports Fale Conosco 
-    define("IMPORT_FALE_CONOSCO", PASTA_RAIZ . PASTA_PROJETO . "/model/faleConoscoClass.php");
-    define("IMPORT_FALE_CONOSCO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/faleConoscoDAO.php");
-    define("IMPORT_FALE_CONOSCO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerFaleConosco.php");
+    define("IMPORT_FALE_CONOSCO", RAIZ_IMPORT . "/model/faleConoscoClass.php");
+    define("IMPORT_FALE_CONOSCO_DAO", RAIZ_IMPORT . "/model/DAO/faleConoscoDAO.php");
+    define("IMPORT_FALE_CONOSCO_CONTROLLER", RAIZ_IMPORT . "/controller/controllerFaleConosco.php");
    
     // Imports Dúvidas Frequentes 
-    define("IMPORT_DUVIDAS_FREQUENTES", PASTA_RAIZ . PASTA_PROJETO . "/model/duvidasFrequentesClass.php");
-    define("IMPORT_DUVIDAS_FREQUENTES_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/duvidasFrequentesDAO.php");
-    define("IMPORT_DUVIDAS_FREQUENTES_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO ."/controller/controllerDuvidasFrequentes.php");
+    define("IMPORT_DUVIDAS_FREQUENTES", RAIZ_IMPORT . "/model/duvidasFrequentesClass.php");
+    define("IMPORT_DUVIDAS_FREQUENTES_DAO", RAIZ_IMPORT . "/model/DAO/duvidasFrequentesDAO.php");
+    define("IMPORT_DUVIDAS_FREQUENTES_CONTROLLER", RAIZ_IMPORT ."/controller/controllerDuvidasFrequentes.php");
 
     //Imports de cancelamento
-    define("IMPORT_CANCELAMENTO", PASTA_RAIZ . PASTA_PROJETO . "/model/cancelamentoClass.php");
-    define("IMPORT_CANCELAMENTO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/cancelamentoDAO.php");
-    define("IMPORT_CANCELAMENTO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerCancelamento.php");  
+    define("IMPORT_CANCELAMENTO", RAIZ_IMPORT . "/model/cancelamentoClass.php");
+    define("IMPORT_CANCELAMENTO_DAO", RAIZ_IMPORT . "/model/DAO/cancelamentoDAO.php");
+    define("IMPORT_CANCELAMENTO_CONTROLLER", RAIZ_IMPORT . "/controller/controllerCancelamento.php");  
 
     //Imports de foto Vvisualizacao_cancelamento
-    define("IMPORT_VVISUALIZACAO_CANCELAMENTO", PASTA_RAIZ . PASTA_PROJETO . "/model/vvisualizacao_cancelamentoClass.php");
-    define("IMPORT_VVISUALIZACAO_CANCELAMENTO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/vvisualizacao_cancelamentoDAO.php");
-    //define("IMPORT_CANCELAMENTO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerCancelamento.php");      
+    define("IMPORT_VVISUALIZACAO_CANCELAMENTO", RAIZ_IMPORT . "/model/vvisualizacao_cancelamentoClass.php");
+    define("IMPORT_VVISUALIZACAO_CANCELAMENTO_DAO", RAIZ_IMPORT . "/model/DAO/vvisualizacao_cancelamentoDAO.php");
+    //define("IMPORT_CANCELAMENTO_CONTROLLER", RAIZ_IMPORT . "/controller/controllerCancelamento.php");      
 
     //Imports de foto v_detalhes_locacao
-    define("IMPORT_V_DETALHES_LOCACAO", PASTA_RAIZ . PASTA_PROJETO . "/model/v_detalhes_locacaoClass.php");
-    define("IMPORT_V_DETALHES_LOCACAO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/v_detalhes_locacaoDAO.php");
-    define("IMPORT_V_DETALHES_LOCACAO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerV_detalhes_locacao.php"); 
+    define("IMPORT_V_DETALHES_LOCACAO", RAIZ_IMPORT . "/model/v_detalhes_locacaoClass.php");
+    define("IMPORT_V_DETALHES_LOCACAO_DAO", RAIZ_IMPORT . "/model/DAO/v_detalhes_locacaoDAO.php");
+    define("IMPORT_V_DETALHES_LOCACAO_CONTROLLER", RAIZ_IMPORT . "/controller/controllerV_detalhes_locacao.php"); 
     
     /*---------------------------------------------------------------*/
     /*--------------------------- PÁGINAS ---------------------------*/
     /*---------------------------------------------------------------*/
 
+    //Import do header e footer do site
+    define("HEADER", RAIZ_IMPORT . "/SITE/view/header.php");
+    define("FOOTER", RAIZ_IMPORT . "/SITE/view/footer.php");
+
     //Imports de páginas do cms
-    define("IMPORT_CMS_HOME", PASTA_RAIZ . PASTA_PROJETO . "/CMS/view/home.php");
-    define("IMPORT_CMS_LOGIN", PASTA_RAIZ . PASTA_PROJETO . "/CMS/view/login.php");
-    define("IMPORT_CMS_INDEX", PASTA_RAIZ . PASTA_PROJETO . "/CMS/index.php");
+    define("IMPORT_CMS_HOME", RAIZ_IMPORT . "/CMS/view/home.php");
+    define("IMPORT_CMS_LOGIN", RAIZ_IMPORT . "/CMS/view/login.php");
+    define("IMPORT_CMS_INDEX", RAIZ_IMPORT . "/CMS/index.php");
 
     //Import páginas de nível
-    define("IMPORT_CMS_CADASTRO_NIVEL", PASTA_RAIZ . PASTA_PROJETO . "/CMS/view/nivel/nivel.php");
+    define("IMPORT_CMS_CADASTRO_NIVEL", RAIZ_IMPORT . "/CMS/view/nivel/nivel.php");
 
     //Import páginas de funcionario
-    define("IMPORT_CMS_CADASTRO_FUNCIONARIO", PASTA_RAIZ . PASTA_PROJETO . "/CMS/view/funcionario/funcionario.php");
+    define("IMPORT_CMS_CADASTRO_FUNCIONARIO", RAIZ_IMPORT . "/CMS/view/funcionario/funcionario.php");
 
     //Import páginas de parceiro
-    define("IMPORT_CMS_CADASTRO_PARCEIRO", PASTA_RAIZ . PASTA_PROJETO . "/CMS/view/parceiro/parceiro.php");
+    define("IMPORT_CMS_CADASTRO_PARCEIRO", RAIZ_IMPORT . "/CMS/view/parceiro/parceiro.php");
 
     //Import páginas de funcionamento
-    define("IMPORT_CMS_CADASTRO_FUNCIONAMENTO", PASTA_RAIZ . PASTA_PROJETO . "/CMS/view/comoFunciona/comoFunciona.php");
+    define("IMPORT_CMS_CADASTRO_FUNCIONAMENTO", RAIZ_IMPORT . "/CMS/view/comoFunciona/comoFunciona.php");
 
     //Import páginas de banner
-    define("IMPORT_CADASTRO_BANNER", PASTA_RAIZ . PASTA_PROJETO . "/view/banner/banner.php");
+    define("IMPORT_CADASTRO_BANNER", RAIZ_IMPORT . "/view/banner/banner.php");
 
     //Import da página de marcas
-    define("IMPORT_CADASTRO_MARCAS", PASTA_RAIZ . PASTA_PROJETO . "/CMS/view/marcasemodelos/marcas.php");
+    define("IMPORT_CADASTRO_MARCAS", RAIZ_IMPORT . "/CMS/view/marcasemodelos/marcas.php");
 
     //Import da página de modelos
-    define("IMPORT_CADASTRO_MODELOS", PASTA_RAIZ . PASTA_PROJETO . "/CMS/view/marcasemodelos/modelos.php");
+    define("IMPORT_CADASTRO_MODELOS", RAIZ_IMPORT . "/CMS/view/marcasemodelos/modelos.php");
 
     //Import das paginas de termo
-    define("IMPORT_CADASTRO_TERMO", PASTA_RAIZ . PASTA_PROJETO . "/CMS/view/termos/termos.php");
+    define("IMPORT_CADASTRO_TERMO", RAIZ_IMPORT . "/CMS/view/termos/termos.php");
 
     //Import páginas de pendencia
-    define("IMPORT_CMS_CADASTRO_PENDENCIA_USUARIO", PASTA_RAIZ . PASTA_PROJETO . "/CMS/view/aprovacao/aprovacaoUsuario.php");
-    define("IMPORT_CMS_CADASTRO_PENDENCIA_VEICULO", PASTA_RAIZ . PASTA_PROJETO . "/CMS/view/aprovacao/aprovacaoVeiculo.php");
+    define("IMPORT_CMS_CADASTRO_PENDENCIA_USUARIO", RAIZ_IMPORT . "/CMS/view/aprovacao/aprovacaoUsuario.php");
+    define("IMPORT_CMS_CADASTRO_PENDENCIA_VEICULO", RAIZ_IMPORT . "/CMS/view/aprovacao/aprovacaoVeiculo.php");
 
     //Imports de páginas do site
-    define("IMPORT_SITE_HOME", PASTA_RAIZ . PASTA_PROJETO . "/SITE/view/home.php");
-    define("IMPORT_SITE_LOGIN", PASTA_RAIZ . PASTA_PROJETO . "/SITE/view/login.php");
-    define("IMPORT_SITE_INDEX", PASTA_RAIZ . PASTA_PROJETO . "/SITE/index.php");
+    define("IMPORT_SITE_HOME", RAIZ_IMPORT . "/SITE/view/home.php");
+    define("IMPORT_SITE_LOGIN", RAIZ_IMPORT . "/SITE/view/login.php");
 
     //Import páginas de Fale Conosco 
-    define("IMPORT_CADASTRO_FALE_CONOSCO", PASTA_RAIZ . PASTA_PROJETO . "/CMS/view/faleConosco/faleConosco.php");
+    define("IMPORT_CADASTRO_FALE_CONOSCO", RAIZ_IMPORT . "/CMS/view/faleConosco/faleConosco.php");
     
     //Import páginas de Duvidas Frequentes
-    define("IMPORT_CADASTRO_DUVIDAS", PASTA_RAIZ . PASTA_PROJETO . "/CMS/view/duvidasFrequentes/duvidas.php");
+    define("IMPORT_CADASTRO_DUVIDAS", RAIZ_IMPORT . "/CMS/view/duvidasFrequentes/duvidas.php");
 
     /*---------------------------------------------------------------*/
     /*--------------------------- ERROS -----------------------------*/
@@ -441,5 +451,12 @@ if(!isset($incluso)){
     define("ALERT_ACEITAR_SUCESSO", alert(MSG_ACEITAR_SUCESSO));
     define("ALERT_RECUSAR_ERRO", alert(MSG_RECUSAR_ERRO));
     define("ALERT_RECUSAR_SUCESSO", alert(MSG_RECUSAR_SUCESSO));
+
+    /*-------------------------------------------------------------*/
+    /*--------------------------- LINKS ---------------------------*/
+    /*-------------------------------------------------------------*/
+
+    define("LINK_SITE_INDEX", RAIZ_LINK . "/site/index.php");
+    define("LINK_SITE_ANUNCIO", RAIZ_LINK . "/site/view/anuncios/anuncios.php");
 }
 ?>

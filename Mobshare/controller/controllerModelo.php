@@ -79,8 +79,8 @@ class controllerModelo{
     }
 
     public function buscarModelos(){
-
-        $id = $_GET["id"];
+        //ARRUMAR A BUSCA para a pagina inicial
+        $id = 1;
 
         $modeloDAO = new modeloDAO();
         
