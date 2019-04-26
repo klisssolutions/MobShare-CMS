@@ -96,7 +96,6 @@ class avaliacaoDAO{
             $avaliacao->setDepoimento($rsAvalicao["depoimento"]);
             $avaliacao->setIdLocacao($rsAvalicao["idLocacao"]);
 
-
             $listAvaliacao[$cont] = $avaliacao;
             $cont++;
         }

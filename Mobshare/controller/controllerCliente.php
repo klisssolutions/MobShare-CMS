@@ -33,7 +33,7 @@ class controllerCliente{
         }
     
 
-    public function inserir($tipoInsercao){
+    public function inserirCliente($tipoInsercao){
         //Instancia do DAO
         $clienteDAO = new clienteDAO();
 
@@ -47,23 +47,28 @@ class controllerCliente{
 
             }else{
                 $nome = $_POST["txtnome"];
-                $cpf = $_POST["txtcpf"];            
+                $cpf = $_POST["txtcpf"]; 
+                $dtNasc = $_POST["txtdtnasc"];
                 $cnh = $_POST["txtcnh"];
                 $categoriacnh = $_POST["txtcategoriacnh"];
                 $email = $_POST["txtemail"];
                 $senha = $_POST["txtsenha"];
+                //Verificar Foto
+                //$fotoPerfil = $_POST["txtfotoperfil"];;
                 $datacadastro = $_POST["txtdatacadastro"];
 
                 //Guardando os dados do post no objeto da classe
                 $cliente->setNome($nome);
-                $cliente->setCpf($cpf);                
+                $cliente->setCpf($cpf);
+                $cliente->setDtNasc($dtNasc);                
                 $cliente->setCnh($cnh);
                 $cliente->setCategoriaCnh($categoriacnh);
                 $cliente->setEmail($email);
                 $cliente->setSenha($senha);
+                //Verificar Foto
+                //$cliente->setFotoPerfil($fotoPerfil);
                 $cliente->setDataCadastro($datacadastro);
-           
-                               
+             
             }
 
             $clienteDAO = new clienteDAO();
@@ -74,39 +79,45 @@ class controllerCliente{
         }
     }
 
-    public function excluirNivel(){
+    public function excluirCliente(){
         //Instancia do DAO
-        $nivelDAO = new nivelDAO();
+        $clienteDAO = new clienteDAO();
         //Esse id foi enviado pela view no href, o arquivo de rota é quem chamou este método
         $id = $_GET["id"];
 
-        //Chamada para o método de excluir um nivel
-        return $nivelDAO->delete($id);
+        //Chamada para o método de excluir um cliente
+        return $clienteDAO->delete($id);
     }
 
-    public function atualizarNivel(){
+    public function atualizarCliente(){
         //Instancia do DAO
-        $nivelDAO = new nivelDAO();
+        $clienteDAO = new clienteDAO();
 
         //Verifica qual metodo esta sendo requisitado do formulario(POST ou GET)
         if($_SERVER["REQUEST_METHOD"] == "POST"){
-            $id = $_GET["id"];
             $nome = $_POST["txtnome"];
-            $descricao = $_POST["txtdescricao"];
-            $permissoes = 0;
+            $cpf = $_POST["txtcpf"]; 
+            $dtNasc = $_POST["txtdtnasc"];
+            $cnh = $_POST["txtcnh"];
+            $categoriacnh = $_POST["txtcategoriacnh"];
+            $email = $_POST["txtemail"];
+            $senha = $_POST["txtsenha"];
+            //Verificar Foto
+            //$fotoPerfil = $_POST["txtfotoperfil"];;
+            $datacadastro = $_POST["txtdatacadastro"];
 
             //Instancia da classe
-            $nivel = new Nivel();
+            $cliente = new Cliente();
 
             //Guardando os dados do post no objeto da classe
-            $nivel->setIdNivel($id);
-            $nivel->setNome($nome);
-            $nivel->setDescricao($descricao);
-            $nivel->setPermissoes($permissoes);
+            $cliente->setIdNivel($id);
+            $cliente->setNome($nome);
+            $cliente->setDescricao($descricao);
+            $cliente->setPermissoes($permissoes);
 
             /* Chamada para o metodo de inserir no BD, passando como parâmetro o objeto
             contatoClass que tem todos os dados que serão inseridos no banco de dados */
-            return $nivelDAO->update($nivel);
+            return $clienteDAO->update($nivel);
         }
     }
 
