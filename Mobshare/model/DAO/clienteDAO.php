@@ -56,8 +56,6 @@ class clienteDAO{
             '".$cliente->getDataCadastro()."')";               
         }
 
-
-
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
 

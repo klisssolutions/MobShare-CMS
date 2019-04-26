@@ -44,8 +44,6 @@ class controllerCliente{
             $cliente = new Cliente();            
 
             if($tipoInsercao == 1){
-
-            }else{
                 $nome = $_POST["txtnome"];
                 $cpf = $_POST["txtcpf"]; 
                 $dtNasc = $_POST["txtdtnasc"];
@@ -54,13 +52,37 @@ class controllerCliente{
                 $email = $_POST["txtemail"];
                 $senha = $_POST["txtsenha"];
                 //Verificar Foto
-                //$fotoPerfil = $_POST["txtfotoperfil"];;
+                //$fotoPerfil = $_POST["txtfotoperfil"];
                 $datacadastro = $_POST["txtdatacadastro"];
 
                 //Guardando os dados do post no objeto da classe
                 $cliente->setNome($nome);
                 $cliente->setCpf($cpf);
                 $cliente->setDtNasc($dtNasc);                
+                $cliente->setCnh($cnh);
+                $cliente->setCategoriaCnh($categoriacnh);
+                $cliente->setEmail($email);
+                $cliente->setSenha($senha);
+                //Verificar Foto
+                //$cliente->setFotoPerfil($fotoPerfil);
+                $cliente->setDataCadastro($datacadastro);
+
+            }else{
+                $nome = $_POST["txtnome"];
+                $cpf = $_POST["txtcpf"]; 
+                //$dtNasc = $_POST["txtdtnasc"];
+                $cnh = $_POST["txtcnh"];
+                $categoriacnh = $_POST["txtcategoriacnh"];
+                $email = $_POST["txtemail"];
+                $senha = $_POST["txtsenha"];
+                //Verificar Foto
+                //$fotoPerfil = $_POST["txtfotoperfil"];
+                $datacadastro = $_POST["txtdatacadastro"];
+
+                //Guardando os dados do post no objeto da classe
+                $cliente->setNome($nome);
+                $cliente->setCpf($cpf);
+                //$cliente->setDtNasc($dtNasc);                
                 $cliente->setCnh($cnh);
                 $cliente->setCategoriaCnh($categoriacnh);
                 $cliente->setEmail($email);
@@ -103,17 +125,23 @@ class controllerCliente{
             $email = $_POST["txtemail"];
             $senha = $_POST["txtsenha"];
             //Verificar Foto
-            //$fotoPerfil = $_POST["txtfotoperfil"];;
+            //$fotoPerfil = $_POST["txtfotoperfil"];
             $datacadastro = $_POST["txtdatacadastro"];
 
             //Instancia da classe
             $cliente = new Cliente();
 
             //Guardando os dados do post no objeto da classe
-            $cliente->setIdNivel($id);
             $cliente->setNome($nome);
-            $cliente->setDescricao($descricao);
-            $cliente->setPermissoes($permissoes);
+            $cliente->setCpf($cpf);
+            $cliente->setDtNasc($dtNasc);                
+            $cliente->setCnh($cnh);
+            $cliente->setCategoriaCnh($categoriacnh);
+            $cliente->setEmail($email);
+            $cliente->setSenha($senha);
+            //Verificar Foto
+            //$cliente->setFotoPerfil($fotoPerfil);
+            $cliente->setDataCadastro($datacadastro);
 
             /* Chamada para o metodo de inserir no BD, passando como parâmetro o objeto
             contatoClass que tem todos os dados que serão inseridos no banco de dados */
@@ -121,22 +149,22 @@ class controllerCliente{
         }
     }
 
-    public function listarNiveis(){
+    public function listarClientes(){
         //Instancia do DAO
-        $nivelDAO = new nivelDAO();
-        return($nivelDAO->selectAll());
+        $clienteDAO = new clienteDAO();
+        return($clienteDAO->selectAll());
     }
 
-    public function buscarNivel(){
+    public function buscarCliente(){
         //Instancia do DAO
-        $nivelDAO = new nivelDAO();
+        $clienteDAO = new clienteDAO();
 
         //Pega o ID para realizar a busca
         $id = $_GET["id"];
 
-        $nivel = new Nivel();
-        $nivel = $nivelDAO->selectById($id);
-        return $nivel;
+        $cliente = new Cliente();
+        $cliente = $clienteDAO->selectById($id);
+        return $cliente;
     }
 }
 ?>
