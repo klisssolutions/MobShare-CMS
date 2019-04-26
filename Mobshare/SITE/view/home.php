@@ -108,25 +108,22 @@ $veiculos = $controllerVeiculo->listarVeiculos();
             $i = 0;
             while($i < count($banners)){
 
-                
         ?>
         <div class="caixa-como-funciona">
             
             <div class="texto-como-funciona">
-                    <h1><?php echo($banners[$i]->getTitulo())?></h1>
-                    <p><?php echo($banners[$i]->getTexto())?></p>
-                    <a href="<?php echo($banners[$i]->getHref())?>"><h2><?php echo($banners[$i]->getNomeBotao())?></h2></a>
+                <h1><?php echo($banners[$i]->getTitulo())?></h1>
+                <p><?php echo($banners[$i]->getTexto())?></p>
+                <a href="<?php echo($banners[$i]->getHref())?>"><h2><?php echo($banners[$i]->getNomeBotao())?></h2></a>
             </div>
             <div class="img-como-funciona">
             
-            
-                    <img src="<?php echo('/Mobshare/'.$banners[$i]->getImagem())?>" width="650" height="600"  alt="App da MobShare">
-                    
+                <img src="<?php echo('/Mobshare/'.$banners[$i]->getImagem())?>" width="650" height="600"  alt="App da MobShare">
+                
             </div>
         </div> 
 
         <?php
-        
                 $i++;
             }
         ?>

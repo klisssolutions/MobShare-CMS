@@ -6,24 +6,24 @@
                 <h1>Páginas:</h1>
             </div>
             <nav class="menu-rodape-item">
-                    <a href="termosdeuso.html">Termos de Uso</a>
-                    <a href="duvidasfreq.html">Duvidas Frequentes</a>
-                    <a href="parceiros.html">Parceiros</a>
-                    <a href="faleconosco.html">Fale Conosco</a>
+                    <a href="<?php echo(LINK_SITE_TERMO); ?>">Termos de Uso</a>
+                    <a href="<?php echo(LINK_SITE_DUVIDA); ?>">Duvidas Frequentes</a>
+                    <a href="<?php echo(LINK_SITE_PARCEIRO); ?>">Parceiros</a>
+                    <a href="<?php echo(LINK_SITE_CONTATO); ?>">Fale Conosco</a>
             </nav>
         </div>
         <div class="logotipo-rodape">
             <!-- LOGOTIPO NO RODAPÉ-->
             <div class="img-logo-rodape">
-                    <img src="images/logo.png" width="340" height="150"  alt="MobShare">
+                    <img src="<?php echo(LINK_IMAGEM_LOGO); ?>" width="340" height="150"  alt="MobShare">
             </div>
             <!-- IMAGENS DAS REDES SOCIAIS-->
             <div class="img-redes-sociais">
-                    <img src="images/facebook-logo-button (1).png" width="30" height="30" alt="icone de rede social">
-                    <img src="images/google-plus-logo-button.png" width="30" height="30"  alt="icone de rede social">
-                    <img src="images/instagram-logo (1).png" width="30" height="30" alt="icone de rede social">
-                    <img src="images/twitter-logo-button (1).png" width="30" height="30" alt="icone de rede social">
-                    <img src="images/linkedin-logo-button.png" width="30" height="30" alt="icone de rede social">
+                    <img src="<?php echo(LINK_IMAGEM_FACEBOOK); ?>" width="30" height="30" alt="icone de rede social">
+                    <img src="<?php echo(LINK_IMAGEM_PLUS); ?>" width="30" height="30"  alt="icone de rede social">
+                    <img src="<?php echo(LINK_IMAGEM_INSTAGRAM); ?>" width="30" height="30" alt="icone de rede social">
+                    <img src="<?php echo(LINK_IMAGEM_TWITTER); ?>" width="30" height="30" alt="icone de rede social">
+                    <img src="<?php echo(LINK_IMAGEM_LINKEDIN); ?>" width="30" height="30" alt="icone de rede social">
             </div>
 
         </div>
@@ -34,13 +34,13 @@
                 </div>
                 <nav class="contato-rodape-item">
                     <a>
-                        <img src="images/map.png" width="20" height="20"  alt="icone de endereço">
+                        <img src="<?php echo(LINK_IMAGEM_MAPA); ?>" width="20" height="20"  alt="icone de endereço">
                          Av Felippo Holt, 543 - São Paulo</a>
                     <a>
-                        <img src="images/phone-call.png" width="20" height="20"  alt="icone de telefone">
+                        <img src="<?php echo(LINK_IMAGEM_FONE); ?>" width="20" height="20"  alt="icone de telefone">
                          (11) 5464-6757</a>
                     <a>
-                        <img src="images/envelope.png" width="20" height="20"  alt="icone de email">
+                        <img src="<?php echo(LINK_IMAGEM_EMAIL); ?>" width="20" height="20"  alt="icone de email">
                          mobshare@gmail.com</a>
                 </nav>
         </div>

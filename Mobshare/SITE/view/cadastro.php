@@ -1,3 +1,8 @@
+<?php
+@session_start();
+@$_SESSION["importInclude"] = $_SERVER["DOCUMENT_ROOT"] . "/Mobshare/include.php";
+require_once($_SESSION["importInclude"]); 
+?>
 <!DOCTYPE html>
 <html>
 <head>
