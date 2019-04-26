@@ -35,7 +35,7 @@
         <div class="cabecalho">
 
             <div class="logo">
-                <a href="#">
+                <a href="#" onclick="inicio()">
                     <img src="view/imagens/logo.png" class="logo" heigth="150" width="200">
                 </a>
             </div>
@@ -106,11 +106,7 @@
             </nav>
             <div class="menu" id="menu">
                 <div class="informacao" id="informacao">
-                    <div class="texto-bem-vindo">
-                        <img src="view/imagens/settings.png" heigth="150" width="150">
-                        <h1>Administração de Conteúdo</h1>
-                        <p>Selecione as opções no menu ao lado!</p>
-                    </div>
+                <script>inicio();</script>
                 </div>
             </div>
         </div>

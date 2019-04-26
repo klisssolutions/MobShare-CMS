@@ -1,3 +1,13 @@
+function inicio() {
+    $.ajax({
+        type: "POST",
+        url: "view/inicio.php",
+        success: function (dados) {
+            $("#informacao").html(dados);
+        }
+    });
+}
+
 function gerenciarFuncionario() {
     $.ajax({
         type: "POST",

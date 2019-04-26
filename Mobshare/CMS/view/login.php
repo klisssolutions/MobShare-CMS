@@ -10,8 +10,8 @@
 	</head>
 	<body>
         <!--Primeiro o Login depois a Home
-Nao é necessario ficar em uma pasta a parte
--->
+        Nao é necessario ficar em uma pasta a parte
+        -->
         <div class="principal-login">
             <div class="box-login">
                 <img src="view/imagens/logo.png" class="logomarca">

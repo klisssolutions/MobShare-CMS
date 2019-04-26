@@ -6,7 +6,7 @@
             <img src="view/imagens/car.png" width="128" heigth="128">
         </div>
         <div class="titulo-func">
-            Marcas de carros
+            Marcas
         </div>
     </div>
     </a>
@@ -15,7 +15,7 @@
         <div class="imagem">
             <img src="view/imagens/thumbs-up.png" width="128" heigth="128">
         </div>
-        <div class="titulo-func">Modelos de carros</div>
+        <div class="titulo-func">Modelos</div>
     </div>
     </a>
 </div>

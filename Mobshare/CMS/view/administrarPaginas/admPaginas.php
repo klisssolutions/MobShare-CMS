@@ -1,5 +1,5 @@
 <div class="titulo-func-lista">ADMINISTRAÇÃO DAS PAGINAS DO SITE</div>
-<a href="#" onclick="parceiro();">
+<a href="#" onclick="banner();">
     <div class="pgAdministracao">
         <div class="imagem-adm">
         <img src="view/Imagens/web.png" width="110" heitgh="110">
@@ -32,23 +32,6 @@
         </div>
     </div>
 </a>
-
-<a href="#" onclick="parceiro();">
-    <div class="pgAdministracao">
-        <div class="imagem-adm">
-        <img src="view/Imagens/car.png" width="110" heitgh="110">
-        <h1>Anuncios de Veículos</h1>
-        </div>
-    </div>
-</a>
-<a href="#" onclick="parceiro();">
-    <div class="pgAdministracao">
-        <div class="imagem-adm">
-        <img src="view/Imagens/thumbs-up.png" width="110" heitgh="110">
-        <h1>Avaliação do Mês</h1>
-        </div>
-    </div>
-</a>
 <a href="#" onclick="comoFunciona();">
     <div class="pgAdministracao">
         <div class="imagem-adm">
@@ -65,14 +48,3 @@
         </div>
     </div>
 </a>
-
-
-<a href="#" onclick="banner();">
-    <div class="pgAdministracao">
-        <div class="imagem-adm">
-        <img src="view/Imagens/chatting.png" width="110" heitgh="110">
-        <h1>Banner</h1>
-        </div>
-    </div>
-</a>
-
