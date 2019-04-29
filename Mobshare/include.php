@@ -35,7 +35,6 @@ if(!isset($incluso)){
 
     //Função para tratar a imagem recebida do upload
     function enviarImagem($item){
-        
         $foto = $item['name'];
         $tamanho_foto = $item['size'];
         $tamanho_foto = round($tamanho_foto/1024);
@@ -44,6 +43,7 @@ if(!isset($incluso)){
         $nome_foto = md5(uniqid(time()).$nome_foto);
         $diretorio = "C:/xampp/htdocs/Mobshare/arquivos/";
         $extensao = array(".jpg",".png",".jpeg");
+
         if(in_array($ext_foto, $extensao)){
             if($tamanho_foto<=2000){
                 $foto_tmp = $item['tmp_name'];
@@ -404,6 +404,14 @@ if(!isset($incluso)){
     define("ALERT_ATUALIZAR_PARCEIRO_SUCESSO", alert(MSG_ATUALIZAR_PARCEIRO_SUCESSO));
     define("ALERT_EXCLUIR_PARCEIRO_ERRO", alert(MSG_EXCLUIR_PARCEIRO_ERRO));
     define("ALERT_EXCLUIR_PARCEIRO_SUCESSO", alert(MSG_EXCLUIR_PARCEIRO_SUCESSO));
+
+    //Alertas de funcionamentos
+    define("ALERT_INSERIR_FUNCIONAMENTO_ERRO", alert(MSG_INSERIR_FUNCIONAMENTO_ERRO));
+    define("ALERT_INSERIR_FUNCIONAMENTO_SUCESSO", alert(MSG_INSERIR_FUNCIONAMENTO_SUCESSO));
+    define("ALERT_ATUALIZAR_FUNCIONAMENTO_ERRO", alert(MSG_ATUALIZAR_FUNCIONAMENTO_ERRO));
+    define("ALERT_ATUALIZAR_FUNCIONAMENTO_SUCESSO", alert(MSG_ATUALIZAR_FUNCIONAMENTO_SUCESSO));
+    define("ALERT_EXCLUIR_FUNCIONAMENTO_ERRO", alert(MSG_EXCLUIR_FUNCIONAMENTO_ERRO));
+    define("ALERT_EXCLUIR_FUNCIONAMENTO_SUCESSO", alert(MSG_EXCLUIR_FUNCIONAMENTO_SUCESSO));
 
     //Alertas de termo
     define("ALERT_INSERIR_TERMO_ERRO", alert(MSG_INSERIR_TERMO_ERRO));

@@ -583,6 +583,15 @@ a{
     
 }
 
+.input-func2{
+    border: none;
+    height: 50px;
+    width: 190px;
+    background-color: #cccccc;
+    font-family: Mont;  
+    
+}
+
 .slt-func{
     border: none;
     height: 25px;
@@ -798,4 +807,9 @@ a{
     margin-left: 10px;
     font-family: Mont;
     font-weight: bold;
+}
+
+#prev{
+    max-width: 350px;
+    max-height: 200px;
 }

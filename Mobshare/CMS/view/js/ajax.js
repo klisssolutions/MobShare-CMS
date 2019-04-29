@@ -432,7 +432,6 @@ function logar(){
 }
 
 function envio(){
-    
     let form = document.getElementById("form");
     let checkForm = form.reportValidity();
     let data = new FormData(form);
@@ -454,4 +453,17 @@ function envio(){
             });
         });
     }
+}
+
+
+function preview(hey) {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+        // get loaded data and render thumbnail.
+        document.getElementById("prev").src = e.target.result;
+    };
+
+    // read the image file as a data URL.
+    reader.readAsDataURL(hey.files[0]);
 }
