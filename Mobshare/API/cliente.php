@@ -32,6 +32,15 @@ if($modo == "LOGAR"){
     //Já recebe um array com id e nome do cliente
     $result = $controllerCliente->logar();
 
+    if($result == null){
+        $result = array(
+
+            "idCliente" => 0,
+            "nomeCliente" => ""            
+
+        );
+    }
+
 }else if($modo == "INSERIR"){
     $status = $controllerCliente->inserir(2);
 
