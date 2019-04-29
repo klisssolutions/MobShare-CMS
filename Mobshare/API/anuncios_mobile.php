@@ -8,20 +8,52 @@ $_SESSION["importInclude"] = $_SERVER["DOCUMENT_ROOT"] . "/Mobshare/include.php"
 require_once($_SESSION["importInclude"]);
 
 //Require das controller
-require_once(IMPORT_VEICULO_CONTROLLER);
-require_once(IMPORT_MODELO_CONTROLLER);
-require_once(IMPORT_MARCA_CONTROLLER);
-require_once(IMPORT_FOTO_VEICULO_CONTROLLER);
+require_once(IMPORT_ANUNCIOS_CONTROLLER);
 
 //Pegar as variáveis da url
 $modo = (isset($_GET["modo"]) ? strtoupper($_GET["modo"]) : null);
 $id = (isset($_GET["id"]) ? strtoupper($_GET["id"]) : null);
 
 //Inicia a controller
-$veiculoController = new controllerVeiculo();
-$modeloController = new controllerModelo();
-$marcaController = new controllerMarca();
-$foto_veiculoController = new ControllerFoto_Veiculo();
+$anunciosController = new controllerAnuncios();
+
+
+//
+if($modo == "LISTA"){
+    $anuncios = $anunciosController->listarAnuncio();
+
+    $result = array();
+    $result["anuncios"] = array();
+
+    foreach($anuncios as $anuncio){
+        $array = array(
+            "idVeiculo" => $anuncio->getIdVeiculo(),
+            "nomeModelo" => $anuncio->getNomeModelo(),
+            "nomeMarca" => $anuncio->getNomeMarca(),
+            "fotoVeiculo" => $anuncio->getFotoVeiculo()
+        );
+
+        array_push($result["anuncios"], $array);
+    }
+
+}else if($modo == "BUSCAR"){
+    $anuncios = $anunciosController->buscarAnuncio();
+
+        $array = array(
+            "idVeiculo" => $anuncios->getIdVeiculo(),
+            "nomeModelo" => $anuncios->getNomeModelo(),
+            "nomeMarca" => $anuncios->getNomeMarca(),
+            "fotoVeiculo" => $anuncios->getFotoVeiculo()
+        );
+
+        $result = (object) $array;
+
+}else{
+    $result["mensagem"] = "Modo inválido.";
+}
+
+echo(json_encode($result));
+
 
 
 
