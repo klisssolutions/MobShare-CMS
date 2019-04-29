@@ -79,7 +79,7 @@ if(isset($_GET["controller"])){
                     case "LOGAR":
                     $idCliente = $controllerCliente->logar();
 
-                    require_once(IMPORT_INDEX);
+                    require_once(IMPORT_SITE_INDEX);
                     break;
                 }
             break;

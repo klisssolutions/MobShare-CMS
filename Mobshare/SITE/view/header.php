@@ -2,7 +2,7 @@
     <!-- onde fica o login-->
     <div class="logotipo">
         <div class="img-logotipo">
-            <a href="<?php echo(LINK_SITE_INDEX); ?>">
+            <a href="<?php echo(LINK_SITE_HOME); ?>">
                 <img src="<?php echo(LINK_IMAGEM_LOGO); ?>" width="364" height="150"  alt="MobShare">
             </a>
         </div>

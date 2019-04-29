@@ -275,6 +275,7 @@ if(!isset($incluso)){
     //Imports de páginas do site
     define("IMPORT_SITE_HOME", RAIZ_IMPORT . "/SITE/view/home.php");
     define("IMPORT_SITE_LOGIN", RAIZ_IMPORT . "/SITE/view/login.php");
+    define("IMPORT_SITE_INDEX", RAIZ_IMPORT . "/SITE/index.php");
 
     //Import páginas de Fale Conosco 
     define("IMPORT_CADASTRO_FALE_CONOSCO", RAIZ_IMPORT . "/CMS/view/faleConosco/faleConosco.php");
@@ -466,6 +467,7 @@ if(!isset($incluso)){
     define("LINK_SITE_DUVIDA", RAIZ_LINK . "/site/view/duvidasfreq/duvidasfreq.php");
     define("LINK_SITE_PARCEIRO", RAIZ_LINK . "/site/view/parceiros/parceiros.php");
     define("LINK_SITE_CONTATO", RAIZ_LINK . "/site/view/faleconosco/faleconosco.php");
+    define("LINK_SITE_HOME", RAIZ_LINK . "/site/view/home.php");
 
     //Constantes com os links das imagens
     define("LINK_IMAGEM_LOGO", RAIZ_LINK . "/site/view/images/logo.png");
