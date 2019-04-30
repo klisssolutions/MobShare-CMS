@@ -23,7 +23,7 @@ if($modo == "LISTA"){
     $anuncios = $anunciosController->listarAnuncio();
 
     $result = array();
-    $result["anuncios"] = array();
+    $result= array();
 
     foreach($anuncios as $anuncio){
         $array = array(
@@ -33,7 +33,7 @@ if($modo == "LISTA"){
             "fotoVeiculo" => $anuncio->getFotoVeiculo()
         );
 
-        array_push($result["anuncios"], $array);
+        array_push($result, $array);
     }
 
 }else if($modo == "BUSCAR"){
