@@ -12,7 +12,7 @@
 @session_start();
 require_once($_SESSION["importInclude"]); 
 
-class controllerTermos{
+class controllerAnuncios{
 
     public function __construct(){
         //Import da classe funcionario
@@ -25,7 +25,7 @@ class controllerTermos{
 
     public function listarAnuncio(){
         //Instancia do DAO criado para ser usado em todos os outros métodos
-        $anuncios = new anunciosDAO();
+        $anunciosDAO = new anunciosDAO();
         return($anunciosDAO->selectAll());
     }
 
