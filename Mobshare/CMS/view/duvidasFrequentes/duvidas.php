@@ -32,33 +32,33 @@
 
 ?>
 
-<div class="titulo">DUVIDAS FREQUENTES</div>
+<div class="titulo-func-lista">DUVIDAS FREQUENTES</div>
 
 <form id="form" method="POST">
  
-<table>
+<table class="func-cad">
   
     <tr>
-            <td class="label2">
+            <td class="titulo-func-cad">
                 Pergunta:
             </td>
-            <td class="input2">
-              <input type="text" size="20" name="txtPerguntas" value="<?php echo($perguntas);?>">
+            <td class="txt-func">
+              <input type="text" class="input-func" size="20" name="txtPerguntas" value="<?php echo($perguntas);?>">
             </td>
         </tr>
         <tr>
-            <td class="label2">
+            <td class="titulo-func-cad">
                 Resposta:
             </td>
-            <td class="input2">
-              <input type="text" size="20" name="txtResposta" value="<?php echo($resposta);?>">
+            <td class="txt-func">
+              <input type="text" class="input-func" size="20" name="txtResposta" value="<?php echo($resposta);?>">
             </td>
         </tr>
         <tr>
-          <td class="label2">
+          <td class="titulo-func-cad">
               Situação:
           </td>
-          <td class="input2">
+          <td class="txt-func">
             <input type="radio" value="1" name="ativo" <?php echo($chkAtivar);?>>Ativar<br>
             <input type="radio" value="0" name="ativo" <?php echo($chkDesativar);?>>Desativar
           </td>
@@ -67,12 +67,12 @@
     
     
         <tr>
-            <td class="label2">
-            <input type="submit" value="Voltar" class="botao2" onclick="admPaginas();">
+            <td class="titulo-func-cad">
+            <input type="submit" value="Voltar" class="btn-fun" onclick="admPaginas();">
             </td>
     
-            <td class="input2">
-                 <input type="submit" value="Enviar" class="botao2" onclick="<?php echo($router)?>">
+            <td class="titulo-func-cad">
+                 <input type="submit" value="Enviar" class="btn-fun" onclick="<?php echo($router)?>">
                
                 
                     

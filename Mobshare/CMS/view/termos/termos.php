@@ -36,7 +36,7 @@
           Titulo do Termo:
       </td>
       <td class="resp-termo">
-        <input type="text" name="txtTitulo" class="input-termo" value="<?php echo($titulo)?>">
+        <input type="text" name="txtTitulo" class="input-func" value="<?php echo($titulo)?>">
       </td>
   </tr>
   <tr>
@@ -44,7 +44,7 @@
           Texto:
       </td>
       <td class="resp-termo">
-        <input type="text" name="txtTexto" class="input-termo" value="<?php echo($texto)?>">
+        <input type="text" name="txtTexto" class="input-func" value="<?php echo($texto)?>">
       </td>
   </tr>
   <tr>
@@ -52,7 +52,7 @@
           Status:
       </td>
       <td class="resp-termo">
-        <select class="input-status" name="sltAtivo">
+        <select class="input-func" name="sltAtivo">
             <option value="">Selecione um modo</option>
             <option value="1">Ativado</option>
             <option value="0">Desativado</option>

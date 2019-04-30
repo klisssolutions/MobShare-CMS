@@ -12,12 +12,12 @@
     $banners = $controllerBanner->listarBanners();
 ?>
 
-<div class="titulo-func-lista">GERENCIAMENTO DE NIVEIS</div>
+<div class="titulo-func-lista">GERENCIAMENTO DE BANNERS</div>
 
 <div class="botoes-func">
 
     <input type="button" value="Novo" class="btn-fun" onclick="cadastroBanner();">
-    <input type="button" value="Voltar" class="btn-fun" onclick="gerenciarFuncionario();">
+    <input type="button" value="Voltar" class="btn-fun" onclick="admPaginas();">
 
 </div>
 <?php
@@ -54,7 +54,7 @@
     <div class="opcao">
     
         <a href="#" onclick="selectRouter('banner', 'excluir', <?php echo($banner->getIdBanner());?>)">
-        <img src="view/imagens/delete.png" width="25" heigth="28">
+        <img src="view/imagens/trash.png" width="25" heigth="28">
         </a>
 
     </div>

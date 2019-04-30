@@ -12,7 +12,7 @@
 
 ?>
 
-<div class="titulo">GERENCIAMENTO DE FALE CONOSCO</div>
+<div class="titulo-func-lista">GERENCIAMENTO DE FALE CONOSCO</div>
 
 
 
@@ -25,44 +25,44 @@
 
 
 
-<div class="listaDados">
+<div class="listaDados2">
 
-    <div class="dados">
+    <div class="dados-func">
     
         Nome:
         
     </div>
-    <div class="infoDados">
+    <div class="dados-resp-func">
     
         <?php echo($Fale_Conosco->getNome());?>
     </div>
-    <div class="dados">
+    <div class="dados-func">
     
         Email:
         
     </div>
     
-    <div class="infoDados">
+    <div class="dados-resp-func">
     
         <?php echo($Fale_Conosco->getEmail());?>
     
     </div>
-        <div class="dados">
+        <div class="dados-func">
     
         Assunto:
         
     </div>
-        <div class="infoDados">
+        <div class="dados-resp-func">
     
         <?php echo($Fale_Conosco->getAssunto());?>
     
     </div>
-        <div class="dados">
+        <div class="dados-func">
     
         Mensagem:
         
     </div>
-        <div class="infoDados">
+        <div class="dados-resp-func">
     
         <?php echo($Fale_Conosco->getMensagem());?>
     
@@ -71,7 +71,7 @@
         
     
         <a href="#" onclick="selectRouter('Fale_Conosco','excluir',<?php
-        echo($Fale_Conosco->getIdFale_Conosco());?>)">Apagar</a>
+        echo($Fale_Conosco->getIdFale_Conosco());?>)"><img src="view/imagens/trash.png" width="25" heigth="28"></a>
 
     
     </div>

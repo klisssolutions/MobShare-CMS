@@ -301,7 +301,7 @@ nav {
     margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #cccccc;
+    background-color: #dddddd;
 }
 
 .dados{
@@ -512,9 +512,9 @@ a{
 }
 
 .botoes-func{
-    width: 600px;
+    width: 430px;
     height: 50px;
-   margin-left: 250px;
+   margin-left: 335px;
 }
 
 .btn-fun{
@@ -541,7 +541,7 @@ a{
     margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #eeeeee;
+    background-color: #dddddd;
 }
 
 .dados-func{
@@ -558,7 +558,8 @@ a{
 
 .dados-resp-func {
     width: 255px;
-    height: 20px;
+    min-height: 20px;
+    height: auto;
     float: left;
     margin-top: 12px;
     text-align: left;
@@ -577,15 +578,6 @@ a{
 .input-func{
     border: none;
     height: 25px;
-    width: 190px;
-    background-color: #cccccc;
-    font-family: Mont;  
-    
-}
-
-.input-func2{
-    border: none;
-    height: 50px;
     width: 190px;
     background-color: #cccccc;
     font-family: Mont;  
@@ -689,6 +681,8 @@ a{
     font-family: Mont;
     font-size: 14px;
     font-weight: bold;
+    background-color: #606e75;
+    color: #fff;
 }
 
 .btn-termo:hover{
@@ -721,6 +715,7 @@ a{
 .info-termo p{
     font-size: 16px;
     margin-top: -10px;
+    width: 250px;
     
 }
 
@@ -792,7 +787,7 @@ a{
     margin-top: 25px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #eeeeee;
+    background-color: #dddddd;
 }
 
 .dados-cancelamento{
@@ -807,9 +802,4 @@ a{
     margin-left: 10px;
     font-family: Mont;
     font-weight: bold;
-}
-
-#prev{
-    max-width: 350px;
-    max-height: 200px;
 }

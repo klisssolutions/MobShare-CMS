@@ -14,12 +14,12 @@
 ?>
 
 
-<div class="titulo">DUVIDAS FREQUENTES</div>
+<div class="titulo-func-lista">DUVIDAS FREQUENTES</div>
 
-<div class="botoes">
+<div class="botoes-func">
 
-    <input type="button" value="Novo" class="botao" onclick="cadastrarDuvida();">
-    <input type="button" value="Voltar" class="botao" onclick="admPaginas();">
+    <input type="button" value="Novo" class="btn-fun" onclick="cadastrarDuvida();">
+    <input type="button" value="Voltar" class="btn-fun" onclick="admPaginas();">
     
 
 </div>
@@ -34,24 +34,24 @@
 
 
 
-<div class="listaDados">
+<div class="listaDadosFunc">
 
-    <div class="dados">
+    <div class="dados-func">
     
         Pergunta:
         
     </div>
-    <div class="infoDados">
+    <div class="dados-resp-func">
     
       <?php echo($duvida->getPerguntas());?>
     
     </div>
-    <div class="dados">
+    <div class="dados-func">
     
         Resposta:
         
     </div>
-    <div class="infoDados">
+    <div class="dados-resp-func">
     
         <?php echo($duvida->getResposta());?>
     
@@ -73,10 +73,10 @@
     </a>
     
         <a class="opcao2" href="#" onclick="selectRouter('duvidas','buscar',<?php
-        echo($duvida->getIdPergunta());?>)">Editar</a>
+        echo($duvida->getIdPergunta());?>)"><img src="view/imagens/pencil.png" width="25" heigth="28"></a>
     
         <a href="#" class="opcao2" onclick="selectRouter('duvidas','excluir',<?php
-        echo($duvida->getIdPergunta());?>)">Apagar</a>
+        echo($duvida->getIdPergunta());?>)"><img src="view/imagens/trash.png" width="25" heigth="28"></a>
 
     
     </div>
