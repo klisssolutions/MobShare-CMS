@@ -1,7 +1,7 @@
 <?php 
 
     @session_start();
-    @$_SESSION["importInclude"] = $_SERVER["DOCUMENT_ROOT"] . "/Mobshare/CMS/include.php";
+    @$_SESSION["importInclude"] = $_SERVER["DOCUMENT_ROOT"] . "/Mobshare/include.php";
     require_once($_SESSION["importInclude"]); 
     require_once(IMPORT_FUNCIONAMENTO);
     require_once(IMPORT_FUNCIONAMENTO_CONTROLLER);

@@ -87,6 +87,17 @@ class controllerModelo{
         return $modeloDAO->selectById($id);
     }
 
+    public function buscarModelo($idModelo){
+        //Instancia do DAO
+        $modeloDAO = new modeloDAO();
+
+        //Pega o ID para realizar a busca
+       // $idModelo = $_GET["id"];
+
+        
+        return $modeloDAO->selectById($idModelo);
+    }    
+
     public function listarModelos(){
         //Instancia do DAO
         $modeloDAO = new modeloDAO();

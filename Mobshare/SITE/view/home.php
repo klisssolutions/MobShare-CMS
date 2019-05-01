@@ -118,7 +118,7 @@ $veiculos = $controllerVeiculo->listarVeiculos();
             </div>
             <div class="img-como-funciona">
             
-                <img src="<?php echo('/Mobshare/'.$banners[$i]->getImagem())?>" width="650" height="600"  alt="App da MobShare">
+                <img src="<?php echo('/Mobshare/arquivos/'.$banners[$i]->getImagem())?>" width="650" height="600"  alt="App da MobShare">
                 
             </div>
         </div> 

@@ -42,7 +42,7 @@ if($modo == "LOGAR"){
     }
 
 }else if($modo == "INSERIR"){
-    $status = $controllerCliente->inserir(2);
+    $status = $controllerCliente->inserirCliente(2);
 
     $result = array(
         "status" => $status

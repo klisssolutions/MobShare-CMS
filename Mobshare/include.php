@@ -258,7 +258,7 @@ if(!isset($incluso)){
     define("IMPORT_CMS_CADASTRO_FUNCIONAMENTO", RAIZ_IMPORT . "/CMS/view/comoFunciona/comoFunciona.php");
 
     //Import páginas de banner
-    define("IMPORT_CADASTRO_BANNER", RAIZ_IMPORT . "/view/banner/banner.php");
+    define("IMPORT_CADASTRO_BANNER", RAIZ_IMPORT . "/CMS/view/banner/banner.php");
 
     //Import da página de marcas
     define("IMPORT_CADASTRO_MARCAS", RAIZ_IMPORT . "/CMS/view/marcasemodelos/marcas.php");

@@ -489,6 +489,50 @@ if(isset($_GET["controller"])){
             }
         break;
 
+        case "BANNER":
+     
+            
+        require_once(IMPORT_BANNER_CONTROLLER);
+
+        $controllerBanner= new controllerBanner();
+
+        
+        switch($modo){
+
+            case "INSERIR":
+
+               $controllerBanner->inserir();
+            
+               echo("<script>banner();</script>");
+            break;
+
+            case "EXCLUIR":
+
+            $controllerBanner->excluir();
+            
+            echo("<script>banner();</script>");
+            break;    
+            
+            case "BUSCAR":
+
+            $banner = new Banner();
+            $banner = $controllerBanner->buscarBanner();
+            
+            require_once(IMPORT_CADASTRO_BANNER);
+            break;   
+
+            case "ATUALIZAR":
+
+           
+                $controllerBanner->atualizar();
+                
+                echo("<script>banner();</script>");
+            break;                  
+
+        }  
+        
+    break;        
+
         case "DUVIDAS":
             
             //Import da controller de DuvidasFrequentes

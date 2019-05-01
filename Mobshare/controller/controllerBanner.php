@@ -23,6 +23,7 @@ class controllerBanner{
     }
 
     public function inserir(){
+        
         //Instancia do DAO
         $bannerDAO = new bannerDAO();
 
