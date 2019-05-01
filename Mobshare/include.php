@@ -231,6 +231,11 @@ if(!isset($incluso)){
     define("IMPORT_V_DETALHES_LOCACAO", RAIZ_IMPORT . "/model/v_detalhes_locacaoClass.php");
     define("IMPORT_V_DETALHES_LOCACAO_DAO", RAIZ_IMPORT . "/model/DAO/v_detalhes_locacaoDAO.php");
     define("IMPORT_V_DETALHES_LOCACAO_CONTROLLER", RAIZ_IMPORT . "/controller/controllerV_detalhes_locacao.php"); 
+
+    //import anuncios mobile
+    define("IMPORT_ANUNCIOS", PASTA_RAIZ . PASTA_PROJETO . "/model/anunciosClass.php");
+    define("IMPORT_ANUNCIOS_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/anunciosDAO.php");
+    define("IMPORT_ANUNCIOS_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerAnuncios.php");
     
     /*---------------------------------------------------------------*/
     /*--------------------------- PÁGINAS ---------------------------*/
