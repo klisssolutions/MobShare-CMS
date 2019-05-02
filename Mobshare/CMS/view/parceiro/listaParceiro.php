@@ -11,7 +11,7 @@
 ?>
 <div class="titulo-func-lista">SEJA UM PARCEIRO</div>
 
-<div class="botoes">
+<div class="botoes-func">
 
     <input type="button" value="Novo" class="btn-fun" onclick="cadastrarParceiro();">
     <input type="button" value="Voltar" class="btn-fun" onclick="admPaginas();">
