@@ -1,38 +1,39 @@
 @charset "utf-8";
 
-body, h1, p{
+body,
+h1,
+p {
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     width: 100%;
     background-color: #102840;
 }
 
-@font-face{
+@font-face {
     font-family: Mont;
     src: url(../fonts/Montserrat-Regular.ttf);
 }
 
 /********** CABEÇALHO ***********/
-header{
+header {
     width: 100%;
     height: 110px;
     background-color: #102840;
     position: fixed;
     box-shadow: 1px 4px 6px 4px rgba(0, 0, 0, 0.2);
-    float: left;
-    
+    z-index: 999;
 }
 
-.logotipo{
+.logotipo {
     width: 30%;
     height: 100%;
     float: left;
 }
 
-.img-logotipo{
+.img-logotipo {
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -42,20 +43,20 @@ header{
 
 }
 
-.menu-header{
+.menu-header {
     width: 50%;
     height: 100%;
     float: left;
 }
 
-.menu-item{
+.menu-item {
     width: 90%;
     height: 100%;
     margin-left: 100px;
     margin-top: 45px;
 }
 
-.menu-item a{
+.menu-item a {
     padding: 10px 8px 10px 8px;
     margin-right: 5px;
     margin-top: 50px;
@@ -64,21 +65,21 @@ header{
     font-size: 18px;
 }
 
-.menu-item a:hover{
+.menu-item a:hover {
     transition: 2s;
     color: #5e85e1;
     border-bottom: 1px solid #5e85e1;
     cursor: pointer;
 }
 
-.box-login{
+.box-login {
     width: 20%;
     height: 100%;
-    
+
     float: left;
 }
 
-.botao-login{
+.botao-login {
     width: 60px;
     padding: 10px 10px 10px 10px;
     margin-right: auto;
@@ -92,21 +93,21 @@ header{
     text-align: center;
 }
 
-.botao-login:hover{
+.botao-login:hover {
     background-color: #5e85e1;
 }
 
-.texto-cadastrar h1{
+.texto-cadastrar h1 {
     font-family: Mont;
     color: #fff;
     font-size: 12px;
     align-content: center;
-    text-align: center; 
+    text-align: center;
     margin-top: 5px;
 }
 
 /******** CAIXA QUE FICA ABAIXO DO CABEÇALHO SEGURANDO AS INFORMAÇÕES *******/
-.content{
+.content {
     width: 100%;
     min-height: 500px;
     height: auto;
@@ -114,34 +115,34 @@ header{
 }
 
 /*********** RODAPÉ *******/
-footer{
+footer {
     width: 100%;
     height: 200px;
     float: left;
-    background-color:#102840;
-}
-
-.rodape{
-    width: 100%;
-    height: 100%;
-    
     background-color: #102840;
 }
 
-.menu-rodape{
+.rodape {
+    width: 100%;
+    height: 100%;
+
+    background-color: #102840;
+}
+
+.menu-rodape {
     width: 33%;
     height: 100%;
     float: left;
-    
+
 }
 
-.titulo-menu-rodape{
+.titulo-menu-rodape {
     height: 15%;
     width: 100%;
     margin-top: 20px;
 }
 
-.titulo-menu-rodape h1{
+.titulo-menu-rodape h1 {
     width: 100px;
     height: 75%;
     margin-left: 120px;
@@ -153,13 +154,13 @@ footer{
     text-align: left;
 }
 
-.menu-rodape-item{
+.menu-rodape-item {
     height: 85%;
     width: 100%;
-    
+
 }
 
-.menu-rodape-item a{
+.menu-rodape-item a {
     width: 170px;
     height: 20px;
     font-family: Mont;
@@ -175,23 +176,22 @@ footer{
     cursor: pointer;
 }
 
-a:link 
-{ 
-text-decoration:none; 
+a:link {
+    text-decoration: none;
 }
 
-.menu-rodape-item a:hover{
+.menu-rodape-item a:hover {
     transition: 2s;
     color: #5e85e1;
 }
 
-.logotipo-rodape{
+.logotipo-rodape {
     width: 34%;
     height: 100%;
     float: left;
 }
 
-.img-logo-rodape{
+.img-logo-rodape {
     width: 100%;
     height: 80%;
     margin-right: auto;
@@ -199,36 +199,36 @@ text-decoration:none;
     margin-top: 10px;
 }
 
-.img-logo-rodape img{
+.img-logo-rodape img {
     margin-left: 100px;
 }
 
-.img-redes-sociais{
+.img-redes-sociais {
     width: 50%;
     height: 20%;
     margin-right: auto;
     margin-left: auto;
 }
 
-.img-redes-sociais img{
+.img-redes-sociais img {
     margin-left: 10px;
     margin-top: 10px;
 }
 
-.contato-rodape{
+.contato-rodape {
     width: 33%;
     height: 100%;
     float: left;
 }
 
-.contato-menu-rodape{
+.contato-menu-rodape {
     height: 15%;
     width: 100%;
     margin-top: 20px;
 
 }
 
-.contato-menu-rodape h1{
+.contato-menu-rodape h1 {
     width: 100px;
     height: 75%;
     margin-left: 90px;
@@ -240,13 +240,13 @@ text-decoration:none;
     text-align: center;
 }
 
-.contato-rodape-item{
+.contato-rodape-item {
     height: 85%;
     width: 100%;
-    
+
 }
 
-.contato-rodape-item a{
+.contato-rodape-item a {
     width: 280px;
     height: 20px;
     font-family: Mont;
@@ -262,14 +262,14 @@ text-decoration:none;
     float: left;
 }
 
-.texto-direitos{
+.texto-direitos {
     width: 100%;
     padding-top: 80px;
     height: 25px;
     background-color: #102840;
 }
 
-.texto-direitos h1{
+.texto-direitos h1 {
     margin-top: 0;
     font-family: Mont;
     font-size: 12px;
@@ -281,7 +281,7 @@ text-decoration:none;
 }
 
 /************* CONTEÚDO DA HOME ***************/
-.caixa-pesquisa-imagem{
+.caixa-pesquisa-imagem {
     width: 100%;
     height: 700px;
     background-image: url(../images/banner.jpg);
@@ -292,13 +292,13 @@ text-decoration:none;
 
 
 
-.caixa-pesquisa-home{
+.caixa-pesquisa-home {
     width: 650px;
     height: 60px;
     border-radius: 50px;
     border: none;
     margin-left: 590px;
-    margin-top:300px;
+    margin-top: 300px;
     font-size: 22px;
     font-family: Mont;
     background-image: url(../images/search.png);
@@ -308,30 +308,32 @@ text-decoration:none;
 }
 
 /*********************** CAIXA QUE SEGURA OS VEICULOS ***************************/
-.caixa-veiculos-home{
+.caixa-veiculos-home {
     width: 100%;
-    height: 1200px;
+    min-height: 1200px;
+    height: auto;
     background-color: #fff;
 }
 
-.caixa-itens-home{
+.caixa-itens-home {
     width: 100%;
     height: 10%;
     float: left;
 }
 
-.menu-veiculos{
+.menu-veiculos {
     width: 100%;
     height: 100%;
     margin-left: 620px;
     margin-top: 42px;
     float: left;
-    
+
 }
 
-.menu-veiculos a{
+.menu-veiculos a {
     width: 500px;
-    border-bottom: 1px solid #002171;;
+    border-bottom: 1px solid #002171;
+    ;
     margin-top: 40px;
     font-family: Mont;
     color: #002171;
@@ -345,35 +347,41 @@ text-decoration:none;
     border-top-left-radius: 20px;*/
 }
 
-.menu-veiculos .clicado{
+.menu-veiculos .clicado {
     background-color: #fff;
 }
 
-.caixa-veiculos{
+.caixa-veiculos {
     width: 1300px;
-    height: 90%;
+    min-height: 600px;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
-    background-color: #fff;
+    overflow: hidden;
 }
 
-.box-veiculo{
+.box-veiculo {
     width: 320px;
-    height: 390px;
+    min-height: 390px;
+    height: auto;
     /*box-shadow: 1px 4px 6px 4px rgba(0, 0, 0, 0.2); */
     float: left;
     margin-left: 60px;
     margin-bottom: 50px;
     background-color: #e9f0f6;
     margin-top: 80px;
+    overflow: hidden;
 }
 
-.img-veiculo{
+.img-veiculo {
     height: 50%;
     width: 100%;
 }
 
-.texto-modelo, .texto-km, .texto-regiao, .texto-avaliacao{
+.texto-modelo,
+.texto-km,
+.texto-regiao,
+.texto-avaliacao {
     font-family: Mont;
     font-size: 16px;
     margin-top: 16px;
@@ -383,11 +391,11 @@ text-decoration:none;
 
 }
 
-.texto-modelo{
+.texto-modelo {
     text-transform: uppercase;
 }
 
-.botao-veiculo{
+.botao-veiculo {
     width: 78px;
     font-size: 16px;
     background-color: #102840;
@@ -402,48 +410,51 @@ text-decoration:none;
     border-radius: 15px;
 }
 
-.botao-veiculo:hover{
+.botao-veiculo:hover {
     background-color: #04070e;
     cursor: pointer;
 }
 
 /*********** caixa como funciona ***************/
-.caixa-como-funciona{
+.caixa-como-funciona {
     width: 100%;
-    height: 700px;
-    background-color: #fff;
+    min-height: 70px;
+    height: auto;
+    overflow: hidden;
+    background-color: aqua;
+    margin-top: 10px;
 }
 
-.img-como-funciona{
+.img-como-funciona {
     width: 50%;
     height: 100%;
     float: left;
 }
 
-.img-como-funciona img{
+.img-como-funciona img {
     margin-left: 0px;
     margin-top: 10px;
 }
 
-.img-como-funciona img:hover{
+.img-como-funciona img:hover {
     filter: grayscale(100%0)
 }
 
-.texto-como-funciona{
+.texto-como-funciona {
     width: 50%;
     height: 100%;
     float: left;
 }
 
 
-.texto-como-funciona h1{
+.texto-como-funciona h1 {
     margin-top: 150px;
     font-family: Mont;
     color: #102840;
     margin-left: 450px;
 }
 
-.texto-como-funciona p{
+.texto-como-funciona p {
     font-family: Mont;
     width: 500px;
     text-align: right;
@@ -451,7 +462,7 @@ text-decoration:none;
     color: #000;
 }
 
-.texto-como-funciona h2{
+.texto-como-funciona h2 {
     width: 120px;
     height: 30px;
     margin-left: 520px;
@@ -465,36 +476,36 @@ text-decoration:none;
     padding: 5px 40px 0px 40px;
 }
 
-.texto-como-funciona h2:hover{
+.texto-como-funciona h2:hover {
     background-color: #5e85e1;
 }
 
 /* CAIXA QUE TEM A FOTO DO APP*/
-.caixa-app{
+.caixa-app {
     width: 100%;
     height: 750px;
     background-color: #fff;
 }
 
-.imagem-app{
+.imagem-app {
     width: 50%;
     height: 100%;
     float: left;
 }
 
-.imagem-app img{
+.imagem-app img {
     margin-left: 260px;
     margin-top: 20px;
 }
 
-.texto-botao-app{
+.texto-botao-app {
     width: 50%;
     height: 100%;
     background-color: #fff;
     float: left;
 }
 
-.texto-botao-app h1{
+.texto-botao-app h1 {
     margin-top: 150px;
     font-family: Mont;
     color: #04070e;
@@ -503,14 +514,14 @@ text-decoration:none;
     margin-bottom: 20px;
 }
 
-.texto-botao-app p{
+.texto-botao-app p {
     font-family: Mont;
     width: 500px;
     font-size: 19px;
     text-align: center;
 }
 
-.texto-botao-app h2{
+.texto-botao-app h2 {
     width: 120px;
     height: 40px;
     margin-left: 180px;
@@ -525,26 +536,26 @@ text-decoration:none;
     line-height: 40px;
 }
 
-.texto-botao-app h2:hover{
+.texto-botao-app h2:hover {
     background-color: #5e85e1;
     cursor: pointer;
 }
 
 /*************** PAGINA ANUNCIOS ************/
 /*box banner */
-.box-slider-banner-veiculo{
+.box-slider-banner-veiculo {
     width: 100%;
     height: 700px;
     background-color: #fff;
 }
 
-.box-texto-anuncios{
+.box-texto-anuncios {
     width: 50%;
     height: 100%;
     float: left;
 }
 
-.box-texto-anuncios h1{
+.box-texto-anuncios h1 {
     font-family: Mont;
     margin-top: 220px;
     text-align: center;
@@ -555,7 +566,7 @@ text-decoration:none;
     font-size: 36px;
 }
 
-.box-texto-anuncios p{
+.box-texto-anuncios p {
     width: 650px;
     font-family: Mont;
     font-size: 20px;
@@ -563,14 +574,14 @@ text-decoration:none;
     margin-left: 150px;
 }
 
-.box-imagem-anuncios{
+.box-imagem-anuncios {
     width: 50%;
     height: 100%;
-    background-color:#fff;
+    background-color: #fff;
     float: left;
 }
 
-.box-imagem-anuncios img{
+.box-imagem-anuncios img {
     margin-top: 150px;
     margin-left: -50px;
 }
@@ -578,21 +589,23 @@ text-decoration:none;
 
 
 /* ANUNCIOS DE CARROS E TALS */
-.box-anuncios{
+.box-anuncios {
     width: 100%;
-    height: 1800px;
+    min-height: 1800px;
+    height: auto;
     background-color: darkred;
-    margin-top: 110px; 
+    margin-top: 110px;
     float: left;
+    overflow: hidden;
 }
 
-.box-pesquisa-anucios{
+.box-pesquisa-anucios {
     height: 7%;
     width: 100%;
     background-color: #e9f0f6;
 }
 
-.anuncios-pesquisa{
+.anuncios-pesquisa {
     width: 600px;
     height: 60px;
     text-align: left;
@@ -607,24 +620,28 @@ text-decoration:none;
     border: none;
 }
 
-.box-anuncios-veiculos{
-    height: 95%;
+.box-anuncios-veiculos {
+    min-height: 500px;
+    height: auto;
     width: 100%;
+    overflow: hidden;
+    
 }
 
-.box-filtros{
+.box-filtros {
     width: 20%;
     height: 100%;
     background-color: #fefefe;
     float: left;
+    
 }
 
-.filtros{
+.filtros {
     width: 100%;
     height: 145px;
 }
 
-.filtros h1{
+.filtros h1 {
     font-family: Mont;
     margin-left: 90px;
     margin-top: 20px;
@@ -634,7 +651,7 @@ text-decoration:none;
     width: 200px;
 }
 
-.filtros select{
+.filtros select {
     border: none;
     width: 200px;
     height: 40px;
@@ -645,14 +662,14 @@ text-decoration:none;
     background-color: #e9f0f6;
 }
 
-.box-veiculos{
+.box-veiculos {
     width: 80%;
     height: 100%;
     background-color: #fff;
     float: left;
 }
 
-.botao-filtrar{
+.botao-filtrar {
     width: 150px;
     height: 20px;
     padding: 10px 20px 10px 10px;
@@ -667,29 +684,29 @@ text-decoration:none;
     text-align: center;
 }
 
-.box-veiculo-anuncio{
+.box-veiculo-anuncio {
     width: 400px;
     height: 450px;
     margin-left: 50px;
-    margin-top: 25px;   
+    margin-top: 25px;
     background-color: #ecebeb;
     float: left;
 }
 
-.box-veiculo-anuncio .texto-modelo{
+.box-veiculo-anuncio .texto-modelo {
     font-weight: bold;
     font-size: 25px;
 }
 
 
 
-.imagem-anuncio{
+.imagem-anuncio {
     height: 50%;
     width: 100%;
     background-color: brown;
 }
 
-.botao-veja{
+.botao-veja {
     width: 150px;
     height: 20px;
     padding: 10px 20px 10px 10px;
@@ -703,25 +720,25 @@ text-decoration:none;
     text-align: center;
 }
 
-.botao-veja:hover{
+.botao-veja:hover {
     background-color: #000;
     cursor: pointer;
 }
 
 /***************** PAGINA COMO FUNCIONA *******************/
-.box-como-funciona-primeiro{
+.box-como-funciona-primeiro {
     height: 700px;
     width: 100%;
-    background-color:#fff;
+    background-color: #fff;
 }
 
-.texto-como-funciona-pag{
+.texto-como-funciona-pag {
     width: 50%;
     height: 100%;
     float: left;
 }
 
-.texto-como-funciona-pag p{
+.texto-como-funciona-pag p {
     margin-top: 250px;
     width: 500px;
     font-family: Mont;
@@ -729,7 +746,7 @@ text-decoration:none;
     margin-left: 280px;
 }
 
-.texto-como-funciona-pag h1{
+.texto-como-funciona-pag h1 {
     width: 500px;
     font-family: Mont;
     font-size: 40px;
@@ -738,29 +755,29 @@ text-decoration:none;
     color: #002171;
 }
 
-.image-como-funciona-pag{
+.image-como-funciona-pag {
     width: 50%;
     height: 100%;
     float: left;
 }
 
-.image-como-funciona-pag img{
+.image-como-funciona-pag img {
     margin-top: 130px;
 }
 
-.box-como-funciona-segundo{
+.box-como-funciona-segundo {
     height: 700px;
     width: 100%;
     background-color: #fff;
 }
 
-.texto-como-funciona2{
+.texto-como-funciona2 {
     width: 50%;
     height: 100%;
     float: left;
 }
 
-.texto-como-funciona2 h1{
+.texto-como-funciona2 h1 {
     width: 500px;
     font-family: Mont;
     font-size: 40px;
@@ -769,31 +786,31 @@ text-decoration:none;
     color: #002171;
 }
 
-.texto-como-funciona2 p{
+.texto-como-funciona2 p {
 
     width: 500px;
     font-family: Mont;
     font-size: 20px;
 }
 
-.image-como-funciona2{
+.image-como-funciona2 {
     width: 50%;
     height: 100%;
     float: left;
 }
 
-.image-como-funciona2 img{
+.image-como-funciona2 img {
     margin-top: 100px;
     margin-left: 100px;
 }
 
-.box-como-funciona-terceiro{
+.box-como-funciona-terceiro {
     height: 500px;
     width: 100%;
     background-color: #fff;
 }
 
-.avaliacoes{
+.avaliacoes {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
@@ -801,16 +818,17 @@ text-decoration:none;
     background-color: #fff;
 }
 
-.avaliacoes h1{
+.avaliacoes h1 {
     width: 100px;
     font-family: Mont;
     font-size: 32px;
     margin-right: auto;
     margin-left: auto;
     padding-top: 100px;
-    
+
 }
-.avaliacoes p{
+
+.avaliacoes p {
     width: 500px;
     font-family: Mont;
     font-size: 20px;
@@ -818,7 +836,7 @@ text-decoration:none;
     margin-left: auto;
 }
 
-.avaliacoes h2{
+.avaliacoes h2 {
     width: 200px;
     font-family: Mont;
     font-size: 20px;
@@ -826,26 +844,28 @@ text-decoration:none;
     margin-right: auto;
     margin-left: auto;
 }
-.box-como-funciona-quarto{
+
+.box-como-funciona-quarto {
     height: 500px;
     width: 100%;
     background-color: #fff;
+    padding-top: 120px;
 }
 
-.image-como-funciona4{
+.image-como-funciona4 {
     width: 50%;
     height: 100%;
     float: left;
 }
 
 
-.texto-como-funciona4{
+.texto-como-funciona4 {
     width: 50%;
     height: 100%;
     float: left;
 }
 
-.texto-como-funciona4 h1{
+.texto-como-funciona4 h1 {
 
     font-family: Mont;
     font-size: 32px;
@@ -856,7 +876,7 @@ text-decoration:none;
     color: #102840;
 }
 
-.texto-como-funciona4 p{
+.texto-como-funciona4 p {
     width: 500px;
     font-family: Mont;
     font-size: 20px;
@@ -867,12 +887,14 @@ text-decoration:none;
 
 
 /********** PAGINA: TERMOS DE USO ***********/
-.box-termos{
+.box-termos {
     width: 100%;
-    height: 1600px;
+    min-height: 1600px;
+    height: auto;
+    overflow: hidden;
 }
 
-.image-termos{
+.image-termos {
     height: 20%;
     width: 100%;
     padding-top: 110px;
@@ -880,7 +902,7 @@ text-decoration:none;
     background-size: 100%;
 }
 
-.texto-sob-imagem{
+.texto-sob-imagem {
     height: 50px;
     width: 400px;
     float: left;
@@ -889,7 +911,7 @@ text-decoration:none;
     background-color: #102840;
 }
 
-.texto-sob-imagem h1{
+.texto-sob-imagem h1 {
     font-family: Mont;
     color: #fff;
     text-align: center;
@@ -897,7 +919,7 @@ text-decoration:none;
     text-transform: uppercase;
 }
 
-.texto-termos{
+.texto-termos {
     min-height: 80%;
     width: 100%;
     background-color: #fefefe;
@@ -907,13 +929,13 @@ text-decoration:none;
 
 }
 
-.termo{
+.termo {
     height: 10%;
     width: 100%;
     float: left;
 }
 
-.termo p{
+.termo p {
     width: 90%;
     height: 90%;
     font-family: Mont;
@@ -925,46 +947,48 @@ text-decoration:none;
 
 
 /************* PÁGINA - DUVIDAS FREQUENTES *****************/
-.box-duvidas{
+.box-duvidas {
     height: 1700px;
     width: 100%;
     background-color: #fff;
- 
+
 }
 
-.duvidas-titulo{
+.duvidas-titulo {
     height: 30%;
     width: 100%;
 }
 
-.texto-duvidas{
-    height: 70%;
+.texto-duvidas {
+    min-height: 70px;
     width: 100%;
     float: left;
+    height: auto;
+    overflow: hidden;
 }
 
-.titulo-duvidas{
+.titulo-duvidas {
     height: 100%;
     width: 50%;
     float: left;
 }
 
-.titulo-duvidas h1{
+.titulo-duvidas h1 {
     font-family: Mont;
     font-size: 38px;
     color: #002171;
     margin-top: 250px;
     margin-left: 200px;
-    text-align: center; 
+    text-align: center;
 }
 
-.image-duvidas{
+.image-duvidas {
     height: 100%;
     width: 50%;
     float: left;
 }
 
-.image-faq{
+.image-faq {
     width: 50%;
     height: 50%;
     margin-left: auto;
@@ -975,36 +999,37 @@ text-decoration:none;
     margin-top: 150px;
 }
 
-.duvida{
-    height: 10%;
+.duvida {
+    min-height: 50px;
+    height: auto;
     width: 90%;
     background-color: #e9f0f6;
     margin-left: auto;
     margin-right: auto;
 }
 
-.duvida h2{
+.duvida h2 {
     font-family: Mont;
     margin-top: 10px;
 
 }
 
-.duvida p{
+.duvida p {
     font-family: Mont;
     font-size: 18px;
 }
 
 /********************* PÁG: FALE CONOSCO*******************/
-.box-fale-conosco{
+.box-fale-conosco {
     width: 100%;
     height: 1200px;
     background-color: #e9f0f6;
     background-image: url(../images/david-hellmann-433025-unsplash.jpg);
     background-size: 100%;
-    
+
 }
 
-.fale-conosco{
+.fale-conosco {
     width: 30%;
     height: 65%;
     background-color: #102840;
@@ -1014,15 +1039,19 @@ text-decoration:none;
     margin-top: 200px;
 }
 
-.titulo-fale-conosco, .nome-fale-conosco, .email-fale-conosco, .assunto-fale-conosco, .botao-fale-conosco{
+.titulo-fale-conosco,
+.nome-fale-conosco,
+.email-fale-conosco,
+.assunto-fale-conosco,
+.botao-fale-conosco {
     height: 100px;
     width: 100%;
     margin-top: 5px;
     float: left;
-    
+
 }
 
-.titulo-fale-conosco h1{
+.titulo-fale-conosco h1 {
     font-family: Mont;
     font-size: 30px;
     color: #5e85e1;
@@ -1035,14 +1064,18 @@ text-decoration:none;
     margin-left: 100px;
 }
 
-.nome-fale-conosco h1, .email-fale-conosco h1, .assunto-fale-conosco h1, .botao-fale-conosco h1, .mensagem-fale-conosco h1{
+.nome-fale-conosco h1,
+.email-fale-conosco h1,
+.assunto-fale-conosco h1,
+.botao-fale-conosco h1,
+.mensagem-fale-conosco h1 {
     font-family: Mont;
     margin-left: 100px;
     color: #ecebeb;
     font-weight: normal;
 }
 
-.txt-fale-conosco{
+.txt-fale-conosco {
     border: none;
     margin-left: 100px;
     width: 350px;
@@ -1053,13 +1086,13 @@ text-decoration:none;
 }
 
 
-.mensagem-fale-conosco{
+.mensagem-fale-conosco {
     width: 100%;
     height: 350px;
     float: left;
 }
 
-.mensagem-fale-conosco textarea{
+.mensagem-fale-conosco textarea {
     width: 350px;
     font-size: 18px;
     font-family: Mont;
@@ -1069,7 +1102,7 @@ text-decoration:none;
     margin-top: 10px;
 }
 
-.btn-fale-conosco{
+.btn-fale-conosco {
     border: none;
     width: 120px;
     height: 50px;
@@ -1084,20 +1117,20 @@ text-decoration:none;
     text-transform: uppercase;
 }
 
-.btn-fale-conosco:hover{
+.btn-fale-conosco:hover {
     background-color: #5e85e1;
     cursor: pointer;
 }
 
 /******************** PAG: AVALIAÇÃO DO MÊS ***********************/
-.box-avaliacoes{
+.box-avaliacoes {
     width: 100%;
     height: 1500px;
     background-color: #ececec;
-    
+
 }
 
-.avaliacoes{
+.avaliacoes {
     width: 100%;
     height: 100%;
     background-color: #ecebeb;
@@ -1106,12 +1139,12 @@ text-decoration:none;
 
 }
 
-.titulo-av{
+.titulo-av {
     height: 10%;
     width: 100%;
 }
 
-.titulo-av h1{
+.titulo-av h1 {
     width: 80%;
     margin-top: -50px;
     float: left;
@@ -1120,21 +1153,21 @@ text-decoration:none;
     color: #002171;
 }
 
-.box-avaliacao{
+.box-avaliacao {
     height: 90%;
     width: 100%;
     background-color: #ecebeb;
 
 }
 
-.caixa-avaliacao{
+.caixa-avaliacao {
     margin-left: auto;
     margin-right: auto;
     width: 75%;
     height: 100%;
 }
 
-.box-av{
+.box-av {
     width: 400px;
     height: 460px;
     background-color: #fff;
@@ -1143,20 +1176,22 @@ text-decoration:none;
     float: left;
 }
 
-.img-avaliacao{
+.img-avaliacao {
     height: 50%;
     width: 100%;
     background-color: aliceblue;
 }
 
-.titulo-veiculo, .texto-av, .botao-avaliacao{
+.titulo-veiculo,
+.texto-av,
+.botao-avaliacao {
     height: 8%;
     width: 100%;
     margin-top: -10px;
     margin-bottom: 20px;
 }
 
-.titulo-veiculo h2{
+.titulo-veiculo h2 {
     font-family: Mont;
     width: 400px;
     font-size: 24px;
@@ -1164,14 +1199,14 @@ text-decoration:none;
     text-align: center;
 }
 
-.texto-av h2{
+.texto-av h2 {
     font-family: Mont;
     text-align: left;
     width: 400px;
-    margin-left: 5px;   
+    margin-left: 5px;
 }
 
-.btn-av{
+.btn-av {
     border: none;
     width: 120px;
     height: 45px;
@@ -1181,41 +1216,41 @@ text-decoration:none;
     color: #ecebeb;
     font-size: 15px;
     font-family: Mont;
-    text-transform: uppercase;  
+    text-transform: uppercase;
     margin-left: 140px;
 }
 
 /**************** PÁG: PARCEIROS ****************/
 
-.box-parceiros{
+.box-parceiros {
     width: 100%;
     height: 1600px;
     float: left;
     background-color: #ecebeb;
     padding-bottom: 100px;
-  
+
 }
 
-.box-parceiro1{
+.box-parceiro1 {
     height: 33%;
     width: 100%;
     margin-top: 100px;
-    
+
 }
 
-.box-parceiro{
+.box-parceiro {
     height: 33%;
     width: 100%;
-    margin-top: 5px;
+    margin-top: 20px;
 }
 
-.box-texto-imagem{
+.box-texto-imagem {
     height: 100%;
     width: 50%;
     float: left;
 }
 
-.txt-parceiro{
+.txt-parceiro {
     width: 60%;
     height: 45%;
     margin-right: auto;
@@ -1223,20 +1258,20 @@ text-decoration:none;
     margin-top: 120px;
 }
 
-.txt-parceiro h1{
+.txt-parceiro h1 {
     font-family: Mont;
     font-size: 35px;
     border-bottom: 2px solid #000;
 }
 
-.txt-parceiro p{
+.txt-parceiro p {
     font-family: Mont;
     font-size: 20px;
     margin-top: 5px;
 
 }
 
-.img-parceiro{
+.img-parceiro {
     width: 70%;
     height: 70%;
     margin-right: auto;
@@ -1244,36 +1279,38 @@ text-decoration:none;
     margin-top: 80px;
 }
 
-.slider-parceiros{
-    width: 40%;
-    height: 90%;
+.slider-parceiros {
+    width: 700px;
+    height: 300px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 160px;
+    margin-bottom: 65px;
+}
+
+.slider-parceiros img {
     margin-right: auto;
     margin-left: auto;
 }
 
-.slider-parceiros img{
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.txt-slider-parceiros{
+.txt-slider-parceiros {
     width: 40%;
     height: 10%;
     margin-right: auto;
     margin-left: auto;
 }
 
-.txt-slider-parceiros h1{
+.txt-slider-parceiros h1 {
     font-family: Mont;
     text-align: center;
     padding-top: 5px;
     font-size: 32px;
     text-transform: uppercase;
-    
+
 }
 
 /******** PAG: LOGIN *************/
-.content-login{
+.content-login {
     width: 1920px;
     height: 937px;
     background-image: url(../images/david-hellmann-433025-unsplash.jpg);
@@ -1281,29 +1318,29 @@ text-decoration:none;
     float: left;
 }
 
-.login{
+.login {
     width: 30%;
     height: 60%;
     background-color: #102840;
     margin-right: auto;
     margin-left: auto;
     margin-top: 190px;
-    
+
 }
 
-.img-login{
+.img-login {
     width: 30%;
     height: 25%;
     margin-right: auto;
     margin-left: auto;
 }
 
-.img-login img{
+.img-login img {
     margin-left: -50px;
     margin-top: 15px;
 }
 
-.txt-login{
+.txt-login {
     width: 90%;
     height: 20%;
     margin-right: auto;
@@ -1311,20 +1348,21 @@ text-decoration:none;
     margin-top: 10px;
 }
 
-.txt-login h1{
+.txt-login h1 {
     font-family: Mont;
     font-size: 26px;
     color: #ecebeb;
 }
 
-.input-login{
+.input-login {
     border: none;
     margin-top: 10px;
     width: 520px;
-    height: 40px;;
+    height: 40px;
+    ;
 }
 
-.btn-login{
+.btn-login {
     width: 90%;
     height: 25%;
     margin-right: auto;
@@ -1332,7 +1370,7 @@ text-decoration:none;
     margin-top: 10px;
 }
 
-.btn-login-form{
+.btn-login-form {
     border: none;
     width: 120px;
     height: 45px;
@@ -1342,20 +1380,20 @@ text-decoration:none;
     color: #000;
     font-size: 15px;
     font-family: Mont;
-    text-transform: uppercase;  
+    text-transform: uppercase;
     margin-top: 10px;
 
 }
 
-.btn-login p{
+.btn-login p {
     text-align: center;
     margin-top: 10px;
-    font-family: Mont; 
+    font-family: Mont;
     color: #e9f0f6;
 }
 
 /*********** PAGINA CADASTRO **************/
-.content-cadastro{
+.content-cadastro {
     width: 1920px;
     height: 937px;
     background-size: 100%;
@@ -1363,18 +1401,18 @@ text-decoration:none;
 }
 
 
-.cadastro{
+.cadastro {
     width: 30%;
     height: 80%;
     background-color: #102840;
     margin-right: auto;
     margin-left: auto;
     margin-top: 90px;
-    box-shadow: 0px 0px 6px -1px rgba(0,0,0,0.75);
-    
+    box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.75);
+
 }
 
-.img-cadastro{
+.img-cadastro {
     width: 30%;
     height: 170px;
     margin-left: auto;
@@ -1382,16 +1420,15 @@ text-decoration:none;
     padding-top: 10px;
 }
 
-.img-cadastro img{
-}
+.img-cadastro img {}
 
-.txt-cadastro{
+.txt-cadastro {
     width: 100%;
     height: 70px;
     float: left;
 }
 
-.aceite-termo{
+.aceite-termo {
     width: 100%;
     height: 50px;
     clear: both;
@@ -1399,29 +1436,32 @@ text-decoration:none;
     font-size: 14px;
     text-align: center;
     color: #fefefe;
-    
+
 }
-.txt-div-cadastro{
+
+.txt-div-cadastro {
     width: 50%;
     height: 70px;
     float: left;
 }
 
-.txt-cadastro h1, .txt-div-cadastro h1{
+.txt-cadastro h1,
+.txt-div-cadastro h1 {
     font-family: Mont;
     font-size: 16px;
     color: #ecebeb;
     margin-left: 20px;
 }
 
-.input-cadastro{
+.input-cadastro {
     border: none;
     margin-top: 10px;
     width: 520px;
-    height: 25px;;
+    height: 25px;
+    ;
 }
 
-.ipt-cad{
+.ipt-cad {
     border: none;
     margin-top: 10px;
     width: 520px;
@@ -1430,7 +1470,7 @@ text-decoration:none;
     font-size: 16px;
 }
 
-.ipt-cads{
+.ipt-cads {
     border: none;
     margin-top: 10px;
     width: 220px;
@@ -1438,7 +1478,8 @@ text-decoration:none;
     font-family: Mont;
     font-size: 16px;
 }
-.btn-cad{
+
+.btn-cad {
     border: none;
     background-color: #ba3135;
     color: #fefefe;
@@ -1448,3 +1489,34 @@ text-decoration:none;
     font-family: Mont;
     font-weight: bold;
 }
+
+/* Essa parte é para o banner na pagina parceiros */
+        .jssorl-009-spin img {
+            animation-name: jssorl-009-spin;
+            animation-duration: 1.6s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes jssorl-009-spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        .jssorb052 .i {position:absolute;cursor:pointer;}
+        .jssorb052 .i .b {fill:#000;fill-opacity:0.3;}
+        .jssorb052 .i:hover .b {fill-opacity:.7;}
+        .jssorb052 .iav .b {fill-opacity: 1;}
+        .jssorb052 .i.idn {opacity:.3;}
+
+        .jssora053 {display:block;position:absolute;cursor:pointer;}
+        .jssora053 .a {fill:none;stroke:#fff;stroke-width:640;stroke-miterlimit:10;}
+        .jssora053:hover {opacity:.8;}
+        .jssora053.jssora053dn {opacity:.5;}
+        .jssora053.jssora053ds {opacity:.3;pointer-events:none;}
