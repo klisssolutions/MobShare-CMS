@@ -61,7 +61,7 @@
   </tr>
   <tr>
       <td class="label2">
-        <input type="submit" value="Voltar" class="btn-fun" onclick="listaTermos();">
+        <input type="button" value="Voltar" class="btn-fun" onclick="termo();">
       </td>
       <td class="input2">
         <input type="submit" value="Enviar" class="btn-fun" onclick="<?php echo($router)?>">

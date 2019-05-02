@@ -457,14 +457,19 @@ function envio(){
 }
 
 
-function preview(hey) {
-    var reader = new FileReader();
+function preview(imagem) {
+    console.log(imagem.value)
+    if(imagem.value){
+        let reader = new FileReader();
 
-    reader.onload = function (e) {
-        // get loaded data and render thumbnail.
-        document.getElementById("prev").src = e.target.result;
-    };
+        reader.onload = function (e) {
+            // get loaded data and render thumbnail.
+            document.getElementById("prev").src = e.target.result;
+        };
 
-    // read the image file as a data URL.
-    reader.readAsDataURL(hey.files[0]);
+        // read the image file as a data URL.
+        reader.readAsDataURL(imagem.files[0]);
+    }else{
+        document.getElementById("prev").src = "";
+    }
 }

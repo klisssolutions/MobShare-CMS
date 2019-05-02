@@ -10,7 +10,7 @@
     $cancelamentos = $controllerCancelamento->listarCancelamentosNaoConfirmados();
 ?>
 
-<div class="titulo-func-lista">GERENCIAMENTO DE NIVEIS</div>
+<div class="titulo-func-lista">APROVAÇÃO DE CANCELAMENTO</div>
 
 <div class="botoes-func">
 

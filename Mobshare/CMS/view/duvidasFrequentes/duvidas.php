@@ -64,18 +64,13 @@
           </td>
       </tr>
     
-    
-    
         <tr>
             <td class="titulo-func-cad">
-            <input type="submit" value="Voltar" class="btn-fun" onclick="admPaginas();">
+            <input type="button" value="Voltar" class="btn-fun" onclick="duvida();">
             </td>
     
             <td class="titulo-func-cad">
                  <input type="submit" value="Enviar" class="btn-fun" onclick="<?php echo($router)?>">
-               
-                
-                    
             </td>
         </tr>
 </table>

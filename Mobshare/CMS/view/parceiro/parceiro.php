@@ -16,7 +16,7 @@
     $email = $parceiro->getEmail();
     $site = $parceiro->getSite();
     $descricao = $parceiro->getDescricao();
-    $logo = $parceiro->getLogo();
+    $logo = "../arquivos/" . $parceiro->getLogo();
     $idParceiro = $parceiro->getIdParceiro();
 
     $router = "router('parceiros', 'atualizar', '".$parceiro->getIdParceiro()."')";
@@ -56,8 +56,13 @@
                   Logo:
               </td>
               <td class="txt-func">
-                <input type="file" name="imgLogo" id="foto" accept="image/*" value="<?php echo($logo)?>">
+                <input type="file" name="imgLogo" id="foto" accept="image/*" onchange="preview(this)" value="<?php echo($logo)?>">
               </td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center">
+              <img src="<?php echo($logo); ?>" id="prev">
+            </td>
           </tr>
           <tr>
               <td class="titulo-func-cad">
@@ -81,7 +86,7 @@
           </tr>
           <tr>
               <td class="label2">
-                <input type="submit" value="Voltar" class="botao2" onclick="admPaginas();">
+                <input type="button" value="Voltar" class="botao2" onclick="parceiro();">
               </td>
               <td class="input2">
                 <input type="submit" value="Enviar" class="botao2" onclick="<?php echo($router); ?>">

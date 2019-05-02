@@ -10,7 +10,7 @@
 
   if(isset($funcionamento)){
     $titulo = $funcionamento->getTitulo();
-    $foto = $funcionamento->getFoto();
+    $foto = "../arquivos/" . $funcionamento->getFoto();
     $descricao = $funcionamento->getDescricao();
     $idFuncionamento = $funcionamento->getIdFuncionamento();
 
@@ -39,7 +39,7 @@
           </tr>
           <tr>
             <td colspan="2" align="center">
-              <img src="../arquivos/<?php echo($foto); ?>" id="prev">
+              <img src="<?php echo($foto); ?>" id="prev">
             </td>
           </tr>
           <tr>
@@ -63,7 +63,7 @@
           </tr>
           <tr>
               <td class="titulo-func-cad">
-                <input type="submit" value="Voltar" class="btn-fun" onclick="comoFunciona();">
+                <input type="button" value="Voltar" class="btn-fun" onclick="comoFunciona();">
               </td>
               <td class="titulo-func-cad">
                 <input type="submit" value="Enviar" class="btn-fun" onclick="<?php echo($router); ?>">

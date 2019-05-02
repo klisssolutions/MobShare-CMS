@@ -21,9 +21,7 @@
     $texto = $banner->getTexto();
     $url = $banner->getHref();
     $nomeBotao = $banner->getNomeBotao();
-    $foto = $banner->getImagem();
-    
-
+    $foto = "../arquivos/" . $banner->getImagem();
   }
 ?>
 <div class="titulo-func-lista">GERENCIAMENTO DE BANNERS</div>
@@ -71,14 +69,17 @@
             Imagem:
           </div>
           <div class="input2">
-             <input type="file" name="imgBanner" id="imgBanner" accept="image/*" value="<?php echo($foto)?>">
+             <input type="file" name="imgBanner" id="imgBanner" accept="image/*" onchange="preview(this)" value="<?php echo($foto)?>">
           </div>
-        </div> 
+        </div>
 
+        <div class="linha-imagem" align="center">
+          <img src="<?php echo($foto); ?>" id="prev">
+        </div>
 
         <div class="linha">
             <div class="texto-niveis-check">
-            <input type="button" value="Voltar" class="btn-fun" onclick="gerenciarFuncionario();">
+            <input type="button" value="Voltar" class="btn-fun" onclick="banner();">
             </div>
             <div class="texto-niveis-check">
               <input type="submit" value="Salvar" class="btn-fun" onclick="<?php echo($router);?>">

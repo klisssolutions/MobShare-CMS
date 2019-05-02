@@ -803,3 +803,16 @@ a{
     font-family: Mont;
     font-weight: bold;
 }
+
+#prev{	
+    max-width: 350px;	
+    max-height: 200px;	
+}
+
+.linha-imagem{
+    width: 365px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
