@@ -12,30 +12,30 @@
 
 ?>
 
-<div class="titulo">APROVAÇÃO DE CADASTRO</div>
+<div class="titulo-func-lista">APROVAÇÃO DE CADASTRO</div>
 
 <?php
     foreach($pendencias as $pendencia){
 ?>
 
-<div class="listaDados">
+<div class="listaDadosFunc">
 
-    <div class="dados">
+    <div class="dados-func">
     
         Nome:
         
     </div>
-    <div class="infoDados">
+    <div class="dados-resp-func">
     
         <?php echo($pendencia->getNome()); ?>
     
     </div>
-    <div class="dados">
+    <div class="dados-func">
     
         ID:
         
     </div>
-    <div class="infoDados">
+    <div class="dados-resp-func">
     
     <?php echo($pendencia->getId()); ?>
     
@@ -43,7 +43,8 @@
 
     <div class="opcao">
     
-        <a href="#" onclick="selectRouter('pendenciausuario', 'buscar', <?php echo($pendencia->getIdPendencia());?>);">Editar</a>
+        <a href="#" onclick="selectRouter('pendenciausuario', 'buscar', <?php echo($pendencia->getIdPendencia());?>);">
+    <img src="view/imagens/pencil.png" width="28" heigth="28"></a>
     
     </div>
 
