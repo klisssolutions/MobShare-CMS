@@ -297,7 +297,9 @@ nav {
 
 .listaDados2{
     width: 550px;
-    height: 140px;
+    min-height: 160px;
+    height: auto;
+    overflow: hidden;
     margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
@@ -537,7 +539,9 @@ a{
 
 .listaDadosFunc{
     width: 550px;
-    height: 75px;
+    min-height: 100px;
+    height: auto;
+    overflow: hidden;
     margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
