@@ -36,19 +36,21 @@ $veiculos = $controllerVeiculo->listarVeiculos();
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="shortcut icon" href="images/anuncios.png" />
     <title>Home | Mob'Share</title>
 </head>
+
 <body>
     <!-- HEADER DO MENU-->
     <?php require_once(HEADER);?>
     <!-- CAIXA QUE SEGURA O CONTEÚDO EMBAIXO DO MENU -->
     <div class="content">
         <div class="caixa-pesquisa-imagem">
-            <input type="text" class="caixa-pesquisa-home" >
+            <input type="text" class="caixa-pesquisa-home">
         </div>
         <div class="caixa-veiculos-home">
             <div class="caixa-itens-home">
@@ -56,7 +58,8 @@ $veiculos = $controllerVeiculo->listarVeiculos();
                     <a class="clicado">Em Destaque</a>
                 </nav>
             </div>
-            <?php
+            <div class="caixa-veiculos">
+                <?php
                 $i= 0;
                  while($i < count($veiculos)){
 
@@ -71,17 +74,17 @@ $veiculos = $controllerVeiculo->listarVeiculos();
                       
             ?>
 
-            <div class="caixa-veiculos">
+
                 <!-- caixa onde fica a informaçao do veiculo -->
                 <div class="box-veiculo">
                     <div class="img-veiculo">
-                        <img src="<?php echo('/Mobshare/arquivos/'.$foto_veiculo->getFotoVeiculo()) ?>" width="400" height="225" alt="veiculo">
+                        <img src="<?php echo('/Mobshare/arquivos/'.$foto_veiculo->getFotoVeiculo()) ?>" width="320" height="225" alt="veiculo">
                     </div>
                     <div class="texto-modelo">
-                        
+
                     </div>
                     <div class="texto-km">
-                    <?php echo($veiculos[$i]->getQuilometragem())?>
+                        <?php echo($veiculos[$i]->getQuilometragem())?>
                     </div>
                     <div class="texto-regiao">
                         Capital
@@ -102,32 +105,59 @@ $veiculos = $controllerVeiculo->listarVeiculos();
 
                 ?>
 
-        </div>
-
-        <?php
+            </div>
+           
+                <?php
             $i = 0;
             while($i < count($banners)){
+                if($i%2){
 
         ?>
-        <div class="caixa-como-funciona">
-            
-            <div class="texto-como-funciona">
-                <h1><?php echo($banners[$i]->getTitulo())?></h1>
-                <p><?php echo($banners[$i]->getTexto())?></p>
-                <a href="<?php echo($banners[$i]->getHref())?>"><h2><?php echo($banners[$i]->getNomeBotao())?></h2></a>
-            </div>
-            <div class="img-como-funciona">
-            
-                <img src="<?php echo('/Mobshare/arquivos/'.$banners[$i]->getImagem())?>" width="650" height="600"  alt="App da MobShare">
-                
-            </div>
-        </div> 
+ <div class="caixa-como-funciona">
 
-        <?php
+                <div class="texto-como-funciona">
+                    <h1><?php echo($banners[$i]->getTitulo())?></h1>
+                    <p><?php echo($banners[$i]->getTexto())?></p>
+                    <a href="<?php echo($banners[$i]->getHref())?>">
+                        <h2><?php echo($banners[$i]->getNomeBotao())?></h2>
+                    </a>
+                </div>
+                <div class="img-como-funciona">
+
+                    <img src="<?php echo('/Mobshare/arquivos/'.$banners[$i]->getImagem())?>" width="650" height="600" alt="App da MobShare">
+
+                </div>
+</div>
+
+                <?php
+                $i++;
+            }else{
+        ?>
+      <div class="caixa-como-funciona">
+                <div class="img-como-funciona">
+
+                    <img src="<?php echo('/Mobshare/arquivos/'.$banners[$i]->getImagem())?>" width="650" height="600" alt="App da MobShare">
+
+                </div>
+                <div class="texto-como-funciona">
+                    <h1><?php echo($banners[$i]->getTitulo())?></h1>
+                    <p><?php echo($banners[$i]->getTexto())?></p>
+                    <a href="<?php echo($banners[$i]->getHref())?>">
+                        <h2><?php echo($banners[$i]->getNomeBotao())?></h2>
+                    </a>
+                </div>
+                
+</div>
+                
+                <?php
                 $i++;
             }
+            }
         ?>
+            
+        </div>
     </div>
+
     <!-- RODAPÉ-->
     <?php require_once(FOOTER);?>
 
