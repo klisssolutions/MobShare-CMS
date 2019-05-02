@@ -17,13 +17,34 @@
     </div>
     <!-- caixa onde ficará o botão de login-->
     <div class="box-login">
-        <a href="<?php echo(LINK_SITE_LOGIN); ?>">
-            <div class="botao-login">
-                Login
+        <?php if(!(isset($_SESSION['idCliente']))){ ?>
+            <a href="<?php echo(LINK_SITE_LOGIN); ?>">
+                <div class="botao-login">
+                    Login
+                </div>
+            </a>
+            <div class="texto-cadastrar">
+                <h1>ou faça seu Cadastro!</h1>
             </div>
-        </a>
-        <div class="texto-cadastrar">
-            <h1>ou faça seu Cadastro!</h1>
-        </div>
+        <?php }else{ 
+            require_once(IMPORT_CLIENTE);
+            require_once(IMPORT_CLIENTE_CONTROLLER);
+
+            $cliente = new Cliente();
+            $clienteController = new controllerCliente();
+
+            $_GET["id"] = $_SESSION['idCliente']['idCliente'];
+            $cliente = $clienteController->buscarCliente();
+            
+            ?>
+            <a href="<?php echo(LINK_SITE_SAIR); ?>">
+                <div class="botao-login">
+                    Sair
+                </div>
+            </a>
+            <div class="texto-cadastrar">
+                <h1><?php echo($cliente->getNome()); ?></h1>
+            </div>
+        <?php } ?>
     </div>    
 </header>

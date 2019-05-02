@@ -482,6 +482,7 @@ if(!isset($incluso)){
     define("LINK_SITE_PARCEIRO", RAIZ_LINK . "/site/view/parceiros/parceiros.php");
     define("LINK_SITE_CONTATO", RAIZ_LINK . "/site/view/faleconosco/faleconosco.php");
     define("LINK_SITE_HOME", RAIZ_LINK . "/site/view/home.php");
+    define("LINK_SITE_SAIR", RAIZ_LINK . "/site/index.php?destroy");
 
     //Constantes com os links das imagens
     define("LINK_IMAGEM_LOGO", RAIZ_LINK . "/site/view/images/logo.png");
