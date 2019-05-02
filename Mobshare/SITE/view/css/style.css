@@ -111,7 +111,7 @@ header {
     width: 100%;
     min-height: 500px;
     height: auto;
-    background-color: black;
+    background-color: #fff;
 }
 
 /*********** RODAPÉ *******/
@@ -421,7 +421,6 @@ a:link {
     min-height: 70px;
     height: auto;
     overflow: hidden;
-    background-color: aqua;
     margin-top: 10px;
 }
 
@@ -457,9 +456,10 @@ a:link {
 .texto-como-funciona p {
     font-family: Mont;
     width: 500px;
-    text-align: right;
+    text-align: center;
     margin-left: 220px;
     color: #000;
+    word-break: break-all;
 }
 
 .texto-como-funciona h2 {
@@ -591,9 +591,9 @@ a:link {
 /* ANUNCIOS DE CARROS E TALS */
 .box-anuncios {
     width: 100%;
-    min-height: 1800px;
+    min-height: 180px;
     height: auto;
-    background-color: darkred;
+    background-color: #fff;
     margin-top: 110px;
     float: left;
     overflow: hidden;
@@ -892,14 +892,16 @@ a:link {
     min-height: 1600px;
     height: auto;
     overflow: hidden;
+    
 }
 
 .image-termos {
-    height: 20%;
+    height: 100px;
     width: 100%;
     padding-top: 110px;
     background-image: url(../images/nicole-baster-1178413-unsplash.jpg);
     background-size: 100%;
+    margin-top: 110px;
 }
 
 .texto-sob-imagem {
@@ -907,7 +909,6 @@ a:link {
     width: 400px;
     float: left;
     margin-left: 350px;
-    margin-top: 130px;
     background-color: #102840;
 }
 
@@ -920,12 +921,13 @@ a:link {
 }
 
 .texto-termos {
-    min-height: 80%;
+    min-height: 80px;
     width: 100%;
-    background-color: #fefefe;
-    padding-top: 20px;
+    background-color: #c7cfdb;
     margin-bottom: 20px;
     float: left;
+    height: auto;
+    margin-top: 10px;
 
 }
 
