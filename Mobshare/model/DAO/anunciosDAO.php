@@ -24,6 +24,63 @@ class anunciosDAO{
         $this->conex = new conexaoMySQL();
     }
 
+    public function filtrarAnuncios($marca, $modelo, $KM, $avaliacao){
+        $sql = "SELECT v.idVeiculo, mo.nomeModelo, ma.nomeMarca, ft.fotoVeiculo FROM veiculo as v
+        join modelo as mo on v.idModelo = mo.idModelo join Marca as ma on ma.idMarca = mo.idMarca join 
+        foto_veiculo as ft on ft.idVeiculo = v.idVeiculo";
+
+        if($modelo != "0"){
+            $sql = $sql . " where mo.idModelo =" . $modelo  ;    
+        }else{
+            $sql = $sql . " where mo.idModelo <>" . $modelo ;
+        }
+        if($marca != "0"){
+            $sql = $sql . " and mo.idModelo in(select mo.idModelo from modelo where mo.idMarca = ".$marca.")"  ;    
+        }
+
+        if($KM != "padrao"){
+            if($KM = "500000"){
+                $sql = $sql . " and quilometragem > ".$KM  ;
+            }else if($KM = "0"){
+                $sql = $sql . " and quilometragem = ".$KM  ;   
+            }else{
+                $sql = $sql . " and quilometragem < ".$KM  ;
+            }
+            //echo($KM);
+        }        
+
+        //echo($sql);
+        //Abrindo conexão com o BD
+        $PDO_conex = $this->conex->connectDataBase();
+
+        //executa o script de select no bd
+        $select = $PDO_conex->query($sql);
+        $cont = 0;
+        
+        /* $select->fetch no formado pdo retorna os dados do BD
+        também retorna com característica do PDO como o fetch
+        é necessário especificar o modelo de conversão.
+        EX: PDO::FETCH_ASSOC, PDO::FETCH_ARRAY etc. */
+        $listAnuncios[] = new anuncios();
+        $listAnuncios = null;
+        while($rsAnuncios=$select->fetch(PDO::FETCH_ASSOC)){
+            $anuncios = new Anuncios();
+            $anuncios->setIdVeiculo($rsAnuncios["idVeiculo"]);
+            $anuncios->setNomeModelo($rsAnuncios["nomeModelo"]);
+            $anuncios->setNomeMarca($rsAnuncios["nomeMarca"]);
+            $anuncios->setFotoVeiculo($rsAnuncios["fotoVeiculo"]);
+
+            $listAnuncios[$cont] = $anuncios;
+            $cont++;
+        }
+
+        $this->conex->closeDataBase();
+
+        return($listAnuncios);
+
+    }
+
+
 
     public function selectAll(){
         $sql = SELECT.VIEW_ANUNCIOS;

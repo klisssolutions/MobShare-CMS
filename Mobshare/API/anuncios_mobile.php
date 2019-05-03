@@ -23,7 +23,7 @@ if($modo == "LISTA"){
     $anuncios = $anunciosController->listarAnuncio();
 
     $result = array();
-    $result= array();
+    
 
     foreach($anuncios as $anuncio){
         $array = array(
@@ -35,6 +35,29 @@ if($modo == "LISTA"){
 
         array_push($result, $array);
     }
+
+}else if($modo == "FILTRAR"){
+    
+    
+
+    $result= array();
+
+    $anunciosController = new controllerAnuncios();
+
+    $anuncios = $anunciosController->filtrarAnuncios();
+
+    foreach($anuncios as $anuncio){
+        $array = array(
+            "idVeiculo" => $anuncio->getIdVeiculo(),
+            "nomeModelo" => $anuncio->getNomeModelo(),
+            "nomeMarca" => $anuncio->getNomeMarca(),
+            "fotoVeiculo" => $anuncio->getFotoVeiculo()
+        );
+
+        array_push($result, $array);        
+    }
+
+
 
 }else if($modo == "BUSCAR"){
     $anuncios = $anunciosController->buscarAnuncio();

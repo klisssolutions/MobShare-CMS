@@ -25,6 +25,12 @@ if($modo == "LISTA"){
 
     $result = array();
 
+    $arrayPadrao = array(
+        "idMarca" => 0,
+        "nomeMarca" => "Selecione"
+    );
+
+    array_push($result, $arrayPadrao);
 
     foreach($marcas as $marca){
         $array = array(
