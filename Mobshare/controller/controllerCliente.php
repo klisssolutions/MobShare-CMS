@@ -65,7 +65,7 @@ class controllerCliente{
                 $cliente->setSenha($senha);
                 //Verificar Foto
                 //$cliente->setFotoPerfil($fotoPerfil);
-                $cliente->setDataCadastro($datacadastro);
+                $cliente->setDataCadastro(date('Y-m-d'));
 
             }else{
                 $nome = $_POST["txtnome"];
@@ -89,7 +89,7 @@ class controllerCliente{
                 $cliente->setSenha($senha);
                 //Verificar Foto
                 //$cliente->setFotoPerfil($fotoPerfil);
-                $cliente->setDataCadastro($datacadastro);
+                $cliente->setDataCadastro(date('Y-m-d'));
              
             }
 
