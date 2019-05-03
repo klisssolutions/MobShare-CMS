@@ -14,7 +14,7 @@
 ?>
 
 
-<div class="titulo">GERENCIAMENTO DO HSTORICO DE LOCAÇÃO</div>
+<div class="titulo-func-lista">GERENCIAMENTO DO HSTORICO DE LOCAÇÃO</div>
 
 <?php
 
