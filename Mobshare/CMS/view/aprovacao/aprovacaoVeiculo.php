@@ -16,26 +16,49 @@
   }
 ?>
 
-<div class="titulo">APROVAÇÃO DE CADASTRO</div>
+<div class="titulo-func-lista">APROVAÇÃO DE CADASTRO</div>
 <form id="form" method="POST">
-  <div class="label3">Nome:</div>
-  <div class="label3"><?php echo($nome); ?></div>
-  <div class="label3">ID:</div>
-  <div class="label3"><?php echo($id); ?></div>
-  <div class="label3"></div>
-  <div class="label3">Motivo</div>
-  <div class="label3"><textarea class="mensagem" name="txtmotivo"><?php echo($motivo); ?></textarea></div>
 
-  <div class="label3">Aberto:</div>
-  <div class="label3">
-    <input type="checkbox" name="chkaberto" <?php echo($chkAberto); ?>>
-  </div>
-
-  <table>
+<table class="func-cad">
           <tr>
-              <td>
-                <input type="submit" value="Aceitar" class="botao2" onclick="<?php echo($router);?>">
+              <td class="titulo-func-cad">
+                  Nome:
+              </td>
+              <td class="titulo-func-cad">
+                <?php echo($nome); ?>
+              </td>
+          </tr>
+          <tr>
+              <td class="titulo-func-cad">
+                  ID:
+              </td>
+              <td class="titulo-func-cad">
+              <?php echo($id); ?>
+              </td>
+          </tr>
+          <tr>
+              <td class="titulo-func-cad">
+                  Motivo:
+              </td>
+              <td class="titulo-func-cad">
+                <textarea name="txtDescricao" class="input-func2" required><?php echo($motivo); ?></textarea>
+              </td>
+          </tr>
+          <tr>
+              <td class="titulo-func-cad">
+                  Aberto:
+              </td>
+              <td class="titulo-func-cad">
+                
+                  <input type="checkbox" name="chkaberto" <?php echo($chkAberto); ?>>
+                </select>
+              </td>
+          </tr>
+          <tr>
+              <td class="titulo-func-cad">
+                <input type="submit" value="Aceitar" class="btn-fun" onclick="<?php echo($router);?>">
               </td>
           </tr>
   </table>
+
 </form>
