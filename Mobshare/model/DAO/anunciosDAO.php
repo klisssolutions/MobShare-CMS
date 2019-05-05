@@ -25,9 +25,10 @@ class anunciosDAO{
     }
 
     public function filtrarAnuncios($marca, $modelo, $KM, $avaliacao){
-        $sql = "SELECT v.idVeiculo, mo.nomeModelo, ma.nomeMarca, ft.fotoVeiculo FROM veiculo as v
+        $sql = "SELECT distinct v.idVeiculo, mo.nomeModelo, ma.nomeMarca, ft.fotoVeiculo FROM veiculo as v
         join modelo as mo on v.idModelo = mo.idModelo join Marca as ma on ma.idMarca = mo.idMarca join 
-        foto_veiculo as ft on ft.idVeiculo = v.idVeiculo";
+        foto_veiculo as ft on ft.idVeiculo = v.idVeiculo join avaliacao_veiculo as av 
+        on av.idVeiculo = v.idVeiculo join avaliacao as a on a.idAvaliacao = av.idAvaliacao ";
 
         if($modelo != "0"){
             $sql = $sql . " where mo.idModelo =" . $modelo  ;    
@@ -47,9 +48,12 @@ class anunciosDAO{
                 $sql = $sql . " and quilometragem < ".$KM  ;
             }
             //echo($KM);
-        }        
+        }    
+        
+        $sql = $sql . " and v.idveiculo in (select v.idVeiculo from avaliacao as a join avaliacao_veiculo as av on av.idAvaliacao = a.idAvaliacao
+        join veiculo as v on v.idVeiculo = av.idVeiculo group by(v.idVeiculo) having avg(a.nota) = ".$avaliacao.")";
 
-        //echo($sql);
+       //echo($sql);
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
 
