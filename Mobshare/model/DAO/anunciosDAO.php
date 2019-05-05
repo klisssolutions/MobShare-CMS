@@ -39,9 +39,9 @@ class anunciosDAO{
         }
 
         if($KM != "padrao"){
-            if($KM = "500000"){
+            if($KM == "500000"){
                 $sql = $sql . " and quilometragem > ".$KM  ;
-            }else if($KM = "0"){
+            }else if($KM == "0"){
                 $sql = $sql . " and quilometragem = ".$KM  ;   
             }else{
                 $sql = $sql . " and quilometragem < ".$KM  ;
