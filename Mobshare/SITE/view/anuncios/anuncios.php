@@ -138,7 +138,7 @@ if(isset($_GET["btnFiltro"])){
                         <!-- <div class="botao-filtrar">
                             Filtrar
                         </div> -->
-                        <input type="submit" class="botao-filtrar" value="Filtrar" name="btnFiltro">
+                        <input type="submit" value="Filtrar" name="btnFiltro">
                     </div>
 
                 </form>

@@ -27,13 +27,20 @@ class anunciosDAO{
     public function filtrarAnuncios($marca, $modelo, $KM, $avaliacao){
         $sql = "SELECT distinct v.idVeiculo, mo.nomeModelo, ma.nomeMarca, ft.fotoVeiculo FROM veiculo as v
         join modelo as mo on v.idModelo = mo.idModelo join Marca as ma on ma.idMarca = mo.idMarca join 
-        foto_veiculo as ft on ft.idVeiculo = v.idVeiculo join avaliacao_veiculo as av 
-        on av.idVeiculo = v.idVeiculo join avaliacao as a on a.idAvaliacao = av.idAvaliacao ";
+        foto_veiculo as ft on ft.idVeiculo = v.idVeiculo ";
+
+        if($avaliacao != "Selecione"){
+            $sql = $sql . " join avaliacao_veiculo as av 
+            on av.idVeiculo = v.idVeiculo join avaliacao as a on a.idAvaliacao = av.idAvaliacao  where v.idveiculo in (select v.idVeiculo from avaliacao as a join avaliacao_veiculo as av on av.idAvaliacao = a.idAvaliacao
+            join veiculo as v on v.idVeiculo = av.idVeiculo group by(v.idVeiculo) having avg(a.nota) = ".$avaliacao.")";
+        }else{
+            $sql = $sql . " where 1 = 1";
+        }
 
         if($modelo != "0"){
-            $sql = $sql . " where mo.idModelo =" . $modelo  ;    
+            $sql = $sql . " and mo.idModelo =" . $modelo  ;    
         }else{
-            $sql = $sql . " where mo.idModelo <>" . $modelo ;
+            $sql = $sql . " and mo.idModelo <>" . $modelo ;
         }
         if($marca != "0"){
             $sql = $sql . " and mo.idModelo in(select mo.idModelo from modelo where mo.idMarca = ".$marca.")"  ;    
@@ -49,9 +56,10 @@ class anunciosDAO{
             }
             //echo($KM);
         }    
+
         
-        $sql = $sql . " and v.idveiculo in (select v.idVeiculo from avaliacao as a join avaliacao_veiculo as av on av.idAvaliacao = a.idAvaliacao
-        join veiculo as v on v.idVeiculo = av.idVeiculo group by(v.idVeiculo) having avg(a.nota) = ".$avaliacao.")";
+        
+        
 
        //echo($sql);
         //Abrindo conexão com o BD
