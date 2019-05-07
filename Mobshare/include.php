@@ -41,7 +41,7 @@ if(!isset($incluso)){
         $ext_foto = strrchr($foto, ".");
         $nome_foto = pathinfo($foto, PATHINFO_FILENAME);
         $nome_foto = md5(uniqid(time()).$nome_foto);
-        $diretorio = "C:/xampp/htdocs/Mobshare/arquivos/";
+        $diretorio = RAIZ_IMPORT . "/arquivos/";
         $extensao = array(".jpg",".png",".jpeg");
 
         if(in_array($ext_foto, $extensao)){
@@ -94,6 +94,7 @@ if(!isset($incluso)){
     define("TABELA_MODELO","modelo");
     define("TABELA_FALE_CONOSCO","fale_conosco");
     define("TABELA_DUVIDAS_FREQUENTES","pergunta_frequente");
+    define("TABELA_CHAT","mensagem_chat");
 
     //Constantes com o nome das views
     define("VIEW_VEICULO", "VPendencia_Veiculo");
@@ -236,6 +237,11 @@ if(!isset($incluso)){
     define("IMPORT_ANUNCIOS", PASTA_RAIZ . PASTA_PROJETO . "/model/anunciosClass.php");
     define("IMPORT_ANUNCIOS_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/anunciosDAO.php");
     define("IMPORT_ANUNCIOS_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerAnuncios.php");
+
+    //import chat
+    define("IMPORT_CHAT", PASTA_RAIZ . PASTA_PROJETO . "/model/chatClass.php");
+    define("IMPORT_CHAT_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/chatDAO.php");
+    define("IMPORT_CHAT_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerChat.php");
     
     /*---------------------------------------------------------------*/
     /*--------------------------- PÁGINAS ---------------------------*/
