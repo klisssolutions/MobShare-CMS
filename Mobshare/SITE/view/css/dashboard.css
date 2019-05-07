@@ -1,44 +1,48 @@
 @charset "utf-8";
 
-body, h1, p{
+body,
+h1,
+p {
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     width: 100%;
     background-color: #102840;
 }
 
-@font-face{
+@font-face {
     font-family: Mont;
     src: url(../fonts/Montserrat-Regular.ttf);
 }
 
-textarea:focus, input:focus, select:focus {
+textarea:focus,
+input:focus,
+select:focus {
     box-shadow: 0 0 0 0;
     border: 0 none;
     outline: 0;
-} 
+}
 
 /********** CABEÇALHO ***********/
-header{
+header {
     width: 100%;
     height: 110px;
     background-color: #102840;
     position: fixed;
     box-shadow: 1px 4px 6px 4px rgba(0, 0, 0, 0.2);
     float: left;
-    
+
 }
 
-.logotipo{
+.logotipo {
     width: 30%;
     height: 100%;
     float: left;
 }
 
-.img-logotipo{
+.img-logotipo {
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -48,20 +52,20 @@ header{
 
 }
 
-.menu-header{
+.menu-header {
     width: 50%;
     height: 100%;
     float: left;
 }
 
-.menu-item{
+.menu-item {
     width: 90%;
     height: 100%;
     margin-left: 100px;
     margin-top: 45px;
 }
 
-.menu-item a{
+.menu-item a {
     padding: 10px 8px 10px 8px;
     margin-right: 5px;
     margin-top: 50px;
@@ -70,21 +74,21 @@ header{
     font-size: 18px;
 }
 
-.menu-item a:hover{
+.menu-item a:hover {
     transition: 2s;
     color: #5e85e1;
     border-bottom: 1px solid #5e85e1;
     cursor: pointer;
 }
 
-.box-login{
+.box-login {
     width: 20%;
     height: 100%;
-    
+
     float: left;
 }
 
-.botao-login{
+.botao-login {
     width: 60px;
     padding: 10px 10px 10px 10px;
     margin-right: auto;
@@ -98,21 +102,21 @@ header{
     text-align: center;
 }
 
-.botao-login:hover{
+.botao-login:hover {
     background-color: #5e85e1;
 }
 
-.texto-cadastrar h1{
+.texto-cadastrar h1 {
     font-family: Mont;
     color: #fff;
     font-size: 12px;
     align-content: center;
-    text-align: center; 
+    text-align: center;
     margin-top: 5px;
 }
 
 /******** CAIXA QUE FICA ABAIXO DO CABEÇALHO SEGURANDO AS INFORMAÇÕES *******/
-.content{
+.content {
     width: 100%;
     min-height: 500px;
     height: auto;
@@ -120,34 +124,34 @@ header{
 }
 
 /*********** RODAPÉ *******/
-footer{
+footer {
     width: 100%;
     height: 200px;
     float: left;
-    background-color:#102840;
-}
-
-.rodape{
-    width: 100%;
-    height: 100%;
-    
     background-color: #102840;
 }
 
-.menu-rodape{
+.rodape {
+    width: 100%;
+    height: 100%;
+
+    background-color: #102840;
+}
+
+.menu-rodape {
     width: 33%;
     height: 100%;
     float: left;
-    
+
 }
 
-.titulo-menu-rodape{
+.titulo-menu-rodape {
     height: 15%;
     width: 100%;
     margin-top: 20px;
 }
 
-.titulo-menu-rodape h1{
+.titulo-menu-rodape h1 {
     width: 100px;
     height: 75%;
     margin-left: 120px;
@@ -159,13 +163,13 @@ footer{
     text-align: left;
 }
 
-.menu-rodape-item{
+.menu-rodape-item {
     height: 85%;
     width: 100%;
-    
+
 }
 
-.menu-rodape-item a{
+.menu-rodape-item a {
     width: 170px;
     height: 20px;
     font-family: Mont;
@@ -181,23 +185,22 @@ footer{
     cursor: pointer;
 }
 
-a:link 
-{ 
-text-decoration:none; 
+a:link {
+    text-decoration: none;
 }
 
-.menu-rodape-item a:hover{
+.menu-rodape-item a:hover {
     transition: 2s;
     color: #5e85e1;
 }
 
-.logotipo-rodape{
+.logotipo-rodape {
     width: 34%;
     height: 100%;
     float: left;
 }
 
-.img-logo-rodape{
+.img-logo-rodape {
     width: 100%;
     height: 80%;
     margin-right: auto;
@@ -205,36 +208,36 @@ text-decoration:none;
     margin-top: 10px;
 }
 
-.img-logo-rodape img{
+.img-logo-rodape img {
     margin-left: 100px;
 }
 
-.img-redes-sociais{
+.img-redes-sociais {
     width: 50%;
     height: 20%;
     margin-right: auto;
     margin-left: auto;
 }
 
-.img-redes-sociais img{
+.img-redes-sociais img {
     margin-left: 10px;
     margin-top: 10px;
 }
 
-.contato-rodape{
+.contato-rodape {
     width: 33%;
     height: 100%;
     float: left;
 }
 
-.contato-menu-rodape{
+.contato-menu-rodape {
     height: 15%;
     width: 100%;
     margin-top: 20px;
 
 }
 
-.contato-menu-rodape h1{
+.contato-menu-rodape h1 {
     width: 100px;
     height: 75%;
     margin-left: 90px;
@@ -246,13 +249,13 @@ text-decoration:none;
     text-align: center;
 }
 
-.contato-rodape-item{
+.contato-rodape-item {
     height: 85%;
     width: 100%;
-    
+
 }
 
-.contato-rodape-item a{
+.contato-rodape-item a {
     width: 280px;
     height: 20px;
     font-family: Mont;
@@ -268,14 +271,14 @@ text-decoration:none;
     float: left;
 }
 
-.texto-direitos{
+.texto-direitos {
     width: 100%;
     padding-top: 80px;
     height: 25px;
     background-color: #102840;
 }
 
-.texto-direitos h1{
+.texto-direitos h1 {
     margin-top: 0;
     font-family: Mont;
     font-size: 12px;
@@ -287,33 +290,33 @@ text-decoration:none;
 }
 
 /********** FORMATAÇÃO PADRONIZADA FINAL ************/
-.box-painel-usuario{
+.box-painel-usuario {
     height: 1000px;
     width: 100%;
     background-color: #cecece;
 }
 
-.menu-lateral-usuario{
+.menu-lateral-usuario {
     width: 20%;
     height: 100%;
     background-color: #102840;
     float: left;
 }
 
-.conteudo-usuario{
+.conteudo-usuario {
     width: 80%;
     height: 100%;
     background-color: #cecece;
     float: left;
 }
 
-.img-usuario-menu{
+.img-usuario-menu {
     height: 20%;
     width: 100%;
     margin-top: 145px;
 }
 
-.imagem-usuario{
+.imagem-usuario {
     width: 50%;
     height: 90%;
     background-image: url(../images/user.png);
@@ -322,11 +325,11 @@ text-decoration:none;
     border-radius: 85px;
 }
 
-.imagem-usuario img{
+.imagem-usuario img {
     border-radius: 85px;
 }
 
-.nome-usuario-menu{
+.nome-usuario-menu {
     height: 10%;
     width: 100%;
     margin-top: 05px;
@@ -334,31 +337,35 @@ text-decoration:none;
     margin-bottom: 20px;
 }
 
-.nome-usuario-menu h1{
+.nome-usuario-menu h1 {
     font-family: Mont;
     color: #fff;
     font-size: 26px;
     text-align: center;
 }
 
-.nav-menu-usuario, .nav-menu-usuario-clicado, .nav-menu-usuario-button{
+.nav-menu-usuario,
+.nav-menu-usuario-clicado,
+.nav-menu-usuario-button {
     height: 70px;
     width: 100%;
     margin-top: 10px;
     float: left;
 }
 
-.nav-menu-usuario-clicado{
+.nav-menu-usuario-clicado {
     background-color: #cecece;
 }
 
-.nav-menu-usuario:hover{
+.nav-menu-usuario:hover {
     z-index: 20;
-    width: 110%; /*ajusta a largura do zoom*/
+    width: 110%;
+    /*ajusta a largura do zoom*/
     cursor: pointer;
 }
 
-.nav-menu-usuario h2, .nav-menu-usuario-clicado h2{
+.nav-menu-usuario h2,
+.nav-menu-usuario-clicado h2 {
     font-family: Mont;
     text-align: left;
     margin-top: 20px;
@@ -367,10 +374,10 @@ text-decoration:none;
     width: 60%;
     margin-left: auto;
     margin-right: auto;
-    
+
 }
 
-.nav-menu-usuario-button h3{
+.nav-menu-usuario-button h3 {
     background-color: #5e85e1;
     width: 100px;
     font-family: Mont;
@@ -382,46 +389,49 @@ text-decoration:none;
     font-family: Mont;
 }
 
-.nav-menu-usuario-button h3:hover{
-background-color: #aca9a9;
-color: black;
-cursor: pointer;
+.nav-menu-usuario-button h3:hover {
+    background-color: #aca9a9;
+    color: black;
+    cursor: pointer;
 }
 
-.nav-menu-usuario h2 img, .nav-menu-usuario-clicado h2 img{
+.nav-menu-usuario h2 img,
+.nav-menu-usuario-clicado h2 img {
 
     margin-right: 10px;
 }
 
 /******************* PAGINA EDIÇÃO DO PEFIL DO USUÁRIO **************/
-.edit-usuario{
+.edit-usuario {
     width: 100%;
     height: 100%;
-    /*background-color: yellow;*/   
+    /*background-color: yellow;*/
     float: left;
     margin-top: 110px;
 }
 
-.info-perfil{
+.info-perfil {
     width: 100%;
     height: 420px;
-    margin-bottom: 5px; 
+    margin-bottom: 5px;
     float: left;
 }
-.titulo-perfil{
+
+.titulo-perfil {
     margin-top: 10px;
     width: 30%;
     height: 10%;
     margin-left: auto;
-    margin-right: auto; 
+    margin-right: auto;
     font-family: Mont;
     font-size: 26px;
     text-align: center;
     font-weight: bold;
     margin-top: 20px;
-    margin-bottom: 10px;    
+    margin-bottom: 10px;
 }
-.foto-perfil{
+
+.foto-perfil {
     width: 310px;
     height: 310px;
     background-color: violet;
@@ -429,7 +439,7 @@ cursor: pointer;
     margin-right: auto;
 }
 
-.dados-perfil{
+.dados-perfil {
     width: 60%;
     height: 20%;
     margin-left: auto;
@@ -437,25 +447,25 @@ cursor: pointer;
     margin-top: 10px;
 }
 
-.dados{
+.dados {
     width: 50%;
     height: 100%;
     float: left;
 }
 
-.dados h1{
+.dados h1 {
     font-family: Mont;
     margin-left: 40px;
     font-size: 20px;
 }
 
-.dados p{
+.dados p {
     font-family: Mont;
     margin-left: 40px;
     font-size: 20px;
 }
 
-.input-usuario{
+.input-usuario {
     width: 280px;
     height: 30px;
     text-decoration: none;
@@ -464,7 +474,9 @@ cursor: pointer;
     font-size: 20px;
 }
 
-.btn-usuario, .btn-usuario-visu, .btn-usuario-canc{
+.btn-usuario,
+.btn-usuario-visu,
+.btn-usuario-canc {
     height: 40px;
     width: 100px;
     border: none;
@@ -472,22 +484,184 @@ cursor: pointer;
     margin-top: 20px;
     color: #aca9a9;
     font-weight: bold;
-    font-family: Mont;  
+    font-family: Mont;
     font-size: 18px;
 }
 
-.btn-usuario:hover , .btn-usuario-visu:hover , .btn-usuario-canc:hover {
+.btn-usuario:hover,
+.btn-usuario-visu:hover,
+.btn-usuario-canc:hover {
     background-color: #ba3135;
     color: #fff;
-    cursor: pointer; 
+    cursor: pointer;
 }
-.btn-usuario-visu{
+
+.btn-usuario-visu {
     /*background-color: green;*/
     margin-left: 750px;
 }
-.btn-usuario-canc{
+
+.btn-usuario-canc {
     margin-left: 290px;
-    
+
 }
 
 /****************** PÁGINA: EDICÃO DO ENDEREÇO *********************/
+
+.titulo-lista {
+    width: 500px;
+    height: 20px;
+    font-family: Mont;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 130px;
+    margin-bottom: 20px;
+}
+
+.titulo-dash {
+    width: 150px;
+    height: 20px;
+    font-family: Mont;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: px;
+    margin-bottom: 20px;
+}
+
+.imagem {
+    width: 128px;
+    height: 128px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.gerenciar-dashboard {
+    margin-left: 350px;
+    margin-top: 250px;
+}
+
+.gerenciar-dash {
+    width: 200px;
+    height: 250px;
+    float: left;
+    margin-left: 150px;
+    margin-top: 150px;
+}
+
+.gerenciar-dash:hover {
+    background-color: rgb(100, 100, 100);
+    color: #eeeeee;
+    transition: 1s;
+}
+
+.botoes-dash {
+    width: 430px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.btn-dash {
+    width: 120px;
+    height: 30px;
+    margin-top: 10px;
+    border: none;
+    background-color: #606e75;
+    padding: 5px 5px 5px 5px;
+    font-family: Mont;
+    color: #fff;
+    font-weight: bold;
+    margin-left: 50px;
+}
+
+.btn-dash:hover {
+    background-color: #cccccc;
+    color: #102840;
+}
+
+.listaDadosDash {
+    width: 550px;
+    min-height: 100px;
+    height: auto;
+    overflow: hidden;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #dddddd;
+}
+
+.dados-dash {
+    width: 100px;
+    height: 20px;
+    text-align: left;
+    margin-top: 12px;
+    float: left;
+    clear: both;
+    margin-left: 10px;
+    font-family: Mont;
+    font-weight: bold;
+}
+
+.dados-resp-dash {
+    width: 255px;
+    min-height: 20px;
+    height: auto;
+    float: left;
+    margin-top: 12px;
+    text-align: left;
+    font-family: Mont;
+}
+
+.opcao {
+    width: 89px;
+    height: 20px;
+    float: right;
+}
+
+.titulo-dash-cad {
+    width: 50px;
+    height: 30px;
+    text-align: left;
+    font-family: Mont;
+    margin-left: 100px;
+}
+
+.dash-cad {
+    width: 400px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+}
+
+.input-dash {
+    border: none;
+    height: 25px;
+    width: 190px;
+    background-color: #aaaaaa;
+    font-family: Mont;
+
+}
+
+.slt-dash {
+    border: none;
+    height: 25px;
+    width: 190px;
+    background-color: #cccccc;
+    font-family: Mont;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
