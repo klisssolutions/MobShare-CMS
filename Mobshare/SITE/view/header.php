@@ -43,7 +43,7 @@
                 </div>
             </a>
             <div class="texto-cadastrar">
-                <h1><?php echo($cliente->getNome()); ?></h1>
+                <a href="usuario-inicio/inicioUsuario.php"><h1><?php echo($cliente->getNome()); ?></h1></a>
             </div>
         <?php } ?>
     </div>    
