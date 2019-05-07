@@ -33,9 +33,11 @@ require_once($_SESSION["importInclude"]);
                 <div class="nav-menu-usuario">
                     <h2> <img src="../images/coupon.png" width="28" height="28"  alt="Usuário">Endereços</h2>
                 </div>
+                <a href="../usuario-veiculo/usuarioVeiculo.php">
                 <div class="nav-menu-usuario">
                     <h2><img src="../images/car (1).png" width="28" height="28"  alt="Usuário">Meus veículos</h2>
                 </div>
+                </a>
                 <div class="nav-menu-usuario">
                     <h2><img src="../images/tag.png" width="28" height="28"  alt="Usuário">Vendas</h2>
                 </div>
