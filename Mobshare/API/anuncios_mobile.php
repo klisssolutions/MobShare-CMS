@@ -9,6 +9,7 @@ require_once($_SESSION["importInclude"]);
 
 //Require das controller
 require_once(IMPORT_ANUNCIOS_CONTROLLER);
+require_once(IMPORT_FOTO_VEICULO_CONTROLLER);
 
 //Pegar as variáveis da url
 $modo = (isset($_GET["modo"]) ? strtoupper($_GET["modo"]) : null);
@@ -60,16 +61,38 @@ if($modo == "LISTA"){
 
 
 }else if($modo == "BUSCAR"){
-    $anuncios = $anunciosController->buscarAnuncio();
+    $controllerFoto_Veiculo = new controllerFoto_Veiculo();
+    $anuncios = $anunciosController->buscarAnuncio($id);
+    $fotos = $controllerFoto_Veiculo->listarFotosPorVeiculo($anuncios->getIdVeiculo());
 
+
+    $array_fotos = array();
+    $result= array();
+
+    foreach($fotos as $foto){
         $array = array(
-            "idVeiculo" => $anuncios->getIdVeiculo(),
-            "nomeModelo" => $anuncios->getNomeModelo(),
-            "nomeMarca" => $anuncios->getNomeMarca(),
-            "fotoVeiculo" => $anuncios->getFotoVeiculo()
+            "idFoto_Veiculo" => $foto->getIdFoto_Veiculo(),
+            "idVeiculo" => $foto->getIdVeiculo(),            
+            "fotoVeiculo" => $foto->getFotoVeiculo(),            
+            "perfil" => $foto->getPerfil()
+            
         );
 
-        $result = (object) $array;
+        array_push($array_fotos, $array);        
+    }
+
+
+
+    $array = array(
+        "idVeiculo" => $anuncios->getIdVeiculo(),
+        "nomeModelo" => $anuncios->getNomeModelo(),
+        "nomeMarca" => $anuncios->getNomeMarca(),
+        "fotos" => $array_fotos
+    );
+
+    array_push($result, $array);   
+
+       
 
 }else{
     $result["mensagem"] = "Modo inválido.";

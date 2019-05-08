@@ -88,6 +88,12 @@ class controllerFoto_Veiculo{
         return($foto_veiculoDAO->selectFotoFrontalPorVeiculo($idVeiculo));
     }
 
+    public function listarFotosPorVeiculo($idVeiculo){
+        //Instancia do DAO
+        $foto_veiculoDAO = new foto_veiculoDAO();
+        return($foto_veiculoDAO->selectFotoPorVeiculo($idVeiculo));
+    }    
+
     public function buscarNivel(){
         //Instancia do DAO
         $nivelDAO = new nivelDAO();
