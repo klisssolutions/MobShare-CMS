@@ -176,9 +176,9 @@ if(!isset($incluso)){
     define("IMPORT_VEICULO_CONTROLLER", RAIZ_IMPORT . "/controller/controllerVeiculo.php");    
 
     //Imports de foto veiculo
-    define("IMPORT_FOTO_VEICULO", RAIZ_IMPORT . "/model/enderecoClass.php");
-    define("IMPORT_FOTO_VEICULO_DAO", RAIZ_IMPORT . "/model/DAO/enderecoDAO.php");
-    define("IMPORT_FOTO_VEICULO_CONTROLLER", RAIZ_IMPORT . "/controller/controllerEndereco.php"); 
+    define("IMPORT_FOTO_VEICULO", RAIZ_IMPORT . "/model/foto_veiculoClass.php");
+    define("IMPORT_FOTO_VEICULO_DAO", RAIZ_IMPORT . "/model/DAO/foto_veiculoDAO.php");
+    define("IMPORT_FOTO_VEICULO_CONTROLLER", RAIZ_IMPORT . "/controller/controllerFoto_Veiculo.php");
 
     //Imports de endereço
     define("IMPORT_ENDERECO", RAIZ_IMPORT . "/model/enderecoClass.php");
