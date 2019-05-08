@@ -95,6 +95,8 @@ if(!isset($incluso)){
     define("TABELA_FALE_CONOSCO","fale_conosco");
     define("TABELA_DUVIDAS_FREQUENTES","pergunta_frequente");
     define("TABELA_CHAT","mensagem_chat");
+    define("TABELA_CATEGORIA","categoria_veiculo");
+    define("TABELA_ENDERECO","endereco");
 
     //Constantes com o nome das views
     define("VIEW_VEICULO", "VPendencia_Veiculo");
@@ -174,15 +176,25 @@ if(!isset($incluso)){
     define("IMPORT_VEICULO_CONTROLLER", RAIZ_IMPORT . "/controller/controllerVeiculo.php");    
 
     //Imports de foto veiculo
-    define("IMPORT_FOTO_VEICULO", RAIZ_IMPORT . "/model/foto_veiculoClass.php");
-    define("IMPORT_FOTO_VEICULO_DAO", RAIZ_IMPORT . "/model/DAO/foto_veiculoDAO.php");
-    define("IMPORT_FOTO_VEICULO_CONTROLLER", RAIZ_IMPORT . "/controller/controllerFoto_Veiculo.php"); 
+    define("IMPORT_FOTO_VEICULO", RAIZ_IMPORT . "/model/enderecoClass.php");
+    define("IMPORT_FOTO_VEICULO_DAO", RAIZ_IMPORT . "/model/DAO/enderecoDAO.php");
+    define("IMPORT_FOTO_VEICULO_CONTROLLER", RAIZ_IMPORT . "/controller/controllerEndereco.php"); 
+
+    //Imports de endereço
+    define("IMPORT_ENDERECO", RAIZ_IMPORT . "/model/enderecoClass.php");
+    define("IMPORT_ENDERECO_DAO", RAIZ_IMPORT . "/model/DAO/enderecoDAO.php");
+    define("IMPORT_ENDERECO_CONTROLLER", RAIZ_IMPORT . "/controller/controllerEndereco.php"); 
     
     //Imports de banner
     define("IMPORT_BANNER", RAIZ_IMPORT . "/model/bannerClass.php");
     define("IMPORT_BANNER_DAO", RAIZ_IMPORT . "/model/DAO/bannerDAO.php");
     define("IMPORT_BANNER_CONTROLLER", RAIZ_IMPORT . "/controller/controllerBanner.php");     
 
+    //Imports de categorias
+    define("IMPORT_CATEGORIA", RAIZ_IMPORT . "/model/categoriaClass.php");
+    define("IMPORT_CATEGORIA_DAO", RAIZ_IMPORT . "/model/DAO/categoriaDAO.php");
+    define("IMPORT_CATEGORIA_CONTROLLER", RAIZ_IMPORT . "/controller/controllerCategoria.php"); 
+    
     //Imports de marca
     define("IMPORT_MARCA", RAIZ_IMPORT . "/model/marcaClass.php");
     define("IMPORT_MARCA_DAO", RAIZ_IMPORT . "/model/DAO/marcaDAO.php");
