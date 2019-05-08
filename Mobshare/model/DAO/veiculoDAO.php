@@ -28,11 +28,21 @@ class veiculoDAO{
     //Inserir um registro no banco de dados.
     public function insert(Veiculo $veiculo){
         $sql = INSERT . TABELA_VEICULO . " 
-        (nome, descricao, permissoes)
+        (cor, altura, comprimento, largura, altura, valorHora, 
+        ano, quilometragem, idCategoria_Veiculo, idModelo, 
+        idEndereco, idCliente)
         VALUES (
-        '".$veiculo->getNome()."',
-        '".$veiculo->getDescricao()."',
-        '".$veiculo->getPermissoes()."')";
+        '".$veiculo->getCor()."',
+        '".$veiculo->getAltura()."',
+        '".$veiculo->getComprimento()."',
+        '".$veiculo->getLargura()."',
+        '".$veiculo->getValorHora()."',
+        '".$veiculo->getAno()."',
+        '".$veiculo->getQuilometragem()."',
+        '".$veiculo->getIdCategoriaVeiculo()."',
+        '".$veiculo->getIdModelo()."',
+        '".$veiculo->getIdEndereco()."',
+        '".$veiculo->getIdCliente()."')";
 
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
