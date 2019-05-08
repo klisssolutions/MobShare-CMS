@@ -2,6 +2,30 @@
 @session_start();
 @$_SESSION["importInclude"] = $_SERVER["DOCUMENT_ROOT"] . "/Mobshare/include.php";
 require_once($_SESSION["importInclude"]); 
+
+    require_once(IMPORT_MODELO);
+    require_once(IMPORT_MODELO_CONTROLLER);
+
+    require_once(IMPORT_CATEGORIA);
+    require_once(IMPORT_CATEGORIA_CONTROLLER);
+
+    require_once(IMPORT_ENDERECO);
+    require_once(IMPORT_ENDERECO_CONTROLLER);
+
+    $controllerModelo = new controllerModelo();
+    $modelos[] = new Modelo();
+    $modelos = $controllerModelo->listarModelos();
+
+    $controllerCategoria = new controllerCategoria();
+    $categorias[] = new Categoria();
+    $categorias = $controllerCategoria->listarCategorias();
+
+    $controllerEndereco = new controllerEndereco();
+    $enderecos[] = new Endereco();
+    $enderecos = $controllerEndereco->listarEnderecos();
+
+    $router = "router('veiculos', 'inserir', '0')";
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -65,9 +89,13 @@ require_once($_SESSION["importInclude"]);
                             </td>
                             <td class="txt-dash">
 
-                                <select class="slt-dash" name="sltAtivo" required>
-                                    <option value="1">Ativado</option>
-                                    <option value="0">Desativado</option>
+                                <select class="slt-dash" name="sltCategoria" required>
+                                <option value="">Selecione uma categoria</option>
+                                    <?php foreach($categorias as $categoria){ 
+                                            $selected = ($idCategoria_Veiculo == $categoria->getIdCategoria_Veiculo() ? "selected" : null);
+                                    ?>
+                                    <option value="<?php echo($categoria->getIdCategoria_Veiculo()); ?>" <?php echo($selected); ?>><?php echo($categoria->getNomeCategoria()); ?></option>
+                                    <?php } ?>
                                 </select>
 
                             </td>
@@ -78,9 +106,13 @@ require_once($_SESSION["importInclude"]);
                             </td>
                             <td class="txt-dash">
 
-                                <select class="slt-dash" name="sltAtivo" required>
-                                    <option value="1">Ativado</option>
-                                    <option value="0">Desativado</option>
+                                <select class="slt-dash" name="sltModelo" required>
+                                    <option value="">Selecione um modelo</option>
+                                    <?php foreach($modelos as $modelo){ 
+                                            $selected = ($idModelo == $modelo->getIdModelo() ? "selected" : null);
+                                    ?>
+                                    <option value="<?php echo($modelo->getIdModelo()); ?>" <?php echo($selected); ?>><?php echo($modelo->getNomeModelo()); ?></option>
+                                    <?php } ?>
                                 </select>
 
                             </td>
@@ -146,7 +178,14 @@ require_once($_SESSION["importInclude"]);
                                 Endereço:
                             </td>
                             <td class="txt-dash">
-                                <input type="text" class="input-dash" name="txtCor" id="cor">
+                            <select class="slt-dash" name="sltEndereco" required>
+                                <option value="">Selecione a rua</option>
+                                    <?php foreach($enderecos as $endereco){ 
+                                            $selected = ($idEndereco == $endereco->getIdEndereco() ? "selected" : null);
+                                    ?>
+                                    <option value="<?php echo($endereco->getIdEndereco()); ?>" <?php echo($selected); ?>><?php echo($endereco->getRua() . ', ' . $endereco->getCidade() . ', ' . $endereco->getUf()); ?></option>
+                                    <?php } ?>
+                                </select>
                             </td>
                         </tr>
                         <tr>
