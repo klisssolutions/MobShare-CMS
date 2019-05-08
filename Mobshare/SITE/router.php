@@ -201,14 +201,50 @@ if(isset($_GET["controller"])){
 
 */
 
-        // case "VEICULOS":
+        case "VEICULOS":
         
-        //  require_once(IMPORT_VEICULO_CONTROLLER);
+         require_once(IMPORT_VEICULO_CONTROLLER);
 
-        //  $controllerVeiculo = new controllerVeiculo();
+         $controllerVeiculo = new controllerVeiculo();
 
+         switch($modo){
+
+            case "INSERIR":
+
+                $controllerVeiculo->inserirVeiculo();
+             
+                echo("<script>alert('oi');</script>");
+             break;
+
+             case "EXCLUIR":
+
+             $controllerVeiculo->excluir();
+             
+             echo("<script>banner();</script>");
+             break;    
+             
+             case "BUSCAR":
+
+             $controllerVeiculo->buscarBanner();
+             
+             
+             break;   
+
+             case "ATUALIZAR":
+
+            
+                 $controllerVeiculo->atualizar();
+                 
+                 echo("<script>banner();</script>");
+             break; 
+
+         }
                             
-        // break;
+        break;
+
+
+
+
 
      case "BANNER":
      
