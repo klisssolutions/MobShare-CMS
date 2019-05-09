@@ -9,6 +9,7 @@ require_once($_SESSION["importInclude"]);
 
 //Require das controller
 require_once(IMPORT_ANUNCIOS_CONTROLLER);
+require_once(IMPORT_ACESSORIO_CONTROLLER);
 require_once(IMPORT_FOTO_VEICULO_CONTROLLER);
 
 //Pegar as variáveis da url
@@ -62,11 +63,14 @@ if($modo == "LISTA"){
 
 }else if($modo == "BUSCAR"){
     $controllerFoto_Veiculo = new controllerFoto_Veiculo();
+    $controllerAcessorio = new controllerAcessorio();
+
     $anuncios = $anunciosController->buscarAnuncio($id);
     $fotos = $controllerFoto_Veiculo->listarFotosPorVeiculo($anuncios->getIdVeiculo());
-
+    $acessorios = $controllerAcessorio->listarAcessorioPorVeiculo($anuncios->getIdVeiculo());
 
     $array_fotos = array();
+    $array_acessorios = array();
     $result= array();
 
     foreach($fotos as $foto){
@@ -81,13 +85,25 @@ if($modo == "LISTA"){
         array_push($array_fotos, $array);        
     }
 
+    foreach($acessorios as $acessorio){
+        $array = array(
+            "idAcessorio" => $acessorio->getIdAcessorio(),
+            "idTipo_Veiculo" => $acessorio->getIdTipoVeiculo(),            
+            "nomeAcessorio" => $acessorio->getNomeAcessorio()
+                        
+        );
+
+        array_push($array_acessorios, $array);        
+    }    
+
 
 
     $array = array(
         "idVeiculo" => $anuncios->getIdVeiculo(),
         "nomeModelo" => $anuncios->getNomeModelo(),
         "nomeMarca" => $anuncios->getNomeMarca(),
-        "fotos" => $array_fotos
+        "fotos" => $array_fotos,
+        "acessorios" => $array_acessorios
     );
 
     array_push($result, $array);   
@@ -99,6 +115,8 @@ if($modo == "LISTA"){
 }
 
 echo(json_encode($result));
+
+
 
 
 

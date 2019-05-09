@@ -250,6 +250,11 @@ if(!isset($incluso)){
     define("IMPORT_ANUNCIOS_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/anunciosDAO.php");
     define("IMPORT_ANUNCIOS_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerAnuncios.php");
 
+    //import anuncios mobile
+    define("IMPORT_ACESSORIO", PASTA_RAIZ . PASTA_PROJETO . "/model/acessorioClass.php");
+    define("IMPORT_ACESSORIO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/acessorioDAO.php");
+    define("IMPORT_ACESSORIO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerAcessorio.php");
+
     //import chat
     define("IMPORT_CHAT", PASTA_RAIZ . PASTA_PROJETO . "/model/chatClass.php");
     define("IMPORT_CHAT_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/chatDAO.php");

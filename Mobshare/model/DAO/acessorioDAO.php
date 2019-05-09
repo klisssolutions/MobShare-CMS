@@ -1,7 +1,7 @@
 <?php
 /*
     Projeto: MobShare
-    Autor: Emanuelly
+    Autor: Leonardo
     Data Criação: 29/04/2019
     Data Modificação:
     Conteudo Modificação:
@@ -28,7 +28,7 @@ class acessorioDAO{
 
     public function selectByVeiculo($idVeiculo
     ){
-        $sql = "select a.idAcessorio, a.idTipoVeiculo, a.nomeAcessorio from Acessorio as a join Acessorio_Veiculo as av 
+        $sql = "select a.idAcessorio, a.idTipo_Veiculo, a.nomeAcessorio from Acessorio as a join Acessorio_Veiculo as av 
         on av.idAcessorio = a.idAcessorio join Veiculo as v on 
         av.idVeiculo = v.idVeiculo where v.idVeiculo = ".$idVeiculo;
 
@@ -48,7 +48,7 @@ class acessorioDAO{
         while($rsAcessorio=$select->fetch(PDO::FETCH_ASSOC)){
             $acessorio = new Acessorio();
             $acessorio->setIdAcessorio($rsAcessorio["idAcessorio"]);
-            $acessorio->setIdTipoVeiculo($rsAcessorio["idTipoVeiculo"]);
+            $acessorio->setIdTipoVeiculo($rsAcessorio["idTipo_Veiculo"]);
             $acessorio->setNomeAcessorio($rsAcessorio["nomeAcessorio"]);
             
 
