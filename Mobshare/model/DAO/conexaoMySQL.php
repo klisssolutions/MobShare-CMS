@@ -17,9 +17,18 @@ class conexaoMySQL{
     private $database;
 
     public function __construct(){
-        $this ->server = "10.107.144.16:3306";
-        $this ->user = "kliss";
-        $this ->password = "klisskliss123";
+        $local = "curso";
+
+        if($local == "curso"){
+            $this ->server = "10.107.144.16:3306";
+            $this ->user = "kliss";
+            $this ->password = "klisskliss123";
+        }else{
+            $this ->server = "localhost";
+            $this ->user = "root";
+            $this ->password = "bcd127";
+        }
+        
         $this ->database = "mydb";
     }
 
