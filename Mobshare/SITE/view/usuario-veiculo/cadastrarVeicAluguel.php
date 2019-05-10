@@ -34,6 +34,7 @@ require_once($_SESSION["importInclude"]);
     <link rel="stylesheet" type="text/css" href="../css/dashboard.css">
     <meta http-equiv="Content-Type" content="view/text/html; charset=utf-8" />
     <link rel="shortcut icon" href="images/user.png" />
+    <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/link.js"></script>
     <title>Painel do Usuário </title>
 </head>
@@ -78,7 +79,7 @@ require_once($_SESSION["importInclude"]);
                     <h3>Sair</h3>
                 </div>
             </div>
-            <div class="conteudo-usuario">
+            <div class="conteudo-usuario" id="informacao">
                 <div class="titulo-lista">VEICULOS</div>
                 <form id="form" method="post" enctype="multipart/form-data">
 
@@ -122,7 +123,7 @@ require_once($_SESSION["importInclude"]);
                                 Cor:
                             </td>
                             <td class="txt-dash">
-                                <input type="text" class="input-dash" name="txtCor" id="cor">
+                                <input type="text" class="input-dash" name="txtCor" id="cor" required>
                             </td>
                         </tr>
                         <tr>
@@ -130,7 +131,7 @@ require_once($_SESSION["importInclude"]);
                                 Altura:
                             </td>
                             <td class="txt-dash">
-                                <input type="text" class="input-dash" name="txtAltura" id="altura">
+                                <input type="text" class="input-dash" name="txtAltura" id="altura" required>
                             </td>
                         </tr>
                         <tr>
@@ -138,11 +139,11 @@ require_once($_SESSION["importInclude"]);
                                 Comprimento:
                             </td>
                             <td class="txt-dash">
-                                <input type="text" class="input-dash" name="txtComprimento" id="comprimento">
+                                <input type="text" class="input-dash" name="txtComprimento" id="comprimento" required>
                             </td>
                         </tr>
                         <tr>
-                            <td class="titulo-dash-cad">
+                            <td class="titulo-dash-cad" required>
                                 Largura:
                             </td>
                             <td class="txt-dash">
@@ -162,7 +163,7 @@ require_once($_SESSION["importInclude"]);
                                 Ano:
                             </td>
                             <td class="txt-dash">
-                                <input type="text" class="input-dash" name="txtAno" id="ano">
+                                <input type="text" class="input-dash" name="txtAno" id="ano" required>
                             </td>
                         </tr>
                         <tr>
@@ -181,7 +182,7 @@ require_once($_SESSION["importInclude"]);
                             <select class="slt-dash" name="sltEndereco" required>
                                 <option value="">Selecione a rua</option>
                                     <?php foreach($enderecos as $endereco){ 
-                                            $selected = ($idEndereco == $endereco->getIdEndereco() ? "selected" : null);
+                                        $selected = ($idEndereco == $endereco->getIdEndereco() ? "selected" : null);
                                     ?>
                                     <option value="<?php echo($endereco->getIdEndereco()); ?>" <?php echo($selected); ?>><?php echo($endereco->getRua() . ', ' . $endereco->getCidade() . ', ' . $endereco->getUf()); ?></option>
                                     <?php } ?>
