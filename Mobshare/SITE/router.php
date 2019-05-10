@@ -161,7 +161,7 @@ if(isset($_GET["controller"])){
         }
         break;
 
-/*        case "MARCAS":
+        case "FOTO_VEICULO":
 
         //Import da controller de TERMOS
         require_once(IMPORT_MARCAS_CONTROLLER);
@@ -172,10 +172,10 @@ if(isset($_GET["controller"])){
         switch($modo){
             case "INSERIR":
                 //Chamando o método de inserir um novo TERMO
-                $controllerMarca->inserirMarcas();
+                $controllerFoto_Veiculo->inserirFoto_Veiculo();
 
                 //Encaminha para a pagina de TERMOS
-                echo("<script>marcas();</script>");
+                // echo("<script>marcas();</script>");
                 break;
 
             case "EXCLUIR":
@@ -199,7 +199,7 @@ if(isset($_GET["controller"])){
         }
         break;
 
-*/
+
 
         case "VEICULOS":
         
@@ -210,10 +210,19 @@ if(isset($_GET["controller"])){
          switch($modo){
 
             case "INSERIR":
-
-                $controllerVeiculo->inserirVeiculo();
+            
+                $erro = $controllerVeiculo->inserirVeiculo();
              
-                echo("<script>alert('oi');</script>");
+                if($erro){
+                    echo(ALERT_INSERIR_VEICULO_ERRO);
+                }else{
+                    echo(ALERT_INSERIR_VEICULO_SUCESSO);
+
+                    echo("<script>cadastrarImagemVeiculo(". $_POST["sltCategoria"] .", " . $id . ");</script>");
+                }
+                
+
+
              break;
 
              case "EXCLUIR":
