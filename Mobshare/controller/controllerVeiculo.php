@@ -39,7 +39,7 @@ class controllerVeiculo{
             $endereco = $_POST["sltEndereco"];
             $categoria = $_POST["sltCategoria"];
             $modelo = $_POST["sltModelo"];
-            $cliente = $_POST[$_SESSION['idCliente']];
+            $cliente = $_SESSION['idCliente']['idCliente'];
 
             //Instancia da classe
             $veiculo = new Veiculo();
