@@ -97,6 +97,7 @@ if(!isset($incluso)){
     define("TABELA_CHAT","mensagem_chat");
     define("TABELA_CATEGORIA","categoria_veiculo");
     define("TABELA_ENDERECO","endereco");
+    define("TABELA_TIPO","tipo_veiculo");
 
     //Constantes com o nome das views
     define("VIEW_VEICULO", "VPendencia_Veiculo");
@@ -178,7 +179,7 @@ if(!isset($incluso)){
     //Imports de foto veiculo
     define("IMPORT_FOTO_VEICULO", RAIZ_IMPORT . "/model/foto_veiculoClass.php");
     define("IMPORT_FOTO_VEICULO_DAO", RAIZ_IMPORT . "/model/DAO/foto_veiculoDAO.php");
-    define("IMPORT_FOTO_VEICULO_CONTROLLER", RAIZ_IMPORT . "/controller/controllerFoto_Veiculo.php");
+    define("IMPORT_FOTO_VEICULO_CONTROLLER", RAIZ_IMPORT . "/controller/controllerFoto_veiculo.php"); 
 
     //Imports de endereço
     define("IMPORT_ENDERECO", RAIZ_IMPORT . "/model/enderecoClass.php");
@@ -250,15 +251,14 @@ if(!isset($incluso)){
     define("IMPORT_ANUNCIOS_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/anunciosDAO.php");
     define("IMPORT_ANUNCIOS_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerAnuncios.php");
 
-    //import anuncios mobile
-    define("IMPORT_ACESSORIO", PASTA_RAIZ . PASTA_PROJETO . "/model/acessorioClass.php");
-    define("IMPORT_ACESSORIO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/acessorioDAO.php");
-    define("IMPORT_ACESSORIO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerAcessorio.php");
-
     //import chat
     define("IMPORT_CHAT", PASTA_RAIZ . PASTA_PROJETO . "/model/chatClass.php");
     define("IMPORT_CHAT_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/chatDAO.php");
     define("IMPORT_CHAT_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerChat.php");
+    
+    define("IMPORT_TIPO", PASTA_RAIZ . PASTA_PROJETO . "/model/tipoClass.php");
+    define("IMPORT_TIPO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/tipoDAO.php");
+    define("IMPORT_TIPO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerTipo.php");
     
     /*---------------------------------------------------------------*/
     /*--------------------------- PÁGINAS ---------------------------*/
@@ -402,6 +402,13 @@ if(!isset($incluso)){
     define("MSG_RECUSAR_ERRO", "Não foi possível recusar o cancelamento.");
     define("MSG_RECUSAR_SUCESSO", "Cancelamento recusado.");
 
+    //Mensagens de parceiros
+    define("MSG_INSERIR_VEICULO_ERRO", "Não foi possível inserir o veiculo.");
+    define("MSG_INSERIR_VEICULO_SUCESSO", "Veiculo inserido.");
+    define("MSG_ATUALIZAR_VEICULO_ERRO", "Não foi possível atualizar o veiculo.");
+    define("MSG_ATUALIZAR_VEICULO_SUCESSO", "Veiculo atualizado.");
+    define("MSG_EXCLUIR_VEICULO_ERRO", "Não foi possível excluir o veiculo.");
+    define("MSG_EXCLUIR_VEICULO_SUCESSO", "Veiculo excluído.");
 
     /*---------------------------------------------------------------*/
     /*--------------------------- ALERTAS ---------------------------*/
@@ -417,6 +424,14 @@ if(!isset($incluso)){
     define("ALERT_ATUALIZAR_NIVEL_SUCESSO", alert(MSG_ATUALIZAR_NIVEL_SUCESSO));
     define("ALERT_EXCLUIR_NIVEL_ERRO", alert(MSG_EXCLUIR_NIVEL_ERRO));
     define("ALERT_EXCLUIR_NIVEL_SUCESSO", alert(MSG_EXCLUIR_NIVEL_SUCESSO));
+    
+    //Alertas de veiculos
+    define("ALERT_INSERIR_VEICULO_ERRO", alert(MSG_INSERIR_VEICULO_ERRO));
+    define("ALERT_INSERIR_VEICULO_SUCESSO", alert(MSG_INSERIR_VEICULO_SUCESSO));
+    define("ALERT_ATUALIZAR_VEICULO_ERRO", alert(MSG_ATUALIZAR_VEICULO_ERRO));
+    define("ALERT_ATUALIZAR_VEICULO_SUCESSO", alert(MSG_ATUALIZAR_VEICULO_SUCESSO));
+    define("ALERT_EXCLUIR_VEICULO_ERRO", alert(MSG_EXCLUIR_VEICULO_ERRO));
+    define("ALERT_EXCLUIR_VEICULO_SUCESSO", alert(MSG_EXCLUIR_VEICULO_SUCESSO));
 
     //Alertas de funcionários
     define("ALERT_INSERIR_FUNCIONARIO_ERRO", alert(MSG_INSERIR_FUNCIONARIO_ERRO));
@@ -425,6 +440,7 @@ if(!isset($incluso)){
     define("ALERT_ATUALIZAR_FUNCIONARIO_SUCESSO", alert(MSG_ATUALIZAR_FUNCIONARIO_SUCESSO));
     define("ALERT_EXCLUIR_FUNCIONARIO_ERRO", alert(MSG_EXCLUIR_FUNCIONARIO_ERRO));
     define("ALERT_EXCLUIR_FUNCIONARIO_SUCESSO", alert(MSG_EXCLUIR_FUNCIONARIO_SUCESSO));
+    
 
     //Alertas de parceiros
     define("ALERT_INSERIR_PARCEIRO_ERRO", alert(MSG_INSERIR_PARCEIRO_ERRO));
