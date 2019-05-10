@@ -17,7 +17,8 @@ class conexaoMySQL{
     private $database;
 
     public function __construct(){
-        $local = "curso";
+        //$local = "curso";
+        $local = "casa";
 
         if($local == "curso"){
             $this ->server = "10.107.144.16:3306";

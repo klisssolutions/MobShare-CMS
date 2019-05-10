@@ -74,11 +74,8 @@ if($modo == "LISTA"){
     $result= array();
 
     foreach($fotos as $foto){
-        $array = array(
-            "idFoto_Veiculo" => $foto->getIdFoto_Veiculo(),
-            "idVeiculo" => $foto->getIdVeiculo(),            
-            "fotoVeiculo" => $foto->getFotoVeiculo(),            
-            "perfil" => $foto->getPerfil()
+        $array = array(                 
+            "fotoVeiculo" => $foto->getFotoVeiculo()
             
         );
 
@@ -86,11 +83,8 @@ if($modo == "LISTA"){
     }
 
     foreach($acessorios as $acessorio){
-        $array = array(
-            "idAcessorio" => $acessorio->getIdAcessorio(),
-            "idTipo_Veiculo" => $acessorio->getIdTipoVeiculo(),            
-            "nomeAcessorio" => $acessorio->getNomeAcessorio()
-                        
+        $array = array(        
+            "nomeAcessorio" => $acessorio->getNomeAcessorio()                        
         );
 
         array_push($array_acessorios, $array);        
@@ -102,6 +96,9 @@ if($modo == "LISTA"){
         "idVeiculo" => $anuncios->getIdVeiculo(),
         "nomeModelo" => $anuncios->getNomeModelo(),
         "nomeMarca" => $anuncios->getNomeMarca(),
+        "valor" => $anuncios->getValor(),
+        "ano" => $anuncios->getAno(),
+        "nota" => $anuncios->getNota(),
         "fotos" => $array_fotos,
         "acessorios" => $array_acessorios
     );

@@ -13,6 +13,9 @@ class anuncios{
     private $nomeModelo;
     private $nomeMarca;
     private $fotoVeiculo;
+    private $valor;
+    private $ano;
+    private $nota;
 
 
 
@@ -96,5 +99,68 @@ class anuncios{
 
         return $this;
     }
+
+
+    /**
+     * Get the value of fotoVeiculo
+     */ 
+    public function getValor()
+    {
+        return $this->valor;
+    }
+
+    /**
+     * Set the value of fotoVeiculo
+     *
+     * @return  self
+     */ 
+    public function setValor($valor)
+    {
+        $this->valor = $valor;
+
+        return $this;
+    }    
+
+    /**
+     * Get the value of fotoVeiculo
+     */ 
+    public function getAno()
+    {
+        return $this->ano;
+    }
+
+    /**
+     * Set the value of fotoVeiculo
+     *
+     * @return  self
+     */ 
+    public function setAno($ano)
+    {
+        $this->ano = $ano;
+
+        return $this;
+    }     
+
+
+    /**
+     * Get the value of fotoVeiculo
+     */     
+    public function getNota()
+    {
+        return $this->nota;
+    }
+
+    /**
+     * Set the value of fotoVeiculo
+     *
+     * @return  self
+     */ 
+    public function setNota($nota)
+    {
+        $this->nota = $nota;
+
+        return $this;
+    }  
+
 }
 ?>

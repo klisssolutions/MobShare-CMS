@@ -28,7 +28,7 @@ if(isset($_SESSION['idCliente'])){
             </div>
             <div class="txt-login">
                 <h1>Senha:</h1>
-                <input type="password" name="txtsenha" class="input-login">
+                <input type="text" name="txtsenha" class="input-login">
             </div>
             <div class="btn-login">
                 <button class="btn-login-form">Entrar</button>

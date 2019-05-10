@@ -129,7 +129,7 @@ class anunciosDAO{
 
        //Seleciona um registro pelo ID.
        public function selectById($id){
-        $sql = SELECT . VIEW_ANUNCIOS . " WHERE idVeiculo=".$id;
+        $sql = SELECT . VIEW_DETALHE_VEICULO . " WHERE idVeiculo=".$id;
 
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
@@ -146,7 +146,9 @@ class anunciosDAO{
             $anuncios->setIdVeiculo($rsAnuncios["idVeiculo"]);
             $anuncios->setNomeModelo($rsAnuncios["nomeModelo"]);
             $anuncios->setNomeMarca($rsAnuncios["nomeMarca"]);
-            $anuncios->setFotoVeiculo($rsAnuncios["fotoVeiculo"]);
+            $anuncios->setValor($rsAnuncios["valor"]);
+            $anuncios->setAno($rsAnuncios["ano"]);
+            $anuncios->setNota($rsAnuncios["nota"]);
         }
 
         $this->conex->closeDataBase();

@@ -145,6 +145,45 @@ class foto_veiculoDAO{
         $this->conex->closeDataBase();
 
         return($foto_Veiculo);
+    }
+    
+    
+
+    public function selectFotoPorVeiculo($idVeiculo){
+        $sql = SELECT.TABELA_FOTO_VEICULO." where idVeiculo = ".$idVeiculo;
+
+        //Abrindo conexão com o BD
+        $PDO_conex = $this->conex->connectDataBase();
+
+        //executa o script de select no bd
+        $select = $PDO_conex->query($sql);
+        $cont = 0;
+        
+        /* $select->fetch no formado pdo retorna os dados do BD
+        também retorna com característica do PDO como o fetch
+        é necessário especificar o modelo de conversão.
+        EX: PDO::FETCH_ASSOC, PDO::FETCH_ARRAY etc. */
+
+          
+        $listFoto_Veiculo[] = new Foto_Veiculo();
+        $listFoto_Veiculo = null;
+        while($rsFoto_Veiculo=$select->fetch(PDO::FETCH_ASSOC)){
+            
+            $foto_Veiculo = new Foto_Veiculo();
+            $foto_Veiculo->setIdFoto_Veiculo($rsFoto_Veiculo["idFoto_Veiculo"]);
+            $foto_Veiculo->setIdVeiculo($rsFoto_Veiculo["idVeiculo"]);
+            $foto_Veiculo->setFotoVeiculo($rsFoto_Veiculo["fotoVeiculo"]);
+            $foto_Veiculo->setPerfil($rsFoto_Veiculo["perfil"]);
+            
+            $listFoto_Veiculo[$cont] = $foto_Veiculo;
+            
+            $cont++;
+        }
+
+
+        $this->conex->closeDataBase();
+
+        return($listFoto_Veiculo);
     }    
 
     //Seleciona um registro pelo ID.
