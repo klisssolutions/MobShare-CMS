@@ -28,7 +28,7 @@ class veiculoDAO{
     //Inserir um registro no banco de dados.
     public function insert(Veiculo $veiculo){
         $sql = INSERT . TABELA_VEICULO . " 
-        (cor, altura, comprimento, largura, altura, valorHora, 
+        (cor, altura, comprimento, largura, valorHora, 
         ano, quilometragem, idCategoria_Veiculo, idModelo, 
         idEndereco, idCliente)
         VALUES (
@@ -50,9 +50,13 @@ class veiculoDAO{
         //Executa no BD o script Insert e retorna verdadeiro/falso
         if($PDO_conex->query($sql)){
             $erro = false;
+            echo($sql);
         }else{
             $erro = true;
+            echo($sql);
         }
+
+        
         //Fecha a conexão com o BD
         $this->conex->closeDataBase();
         return $erro;
@@ -126,7 +130,7 @@ class veiculoDAO{
             $listVeiculos[$cont]->setValorHora($rsVeiculos["valorHora"]);
             $listVeiculos[$cont]->setAno($rsVeiculos["ano"]);
             $listVeiculos[$cont]->setQuilometragem($rsVeiculos["quilometragem"]);
-            $listVeiculos[$cont]->setValorVenda($rsVeiculos["valorVenda"]);
+            
             $listVeiculos[$cont]->setIdEndereco($rsVeiculos["idEndereco"]);
             
             $cont++;
@@ -163,7 +167,6 @@ class veiculoDAO{
             $veiculo->setValorHora($rsVeiculo["valorHora"]);
             $veiculo->setAno($rsVeiculo["ano"]);
             $veiculo->setQuilometragem($rsVeiculo["quilometragem"]);
-            $veiculo->setValorVenda($rsVeiculo["valorVenda"]);
             $veiculo->setIdEndereco($rsVeiculo["idEndereco"]);
         }
 
@@ -221,7 +224,6 @@ class veiculoDAO{
             $veiculo->setValorHora($rsVeiculos["valorHora"]);
             $veiculo->setAno($rsVeiculos["ano"]);
             $veiculo->setQuilometragem($rsVeiculos["quilometragem"]);
-            $veiculo->setValorVenda($rsVeiculos["valorVenda"]);
             $veiculo->setIdEndereco($rsVeiculos["idEndereco"]);
             
             $listVeiculos[$cont] = $veiculo;
