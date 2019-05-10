@@ -10,6 +10,17 @@ function veiculo() {
     location.href = "usuarioVeiculo.php";
 }
 
+function cadastrarImagemVeiculo(categoria, idVeiculo) {
+    $.ajax({
+        type: "POST",
+        url: `cadastroImagem.php?id=${categoria}&veiculo=${idVeiculo}`,
+        success: function (dados) {
+            $("#informacao").html(dados);
+        }
+    });
+}
+
+
 function router(controller, modo, id){
 
     let form = document.getElementById("form");
@@ -24,7 +35,7 @@ function router(controller, modo, id){
                 processData: false,
                 contentType: false,
                 cache: false,
-                url: `router.php?controller=${controller}&modo=${modo}&id=${id}`,
+                url: `../../router.php?controller=${controller}&modo=${modo}&id=${id}`,
                 data: data,
                 success: function (data) {                    
                     
