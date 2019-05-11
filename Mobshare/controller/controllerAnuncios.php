@@ -30,13 +30,14 @@ class controllerAnuncios{
     }
 
     public function filtrarAnuncios(){
+        $tipoVeiculo = $_GET['cbTipoVeiculo'];
         $marca = $_GET['cbMarca'];
         $modelo = $_GET['cbModelo'];
         $KM = $_GET['cbKM'];
         $avaliacao = $_GET['cbAvaliacao'];
         //Instancia do DAO criado para ser usado em todos os outros métodos
         $anunciosDAO = new anunciosDAO();
-        return($anunciosDAO->filtrarAnuncios($marca, $modelo, $KM, $avaliacao));
+        return($anunciosDAO->filtrarAnuncios($marca, $modelo, $KM, $avaliacao, $tipoVeiculo));
     }
 
 

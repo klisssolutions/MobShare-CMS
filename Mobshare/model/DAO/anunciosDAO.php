@@ -24,23 +24,28 @@ class anunciosDAO{
         $this->conex = new conexaoMySQL();
     }
 
-    public function filtrarAnuncios($marca, $modelo, $KM, $avaliacao){
-        $sql = "SELECT distinct v.idVeiculo, mo.nomeModelo, ma.nomeMarca, ft.fotoVeiculo FROM veiculo as v
+    public function filtrarAnuncios($marca, $modelo, $KM, $avaliacao, $tipoVeiculo){
+        $sql = "SELECT v.idVeiculo, mo.nomeModelo, ma.nomeMarca, ft.fotoVeiculo FROM veiculo as v
         join modelo as mo on v.idModelo = mo.idModelo join Marca as ma on ma.idMarca = mo.idMarca join 
-        foto_veiculo as ft on ft.idVeiculo = v.idVeiculo ";
+        foto_veiculo as ft on ft.idVeiculo = v.idVeiculo join categoria_veiculo as cv on cv.idCategoria_Veiculo = 
+        v.idCategoria_Veiculo join tipo_veiculo as tv on tv.idTipo_Veiculo = cv.idTipo_Veiculo ";
 
         if($avaliacao != "Selecione"){
             $sql = $sql . " join avaliacao_veiculo as av 
             on av.idVeiculo = v.idVeiculo join avaliacao as a on a.idAvaliacao = av.idAvaliacao  where v.idveiculo in (select v.idVeiculo from avaliacao as a join avaliacao_veiculo as av on av.idAvaliacao = a.idAvaliacao
             join veiculo as v on v.idVeiculo = av.idVeiculo group by(v.idVeiculo) having avg(a.nota) = ".$avaliacao.")";
-        }else{
-            $sql = $sql . " where 1 = 1";
+        }
+        
+        $sql = $sql . " where ft.perfil = 'frontal' ";
+        
+
+
+        if($tipoVeiculo != "0"){
+            $sql = $sql . " and tv.idTipo_Veiculo =" . $tipoVeiculo ;    
         }
 
         if($modelo != "0"){
             $sql = $sql . " and mo.idModelo =" . $modelo  ;    
-        }else{
-            $sql = $sql . " and mo.idModelo <>" . $modelo ;
         }
         if($marca != "0"){
             $sql = $sql . " and mo.idModelo in(select mo.idModelo from modelo where mo.idMarca = ".$marca.")"  ;    
