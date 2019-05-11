@@ -147,6 +147,7 @@ class anunciosDAO{
             $anuncios->setNomeModelo($rsAnuncios["nomeModelo"]);
             $anuncios->setNomeMarca($rsAnuncios["nomeMarca"]);
             $anuncios->setValor($rsAnuncios["valor"]);
+            $anuncios->setCor($rsAnuncios["cor"]);
             $anuncios->setAno($rsAnuncios["ano"]);
             $anuncios->setNota($rsAnuncios["nota"]);
         }

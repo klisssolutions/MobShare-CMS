@@ -74,36 +74,29 @@ if($modo == "LISTA"){
     $result= array();
 
     foreach($fotos as $foto){
-        $array = array(                 
-            "fotoVeiculo" => $foto->getFotoVeiculo()
-            
-        );
-
-        array_push($array_fotos, $array);        
+        array_push($array_fotos,  $foto->getFotoVeiculo());        
     }
 
     foreach($acessorios as $acessorio){
-        $array = array(        
-            "nomeAcessorio" => $acessorio->getNomeAcessorio()                        
-        );
-
-        array_push($array_acessorios, $array);        
+    
+        array_push($array_acessorios, $acessorio->getQuantidade()." ".$acessorio->getNomeAcessorio());        
     }    
 
 
 
-    $array = array(
+    $result = array(
         "idVeiculo" => $anuncios->getIdVeiculo(),
         "nomeModelo" => $anuncios->getNomeModelo(),
         "nomeMarca" => $anuncios->getNomeMarca(),
         "valor" => $anuncios->getValor(),
         "ano" => $anuncios->getAno(),
+        "cor" => $anuncios->getCor(),
         "nota" => $anuncios->getNota(),
         "fotos" => $array_fotos,
         "acessorios" => $array_acessorios
     );
 
-    array_push($result, $array);   
+    //array_push($result, $array);   
 
        
 

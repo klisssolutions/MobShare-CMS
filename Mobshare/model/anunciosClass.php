@@ -16,6 +16,7 @@ class anuncios{
     private $valor;
     private $ano;
     private $nota;
+    private $cor;
 
 
 
@@ -161,6 +162,23 @@ class anuncios{
 
         return $this;
     }  
+
+    public function getCor()
+    {
+        return $this->cor;
+    }
+
+    /**
+     * Set the value of fotoVeiculo
+     *
+     * @return  self
+     */ 
+    public function setCor($cor)
+    {
+        $this->cor = $cor;
+
+        return $this;
+    }   
 
 }
 ?>

@@ -12,6 +12,7 @@ class Acessorio{
     private $idAcessorio;
     private $idTipoVeiculo;
     private $nomeAcessorio;
+    private $quantidade;
     
 
 
@@ -76,5 +77,23 @@ class Acessorio{
         return $this;
     }        
     
+
+    public function getQuantidade()
+    {
+        return $this->quantidade;
+    }
+
+    /**
+     * Set the value of idVeiculo
+     *
+     * @return  self
+     */ 
+    public function setQuantidade($quantidade)
+    {
+        $this->quantidade = $quantidade;
+
+        return $this;
+    }        
+        
 }
 ?>

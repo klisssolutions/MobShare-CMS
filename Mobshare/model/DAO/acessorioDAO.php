@@ -28,7 +28,7 @@ class acessorioDAO{
 
     public function selectByVeiculo($idVeiculo
     ){
-        $sql = "select a.idAcessorio, a.idTipo_Veiculo, a.nomeAcessorio from Acessorio as a join Acessorio_Veiculo as av 
+        $sql = "select a.idAcessorio, a.idTipo_Veiculo, a.nomeAcessorio, av.qtdAcessorio from Acessorio as a join Acessorio_Veiculo as av 
         on av.idAcessorio = a.idAcessorio join Veiculo as v on 
         av.idVeiculo = v.idVeiculo where v.idVeiculo = ".$idVeiculo;
 
@@ -50,6 +50,7 @@ class acessorioDAO{
             $acessorio->setIdAcessorio($rsAcessorio["idAcessorio"]);
             $acessorio->setIdTipoVeiculo($rsAcessorio["idTipo_Veiculo"]);
             $acessorio->setNomeAcessorio($rsAcessorio["nomeAcessorio"]);
+            $acessorio->setQuantidade($rsAcessorio["qtdAcessorio"]);
             
 
             $listAcessorios[$cont] = $acessorio;
