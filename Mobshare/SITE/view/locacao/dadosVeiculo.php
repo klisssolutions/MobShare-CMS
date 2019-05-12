@@ -16,6 +16,21 @@ require_once(IMPORT_MODELO);
 require_once(IMPORT_MARCA_CONTROLLER);
 require_once(IMPORT_MARCA);
 
+require_once(IMPORT_SOLICITACAO_LOCACAO_CONTROLLER);
+require_once(IMPORT_SOLICITACAO_LOCACAO);
+
+if(isset($_GET["alugar"])){
+    $_GET["id"] = $_SESSION['idVeiculo'];
+
+    $controllerSolicitacao = new controllerSolicitacao_Locacao();
+    $_GET["idCliente"] = $_SESSION['idCliente']['idCliente'];
+    $_GET["idVeiculo"] = $_SESSION['idVeiculo'];
+    $_GET["txtHorarioInicio"] = $_GET["diaInicio"] . " " . $_GET["horaInicio"];
+    $_GET["txtHorarioFim"] = $_GET["diaTermino"] . " " . $_GET["horaTermino"];
+
+    $controllerSolicitacao->inserirSolicitacao_Locacao();
+}
+
 $controllerVeiculo = new controllerVeiculo();
 $controllerFoto_veiculo = new controllerFoto_Veiculo();
 $controllerMarca = new controllerMarca();
@@ -24,6 +39,7 @@ $controllerModelo = new controllerModelo();
 $veiculo = new Veiculo();
 
 $id = $_GET["id"];
+$_SESSION['idVeiculo'] = $id;
 
 $veiculo = $controllerVeiculo->buscarVeiculo();
 $foto_veiculo = new Foto_Veiculo();
@@ -43,7 +59,7 @@ $foto_veiculo = $controllerFoto_veiculo->listarFotoFrontal($veiculo->getIdVeicul
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="shortcut icon" href="images/anuncios.png" />
-    <title>Home | Mob'Share</title>
+    <title><?php echo($marca->getNomeMarca() . " " . $modelo->getNomeModelo());?> | Mob'Share</title>
 </head>
 
 <body>
@@ -61,13 +77,14 @@ $foto_veiculo = $controllerFoto_veiculo->listarFotoFrontal($veiculo->getIdVeicul
                 </nav>
             </div>
             <div class="caixa-veiculos">
+                <form method="GET">
                 <div class="dadosVeiculo">
                     <table>
                         <tr>
                             <td>
                                 <img src="<?php echo('/Mobshare/arquivos/'.$foto_veiculo->getFotoVeiculo()) ?>" width="320" height="225" alt="veiculo">
                             </td>
-                        </tr>
+                        </tr>   
                         <tr>
                             <td>
                                 Marca
@@ -88,8 +105,34 @@ $foto_veiculo = $controllerFoto_veiculo->listarFotoFrontal($veiculo->getIdVeicul
                                 <?php echo($modelo->getNomeModelo()); ?>
                             </td>
                         </tr>
+                        <tr>
+                            <td>
+                                Início locação:
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="date" name="diaInicio" required><input type="time" name="horaInicio" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Término locação:
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="date" name="diaTermino" required><input type="time" name="horaTermino" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" value="Alugar" name="alugar">
+                            </td>
+                        </tr>
                     </table>
                 </div>
+                </form>
             </div>
         </div>
     </div>

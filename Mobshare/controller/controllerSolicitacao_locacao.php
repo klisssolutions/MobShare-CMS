@@ -32,6 +32,8 @@ class controllerSolicitacao_Locacao{
         //Instancia da classe
         $solicitacao_Locacao = new Solicitacao_Locacao();
 
+
+        //Mudar para POST futuramente
         $idCliente = $_GET["idCliente"];
         $idVeiculo = $_GET["idVeiculo"];
         $horarioInicio = $_GET["txtHorarioInicio"];
