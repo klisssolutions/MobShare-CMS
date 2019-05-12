@@ -34,9 +34,11 @@ class anunciosDAO{
             $sql = $sql . " join avaliacao_veiculo as av 
             on av.idVeiculo = v.idVeiculo join avaliacao as a on a.idAvaliacao = av.idAvaliacao  where v.idveiculo in (select v.idVeiculo from avaliacao as a join avaliacao_veiculo as av on av.idAvaliacao = a.idAvaliacao
             join veiculo as v on v.idVeiculo = av.idVeiculo group by(v.idVeiculo) having avg(a.nota) = ".$avaliacao.")";
+        }else{
+            $sql = $sql . " where 1 = 1 ";    
         }
         
-        $sql = $sql . " where ft.perfil = 'frontal' ";
+        $sql = $sql . " and ft.perfil = 'frontal' ";
         
 
 

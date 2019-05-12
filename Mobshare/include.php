@@ -88,6 +88,8 @@ if(!isset($incluso)){
     define("TABELA_CATEGORIA","categoria_veiculo");
     define("TABELA_ENDERECO","endereco");
     define("TABELA_TIPO","tipo_veiculo");
+    define("TABELA_SOLICITACAO_LOCACAO","solicitacao_locacao");
+
     //Constantes com o nome das views
     define("VIEW_VEICULO", "VPendencia_Veiculo");
     define("VIEW_USUARIO", "VPendencia_Cliente");
@@ -228,6 +230,12 @@ if(!isset($incluso)){
     define("IMPORT_ACESSORIO", PASTA_RAIZ . PASTA_PROJETO . "/model/acessorioClass.php");
     define("IMPORT_ACESSORIO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/acessorioDAO.php");
     define("IMPORT_ACESSORIO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerAcessorio.php");    
+
+
+    //import anuncios mobile
+    define("IMPORT_SOLICITACAO_LOCACAO", PASTA_RAIZ . PASTA_PROJETO . "/model/solicitacao_locacaoClass.php");
+    define("IMPORT_SOLICITACAO_LOCACAO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/solicitacao_locacaoDAO.php");
+    define("IMPORT_SOLICITACAO_LOCACAO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerSolicitacao_locacao.php");    
     
     /*---------------------------------------------------------------*/
     /*--------------------------- PÁGINAS ---------------------------*/
