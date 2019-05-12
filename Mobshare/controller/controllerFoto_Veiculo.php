@@ -93,17 +93,5 @@ class controllerFoto_Veiculo{
         $foto_veiculoDAO = new foto_veiculoDAO();
         return($foto_veiculoDAO->selectFotoPorVeiculo($idVeiculo));
     }    
-
-    public function buscarNivel(){
-        //Instancia do DAO
-        $nivelDAO = new nivelDAO();
-
-        //Pega o ID para realizar a busca
-        $id = $_GET["id"];
-
-        $nivel = new Nivel();
-        $nivel = $nivelDAO->selectById($id);
-        return $nivel;
-    }
 }
 ?>

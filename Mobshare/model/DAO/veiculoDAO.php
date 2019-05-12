@@ -126,7 +126,7 @@ class veiculoDAO{
             $listVeiculos[$cont]->setValorHora($rsVeiculos["valorHora"]);
             $listVeiculos[$cont]->setAno($rsVeiculos["ano"]);
             $listVeiculos[$cont]->setQuilometragem($rsVeiculos["quilometragem"]);
-            $listVeiculos[$cont]->setValorVenda($rsVeiculos["valorVenda"]);
+            $listVeiculos[$cont]->setDisponivel($rsVeiculos["disponivel"]);
             $listVeiculos[$cont]->setIdEndereco($rsVeiculos["idEndereco"]);
             
             $cont++;
@@ -163,7 +163,7 @@ class veiculoDAO{
             $veiculo->setValorHora($rsVeiculo["valorHora"]);
             $veiculo->setAno($rsVeiculo["ano"]);
             $veiculo->setQuilometragem($rsVeiculo["quilometragem"]);
-            $veiculo->setValorVenda($rsVeiculo["valorVenda"]);
+            $veiculo->setDisponivel($rsVeiculo["disponivel"]);
             $veiculo->setIdEndereco($rsVeiculo["idEndereco"]);
         }
 
@@ -221,7 +221,7 @@ class veiculoDAO{
             $veiculo->setValorHora($rsVeiculos["valorHora"]);
             $veiculo->setAno($rsVeiculos["ano"]);
             $veiculo->setQuilometragem($rsVeiculos["quilometragem"]);
-            $veiculo->setValorVenda($rsVeiculos["valorVenda"]);
+            $veiculo->setDisponivel($rsVeiculos["disponivel"]);
             $veiculo->setIdEndereco($rsVeiculos["idEndereco"]);
             
             $listVeiculos[$cont] = $veiculo;

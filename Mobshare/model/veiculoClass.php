@@ -20,7 +20,7 @@ class veiculo{
     private $valorHora;
     private $ano;
     private $quilometragem;
-    private $valorVenda;
+    private $disponivel;
     private $idEndereco;
 
 
@@ -115,12 +115,12 @@ class veiculo{
         $this->quilometragem = $quilometragem;
     }
 
-    public function getValorVenda(){
-        return $this->valorVenda;
+    public function getDisponivel(){
+        return $this->disponivel;
     }
 
-    public function setValorVenda($valorVenda){
-        $this->valorVenda = $valorVenda;
+    public function setDisponivel($disponivel){
+        $this->disponivel = $disponivel;
     }
 
     public function getIdEndereco(){
