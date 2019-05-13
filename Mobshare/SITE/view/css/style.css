@@ -410,6 +410,10 @@ a:link {
     border-radius: 15px;
 }
 
+.botao-veiculo a {
+    color: #fff;
+}
+
 .botao-veiculo:hover {
     background-color: #04070e;
     cursor: pointer;

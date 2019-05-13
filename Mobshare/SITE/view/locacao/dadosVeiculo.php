@@ -107,12 +107,23 @@ $foto_veiculo = $controllerFoto_veiculo->listarFotoFrontal($veiculo->getIdVeicul
                         </tr>
                         <tr>
                             <td>
+                                Valor da hora:
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                R$<input type="text" size="3" value="<?php echo($veiculo->getValorHora()); ?>" readonly>
+                            </td>
+                        </tr>
+                        <?php if(isset($_SESSION['idCliente']['idCliente'])):?>
+                        <tr>
+                            <td>
                                 Início locação:
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <input type="date" name="diaInicio" required><input type="time" name="horaInicio" required>
+                                <input type="date" name="diaInicio" id="diaComeco" required><input type="time" name="horaInicio" id="horaComeco" required>
                             </td>
                         </tr>
                         <tr>
@@ -122,14 +133,16 @@ $foto_veiculo = $controllerFoto_veiculo->listarFotoFrontal($veiculo->getIdVeicul
                         </tr>
                         <tr>
                             <td>
-                                <input type="date" name="diaTermino" required><input type="time" name="horaTermino" required>
+                                <input type="date" name="diaTermino" id="diaTermino" required><input type="time" name="horaTermino" id="horaTermino" required>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <input type="submit" value="Alugar" name="alugar">
+                                <input type="button" onclick="horas()" id="botao">
                             </td>
                         </tr>
+                    <?php endif;?>
                     </table>
                 </div>
                 </form>
@@ -139,6 +152,15 @@ $foto_veiculo = $controllerFoto_veiculo->listarFotoFrontal($veiculo->getIdVeicul
 
     <!-- RODAPÉ-->
     <?php require_once(FOOTER);?>
+    <script>
+        function horas(){
+            dataComeco = new Date(diaComeco.value + " " + horaComeco.value);
+            dataTermino = new Date(diaTermino.value + " " + horaTermino.value);
+            horasAluguel = Math.abs(dataComeco.getTime() - dataTermino.getTime()) / 3600000;
+
+            alert(horasAluguel);
+        }
+    </script>
 
 </body>
 

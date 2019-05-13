@@ -93,7 +93,7 @@ $veiculos = $controllerVeiculo->listarVeiculos();
                         *****
                     </div>
                     <div class="botao-veiculo">
-                        Veja mais
+                        <a href="locacao/dadosVeiculo.php?id=<?php echo ($veiculos[$i]->getIdVeiculo()); ?>">Veja mais</a>
                     </div>
                 </div>
 
