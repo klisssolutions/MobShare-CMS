@@ -72,7 +72,7 @@ class solicitacao_locacaoDAO{
     }
 
     public function selectAll(){
-        $sql = SELECT.TABELA_SOLICITACAO_LOCACAO;
+        $sql = SELECT." vsolicitacao_locacao";
 
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
@@ -85,22 +85,26 @@ class solicitacao_locacaoDAO{
         também retorna com característica do PDO como o fetch
         é necessário especificar o modelo de conversão.
         EX: PDO::FETCH_ASSOC, PDO::FETCH_ARRAY etc. */
-        $listTermos[] = new Termos();
-        $listTermos = null;
+        $listSolicitacoes[] = new VSolicitacao_Locacao();
+        $listSolicitacoes = null;
         while($rsTermos=$select->fetch(PDO::FETCH_ASSOC)){
-            $termos= new Termos();
-            $termos->setIdTermo($rsTermos["idTermo"]);
-            $termos->setTitulo($rsTermos["titulo"]);
-            $termos->setTexto($rsTermos["texto"]);
-            $termos->setAtivo($rsTermos["ativo"]);
+            $vSolicitacao_Locacao= new VSolicitacao_Locacao();
+            $vSolicitacao_Locacao->setIdSolicitacao_Locacao("idSolicitacao_Locacao");
+            $vSolicitacao_Locacao->setIdCliente("idCliente");
+            $vSolicitacao_Locacao->setNomeCliente("nomeCliente");
+            $vSolicitacao_Locacao->setIdDono("idDono");
+            $vSolicitacao_Locacao->setVeiculo("veiculo");
+            $vSolicitacao_Locacao->setHorarioInicio("horarioInicio");
+            $vSolicitacao_Locacao->setHorarioFim("horarioFim");
+            
 
-            $listTermos[$cont] = $termos;
+            $listSolicitacoes[$cont] = $vSolicitacao_Locacao;
             $cont++;
         }
 
         $this->conex->closeDataBase();
 
-        return($listTermos);
+        return($listSolicitacoes);
 
     }
 

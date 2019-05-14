@@ -10,6 +10,7 @@ require_once($_SESSION["importInclude"]);
 //Require das controller
 require_once(IMPORT_SOLICITACAO_LOCACAO_CONTROLLER);
 require_once(IMPORT_SOLICITACAO_LOCACAO);
+require_once(IMPORT_VSOLICITACAO_LOCACAO);
 
 
 //Pegar as variáveis da url
@@ -29,22 +30,27 @@ if($modo == "INSERIR"){
         "status" => $status
     );
 
-}else if($modo == "FILTRAR"){
+}else if($modo == "LISTAR"){
     
     
 
     $result= array();
 
-    $anunciosController = new controllerAnuncios();
+    
+    $controllerSolicitacao_Locacao = new controllerSolicitacao_Locacao();   
 
-    $anuncios = $anunciosController->filtrarAnuncios();
+    $solicitacoes_Locacao = $controllerSolicitacao_Locacao->listarSolicitacaoLocacao();
 
-    foreach($anuncios as $anuncio){
+    foreach($solicitacoes_Locacao as $solicitacao_Locacao){
         $array = array(
-            "idVeiculo" => $anuncio->getIdVeiculo(),
-            "nomeModelo" => $anuncio->getNomeModelo(),
-            "nomeMarca" => $anuncio->getNomeMarca(),
-            "fotoVeiculo" => $anuncio->getFotoVeiculo()
+            "idSolicitacaoLocacao" => $solicitacao_Locacao->getIdSolicitacao_Locacao(),
+            "idCliente" => $solicitacao_Locacao->getIdCliente(),
+            "nomeCliente" => $solicitacao_Locacao->getNomeCliente(),
+            "veiculo" => $solicitacao_Locacao->getVeiculo(),
+            "horarioInicio" => $solicitacao_Locacao->getHorarioInicio(),
+            "horarioFim" => $solicitacao_Locacao->getHorarioFim(),
+            "motivoRecusa" => $solicitacao_Locacao->getMotivoRecusa()
+            
         );
 
         array_push($result, $array);        

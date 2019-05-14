@@ -233,6 +233,8 @@ if(!isset($incluso)){
 
 
     //import anuncios mobile
+    
+    define("IMPORT_VSOLICITACAO_LOCACAO", PASTA_RAIZ . PASTA_PROJETO . "/model/vsolicitacao_locacaoClass.php");
     define("IMPORT_SOLICITACAO_LOCACAO", PASTA_RAIZ . PASTA_PROJETO . "/model/solicitacao_locacaoClass.php");
     define("IMPORT_SOLICITACAO_LOCACAO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/solicitacao_locacaoDAO.php");
     define("IMPORT_SOLICITACAO_LOCACAO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerSolicitacao_locacao.php");    
