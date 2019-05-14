@@ -26,25 +26,71 @@ class foto_veiculoDAO{
     }
 
     //Inserir um registro no banco de dados.
-    public function insert(Veiculo $veiculo){
-        $sql = INSERT . TABELA_VEICULO . " 
-        (nome, descricao, permissoes)
-        VALUES (
-        '".$nivel->getNome()."',
-        '".$nivel->getDescricao()."',
-        '".$nivel->getPermissoes()."')";
+    public function insert(Foto_Veiculo $foto_veiculo){
 
-        //Abrindo conexão com o BD
+        
+            $sql = INSERT . TABELA_FOTO_VEICULO . "
+            (idVeiculo, fotoVeiculo, perfil) VALUES (
+        '".$foto_veiculo->getIdVeiculo()."',
+        '".$foto_veiculo->getFotoVeiculo()."',
+        'frontal');"; echo('<br>');
+
         $PDO_conex = $this->conex->connectDataBase();
 
         //Executa no BD o script Insert e retorna verdadeiro/falso
         if($PDO_conex->query($sql)){
             $erro = false;
+            echo($sql);
         }else{
             $erro = true;
+            echo($sql);
         }
+       
         //Fecha a conexão com o BD
-        $this->conex->closeDataBase();
+        //$this->conex->closeDataBase();
+
+        //Abrindo conexão com o BD
+        
+        return $erro;
+    }
+
+        //Inserir um registro no banco de dados.
+    public function insertVarias($fotos_veiculo){
+
+
+        // $imagens['name'] = $_FILES['foto']['name'][$i];
+        // $imagens['tmp_name'] = $_FILES['foto']['tmp_name'][$i];
+        // $imagens['size'] = $_FILES['foto']['size'][$i];
+        
+            $sql = INSERT . TABELA_FOTO_VEICULO . "
+            (idVeiculo, fotoVeiculo, perfil) VALUES (
+        ".$fotos_veiculo[0]->getIdVeiculo().",
+        '".$fotos_veiculo[0]->getFotoVeiculo()."',
+        'frontal') ";
+
+        for($i = 1; $i < sizeof($fotos_veiculo); $i++){
+            $sql = ", (".$fotos_veiculo[$i]->getIdVeiculo().",
+        '".$fotos_veiculo[$i]->getFotoVeiculo()."',
+        'frontal') ";
+
+        }
+
+        $PDO_conex = $this->conex->connectDataBase();
+
+        //Executa no BD o script Insert e retorna verdadeiro/falso
+        if($PDO_conex->query($sql)){
+            $erro = false;
+            echo($sql);
+        }else{
+            $erro = true;
+            echo($sql);
+        }
+       
+        //Fecha a conexão com o BD
+        //$this->conex->closeDataBase();
+
+        //Abrindo conexão com o BD
+        
         return $erro;
     }
 
@@ -145,45 +191,6 @@ class foto_veiculoDAO{
         $this->conex->closeDataBase();
 
         return($foto_Veiculo);
-    }
-    
-    
-
-    public function selectFotoPorVeiculo($idVeiculo){
-        $sql = SELECT.TABELA_FOTO_VEICULO." where idVeiculo = ".$idVeiculo;
-
-        //Abrindo conexão com o BD
-        $PDO_conex = $this->conex->connectDataBase();
-
-        //executa o script de select no bd
-        $select = $PDO_conex->query($sql);
-        $cont = 0;
-        
-        /* $select->fetch no formado pdo retorna os dados do BD
-        também retorna com característica do PDO como o fetch
-        é necessário especificar o modelo de conversão.
-        EX: PDO::FETCH_ASSOC, PDO::FETCH_ARRAY etc. */
-
-          
-        $listFoto_Veiculo[] = new Foto_Veiculo();
-        $listFoto_Veiculo = null;
-        while($rsFoto_Veiculo=$select->fetch(PDO::FETCH_ASSOC)){
-            
-            $foto_Veiculo = new Foto_Veiculo();
-            $foto_Veiculo->setIdFoto_Veiculo($rsFoto_Veiculo["idFoto_Veiculo"]);
-            $foto_Veiculo->setIdVeiculo($rsFoto_Veiculo["idVeiculo"]);
-            $foto_Veiculo->setFotoVeiculo($rsFoto_Veiculo["fotoVeiculo"]);
-            $foto_Veiculo->setPerfil($rsFoto_Veiculo["perfil"]);
-            
-            $listFoto_Veiculo[$cont] = $foto_Veiculo;
-            
-            $cont++;
-        }
-
-
-        $this->conex->closeDataBase();
-
-        return($listFoto_Veiculo);
     }    
 
     //Seleciona um registro pelo ID.

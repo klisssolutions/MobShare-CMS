@@ -22,27 +22,49 @@ class controllerFoto_Veiculo{
         require_once(IMPORT_FOTO_VEICULO_DAO);
     }
 
-    public function inserirNivel(){
+    public function inserirFoto_Veiculo(){
         //Instancia do DAO
-        $nivelDAO = new nivelDAO();
+        $foto_veiculoDAO = new Foto_VeiculoDAO();
 
         //Verifica qual metodo esta sendo requisitado do formulario(POST ou GET)
         if($_SERVER["REQUEST_METHOD"] == "POST"){
-            $nome = $_POST["txtnome"];
-            $descricao = $_POST["txtdescricao"];
-            $permissoes = 0;
 
-            //Instancia da classe
-            $nivel = new Nivel();
+                $idVeiculo = $_SESSION['idVeiculo'];
+                // $imagem = enviarImagem($_FILES ['foto'][0] = VALUE);
+                $imagens = $_FILES['foto']['name'];
 
-            //Guardando os dados do post no objeto da classe
-            $nivel->setNome($nome);
-            $nivel->setDescricao($descricao);
-            $nivel->setPermissoes($permissoes);
+                
+                // var_dump($imagens);
 
-            /* Chamada para o metodo de inserir no BD, passando como parâmetro o objeto
-            contatoClass que tem todos os dados que serão inseridos no banco de dados */
-            return $nivelDAO->insert($nivel);
+                $count = count($imagens);
+
+
+                $fotos_veiculo [] = new Foto_Veiculo();
+
+                for($i=0; $i<$count; $i++):
+
+                    $imagem['name'] = $_FILES['foto']['name'][$i];
+                    $imagem['tmp_name'] = $_FILES['foto']['tmp_name'][$i];
+                    $imagem['size'] = $_FILES['foto']['size'][$i];
+                    
+                    //Instancia da classe
+                    $foto_veiculo = new Foto_Veiculo();
+                    $foto = enviarImagem($imagem);
+                    
+                    //Guardando os dados do post no objeto da classe
+                    $foto_veiculo->setIdVeiculo($idVeiculo);
+                    $foto_veiculo->setFotoVeiculo($foto);
+                    
+                    /* Chamada para o metodo de inserir no BD, passando como parâmetro o objeto
+                    contatoClass que tem todos os dados que serão inseridos no banco de dados */
+                    
+                    $fotos_veiculo [$count] = $foto_veiculo;
+
+                    $foto_veiculoDAO->insert($foto_veiculo);
+                endfor;
+
+                
+                
         }
     }
 
@@ -88,10 +110,16 @@ class controllerFoto_Veiculo{
         return($foto_veiculoDAO->selectFotoFrontalPorVeiculo($idVeiculo));
     }
 
-    public function listarFotosPorVeiculo($idVeiculo){
+    public function buscarNivel(){
         //Instancia do DAO
-        $foto_veiculoDAO = new foto_veiculoDAO();
-        return($foto_veiculoDAO->selectFotoPorVeiculo($idVeiculo));
-    }    
+        $nivelDAO = new nivelDAO();
+
+        //Pega o ID para realizar a busca
+        $id = $_GET["id"];
+
+        $nivel = new Nivel();
+        $nivel = $nivelDAO->selectById($id);
+        return $nivel;
+    }
 }
 ?>
