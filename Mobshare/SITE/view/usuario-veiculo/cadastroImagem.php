@@ -4,7 +4,10 @@
 require_once($_SESSION["importInclude"]); 
 
 
-    $id = $_GET['id'];
+
+    $id = $_GET['idVeiculo'];
+    $_SESSION['idVeiculo'] = $id;
+    
 
     require_once(IMPORT_CATEGORIA);
     require_once(IMPORT_CATEGORIA_CONTROLLER);
@@ -35,17 +38,15 @@ require_once($_SESSION["importInclude"]);
     <title>Painel do Usuário </title>
 
 
-                <div class="titulo-lista"><?php echo($id); ?></div>
+                <div class="titulo-lista">MANDE FOTOS DE SEU VEICULO</div>
                 
                 <form id="form" method="post" enctype="multipart/form-data">
 
                     <table class="dash-cad">
                     <?php for($i=0; $i < $fotos; $i++):?>
                         <tr>
-                            <td class="titulo-dash-cad">
-                                Foto da Dianteira:
-                            </td>
-                            <td class="txt-dash">
+                            <td class="titulo-dash-cad" rowspan="1">
+                            
 
                                 <input type="file" name="foto[]" required>
 
@@ -53,7 +54,6 @@ require_once($_SESSION["importInclude"]);
                         </tr>
 
                         <?php endfor ?>
-
 
 
                       
