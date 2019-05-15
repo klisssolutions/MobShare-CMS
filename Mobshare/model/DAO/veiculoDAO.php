@@ -25,10 +25,32 @@ class veiculoDAO{
         $this->conex = new conexaoMySQL();
     }
 
+     public function selecionarUltimoInserido(){
+        $sql = "select max(idVeiculo) as idVeiculo from veiculo";
+
+        //Abrindo conexão com o BD
+        $PDO_conex = $this->conex->connectDataBase();
+
+        //executa o script de select no bd
+        $select = $PDO_conex->query($sql);
+        $idVeiculo;
+
+        /* $select->fetch no formado pdo retorna os dados do BD
+        também retorna com característica do PDO como o fetch
+        é necessário especificar o modelo de conversão.
+        EX: PDO::FETCH_ASSOC, PDO::FETCH_ARRAY etc. */
+        if($rsVeiculo = $select->fetch(PDO::FETCH_ASSOC)){
+            $idVeiculo = $rsVeiculo ['idVeiculo'];
+        }
+
+        $this->conex->closeDataBase();
+        return($idVeiculo);
+    }
+
     //Inserir um registro no banco de dados.
     public function insert(Veiculo $veiculo){
         $sql = INSERT . TABELA_VEICULO . " 
-        (cor, altura, comprimento, largura, altura, valorHora, 
+        (cor, altura, comprimento, largura, valorHora, 
         ano, quilometragem, idCategoria_Veiculo, idModelo, 
         idEndereco, idCliente)
         VALUES (
@@ -49,13 +71,21 @@ class veiculoDAO{
 
         //Executa no BD o script Insert e retorna verdadeiro/falso
         if($PDO_conex->query($sql)){
-            $erro = false;
+    
+            $idVeiculo = $this->selecionarUltimoInserido();
+            //Fecha a conexão com o BD
+            $this->conex->closeDataBase();
+            return $idVeiculo;            
+            //echo($sql);
         }else{
             $erro = true;
+            $this->conex->closeDataBase();
+            return $erro;  
+            echo($sql);
         }
-        //Fecha a conexão com o BD
-        $this->conex->closeDataBase();
-        return $erro;
+
+        
+
     }
 
     //Deletar um registro no banco de dados.
@@ -98,6 +128,8 @@ class veiculoDAO{
         return $erro;
     }
 
+   
+
     //Lista todos os registros do banco de dados.
     public function selectAll(){
         $sql = SELECT.TABELA_VEICULO;
@@ -126,7 +158,7 @@ class veiculoDAO{
             $listVeiculos[$cont]->setValorHora($rsVeiculos["valorHora"]);
             $listVeiculos[$cont]->setAno($rsVeiculos["ano"]);
             $listVeiculos[$cont]->setQuilometragem($rsVeiculos["quilometragem"]);
-            $listVeiculos[$cont]->setDisponivel($rsVeiculos["disponivel"]);
+            
             $listVeiculos[$cont]->setIdEndereco($rsVeiculos["idEndereco"]);
             
             $cont++;
@@ -163,7 +195,6 @@ class veiculoDAO{
             $veiculo->setValorHora($rsVeiculo["valorHora"]);
             $veiculo->setAno($rsVeiculo["ano"]);
             $veiculo->setQuilometragem($rsVeiculo["quilometragem"]);
-            $veiculo->setDisponivel($rsVeiculo["disponivel"]);
             $veiculo->setIdEndereco($rsVeiculo["idEndereco"]);
         }
 
@@ -221,7 +252,6 @@ class veiculoDAO{
             $veiculo->setValorHora($rsVeiculos["valorHora"]);
             $veiculo->setAno($rsVeiculos["ano"]);
             $veiculo->setQuilometragem($rsVeiculos["quilometragem"]);
-            $veiculo->setDisponivel($rsVeiculos["disponivel"]);
             $veiculo->setIdEndereco($rsVeiculos["idEndereco"]);
             
             $listVeiculos[$cont] = $veiculo;
