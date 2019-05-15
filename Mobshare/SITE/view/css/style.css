@@ -353,8 +353,7 @@ a:link {
 
 .caixa-veiculos {
     width: 1300px;
-    min-height: 600px;
-    height: auto;
+    height: 1200px;
     margin-left: auto;
     margin-right: auto;
     overflow: hidden;
@@ -368,14 +367,15 @@ a:link {
     float: left;
     margin-left: 60px;
     margin-bottom: 50px;
-    background-color: #e9f0f6;
+    background-color: #eaeaea;
     margin-top: 80px;
     overflow: hidden;
+    box-shadow: 1px 4px 6px 4px rgba(0, 0, 0, 0.1);
 }
 
 .img-veiculo {
-    height: 50%;
-    width: 100%;
+    height: 225px;
+    width: 320px;
 }
 
 .texto-modelo,
@@ -393,20 +393,24 @@ a:link {
 
 .texto-modelo {
     text-transform: uppercase;
+    color: #002171;
+    font-weight: bold;
 }
 
 .botao-veiculo {
     width: 78px;
+    height: 20px;
     font-size: 16px;
     background-color: #102840;
     color: #fff;
     align-content: center;
     text-align: center;
-    padding: 05px 40px 05px 40px;
+    padding: 8px 40px 8px 45px;
     font-family: Mont;
     font-size: 16px;
-    margin-left: 150px;
-    margin-top: -10px;
+    margin-left: 90px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     border-radius: 15px;
 }
 
@@ -415,7 +419,7 @@ a:link {
 }
 
 .botao-veiculo:hover {
-    background-color: #04070e;
+    background-color: #ba3135;
     cursor: pointer;
 }
 
@@ -425,7 +429,8 @@ a:link {
     min-height: 70px;
     height: auto;
     overflow: hidden;
-    margin-top: 10px;
+    margin-top: 100px;
+    padding-bottom: 150px;
 }
 
 .img-como-funciona {
@@ -435,13 +440,12 @@ a:link {
 }
 
 .img-como-funciona img {
-    margin-left: 0px;
-    margin-top: 10px;
+    text-align: center;
 }
 
 .img-como-funciona img:hover {
     filter: grayscale(100%0)
-}
+}   
 
 .texto-como-funciona {
     width: 50%;
@@ -451,10 +455,14 @@ a:link {
 
 
 .texto-como-funciona h1 {
+    width: 100%;
     margin-top: 150px;
     font-family: Mont;
     color: #102840;
-    margin-left: 450px;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+   
 }
 
 .texto-como-funciona p {
@@ -466,10 +474,18 @@ a:link {
     word-break: break-all;
 }
 
+.cm-primeira-imagem{
+    margin-left: 250px;
+}
+
+.cm-segunda-imagem{
+    margin-left: 100px;
+}
+
 .texto-como-funciona h2 {
     width: 120px;
     height: 30px;
-    margin-left: 520px;
+    margin-left: 400px;
     font-family: Mont;
     color: #fff;
     margin-top: 35px;
@@ -688,32 +704,33 @@ a:link {
 }
 
 .box-veiculo-anuncio {
-    width: 400px;
-    height: 450px;
+    width: 320px;
+    height: 480px;
     margin-left: 50px;
     margin-top: 25px;
     background-color: #ecebeb;
     float: left;
+    margin-bottom: 20px;
 }
 
 .box-veiculo-anuncio .texto-modelo {
     font-weight: bold;
     font-size: 25px;
+    height: 65px;
 }
 
 
 
 .imagem-anuncio {
-    height: 50%;
-    width: 100%;
-    background-color: brown;
+    height: 225px;
+    width: 320px;
 }
 
 .botao-veja {
     width: 150px;
     height: 20px;
     padding: 10px 20px 10px 10px;
-    margin-left: 190px;
+    margin-left: 70px;
     font-family: Mont;
     color: #fff;
     font-size: 16px;
