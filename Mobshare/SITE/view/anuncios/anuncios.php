@@ -163,25 +163,26 @@ if(isset($_GET["btnFiltro"])){
                                 $modelo = $controllerModelo->buscarModelo($veiculos[$i]->getIdModelo());
                                 //$marca = $controllerMarca->buscarMarca();
                                 $foto_veiculo = $controllerFoto_veiculo->listarFotoFrontal($veiculos[$i]->getIdVeiculo());
-
+                                $_GET["id"] = $modelo->getIdMarca();
+                                $marca = $controllerMarca->buscarMarcas();
                         
                     ?>
                     <div class="box-veiculo-anuncio">
                         <div class="imagem-anuncio">
-                                <img src="<?php echo("/Mobshare/arquivos/".$foto_veiculo->getFotoVeiculo()) ?>" width="400" height="225" alt="veiculo">
+                                <img src="<?php echo("/Mobshare/arquivos/".$foto_veiculo->getFotoVeiculo()) ?>" width="320" height="225" alt="veiculo">
                                 
                         </div>
                          <div class="texto-modelo">
                              <?php echo($modelo->getNomeModelo()) ?>
                         </div>
                          <div class="texto-km">
-                             <?php echo($veiculos[$i]->getQuilometragem()." km") ?>
+                         Marca: <?php echo($marca->getNomeMarca())?>
                         </div>
                         <div class="texto-regiao">
-                        Capital
+                            Ano: <?php echo($veiculos[$i]->getAno())?>
                         </div>
                         <div class="texto-avaliacao">
-                        *****
+                            <img src="../images/5estrelas.png" width="150" height="30" alt="veiculo">
                         </div>
                         <div class="botao-veja">
                             Alugar
