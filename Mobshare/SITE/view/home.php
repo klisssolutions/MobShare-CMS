@@ -19,18 +19,30 @@ require_once(IMPORT_MARCA);
 require_once(IMPORT_BANNER_CONTROLLER);
 require_once(IMPORT_BANNER);
 
+require_once(IMPORT_AVALIACAO_VEICULO_CONTROLLER);
+require_once(IMPORT_AVALIACAO_VEICULO);
+
+require_once(IMPORT_AVALIACAO_CONTROLLER);
+require_once(IMPORT_AVALIACAO);
+
 $controllerVeiculo = new controllerVeiculo();
 $controllerFoto_veiculo = new controllerFoto_Veiculo();
 $controllerMarca = new controllerMarca();
 $controllerModelo = new controllerModelo();
 $controllerBanner = new controllerBanner();
+$controllerAvaliacaoVeiculo = new controllerAvaliacaoVeiculo();
+$controllerAvaliacao = new controllerAvaliacao();
+
 
 $veiculos[] = new Veiculo();
-
+$avaliacaoVeiculos[] = new AvaliacaoVeiculo();
+$avaliacao[] = new Avaliacao();
 $banners[] = new Banner();
 
 $banners = $controllerBanner->listarBanners();
 $veiculos = $controllerVeiculo->listarVeiculos();
+$avaliacaoVeiculos = $controllerAvaliacaoVeiculo->listarAvaliacaoVeiculos();
+$avaliacao = $controllerAvaliacao->listarAvaliacao();
 
 ?>
 
@@ -40,7 +52,7 @@ $veiculos = $controllerVeiculo->listarVeiculos();
 <head>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="shortcut icon" href="images/anuncios.png" />
+    <link rel="shortcut icon" href="images/logoapp.png" />
     <title>Home | Mob'Share</title>
 </head>
 
@@ -66,11 +78,15 @@ $veiculos = $controllerVeiculo->listarVeiculos();
                     $foto_veiculo = new Foto_Veiculo();
                     $marca = new Marca();
                     $modelo = new Modelo();
+                    $avaliacaoVeiculo = new AvaliacaoVeiculo();
+                    $avaliacao = new Avaliacao();
 
 
                     $modelo = $controllerModelo->buscarModelos($veiculos[$i]->getIdModelo());
-                    //$marca = $controllerMarca->buscarMarca();
+                    $_GET["id"] = $modelo->getIdMarca();
+                    $marca = $controllerMarca->buscarMarcas();
                     $foto_veiculo = $controllerFoto_veiculo->listarFotoFrontal($veiculos[$i]->getIdVeiculo());
+                    $avaliacaoVeiculo = $controllerAvaliacaoVeiculo->pegarAvaliacaoPorVeiculo($veiculos[$i]->getIdVeiculo());
                       
             ?>
 
@@ -78,19 +94,21 @@ $veiculos = $controllerVeiculo->listarVeiculos();
                 <!-- caixa onde fica a informaçao do veiculo -->
                 <div class="box-veiculo">
                     <div class="img-veiculo">
-                        <img src="<?php echo('/Mobshare/arquivos/'.$foto_veiculo->getFotoVeiculo()) ?>" width="320" height="225" alt="veiculo">
+                        <img src="<?php echo('/Mobshare/arquivos/'.$foto_veiculo->getFotoVeiculo()) ?>" width="320" height="225" alt="<?php echo($modelo->getNomeModelo())?>">
                     </div>
                     <div class="texto-modelo">
-
+                        <?php echo($modelo->getNomeModelo())?>
                     </div>
                     <div class="texto-km">
-                        <?php echo($veiculos[$i]->getQuilometragem())?>
+                        Marca: <?php echo($marca->getNomeMarca())?>
                     </div>
                     <div class="texto-regiao">
-                        Capital
+                        Ano: <?php echo($veiculos[$i]->getAno())?>
+
                     </div>
                     <div class="texto-avaliacao">
-                        *****
+                    <img src="images/5estrelas.png" width="150" height="30" alt="veiculo">
+
                     </div>
                     <div class="botao-veiculo">
                         <a href="locacao/dadosVeiculo.php?id=<?php echo ($veiculos[$i]->getIdVeiculo()); ?>">Veja mais</a>
@@ -124,7 +142,7 @@ $veiculos = $controllerVeiculo->listarVeiculos();
                 </div>
                 <div class="img-como-funciona">
 
-                    <img src="<?php echo('/Mobshare/arquivos/'.$banners[$i]->getImagem())?>" width="650" height="600" alt="App da MobShare">
+                    <img class="cm-segunda-imagem" src="<?php echo('/Mobshare/arquivos/'.$banners[$i]->getImagem())?>" width="700" height="590" alt="<?php echo($banners[$i]->getTitulo())?>">
 
                 </div>
 </div>
@@ -136,7 +154,7 @@ $veiculos = $controllerVeiculo->listarVeiculos();
       <div class="caixa-como-funciona">
                 <div class="img-como-funciona">
 
-                    <img src="<?php echo('/Mobshare/arquivos/'.$banners[$i]->getImagem())?>" width="650" height="600" alt="App da MobShare">
+                    <img class="cm-primeira-imagem" src="<?php echo('/Mobshare/arquivos/'.$banners[$i]->getImagem())?>" width="600" height="450" alt="<?php echo($banners[$i]->getTitulo())?>">
 
                 </div>
                 <div class="texto-como-funciona">
