@@ -242,7 +242,7 @@ if(!isset($incluso)){
     /*---------------------------------------------------------------*/
     /*--------------------------- PÁGINAS ---------------------------*/
     /*---------------------------------------------------------------*/
-    //Import do header e footer do site
+    //Import do header e footer do SITE
     define("HEADER", RAIZ_IMPORT . "/SITE/view/header.php");
     define("FOOTER", RAIZ_IMPORT . "/SITE/view/footer.php");
     //Imports de páginas do cms
@@ -268,7 +268,7 @@ if(!isset($incluso)){
     //Import páginas de pendencia
     define("IMPORT_CMS_CADASTRO_PENDENCIA_USUARIO", RAIZ_IMPORT . "/CMS/view/aprovacao/aprovacaoUsuario.php");
     define("IMPORT_CMS_CADASTRO_PENDENCIA_VEICULO", RAIZ_IMPORT . "/CMS/view/aprovacao/aprovacaoVeiculo.php");
-    //Imports de páginas do site
+    //Imports de páginas do SITE
     define("IMPORT_SITE_HOME", RAIZ_IMPORT . "/SITE/view/home.php");
     define("IMPORT_SITE_LOGIN", RAIZ_IMPORT . "/SITE/view/login.php");
     define("IMPORT_SITE_INDEX", RAIZ_IMPORT . "/SITE/index.php");
@@ -449,26 +449,26 @@ if(!isset($incluso)){
     /*--------------------------- LINKS ---------------------------*/
     /*-------------------------------------------------------------*/
     //Constantes que criam os links das páginas
-    define("LINK_SITE_INDEX", RAIZ_LINK . "/site/index.php");
-    define("LINK_SITE_ANUNCIO", RAIZ_LINK . "/site/view/anuncios/anuncios.php");
-    define("LINK_SITE_FUNCIONA", RAIZ_LINK . "/site/view/comofunciona/comofunciona.php");
-    define("LINK_SITE_MES", RAIZ_LINK . "/site/view/avaliacoesdomes/avaliacoesdomes.php");
-    define("LINK_SITE_LOGIN", RAIZ_LINK . "/site/view/login.php");
-    define("LINK_SITE_TERMO", RAIZ_LINK . "/site/view/termosdeuso/termosdeuso.php");
-    define("LINK_SITE_DUVIDA", RAIZ_LINK . "/site/view/duvidasfreq/duvidasfreq.php");
-    define("LINK_SITE_PARCEIRO", RAIZ_LINK . "/site/view/parceiros/parceiros.php");
-    define("LINK_SITE_CONTATO", RAIZ_LINK . "/site/view/faleconosco/faleconosco.php");
-    define("LINK_SITE_HOME", RAIZ_LINK . "/site/view/home.php");
-    define("LINK_SITE_SAIR", RAIZ_LINK . "/site/index.php?destroy");
+    define("LINK_SITE_INDEX", RAIZ_LINK . "/SITE/index.php");
+    define("LINK_SITE_ANUNCIO", RAIZ_LINK . "/SITE/view/anuncios/anuncios.php");
+    define("LINK_SITE_FUNCIONA", RAIZ_LINK . "/SITE/view/comofunciona/comofunciona.php");
+    define("LINK_SITE_MES", RAIZ_LINK . "/SITE/view/avaliacoesdomes/avaliacoesdomes.php");
+    define("LINK_SITE_LOGIN", RAIZ_LINK . "/SITE/view/login.php");
+    define("LINK_SITE_TERMO", RAIZ_LINK . "/SITE/view/termosdeuso/termosdeuso.php");
+    define("LINK_SITE_DUVIDA", RAIZ_LINK . "/SITE/view/duvidasfreq/duvidasfreq.php");
+    define("LINK_SITE_PARCEIRO", RAIZ_LINK . "/SITE/view/parceiros/parceiros.php");
+    define("LINK_SITE_CONTATO", RAIZ_LINK . "/SITE/view/faleconosco/faleconosco.php");
+    define("LINK_SITE_HOME", RAIZ_LINK . "/SITE/view/home.php");
+    define("LINK_SITE_SAIR", RAIZ_LINK . "/SITE/index.php?destroy");
     //Constantes com os links das imagens
-    define("LINK_IMAGEM_LOGO", RAIZ_LINK . "/site/view/images/logo.png");
-    define("LINK_IMAGEM_FACEBOOK", RAIZ_LINK . "/site/view/images/social-facebook.png");
-    define("LINK_IMAGEM_PLUS", RAIZ_LINK . "/site/view/images/social-plus.png");
-    define("LINK_IMAGEM_INSTAGRAM", RAIZ_LINK . "/site/view/images/social-instagram.png");
-    define("LINK_IMAGEM_TWITTER", RAIZ_LINK . "/site/view/images/social-twitter.png");
-    define("LINK_IMAGEM_LINKEDIN", RAIZ_LINK . "/site/view/images/social-linkedin.png");
-    define("LINK_IMAGEM_MAPA", RAIZ_LINK . "/site/view/images/map.png");
-    define("LINK_IMAGEM_FONE", RAIZ_LINK . "/site/view/images/phone-call.png");
-    define("LINK_IMAGEM_EMAIL", RAIZ_LINK . "/site/view/images/envelope.png");
+    define("LINK_IMAGEM_LOGO", RAIZ_LINK . "/SITE/view/images/logo.png");
+    define("LINK_IMAGEM_FACEBOOK", RAIZ_LINK . "/SITE/view/images/social-facebook.png");
+    define("LINK_IMAGEM_PLUS", RAIZ_LINK . "/SITE/view/images/social-plus.png");
+    define("LINK_IMAGEM_INSTAGRAM", RAIZ_LINK . "/SITE/view/images/social-instagram.png");
+    define("LINK_IMAGEM_TWITTER", RAIZ_LINK . "/SITE/view/images/social-twitter.png");
+    define("LINK_IMAGEM_LINKEDIN", RAIZ_LINK . "/SITE/view/images/social-linkedin.png");
+    define("LINK_IMAGEM_MAPA", RAIZ_LINK . "/SITE/view/images/map.png");
+    define("LINK_IMAGEM_FONE", RAIZ_LINK . "/SITE/view/images/phone-call.png");
+    define("LINK_IMAGEM_EMAIL", RAIZ_LINK . "/SITE/view/images/envelope.png");
 }
 ?>
