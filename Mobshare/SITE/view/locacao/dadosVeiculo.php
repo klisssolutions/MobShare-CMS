@@ -67,22 +67,57 @@ $foto_veiculo = $controllerFoto_veiculo->listarFotoFrontal($veiculo->getIdVeicul
     <?php require_once(HEADER);?>
     <!-- CAIXA QUE SEGURA O CONTEÚDO EMBAIXO DO MENU -->
     <div class="content">
+        <div class="caixa-dados-veiculo">
+            <div class="dados-veiculo">
+                <div class="foto-dados-veiculo">
+                        <img src="<?php echo('/Mobshare/arquivos/'.$foto_veiculo->getFotoVeiculo()) ?>" width="610" height="400" alt="veiculo">
+                </div>
+                <form method="GET">
+                <div class="foto-dados-veiculo">
+                    <h2>Marca: <?php echo($marca->getNomeMarca());?></h2>
+                    <h1><?php echo($modelo->getNomeModelo());?></h1>
+                    <h2>Ano: 2016</h2>
+                    <h1>R$ <?php echo($veiculo->getValorHora()); ?>/h</h1>
+                    <h2>Acessórios:</h2>
+                </div>
+                <input type="submit" value="Quero alugar este!" class="inpt-dados">
+                </form>
+                <div class="dados-usuario-veiculo">
+                    <div class="caixa-dados-usuario">
+                        <div class="foto-dados-usuario">
+                            <img src="../images/pessoa.jpg" width="200" height="200" alt="veiculo">
+                        </div>
+                        <div class="nome-dados-usuario">
+                            <h1>Jaqueline Alves</h1>
+                        </div>
+                        <div class="nome-dados-usuario">
+                            <h2>Entrou em junho de 2015</h2>
+                        </div>
+                        <div class="avaliacao-usuario">
+                             <img src="../images/5estrelas.png" width="250" height="45" alt="veiculo">
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    <!--
         <div class="caixa-pesquisa-imagem">
             <input type="text" class="caixa-pesquisa-home">
         </div>
         <div class="caixa-veiculos-home">
             <div class="caixa-itens-home">
                 <nav class="menu-veiculos">
-                    <a class="clicado"><?php echo($marca->getNomeMarca() . " " . $modelo->getNomeModelo());?></a>
+                    <a class="clicado"><?php //echo($marca->getNomeMarca() . " " . $modelo->getNomeModelo());?></a>
                 </nav>
             </div>
             <div class="caixa-veiculos">
-                <form method="GET">
+                
                 <div class="dadosVeiculo">
                     <table>
                         <tr>
                             <td>
-                                <img src="<?php echo('/Mobshare/arquivos/'.$foto_veiculo->getFotoVeiculo()) ?>" width="320" height="225" alt="veiculo">
+                                <img src="<?php //echo('/Mobshare/arquivos/'.$foto_veiculo->getFotoVeiculo()) ?>" width="320" height="225" alt="veiculo">
                             </td>
                         </tr>   
                         <tr>
@@ -92,7 +127,7 @@ $foto_veiculo = $controllerFoto_veiculo->listarFotoFrontal($veiculo->getIdVeicul
                         </tr>
                         <tr>
                             <td>
-                                <?php echo($marca->getNomeMarca()); ?>
+                                <?php //echo($marca->getNomeMarca()); ?>
                             </td>
                         </tr>
                         <tr>
@@ -102,7 +137,7 @@ $foto_veiculo = $controllerFoto_veiculo->listarFotoFrontal($veiculo->getIdVeicul
                         </tr>
                         <tr>
                             <td>
-                                <?php echo($modelo->getNomeModelo()); ?>
+                                <?php //echo($modelo->getNomeModelo()); ?>
                             </td>
                         </tr>
                         <tr>
@@ -112,10 +147,10 @@ $foto_veiculo = $controllerFoto_veiculo->listarFotoFrontal($veiculo->getIdVeicul
                         </tr>
                         <tr>
                             <td>
-                                R$<input type="text" size="3" value="<?php echo($veiculo->getValorHora()); ?>" readonly>
+                                R$<input type="text" size="3" value="<?php //echo($veiculo->getValorHora()); ?>" readonly>
                             </td>
                         </tr>
-                        <?php if(isset($_SESSION['idCliente']['idCliente'])):?>
+                        <?php// if(isset($_SESSION['idCliente']['idCliente'])):?>
                         <tr>
                             <td>
                                 Início locação:
@@ -142,12 +177,13 @@ $foto_veiculo = $controllerFoto_veiculo->listarFotoFrontal($veiculo->getIdVeicul
                                 <input type="button" onclick="horas()" id="botao">
                             </td>
                         </tr>
-                    <?php endif;?>
+                    <?php //endif;?>
                     </table>
                 </div>
-                </form>
+                
             </div>
         </div>
+        -->
     </div>
 
     <!-- RODAPÉ-->
