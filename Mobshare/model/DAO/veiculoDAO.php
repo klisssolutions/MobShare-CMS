@@ -168,6 +168,44 @@ class veiculoDAO{
         return($listVeiculos);
     }
 
+    public function selectAllCliente($cliente){
+        $sql = SELECT.TABELA_VEICULO . " where idCliente= " . $cliente;
+
+
+        //Abrindo conexão com o BD
+        $PDO_conex = $this->conex->connectDataBase();
+
+        //executa o script de select no bd
+        $select = $PDO_conex->query($sql);
+        $cont = 0;
+        
+        /* $select->fetch no formado pdo retorna os dados do BD
+        também retorna com característica do PDO como o fetch
+        é necessário especificar o modelo de conversão.
+        EX: PDO::FETCH_ASSOC, PDO::FETCH_ARRAY etc. */
+        while($rsVeiculos=$select->fetch(PDO::FETCH_ASSOC)){
+            $listVeiculos[] = new Veiculo();
+            $listVeiculos[$cont]->setIdVeiculo($rsVeiculos["idVeiculo"]);
+            $listVeiculos[$cont]->setIdCategoriaVeiculo($rsVeiculos["idCategoria_Veiculo"]);
+            $listVeiculos[$cont]->setIdCliente($rsVeiculos["idCliente"]);
+            $listVeiculos[$cont]->setIdModelo($rsVeiculos["idModelo"]);
+            $listVeiculos[$cont]->setCor($rsVeiculos["cor"]);
+            $listVeiculos[$cont]->setAltura($rsVeiculos["altura"]);
+            $listVeiculos[$cont]->setComprimento($rsVeiculos["comprimento"]);
+            $listVeiculos[$cont]->setLargura($rsVeiculos["largura"]);
+            $listVeiculos[$cont]->setValorHora($rsVeiculos["valorHora"]);
+            $listVeiculos[$cont]->setAno($rsVeiculos["ano"]);
+            $listVeiculos[$cont]->setQuilometragem($rsVeiculos["quilometragem"]);
+            
+            $listVeiculos[$cont]->setIdEndereco($rsVeiculos["idEndereco"]);
+            
+            $cont++;
+        }
+
+        $this->conex->closeDataBase();
+        return($listVeiculos);
+    }
+
     //Seleciona um registro pelo ID.
     public function selectById($id){
         $sql = SELECT . TABELA_VEICULO . " WHERE idVeiculo=".$id;
