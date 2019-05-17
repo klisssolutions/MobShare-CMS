@@ -101,7 +101,7 @@ class vvisualizacao_cancelamentoDAO{
 
 //seleciona as marcas dos veiculos
 public function listarNaoConfirmados(){
-    $sql = 'select * from Vvisualizacao_cancelamento';
+    $sql = SELECT . VIEW_CANCELAMENTO;
 
     require_once(IMPORT_VVISUALIZACAO_CANCELAMENTO);
 

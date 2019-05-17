@@ -2,7 +2,7 @@
 <a href="#" onclick="banner();">
     <div class="pgAdministracao">
         <div class="imagem-adm">
-        <img src="view/Imagens/web.png" width="110" heitgh="110">
+        <img src="view/imagens/web.png" width="110" heitgh="110">
         <h1>Pagina inicial</h1>
         </div>
     </div>
@@ -10,7 +10,7 @@
 <a href="#" onclick="termo();">
     <div class="pgAdministracao">
         <div class="imagem-adm">
-        <img src="view/Imagens/notepad.png" width="110" heitgh="110">
+        <img src="view/imagens/notepad.png" width="110" heitgh="110">
             <h1>Termos de Uso</h1>
         </div>
         
@@ -19,7 +19,7 @@
 <a href="#" onclick="duvida();">
     <div class="pgAdministracao">
         <div class="imagem-adm">
-        <img src="view/Imagens/support.png" width="110" heitgh="110">
+        <img src="view/imagens/support.png" width="110" heitgh="110">
         <h1>Duvidas Frequentes</h1>
         </div>
     </div>
@@ -27,7 +27,7 @@
 <a href="#" onclick="parceiro();">
     <div class="pgAdministracao">
         <div class="imagem-adm">
-        <img src="view/Imagens/teamwork.png" width="110" heitgh="110">
+        <img src="view/imagens/teamwork.png" width="110" heitgh="110">
         <h1>Parceiros</h1>
         </div>
     </div>
@@ -35,7 +35,7 @@
 <a href="#" onclick="comoFunciona();">
     <div class="pgAdministracao">
         <div class="imagem-adm">
-        <img src="view/Imagens/com.png" width="110" heitgh="110">
+        <img src="view/imagens/com.png" width="110" heitgh="110">
         <h1>Como funciona</h1>
         </div>
     </div>
@@ -43,7 +43,7 @@
 <a href="#" onclick="faleConosco();">
     <div class="pgAdministracao">
         <div class="imagem-adm">
-        <img src="view/Imagens/chatting.png" width="110" heitgh="110">
+        <img src="view/imagens/chatting.png" width="110" heitgh="110">
         <h1>Fale Conosco</h1>
         </div>
     </div>

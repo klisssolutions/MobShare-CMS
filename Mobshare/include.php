@@ -10,7 +10,9 @@
 */
 //Verificaa se o arquivo já foi importado
 if(!isset($incluso)){
-    
+	ini_set('display_errors',1);
+    ini_set('display_startup_errors',1);
+    error_reporting(E_ALL);
     //Set uma variável para verificar se o arquivo foi importado
     $incluso = true;
     /*---------------------------------------------------------------*/
@@ -74,9 +76,9 @@ if(!isset($incluso)){
     define("TABELA_NIVEL", "nivel");
     define("TABELA_PARCEIRO", "parceiro");
     define("TABELA_FUNCIONAMENTO", "funcionamento");
-    define("TABELA_CLIENTE", "Cliente");
-    define("TABELA_VEICULO", "Veiculo");
-    define("TABELA_FOTO_VEICULO", "Foto_Veiculo");
+    define("TABELA_CLIENTE", "cliente");
+    define("TABELA_VEICULO", "veiculo");
+    define("TABELA_FOTO_VEICULO", "foto_veiculo");
     define("TABELA_TERMOS", "termo");  
     define("TABELA_AVALIACAO_VEICULO", "avaliacao_veiculo");
     define("TABELA_AVALIACAO", "avaliacao");
@@ -89,13 +91,17 @@ if(!isset($incluso)){
     define("TABELA_ENDERECO","endereco");
     define("TABELA_TIPO","tipo_veiculo");
     define("TABELA_SOLICITACAO_LOCACAO","solicitacao_locacao");
+	define("TABELA_BANNER", "banner");
+	define("TABELA_CANCELAMENTO", "cancelamento");
 
     //Constantes com o nome das views
-    define("VIEW_VEICULO", "VPendencia_Veiculo");
-    define("VIEW_USUARIO", "VPendencia_Cliente");
-    define("VIEW_AVALIACAO_VEICULO", "VAvaliacao_Veiculo");
-    define("VIEW_ANUNCIOS", "VAnuncios_Mobile");
+    define("VIEW_VEICULO", "vpendencia_veiculo");
+    define("VIEW_USUARIO", "vpendencia_cliente");
+    define("VIEW_AVALIACAO_VEICULO", "vavaliacao_veiculo");
+    define("VIEW_ANUNCIOS", "vanuncios_mobile");
     define("VIEW_DETALHE_VEICULO", "vdetalhes_veiculo");
+	define("VIEW_LOCACAO", "v_detalhes_locacao");
+	define("VIEW_CANCELAMENTO", "vvisualizacao_cancelamento");
     /*---------------------------------------------------------------*/
     /*--------------------------- NÚMEROS ---------------------------*/
     /*---------------------------------------------------------------*/
@@ -117,7 +123,7 @@ if(!isset($incluso)){
     //Constantes com endereço da pasta para importar
     define("PASTA_RAIZ" , $_SERVER["DOCUMENT_ROOT"]);
     define("PASTA_PROJETO", "/Mobshare");
-    define("PASTA_LINK", "http://localhost");
+    define("PASTA_LINK", "http://www.mob.com.br");
     define("RAIZ_IMPORT", PASTA_RAIZ . PASTA_PROJETO);
     define("RAIZ_LINK", PASTA_LINK . PASTA_PROJETO);
     /*---------------------------------------------------------------*/
@@ -132,7 +138,7 @@ if(!isset($incluso)){
     //Imports de funcionario
     define("IMPORT_FUNCIONARIO", RAIZ_IMPORT . "/model/funcionarioClass.php");
     define("IMPORT_FUNCIONARIO_DAO", RAIZ_IMPORT . "/model/DAO/funcionarioDAO.php");
-    define("IMPORT_FUNCIONARIO_CONTROLLER", RAIZ_IMPORT . "/controller/controllerfuncionario.php");
+    define("IMPORT_FUNCIONARIO_CONTROLLER", RAIZ_IMPORT . "/controller/controllerFuncionario.php");
     //Imports de pendencia
     define("IMPORT_PENDENCIA", RAIZ_IMPORT . "/model/pendenciaClass.php");
     define("IMPORT_PENDENCIA_DAO", RAIZ_IMPORT . "/model/DAO/pendenciaDAO.php");
@@ -156,7 +162,7 @@ if(!isset($incluso)){
     //Imports de foto veiculo
     define("IMPORT_FOTO_VEICULO", RAIZ_IMPORT . "/model/foto_veiculoClass.php");
     define("IMPORT_FOTO_VEICULO_DAO", RAIZ_IMPORT . "/model/DAO/foto_veiculoDAO.php");
-    define("IMPORT_FOTO_VEICULO_CONTROLLER", RAIZ_IMPORT . "/controller/controllerFoto_veiculo.php"); 
+    define("IMPORT_FOTO_VEICULO_CONTROLLER", RAIZ_IMPORT . "/controller/controllerFoto_Veiculo.php"); 
     //Imports de endereço
     define("IMPORT_ENDERECO", RAIZ_IMPORT . "/model/enderecoClass.php");
     define("IMPORT_ENDERECO_DAO", RAIZ_IMPORT . "/model/DAO/enderecoDAO.php");

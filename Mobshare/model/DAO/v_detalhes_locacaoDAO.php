@@ -107,7 +107,7 @@ class v_detalhes_locacaoDAO{
 
     //Lista todos os registros do banco de dados.
     public function selectAll(){
-        $sql = SELECT.' v_detalhes_locacao';
+        $sql = SELECT. VIEW_LOCACAO;
 
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
@@ -125,15 +125,13 @@ class v_detalhes_locacaoDAO{
         $listBanners = null;
         while($rsLocacoes=$select->fetch(PDO::FETCH_ASSOC)){
             $locacao = new V_detalhes_locacao();
-            $locacao->setIdLocacao($rsLocacoes["ID locação"]);
-            $locacao->setLocatario($rsLocacoes["Locatário"]);
+            $locacao->setIdLocacao($rsLocacoes["Idlocacao"]);
+            $locacao->setLocatario($rsLocacoes["Locatario"]);
             $locacao->setLocador($rsLocacoes["Locador"]);            
             $locacao->setVeiculo($rsLocacoes["Veiculo"]);
             $locacao->setInicio($rsLocacoes["Inicio"]);
             $locacao->setFim($rsLocacoes["Fim"]);
             $locacao->setValorTotal($rsLocacoes["Valor total"]);
-
-
 
             $listLocacoes[$cont] = $locacao;
 

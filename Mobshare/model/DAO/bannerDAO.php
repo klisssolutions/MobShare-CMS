@@ -27,7 +27,7 @@ class bannerDAO{
 
     //Inserir um registro no banco de dados.
     public function insert(Banner $banner){
-        $sql = INSERT . " Banner " . " 
+        $sql = INSERT . TABELA_BANNER . " 
         (titulo, imagem, texto, href, nomeBotao)
         VALUES (
         '".$banner->getTitulo()."',
@@ -71,7 +71,7 @@ class bannerDAO{
     //Atualiza um registro no banco de dados.
     public function update(Banner $banner){
         if($banner->getImagem()){
-            $sql = UPDATE . " Banner" . " 
+            $sql = UPDATE . TABELA_BANNER . " 
             SET titulo = '".$banner->getTitulo()."',
                 texto = '".$banner->getTexto()."',
                 href = '".$banner->getHref()."',
@@ -80,7 +80,7 @@ class bannerDAO{
                 imagem = '".$banner->getImagem()."'
             WHERE idBanner = '".$banner->getIdBanner()."';";
         }else{
-            $sql = UPDATE . " Banner" . " 
+            $sql = UPDATE . TABELA_BANNER . " 
             SET titulo = '".$banner->getTitulo()."',
                 texto = '".$banner->getTexto()."',
                 href = '".$banner->getHref()."',
@@ -105,7 +105,7 @@ class bannerDAO{
 
     //Lista todos os registros do banco de dados.
     public function selectAll(){
-        $sql = SELECT.' Banner';
+        $sql = SELECT.' banner';
 
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
@@ -131,11 +131,11 @@ class bannerDAO{
             $banner->setNomeBotao($rsBanner["nomeBotao"]);
             $banner->setAtivo($rsBanner["ativo"]);
 
-
             $listBanners[$cont] = $banner;
 
             $cont++;
         }
+		
         $this->conex->closeDataBase();
         return($listBanners);
     }
@@ -143,7 +143,7 @@ class bannerDAO{
 
     //Seleciona um registro pelo ID.
     public function selectById($id){
-        $sql = SELECT.' Banner where idBanner = '.$id;
+        $sql = SELECT. TABELA_BANNER . ' where idBanner = '.$id;
 
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();

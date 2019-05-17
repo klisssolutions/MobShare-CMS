@@ -157,7 +157,7 @@ class cancelamentoDAO{
 
     public function confirmarCancelamento($idCancelamento){
 
-        $sql = "update cancelamento set confirmacao = 1 where idCancelamento = ".$idCancelamento;
+        $sql = "update" . TABELA_CANCELAMENTO . " set confirmacao = 1 where idCancelamento = ".$idCancelamento;
 
         $PDO_conex = $this->conex->connectDataBase();
 
@@ -175,7 +175,7 @@ class cancelamentoDAO{
 
     public function recusarCancelamento($idCancelamento){
 
-        $sql = "update cancelamento set confirmacao = 0 where idCancelamento = ".$idCancelamento;
+        $sql = "update" . TABELA_CANCELAMENTO ." set confirmacao = 0 where idCancelamento = ".$idCancelamento;
 
         $PDO_conex = $this->conex->connectDataBase();
 
