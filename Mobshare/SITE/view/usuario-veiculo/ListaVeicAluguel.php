@@ -2,6 +2,31 @@
 @session_start();
 @$_SESSION["importInclude"] = $_SERVER["DOCUMENT_ROOT"] . "/Mobshare/include.php";
 require_once($_SESSION["importInclude"]); 
+
+require_once(IMPORT_VEICULO);
+require_once(IMPORT_VEICULO_CONTROLLER);
+
+require_once(IMPORT_FOTO_VEICULO_CONTROLLER);
+require_once(IMPORT_FOTO_VEICULO);
+
+require_once(IMPORT_MODELO_CONTROLLER);
+require_once(IMPORT_MODELO);
+
+require_once(IMPORT_MARCA_CONTROLLER);
+require_once(IMPORT_MARCA);
+
+
+
+$controllerVeiculo = new controllerVeiculo();
+$controllerFoto_veiculo = new controllerFoto_Veiculo();
+$controllerMarca = new controllerMarca();
+$controllerModelo = new controllerModelo();
+
+$veiculos[] = new Veiculo();
+
+$veiculos = $controllerVeiculo->listarVeiculosCliente();
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,7 +34,7 @@ require_once($_SESSION["importInclude"]);
 <head>
     <link rel="stylesheet" type="text/css" href="../css/dashboard.css">
     <meta http-equiv="Content-Type" content="view/text/html; charset=utf-8" />
-    <link rel="shortcut icon" href="images/user.png" />
+    <link rel="shortcut icon" href="../images/user.png" />
     <script type="text/javascript" src="../js/link.js"></script>
     <title>Painel do Usuário </title>
 </head>
@@ -63,28 +88,37 @@ require_once($_SESSION["importInclude"]);
                     <input type="button" value="Voltar" class="btn-dash" onclick="veiculo();">
 
                 </div>
+<?php
+                $i= 0;
+                 while($i < count($veiculos)){
 
+                    $foto_veiculo = new Foto_Veiculo();
+                    $marca = new Marca();
+                    $modelo = new Modelo();
 
-                <div class="listaDadosDash">
+                    $_GET["id"] = $veiculos[$i]->getIdModelo();
+                    $modelo = $controllerModelo->buscarModelos();
 
-                    <div class="dados-dash">
+                    $_GET["id"] = $modelo->getIdMarca();
+                    $marca = $controllerMarca->buscarMarcas();
 
-                        Titulo:
+                    $foto_veiculo = $controllerFoto_veiculo->listarFotoFrontal($veiculos[$i]->getIdVeiculo());
+                      
+            ?>
 
+                <div class="box-veiculo">
+                    <div class="img-veiculo">
+                        <img src="<?php echo('/Mobshare/arquivos/'.$foto_veiculo->getFotoVeiculo()) ?>" width="320" height="225" alt="veiculo">
                     </div>
-                    <div class="dados-resp-dash">
-
-                        asdasd
-
+                    <div class="texto-modelo">
+                        <label class="negrito">Modelo: </label><?php echo($modelo->getNomeModelo())?>
                     </div>
-                    <div class="dados-dash">
-
-                        Descrição:
-
+                    <div class="texto-marca">
+                        <label class="negrito">Marca: </label> <?php echo($marca->getNomeMarca())?>
                     </div>
-                    <div class="dados-resp-dash">
-
-                        asdasd
+                    <div class="texto-ano">
+                        
+                        <label class="negrito">Ano: </label> <?php echo($veiculos[$i]->getAno())?>
 
                     </div>
 
@@ -92,17 +126,23 @@ require_once($_SESSION["importInclude"]);
 
 
                         <a href="#">
-                            <img src="view/imagens/pencil.png" width="25" heigth="28">
+                            <img src="../images/pencil.png" width="25" heigth="28">
                         </a>
 
                         <a href="#">
-                            <img src="view/imagens/trash.png" width="25" heigth="28">
+                            <img src="../images/trash.png" width="25" heigth="28">
                         </a>
 
 
                     </div>
 
                 </div>
+
+                 <?php 
+                    $i++;
+                    }
+                 ?>
+
 
             </div>
         </div>
