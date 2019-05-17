@@ -57,7 +57,6 @@ if(isset($_GET["btnFiltro"])){
         
         <div class="box-anuncios">
             <div class="box-pesquisa-anucios">
-                <input type="text" class="anuncios-pesquisa" placeholder="Digite o que procura!"> 
             </div>
             <div class="box-anuncios-veiculos">
 
