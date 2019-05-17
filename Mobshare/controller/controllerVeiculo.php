@@ -39,7 +39,7 @@ class controllerVeiculo{
             $endereco = $_POST["sltEndereco"];
             $categoria = $_POST["sltCategoria"];
             $modelo = $_POST["sltModelo"];
-            $cliente = $_POST[$_SESSION['idCliente']];
+            $cliente = $_SESSION['idCliente']['idCliente'];
 
             //Instancia da classe
             $veiculo = new Veiculo();
@@ -103,6 +103,19 @@ class controllerVeiculo{
         //Instancia do DAO
         $veiculoDAO = new veiculoDAO();
         return($veiculoDAO->selectAll());
+    }
+
+    public function listarVeiculosCliente(){
+        //Instancia do DAO
+
+        $cliente = $_SESSION['idCliente']['idCliente'];
+
+        $veiculo = new Veiculo();
+
+        
+        $veiculoDAO = new veiculoDAO();
+
+        return($veiculoDAO->selectAllCliente($cliente));
     }
 
     public function buscarVeiculo(){
