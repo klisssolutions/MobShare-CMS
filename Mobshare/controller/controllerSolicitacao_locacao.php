@@ -38,7 +38,7 @@ class controllerSolicitacao_Locacao{
         $idVeiculo = $_GET["idVeiculo"];
         $horarioInicio = $_GET["txtHorarioInicio"];
         $horarioFim = $_GET["txtHorarioFim"];
-        
+
     
         //Guardando os dados do post no objeto da classe
         $solicitacao_Locacao->setIdCliente($idCliente);
@@ -53,12 +53,29 @@ class controllerSolicitacao_Locacao{
         
     }
 
+    public function aceitarSolicitacao(){
 
-
-    public function listarSolicitacaoLocacao(){
+        $idSolicitacao = $_GET['id'];
         //Instancia do DAO
         $solicitacao_locacaoDAO = new solicitacao_locacaoDAO();
-        return($solicitacao_locacaoDAO->selectAll());
+        return($solicitacao_locacaoDAO->aceitar($idSolicitacao));
+    }
+
+    public function recusarSolicitacao(){
+
+        $idSolicitacao = $_GET['id'];
+        //Instancia do DAO
+        $solicitacao_locacaoDAO = new solicitacao_locacaoDAO();
+        return($solicitacao_locacaoDAO->recusar($idSolicitacao));
+    }
+
+    public function listarSolicitacaoLocacaoPorLocador(){
+        
+        $idLocador = $_GET['id'];
+        //Instancia do DAO
+        $solicitacao_locacaoDAO = new solicitacao_locacaoDAO();
+        return($solicitacao_locacaoDAO->selectAllPorLocador($idLocador));
+
     }
 
 }
