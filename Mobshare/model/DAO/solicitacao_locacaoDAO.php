@@ -47,6 +47,43 @@ class solicitacao_locacaoDAO{
         return $erro;
     }
 
+
+    public function aceitar($idSolicitacaoLocacao){
+        $sql = UPDATE . TABELA_SOLICITACAO_LOCACAO . " 
+        set confirmLocador = 1 where idSolicitacao_Locacao = ".$idSolicitacaoLocacao;
+
+        //Abrindo conexão com o BD
+        $PDO_conex = $this->conex->connectDataBase();
+
+        //Executa no BD o script Insert e retorna verdadeiro/falso
+        if($PDO_conex->query($sql)){
+            $erro = false;
+        }else{
+            $erro = true;
+        }
+        //Fecha a conexão com o BD
+        $this->conex->closeDataBase();
+        return $erro;
+    }   
+    
+    public function recusar($idSolicitacaoLocacao){
+        $sql = UPDATE . TABELA_SOLICITACAO_LOCACAO . " 
+        set confirmLocador = 0 where idSolicitacao_Locacao = ".$idSolicitacaoLocacao;
+
+        //Abrindo conexão com o BD
+        $PDO_conex = $this->conex->connectDataBase();
+
+        //Executa no BD o script Insert e retorna verdadeiro/falso
+        if($PDO_conex->query($sql)){
+            $erro = false;
+        }else{
+            $erro = true;
+        }
+        //Fecha a conexão com o BD
+        $this->conex->closeDataBase();
+        return $erro;
+    }   
+
     
 
      //Atualiza um registro no banco de dados.
@@ -71,9 +108,10 @@ class solicitacao_locacaoDAO{
         return $erro;
     }
 
-    public function selectAll(){
-        $sql = SELECT." vsolicitacao_locacao";
+    public function selectAllPorLocador($id){
+        $sql = SELECT." vsolicitacao_locacao where idDono = ".$id;
 
+        
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
 
@@ -87,20 +125,24 @@ class solicitacao_locacaoDAO{
         EX: PDO::FETCH_ASSOC, PDO::FETCH_ARRAY etc. */
         $listSolicitacoes[] = new VSolicitacao_Locacao();
         $listSolicitacoes = null;
-        while($rsTermos=$select->fetch(PDO::FETCH_ASSOC)){
-            $vSolicitacao_Locacao= new VSolicitacao_Locacao();
-            $vSolicitacao_Locacao->setIdSolicitacao_Locacao("idSolicitacao_Locacao");
-            $vSolicitacao_Locacao->setIdCliente("idCliente");
-            $vSolicitacao_Locacao->setNomeCliente("nomeCliente");
-            $vSolicitacao_Locacao->setIdDono("idDono");
-            $vSolicitacao_Locacao->setVeiculo("veiculo");
-            $vSolicitacao_Locacao->setHorarioInicio("horarioInicio");
-            $vSolicitacao_Locacao->setHorarioFim("horarioFim");
+        while($rsSolicitacoes=$select->fetch(PDO::FETCH_ASSOC)){
+            $vSolicitacao_Locacao = new VSolicitacao_Locacao();
+            $vSolicitacao_Locacao->setIdSolicitacao_Locacao($rsSolicitacoes["idSolicitacao_Locacao"]);
+            $vSolicitacao_Locacao->setIdCliente($rsSolicitacoes["idCliente"]);
+            $vSolicitacao_Locacao->setNomeCliente($rsSolicitacoes["nomeCliente"]);
+            $vSolicitacao_Locacao->setIdDono($rsSolicitacoes["idDono"]);
+            $vSolicitacao_Locacao->setVeiculo($rsSolicitacoes["veiculo"]);
+            $vSolicitacao_Locacao->setHorarioInicio($rsSolicitacoes["horarioInicio"]);
+            $vSolicitacao_Locacao->setHorarioFim($rsSolicitacoes["horarioFim"]);
+            
+            
             
 
             $listSolicitacoes[$cont] = $vSolicitacao_Locacao;
             $cont++;
         }
+
+        
 
         $this->conex->closeDataBase();
 
