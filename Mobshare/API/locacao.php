@@ -9,6 +9,7 @@ require_once($_SESSION["importInclude"]);
 
 //Require das controller
 require_once(IMPORT_SOLICITACAO_LOCACAO_CONTROLLER);
+require_once(IMPORT_LOCACAO_CONTROLLER);
 require_once(IMPORT_SOLICITACAO_LOCACAO);
 require_once(IMPORT_VSOLICITACAO_LOCACAO);
 
@@ -49,6 +50,35 @@ if($modo == "INSERIR"){
             "horarioInicio" => $solicitacao_Locacao->getHorarioInicio(),
             "horarioFim" => $solicitacao_Locacao->getHorarioFim(),
             "motivoRecusa" => $solicitacao_Locacao->getMotivoRecusa()
+            
+        );
+
+        array_push($result, $array);        
+    }
+
+
+
+}else if($modo == "LISTARHISTORICO"){
+    $result= array();
+
+    
+    $controllerLocacao = new controllerLocacao();   
+
+
+    $vhistorico_Locacoes = $controllerLocacao->listarHistoricoLocacaoPorLocador();
+
+    foreach($vhistorico_Locacoes as $vhistorico_Locacao){
+        $array = array(
+
+            "idLocacao" => $vhistorico_Locacao->getIdLocacao(),
+            "idCliente" => $vhistorico_Locacao->getIdCliente(),
+            "nomeCliente" => $vhistorico_Locacao->getNomeCliente(),
+            "veiculo" => $vhistorico_Locacao->getVeiculo(),
+            "horarioInicio" => $vhistorico_Locacao->getHorarioInicio(),
+            "horarioFim" => $vhistorico_Locacao->getHorarioFim(),
+            "valor" => $vhistorico_Locacao->getValor(),
+            "devolvido" => $vhistorico_Locacao->getDevolvido(),
+            "recebido" => $vhistorico_Locacao->getRecebido()
             
         );
 

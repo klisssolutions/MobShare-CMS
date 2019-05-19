@@ -16,18 +16,18 @@ class controllerLocacao{
 
     public function __construct(){
         //Import da classe nivel
-        require_once(IMPORT_SOLICITACAO_LOCACAO);
+        require_once(IMPORT_V_HISTORICO_LOCACAO);
 
         //Import da classe nivelDAO, para inserir no BD
-        require_once(IMPORT_SOLICITACAO_LOCACAO_DAO);
+        require_once(IMPORT_V_HISTORICO_LOCACAO_DAO);
     }
 
-    public function listarLocacaoPorLocador(){
+    public function listarHistoricoLocacaoPorLocador(){
         
         $idLocador = $_GET['id'];
         //Instancia do DAO
-        $solicitacao_locacaoDAO = new solicitacao_locacaoDAO();
-        return($solicitacao_locacaoDAO->selectAllPorLocador($idLocador));
+        $vhistorico_locacaoDAO = new vhistorico_locacaoDAO();
+        return($vhistorico_locacaoDAO->selecionarHistoricoLocacoes($idLocador));
 
     }
 

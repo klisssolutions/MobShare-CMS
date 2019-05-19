@@ -39,7 +39,7 @@ class vhistorico_locacao{
 
     public function getValor(){
         return $this->valor;
-    }
+    }   
 
     public function setValor($valor){
         $this->valor = $valor;
@@ -90,7 +90,7 @@ class vhistorico_locacao{
         $this->idDono = $idDono;
     } 
 
-    public function getVeiculo($veiculo){
+    public function getVeiculo(){
         return $this->veiculo;
     }
 
@@ -99,7 +99,7 @@ class vhistorico_locacao{
     } 
 
 
-    public function getHorarioInicio($horarioInicio){
+    public function getHorarioInicio(){
         return $this->horarioInicio;
     }
 
@@ -108,7 +108,7 @@ class vhistorico_locacao{
     } 
 
 
-    public function getHorarioFim($horarioFim){
+    public function getHorarioFim(){
         return $this->horarioFim;
     }
 
