@@ -113,29 +113,14 @@ $veiculos = $controllerVeiculo->listarVeiculosCliente();
                         <img src="<?php echo('/Mobshare/arquivos/'.$foto_veiculo->getFotoVeiculo()) ?>" width="320" height="225" alt="veiculo">
                     </div>
                     <div class="texto-modelo">
-                        <label class="negrito">Modelo: </label><?php echo($modelo->getNomeModelo())?>
-                    </div>
-                    <div class="texto-marca">
-                        <label class="negrito">Marca: </label> <?php echo($marca->getNomeMarca())?>
+                        <label class="negrito">Veiculo: </label><?php echo($modelo->getNomeModelo() . " " . $marca->getNomeMarca())?>
                     </div>
                     <div class="texto-ano">
-                        
                         <label class="negrito">Ano: </label> <?php echo($veiculos[$i]->getAno())?>
-
                     </div>
 
-                    <div class="opcao">
-
-
-                        <a href="#">
-                            <img src="../images/pencil.png" width="25" heigth="28">
-                        </a>
-
-                        <a href="#">
-                            <img src="../images/trash.png" width="25" heigth="28">
-                        </a>
-
-
+                    <div class="texto-ano">
+                        <input type="button" value="Recebido">
                     </div>
 
                 </div>
