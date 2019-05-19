@@ -82,6 +82,52 @@ if(isset($_GET["controller"])){
                     require_once(IMPORT_SITE_INDEX);
                     break;
                 }
+            switch ($modo){
+                case "INSERIR":
+                    //Chamando o método de inserir um novo funcionario
+                    
+                    
+                    $controllerCliente->inserirCliente(1);
+
+                    //Encaminha para a pagina de usuario
+                    echo("<script>alert('Cliente cadastrado. Por favor faça seu Login');</script>");
+
+                    require_once(IMPORT_SITE_LOGIN);
+                    
+                break;
+            }
+            switch ($modo){
+                case "BUSCAR":
+                    //Chamando o método de inserir um novo funcionario
+                    
+                    
+                    $user = $controllerCliente->buscarCliente();
+
+                    //Encaminha para a pagina de usuario
+                    
+                    var_dump($user);
+
+                    require_once(IMPORT_SITE_USUARIO);
+                    
+                break;
+            }
+            switch ($modo){
+                case "ATUALIZAR":
+                    //Chamando o método de inserir um novo funcionario
+                    
+                    $controllerCliente->atualizarCliente();
+
+                    echo("<script>ver()</script>");
+
+                    //Encaminha para a pagina de usuario
+                    
+                    require_once(IMPORT_SITE_USUARIO);
+
+                    
+                    
+                break;
+            }
+
             break;
             
 
