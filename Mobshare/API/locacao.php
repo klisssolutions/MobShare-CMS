@@ -31,9 +31,6 @@ if($modo == "INSERIR"){
     );
 
 }else if($modo == "LISTAR"){
-    
-    
-
     $result= array();
 
     
@@ -41,8 +38,6 @@ if($modo == "INSERIR"){
 
 
     $solicitacoes_Locacao = $controllerSolicitacao_Locacao->listarSolicitacaoLocacaoPorLocador();
-
-
 
     foreach($solicitacoes_Locacao as $solicitacao_Locacao){
         $array = array(
