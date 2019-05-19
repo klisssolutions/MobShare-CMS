@@ -41,7 +41,7 @@
             Nome:
             </td>
             <td class="txt-func">
-              <input type="text" class="input-func" name="txtnome" maxlength="25" value="<?php echo($nome)?>" size="20" required>
+              <input type="text" class="input-func" name="txtnome" maxlength="15" value="<?php echo($nome)?>" size="20" required>
             </td>
         </tr>
         <tr>
@@ -49,7 +49,7 @@
             E-mail:
             </td>
             <td class="txt-func">
-              <input type="email" class="input-func" name="txtemail" maxlength="25" value="<?php echo($email)?>" size="20" required>
+              <input type="email" class="input-func" name="txtemail" maxlength="15" value="<?php echo($email)?>" size="20" required>
             </td>
         </tr>
         <tr>

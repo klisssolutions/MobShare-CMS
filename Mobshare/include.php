@@ -123,7 +123,7 @@ if(!isset($incluso)){
     //Constantes com endereço da pasta para importar
     define("PASTA_RAIZ" , $_SERVER["DOCUMENT_ROOT"]);
     define("PASTA_PROJETO", "/Mobshare");
-    define("PASTA_LINK", "http://localhost");
+    define("PASTA_LINK", "http://www.mob.com.br");
     define("RAIZ_IMPORT", PASTA_RAIZ . PASTA_PROJETO);
     define("RAIZ_LINK", PASTA_LINK . PASTA_PROJETO);
     /*---------------------------------------------------------------*/
@@ -244,6 +244,11 @@ if(!isset($incluso)){
     define("IMPORT_SOLICITACAO_LOCACAO", PASTA_RAIZ . PASTA_PROJETO . "/model/solicitacao_locacaoClass.php");
     define("IMPORT_SOLICITACAO_LOCACAO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/solicitacao_locacaoDAO.php");
     define("IMPORT_SOLICITACAO_LOCACAO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerSolicitacao_locacao.php");    
+
+    define("IMPORT_V_HISTORICO_LOCACAO", PASTA_RAIZ . PASTA_PROJETO . "/model/vhistorico_locacaoClass.php");
+    define("IMPORT_V_HISTORICO_LOCACAO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/vhistorico_locacaoDAO.php");
+    define("IMPORT_LOCACAO_CONTROLLER", PASTA_RAIZ . PASTA_PROJETO . "/controller/controllerLocacao.php");    
+
     
     /*---------------------------------------------------------------*/
     /*--------------------------- PÁGINAS ---------------------------*/

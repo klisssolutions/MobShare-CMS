@@ -18,7 +18,7 @@ class Solicitacao_Locacao{
     private $motivoRecusa;
 
     public function __construct(){ 
-           
+      
     }
     
     //------------Começo dos GETTERS e SETTERS------------
