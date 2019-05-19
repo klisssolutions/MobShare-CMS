@@ -39,10 +39,14 @@ if($modo == "INSERIR"){
     
     $controllerSolicitacao_Locacao = new controllerSolicitacao_Locacao();   
 
-    $solicitacoes_Locacao = $controllerSolicitacao_Locacao->listarSolicitacaoLocacao();
+
+    $solicitacoes_Locacao = $controllerSolicitacao_Locacao->listarSolicitacaoLocacaoPorLocador();
+
+
 
     foreach($solicitacoes_Locacao as $solicitacao_Locacao){
         $array = array(
+
             "idSolicitacaoLocacao" => $solicitacao_Locacao->getIdSolicitacao_Locacao(),
             "idCliente" => $solicitacao_Locacao->getIdCliente(),
             "nomeCliente" => $solicitacao_Locacao->getNomeCliente(),
@@ -94,6 +98,22 @@ if($modo == "INSERIR"){
     );
 
     //array_push($result, $array);   
+
+}else if($modo == "ACEITAR"){
+    
+    $status = $controllerSolicitacao_Locacao->aceitarSolicitacao($id);
+
+    $result = array(
+        "status" => $status
+    );  
+
+}else if($modo == "RECUSAR"){
+
+    $status = $controllerSolicitacao_Locacao->recusarSolicitacao($id);
+
+    $result = array(
+        "status" => $status
+    );  
 
 }else{
     $result["mensagem"] = "Modo inválido.";
