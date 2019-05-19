@@ -16,7 +16,6 @@ require_once(IMPORT_MARCA_CONTROLLER);
 require_once(IMPORT_MARCA);
 
 
-
 $controllerVeiculo = new controllerVeiculo();
 $controllerFoto_veiculo = new controllerFoto_Veiculo();
 $controllerMarca = new controllerMarca();
