@@ -24,6 +24,47 @@ class vhistorico_locacaoDAO{
         $this->conex = new conexaoMySQL();
     }
 
+    public function receber($idLocacao){
+        
+        $sql = UPDATE . TABELA_LOCACAO . " 
+        SET recebido = 1 WHERE idLocacao = ".$idLocacao;
+
+        //Abrindo conexão com o BD
+        $PDO_conex = $this->conex->connectDataBase();
+
+echo($sql);
+
+        //Executa no BD o script Insert e retorna verdadeiro/falso
+        if($PDO_conex->query($sql)){
+            $erro = false;
+        }else{
+            $erro = true; 
+        }
+        //Fecha a conexão com o BD
+        $this->conex->closeDataBase();
+        return $erro;
+        
+    }
+    
+    public function devolver($idLocacao){
+        
+        $sql = UPDATE . TABELA_LOCACAO . " 
+        SET devolvido = 1 WHERE idLocacao = ".$idLocacao;
+
+        //Abrindo conexão com o BD
+        $PDO_conex = $this->conex->connectDataBase();
+
+        //Executa no BD o script Insert e retorna verdadeiro/falso
+        if($PDO_conex->query($sql)){
+            $erro = false;
+        }else{
+            $erro = true;
+        }
+        //Fecha a conexão com o BD
+        $this->conex->closeDataBase();
+        return $erro;
+        
+    }
 
     public function selecionarHistoricoLocacoes($id){
         $sql = SELECT." vhistorico_locacao where idDono = ".$id;

@@ -21,11 +21,25 @@ $id = (isset($_GET["id"]) ? strtoupper($_GET["id"]) : null);
 //Inicia a controller
 $solicitacao_Locacao = new Solicitacao_Locacao();
 $controllerSolicitacao_Locacao = new controllerSolicitacao_Locacao();
-
+$controllerLocacao = new controllerLocacao();
 
 //
 if($modo == "INSERIR"){
     $status = $controllerSolicitacao_Locacao->inserirSolicitacao_Locacao();
+
+    $result = array(
+        "status" => $status
+    );
+
+}else if($modo == "RECEBER"){
+    $status = $controllerLocacao->receber();
+
+    $result = array(
+        "status" => $status
+    );
+
+}else if($modo == "DEVOLVER"){
+    $status = $controllerLocacao->devolver();
 
     $result = array(
         "status" => $status
@@ -60,11 +74,6 @@ if($modo == "INSERIR"){
 
 }else if($modo == "LISTARHISTORICO"){
     $result= array();
-
-    
-    $controllerLocacao = new controllerLocacao();   
-
-
     $vhistorico_Locacoes = $controllerLocacao->listarHistoricoLocacaoPorLocador();
 
     foreach($vhistorico_Locacoes as $vhistorico_Locacao){

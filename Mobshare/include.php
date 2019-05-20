@@ -92,7 +92,8 @@ if(!isset($incluso)){
     define("TABELA_TIPO","tipo_veiculo");
     define("TABELA_SOLICITACAO_LOCACAO","solicitacao_locacao");
 	define("TABELA_BANNER", "banner");
-	define("TABELA_CANCELAMENTO", "cancelamento");
+    define("TABELA_CANCELAMENTO", "cancelamento");
+    define("TABELA_LOCACAO", "locacao");
 
     //Constantes com o nome das views
     define("VIEW_VEICULO", "vpendencia_veiculo");
@@ -239,7 +240,6 @@ if(!isset($incluso)){
 
 
     //import anuncios mobile
-    
     define("IMPORT_VSOLICITACAO_LOCACAO", PASTA_RAIZ . PASTA_PROJETO . "/model/vsolicitacao_locacaoClass.php");
     define("IMPORT_SOLICITACAO_LOCACAO", PASTA_RAIZ . PASTA_PROJETO . "/model/solicitacao_locacaoClass.php");
     define("IMPORT_SOLICITACAO_LOCACAO_DAO", PASTA_RAIZ . PASTA_PROJETO . "/model/DAO/solicitacao_locacaoDAO.php");

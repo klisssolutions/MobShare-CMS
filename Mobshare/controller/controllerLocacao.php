@@ -31,5 +31,24 @@ class controllerLocacao{
 
     }
 
+    public function receber(){
+        
+        $idLocacao = $_GET['id'];
+        //Instancia do DAO
+        $vhistorico_locacaoDAO = new vhistorico_locacaoDAO();
+        return($vhistorico_locacaoDAO->receber($idLocacao));
+
+    }
+
+
+    public function devolver(){
+        
+        $idLocacao = $_GET['id'];
+        //Instancia do DAO
+        $vhistorico_locacaoDAO = new vhistorico_locacaoDAO();
+        return($vhistorico_locacaoDAO->devolver($idLocacao));
+
+    }
+
 }
 ?>
