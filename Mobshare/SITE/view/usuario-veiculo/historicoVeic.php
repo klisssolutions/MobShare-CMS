@@ -3,29 +3,18 @@
 @$_SESSION["importInclude"] = $_SERVER["DOCUMENT_ROOT"] . "/Mobshare/include.php";
 require_once($_SESSION["importInclude"]); 
 
-require_once(IMPORT_VEICULO);
-require_once(IMPORT_VEICULO_CONTROLLER);
+require_once(IMPORT_V_HISTORICO_LOCACAO);
+require_once(IMPORT_LOCACAO_CONTROLLER);
 
-require_once(IMPORT_FOTO_VEICULO_CONTROLLER);
-require_once(IMPORT_FOTO_VEICULO);
+require_once(IMPORT_CLIENTE);
+require_once(IMPORT_CLIENTE_CONTROLLER);
 
-require_once(IMPORT_MODELO_CONTROLLER);
-require_once(IMPORT_MODELO);
+$controllerCliente = new controllerCliente();
+$controllerLocacao = new controllerLocacao();
 
-require_once(IMPORT_MARCA_CONTROLLER);
-require_once(IMPORT_MARCA);
+$_GET["id"] = $_SESSION['idCliente']['idCliente'];
 
-
-
-$controllerVeiculo = new controllerVeiculo();
-$controllerFoto_veiculo = new controllerFoto_Veiculo();
-$controllerMarca = new controllerMarca();
-$controllerModelo = new controllerModelo();
-
-$veiculos[] = new Veiculo();
-
-$veiculos = $controllerVeiculo->listarVeiculosCliente();
-
+$locacoes = $controllerLocacao->listarHistoricoLocacaoPorLocador();
 
 ?>
 <!DOCTYPE html>
@@ -83,40 +72,13 @@ $veiculos = $controllerVeiculo->listarVeiculosCliente();
             </div>
             <div class="conteudo-usuario">
                 <div class="titulo-lista">VEICULOS</div>
-
-                <div class="botoes-dash">
-
-                    <input type="button" value="Novo" class="btn-dash" onclick="cadastrarAluguel();">
-                    <input type="button" value="Voltar" class="btn-dash" onclick="veiculo();">
-
-                </div>
-<?php
-                $i= 0;
-                 while($i < count($veiculos)){
-
-                    $foto_veiculo = new Foto_Veiculo();
-                    $marca = new Marca();
-                    $modelo = new Modelo();
-
-                    $_GET["id"] = $veiculos[$i]->getIdModelo();
-                    $modelo = $controllerModelo->buscarModelos();
-
-                    $_GET["id"] = $modelo->getIdMarca();
-                    $marca = $controllerMarca->buscarMarcas();
-
-                    $foto_veiculo = $controllerFoto_veiculo->listarFotoFrontal($veiculos[$i]->getIdVeiculo());
-                      
+            <?php
+                foreach($locacoes as $locacao):    
             ?>
 
                 <div class="box-veiculo">
-                    <div class="img-veiculo">
-                        <img src="<?php echo('/Mobshare/arquivos/'.$foto_veiculo->getFotoVeiculo()) ?>" width="320" height="225" alt="veiculo">
-                    </div>
                     <div class="texto-modelo">
                         <label class="negrito">Veiculo: </label><?php echo($modelo->getNomeModelo() . " " . $marca->getNomeMarca())?>
-                    </div>
-                    <div class="texto-ano">
-                        <label class="negrito">Ano: </label> <?php echo($veiculos[$i]->getAno())?>
                     </div>
 
                     <div class="texto-ano">
@@ -126,8 +88,7 @@ $veiculos = $controllerVeiculo->listarVeiculosCliente();
                 </div>
 
                  <?php 
-                    $i++;
-                    }
+                    endforeach;
                  ?>
 
 
