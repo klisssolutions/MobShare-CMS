@@ -67,7 +67,7 @@ echo($sql);
     }
 
     public function selecionarHistoricoLocacoes($id){
-        $sql = SELECT." vhistorico_locacao where idDono = ".$id;
+        $sql = SELECT." vhistorico_locacao where idDono = ".$id." or idCliente =".$id;
 
         
         //Abrindo conexão com o BD
