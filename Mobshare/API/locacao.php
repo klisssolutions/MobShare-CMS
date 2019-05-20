@@ -82,6 +82,7 @@ if($modo == "INSERIR"){
             "idLocacao" => $vhistorico_Locacao->getIdLocacao(),
             "idCliente" => $vhistorico_Locacao->getIdCliente(),
             "nomeCliente" => $vhistorico_Locacao->getNomeCliente(),
+            "idDono" => $vhistorico_Locacao->getIdDono(),
             "veiculo" => $vhistorico_Locacao->getVeiculo(),
             "horarioInicio" => $vhistorico_Locacao->getHorarioInicio(),
             "horarioFim" => $vhistorico_Locacao->getHorarioFim(),
