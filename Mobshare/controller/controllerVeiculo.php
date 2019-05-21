@@ -79,23 +79,37 @@ class controllerVeiculo{
 
         //Verifica qual metodo esta sendo requisitado do formulario(POST ou GET)
         if($_SERVER["REQUEST_METHOD"] == "POST"){
-            $id = $_GET["id"];
-            $nome = $_POST["txtnome"];
-            $descricao = $_POST["txtdescricao"];
-            $permissoes = 0;
+            $cor = $_POST["txtCor"];
+            $altura = $_POST["txtAltura"];
+            $comprimento = $_POST["txtComprimento"];
+            $largura = $_POST["txtLargura"];
+            $altura = $_POST["txtAltura"];
+            $valorHora = $_POST["txtValor"];
+            $ano = $_POST["txtAno"];
+            $quilometragem = $_POST["txtQuilometragem"];
+            $endereco = $_POST["sltEndereco"];
+            $categoria = $_POST["sltCategoria"];
+            $modelo = $_POST["sltModelo"];
 
             //Instancia da classe
-            $nivel = new Nivel();
+            $veiculo = new Veiculo();
 
             //Guardando os dados do post no objeto da classe
-            $nivel->setIdNivel($id);
-            $nivel->setNome($nome);
-            $nivel->setDescricao($descricao);
-            $nivel->setPermissoes($permissoes);
+            $veiculo->setCor($cor);
+            $veiculo->setAltura($altura);
+            $veiculo->setComprimento($comprimento);
+            $veiculo->setLargura($largura);
+            $veiculo->setValorHora($valorHora);
+            $veiculo->setAno($ano);
+            $veiculo->setQuilometragem($quilometragem);
+            $veiculo->setIdEndereco($endereco);
+            $veiculo->setIdCategoriaVeiculo($categoria);
+            $veiculo->setIdModelo($modelo);
+            $veiculo->setIdVeiculo($id);
 
             /* Chamada para o metodo de inserir no BD, passando como parâmetro o objeto
             contatoClass que tem todos os dados que serão inseridos no banco de dados */
-            return $nivelDAO->update($nivel);
+            return $veiculoDAO->update($veiculo);
         }
     }
 
@@ -122,6 +136,7 @@ class controllerVeiculo{
         //Instancia do DAO
         $veiculoDAO = new veiculoDAO();
 
+        
         //Pega o ID para realizar a busca
         $id = $_GET["id"];
 

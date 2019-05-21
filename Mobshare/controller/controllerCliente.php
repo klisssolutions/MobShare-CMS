@@ -48,12 +48,12 @@ class controllerCliente{
                 $cpf = $_POST["txtcpf"]; 
                 $dtNasc = $_POST["txtdtnasc"];
                 $cnh = $_POST["txtcnh"];
-                $categoriacnh = $_POST["txtcategoriacnh"];
+                $categoriacnh = $_POST["txtCategoriaCnh"];
                 $email = $_POST["txtemail"];
                 $senha = $_POST["txtsenha"];
                 //Verificar Foto
-                //$fotoPerfil = $_POST["txtfotoperfil"];
-                $datacadastro = $_POST["txtdatacadastro"];
+                $fotoPerfil = enviarImagem($_FILES['imgPerfil']);
+                
 
                 //Guardando os dados do post no objeto da classe
                 $cliente->setNome($nome);
@@ -64,7 +64,7 @@ class controllerCliente{
                 $cliente->setEmail($email);
                 $cliente->setSenha($senha);
                 //Verificar Foto
-                //$cliente->setFotoPerfil($fotoPerfil);
+                $cliente->setFotoPerfil($fotoPerfil);
                 $cliente->setDataCadastro(date('Y-m-d'));
 
             }else{
@@ -114,22 +114,22 @@ class controllerCliente{
     public function atualizarCliente(){
         //Instancia do DAO
         $clienteDAO = new clienteDAO();
-
+        $id = $_GET["id"];
         //Verifica qual metodo esta sendo requisitado do formulario(POST ou GET)
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             $nome = $_POST["txtnome"];
             $cpf = $_POST["txtcpf"]; 
             $dtNasc = $_POST["txtdtnasc"];
             $cnh = $_POST["txtcnh"];
-            $categoriacnh = $_POST["txtcategoriacnh"];
+            $categoriacnh = $_POST["cbcategoriacnh"];
             $email = $_POST["txtemail"];
             $senha = $_POST["txtsenha"];
             //Verificar Foto
-            //$fotoPerfil = $_POST["txtfotoperfil"];
-            $datacadastro = $_POST["txtdatacadastro"];
+            $fotoPerfil = ($_FILES['imgPerfil']["size"] ? enviarImagem($_FILES['imgPerfil']) :  null);
 
             //Instancia da classe
             $cliente = new Cliente();
+
 
             //Guardando os dados do post no objeto da classe
             $cliente->setNome($nome);
@@ -139,9 +139,9 @@ class controllerCliente{
             $cliente->setCategoriaCnh($categoriacnh);
             $cliente->setEmail($email);
             $cliente->setSenha($senha);
+            $cliente->setIdCliente($id);
             //Verificar Foto
-            //$cliente->setFotoPerfil($fotoPerfil);
-            $cliente->setDataCadastro($datacadastro);
+            $cliente->setFotoPerfil($fotoPerfil);
 
             /* Chamada para o metodo de inserir no BD, passando como parâmetro o objeto
             contatoClass que tem todos os dados que serão inseridos no banco de dados */
@@ -160,7 +160,7 @@ class controllerCliente{
         $clienteDAO = new clienteDAO();
 
         //Pega o ID para realizar a busca
-        $id = $_GET["id"];
+        $id = $_SESSION['idCliente']['idCliente'];
 
         $cliente = new Cliente();
         $cliente = $clienteDAO->selectById($id);
