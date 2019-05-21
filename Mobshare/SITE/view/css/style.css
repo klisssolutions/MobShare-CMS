@@ -56,6 +56,11 @@ header {
     margin-top: 45px;
 }
 
+.link{
+    color: #fff;
+    text-decoration: underline;
+}
+
 .menu-item a {
     padding: 10px 8px 10px 8px;
     margin-right: 5px;
@@ -296,7 +301,6 @@ a:link {
     width: 650px;
     height: 60px;
     border-radius: 50px;
-    text-align: right;
     border: none;
     margin-left: 590px;
     margin-top: 300px;
@@ -354,7 +358,8 @@ a:link {
 
 .caixa-veiculos {
     width: 1300px;
-    height: 1200px;
+    min-height: 600px;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
     overflow: hidden;
@@ -368,15 +373,14 @@ a:link {
     float: left;
     margin-left: 60px;
     margin-bottom: 50px;
-    background-color: #eaeaea;
+    background-color: #e9f0f6;
     margin-top: 80px;
     overflow: hidden;
-    box-shadow: 1px 4px 6px 4px rgba(0, 0, 0, 0.1);
 }
 
 .img-veiculo {
-    height: 225px;
-    width: 320px;
+    height: 50%;
+    width: 100%;
 }
 
 .texto-modelo,
@@ -394,33 +398,25 @@ a:link {
 
 .texto-modelo {
     text-transform: uppercase;
-    color: #002171;
-    font-weight: bold;
 }
 
 .botao-veiculo {
     width: 78px;
-    height: 20px;
     font-size: 16px;
     background-color: #102840;
     color: #fff;
     align-content: center;
     text-align: center;
-    padding: 8px 40px 8px 45px;
+    padding: 05px 40px 05px 40px;
     font-family: Mont;
     font-size: 16px;
-    margin-left: 90px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-left: 150px;
+    margin-top: -10px;
     border-radius: 15px;
 }
 
-.botao-veiculo a {
-    color: #fff;
-}
-
 .botao-veiculo:hover {
-    background-color: #ba3135;
+    background-color: #04070e;
     cursor: pointer;
 }
 
@@ -430,8 +426,7 @@ a:link {
     min-height: 70px;
     height: auto;
     overflow: hidden;
-    margin-top: 100px;
-    padding-bottom: 150px;
+    margin-top: 10px;
 }
 
 .img-como-funciona {
@@ -441,12 +436,13 @@ a:link {
 }
 
 .img-como-funciona img {
-    text-align: center;
+    margin-left: 0px;
+    margin-top: 10px;
 }
 
 .img-como-funciona img:hover {
     filter: grayscale(100%0)
-}   
+}
 
 .texto-como-funciona {
     width: 50%;
@@ -456,14 +452,10 @@ a:link {
 
 
 .texto-como-funciona h1 {
-    width: 100%;
     margin-top: 150px;
     font-family: Mont;
     color: #102840;
-    align-items: center;
-    align-content: center;
-    text-align: center;
-   
+    margin-left: 450px;
 }
 
 .texto-como-funciona p {
@@ -475,18 +467,10 @@ a:link {
     word-break: break-all;
 }
 
-.cm-primeira-imagem{
-    margin-left: 250px;
-}
-
-.cm-segunda-imagem{
-    margin-left: 100px;
-}
-
 .texto-como-funciona h2 {
     width: 120px;
     height: 30px;
-    margin-left: 400px;
+    margin-left: 520px;
     font-family: Mont;
     color: #fff;
     margin-top: 35px;
@@ -621,8 +605,9 @@ a:link {
 }
 
 .box-pesquisa-anucios {
-    height: 50px;
+    height: 7%;
     width: 100%;
+    background-color: #e9f0f6;
 }
 
 .anuncios-pesquisa {
@@ -690,53 +675,46 @@ a:link {
 }
 
 .botao-filtrar {
-    width: 190px;
-    height: 40px;
+    width: 100px;
+    height: 30px;
     margin-left: 90px;
 	margin-bottom: 10px;
     font-family: Mont;
     color: #fff;
     font-size: 16px;
-    border: none;
     background-color: #002171;
     border-radius: 15px;
     align-content: center;
     text-align: center;
 }
 
-.botao-filtrar:hover{
-    cursor: pointer;
-    background-color: #ba3135;
-}
-
 .box-veiculo-anuncio {
-    width: 320px;
-    height: 480px;
+    width: 400px;
+    height: 450px;
     margin-left: 50px;
     margin-top: 25px;
     background-color: #ecebeb;
     float: left;
-    margin-bottom: 20px;
 }
 
 .box-veiculo-anuncio .texto-modelo {
     font-weight: bold;
     font-size: 25px;
-    height: 65px;
 }
 
 
 
 .imagem-anuncio {
-    height: 225px;
-    width: 320px;
+    height: 50%;
+    width: 100%;
+    background-color: brown;
 }
 
 .botao-veja {
     width: 150px;
     height: 20px;
     padding: 10px 20px 10px 10px;
-    margin-left: 70px;
+    margin-left: 190px;
     font-family: Mont;
     color: #fff;
     font-size: 16px;
@@ -922,12 +900,11 @@ a:link {
 }
 
 .image-termos {
-    height: 160px;
+    height: 100px;
     width: 100%;
     padding-top: 110px;
     background-image: url(../images/nicole-baster-1178413-unsplash.jpg);
     background-size: 100%;
-    background-attachment: fixed;
     margin-top: 110px;
 }
 
@@ -961,6 +938,9 @@ a:link {
     height: 10%;
     width: 100%;
     float: left;
+    text-align: center;
+    margin-top: 20px;
+    background-color: #c7cfdb;
 }
 
 .termo p {
@@ -1254,7 +1234,7 @@ a:link {
     width: 100%;
     height: 1600px;
     float: left;
-    background-color: #fff;
+    background-color: #ecebeb;
     padding-bottom: 100px;
 
 }
@@ -1424,6 +1404,7 @@ a:link {
 .content-cadastro {
     width: 1920px;
     height: 937px;
+    background-image: url(../images/david-hellmann-433025-unsplash.jpg);
     background-size: 100%;
     float: left;
 }
@@ -1431,12 +1412,13 @@ a:link {
 
 .cadastro {
     width: 30%;
-    height: 80%;
+    height: 75%;
     background-color: #102840;
     margin-right: auto;
     margin-left: auto;
     margin-top: 90px;
     box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.75);
+    padding-left: 35px;
 
 }
 
@@ -1548,124 +1530,3 @@ a:link {
         .jssora053:hover {opacity:.8;}
         .jssora053.jssora053dn {opacity:.5;}
         .jssora053.jssora053ds {opacity:.3;pointer-events:none;}
-
-/********************** PAGINA: DADOS DO VEICULO *******************************/
-.caixa-dados-veiculo{
-    background-color: #fff;
-    width: 100%;
-    margin-top: 110px;
-    float: left;
-    height: 1150px;
-}
-
-.dados-veiculo{
-    width: 100%;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.foto-dados-veiculo{
-    height: 300px;
-    width: 50%;
-    float: left;
-    margin-top: 50px;
-}
-
-.foto-dados-veiculo img{
-    margin-left: 200px;
-}
-
-.foto-dados-veiculo h1{
-    font-family: Montserrat;
-    color: #102840;
-}
-
-.foto-dados-veiculo h2{
-    font-family: Montserrat;
-    color: rgb(63, 62, 62);
-    font-size: 18px;
-}
-
-.dados-usuario-veiculo{
-    width: 100%;
-    height: 550px;
-    overflow: hidden;
-    background-image: url(../images/the-ride-academy-1145448-unsplash.jpg);
-    background-attachment: fixed;
-    background-size: 100%;
-    margin-top: 150px;
-    float: left;
-    background-color: #000;
-}
-
-.caixa-dados-usuario{
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%;
-    height: 70%;
-    margin-top: 100px;
-}
-
-.foto-dados-usuario{
-    width: 200px;
-    height: 200px;
-    background-color: rebeccapurple;
-    border-radius: 100px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.foto-dados-usuario img{
-    border-radius: 100px;
-    width: 200px;
-    height: 200px;
-    background-size: 100%;
-}
-
-.avaliacao-usuario, .nome-dados-usuario{
-    width: 30%;
-    height: 40px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.nome-dados-usuario h1{
-    color: #c7cfdb;
-    font-family: Mont;
-    font-size: 28px;
-    text-align: center;
-    margin-top: 10px;
-}
-
-.nome-dados-usuario h2{
-    color: #c7cfdb;
-    font-family: Mont;
-    font-size: 24px;
-    text-align: center;
-    margin-top: 5px;
-}
-
-.nome-dados-usuario{
-    width: 50%;
-}
-
-.inpt-dados{
-    border: none;
-    height: 50px;
-    border-radius: 25px;
-    padding: 10px 20px 10px 20px;
-    background-color: #002171;
-    color: #ecebeb;
-    font-size: 18px;
-    font-family: Mont;
-    text-transform: uppercase;
-    margin-left: 1400px;
-    margin-top: 50px;
-    float: left;
-}
-
-.inpt-dados:hover{
-    cursor: pointer;
-    background-color: #ba3135;
-}

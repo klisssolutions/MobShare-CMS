@@ -2,12 +2,26 @@
 @session_start();
 @$_SESSION["importInclude"] = $_SERVER["DOCUMENT_ROOT"] . "/Mobshare/include.php";
 require_once($_SESSION["importInclude"]); 
+
+    require_once(IMPORT_CLIENTE);
+    require_once(IMPORT_CLIENTE_CONTROLLER);
+
+    $idCliente = $_SESSION['idCliente']['idCliente'];
+    
+    $controllerCliente = new controllerCliente();
+    $clientes[] = new Cliente();
+    $clientes = $controllerCliente->buscarCliente();
+
+    
+
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="../css/dashboard.css">
     <meta http-equiv="Content-Type" content="view/text/html; charset=utf-8" />
+    <script type="text/javascript" src="../js/link.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
     <link rel="shortcut icon" href="../images/user.png" />
     <title>Painel do Usuário </title>
 </head>
@@ -20,10 +34,11 @@ require_once($_SESSION["importInclude"]);
             <div class="menu-lateral-usuario">
                 <div class="img-usuario-menu">
                     <div class="imagem-usuario">
-                        <img src="../images/jon.jpg" width="180" height="180"  alt="Usuário">
+                        <img src="../../../arquivos/<?php echo ($clientes->getFotoPerfil());?>" width="180" height="180"  alt="Usuário">
                     </div>
+
                     <div class="nome-usuario-menu">
-                        <h1>Johnny Depp</h1>
+                        <h1><?php echo ($clientes->getNome());?></h1>
                     </div>
                 </div>
                 <div class="nav-menu-usuario-clicado">
@@ -57,48 +72,49 @@ require_once($_SESSION["importInclude"]);
                             Meus dados do perfil
                         </div>
                         <div class="foto-perfil">
-                            <img src="../images/jon.jpg" width="310" height="310"  alt="Usuário">
+                            <img src="../../../arquivos/<?php echo ($clientes->getFotoPerfil());?>" width="310" height="310"  alt="Usuário">
                         </div>
                     </div>
                     <div class="info-perfil">
                         <div class="dados-perfil">
                             <div class="dados">
                                 <h1>Nome completo:</h1>
-                                <p>Dean Winchester</p>
+                                <p><?php echo ($clientes->getNome());?></p>
                             </div>
                             <div class="dados">
                                 <h1>CPF:</h1>
-                                <p>052.654.786-19</p>
+                                <p><?php echo ($clientes->getCpf());?></p>
                             </div>
                         </div>
                         <div class="dados-perfil">
                             <div class="dados">
-                                <h1>Sexo:</h1>
-                                <p>Masculino</p>
+                                <h1>Email:</h1>
+                                <p><?php echo($clientes->getEmail());?></p>
                             </div>
                             <div class="dados">
                                 <h1>Data de Nasc:</h1>
-                                <p>02/04/1383</p>
+                                <p><?php echo($clientes->getDtNasc());?></p>
                             </div>
                         </div>
                         <div class="dados-perfil">
                             <div class="dados">
                                 <h1>Numero da CNH:</h1>
-                                <p>256323647-46</p>
+                                <p><?php echo ($clientes->getCnh());?></p>
                             </div>
                             <div class="dados">
                                 <h1>Tipo de CNH:</h1>
-                                <p>Tipo A</p>
+                                <p><?php echo ($clientes->getCategoriaCnh());?></p>
                             </div>
                         </div>
                         <div class="dados-perfil">
                             <div class="dados">
-                                <a href="edicaoUsuario.php">
-                                 <input class="btn-usuario-visu" type="submit" name="btnSalvar" value="Editar">
+                                <a href="edicaoUsuario.php?id=<?php echo($cliente->getIdCliente());?>">
+                                    <input class="btn-usuario-visu" type="button" name="btnSalvar" value="Editar">
                                 </a>
                             </div>
                         </div>
                     </div>
+                    
                 </section>
             </div>
         </div>

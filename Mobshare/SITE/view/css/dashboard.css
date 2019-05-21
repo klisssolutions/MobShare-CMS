@@ -308,6 +308,8 @@ a:link {
     height: 100%;
     background-color: #cecece;
     float: left;
+    overflow: scroll;
+    overflow: auto;
 }
 
 .img-usuario-menu {
@@ -319,7 +321,6 @@ a:link {
 .imagem-usuario {
     width: 50%;
     height: 90%;
-    background-image: url(../images/user.png);
     margin-left: auto;
     margin-right: auto;
     border-radius: 85px;
@@ -330,7 +331,8 @@ a:link {
 }
 
 .nome-usuario-menu {
-    height: 10%;
+    min-height: 10%;
+    height: auto;
     width: 100%;
     margin-top: 05px;
     float: left;
@@ -434,7 +436,6 @@ a:link {
 .foto-perfil {
     width: 310px;
     height: 310px;
-    background-color: violet;
     margin-left: auto;
     margin-right: auto;
 }
@@ -642,6 +643,7 @@ a:link {
     margin-left: auto;
     margin-right: auto;
     margin-top: 150px;
+    text-align: center;
 }
 
 .input-dash {
@@ -661,13 +663,51 @@ a:link {
     font-family: Mont;
 }
 
+.file-upload{
+    margin-left: 60px;
+}
+
 a {
     color: black;
     text-decoration: none;
 }
 
 .box-veiculo {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100px;
+    width: 320px;
+    min-height: 390px;
+    height: auto;
+    /*box-shadow: 1px 4px 6px 4px rgba(0, 0, 0, 0.2); */
+    float: left;
+    margin-left: 40px;
+    margin-bottom: 50px;
+    background-color: #e9f0f6;
+    margin-top: 80px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.img-veiculo {
+    height: 225px;
+    width: 100%;
+}
+
+.texto-modelo,
+.texto-marca,
+.texto-ano{
+    font-family: Mont;
+    font-size: 16px;
+    margin-top: 16px;
+    align-content: center;
+    padding: 5px 20px 0px 20px;
+
+}
+
+.opcao{
+    width: 89px;
+    height: 20px;
+    float: right;
+}
+
+.negrito{
+    font-weight: bold;
 }
