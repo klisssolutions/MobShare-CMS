@@ -471,6 +471,7 @@ if(!isset($incluso)){
     define("LINK_SITE_CONTATO", RAIZ_LINK . "/SITE/view/faleconosco/faleconosco.php");
     define("LINK_SITE_HOME", RAIZ_LINK . "/SITE/view/home.php");
     define("LINK_SITE_SAIR", RAIZ_LINK . "/SITE/index.php?destroy");
+    define("LINK_SITE_HISTORICO", RAIZ_LINK . "/SITE/view/usuario-veiculo/historicoVeic.php");
     //Constantes com os links das imagens
     define("LINK_IMAGEM_LOGO", RAIZ_LINK . "/SITE/view/images/logo.png");
     define("LINK_IMAGEM_FACEBOOK", RAIZ_LINK . "/SITE/view/images/social-facebook.png");
