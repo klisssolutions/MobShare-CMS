@@ -83,6 +83,53 @@ if(isset($_GET["controller"])){
                     break;
                 }
             break;
+            switch ($modo){
+                case "INSERIR":
+                    //Chamando o método de inserir um novo funcionario
+                    
+                    
+                    $controllerCliente->inserirCliente(1);
+
+                    //Encaminha para a pagina de usuario
+                    echo("<script>alert('Cliente cadastrado. Por favor faça seu Login');</script>");
+
+                    require_once(IMPORT_SITE_LOGIN);
+                    
+                break;
+            }
+            switch ($modo){
+                case "BUSCAR":
+                    //Chamando o método de inserir um novo funcionario
+                    
+                    
+                    $user = $controllerCliente->buscarCliente();
+
+                    //Encaminha para a pagina de usuario
+                    
+                    var_dump($user);
+
+                    require_once(IMPORT_SITE_USUARIO);
+                    
+                break;
+            }
+            switch ($modo){
+                case "ATUALIZAR":
+                    //Chamando o método de inserir um novo funcionario
+                    
+                    $controllerCliente->atualizarCliente();
+
+                    echo("<script>ver()</script>");
+
+                    //Encaminha para a pagina de usuario
+                    
+                    require_once(IMPORT_SITE_USUARIO);
+
+                    
+                    
+                break;
+            }
+
+            break;
             
 
         case "FUNCIONAMENTO":
@@ -122,6 +169,46 @@ if(isset($_GET["controller"])){
                 break;
             }       
         break;
+
+        case "ENDERECO":
+
+        require_once(IMPORT_ENDERECO_CONTROLLER);
+
+        $controllerEndereco = new controllerEndereco();
+
+        switch ($modo){
+            case "INSERIR":
+                //Chamando o método de inserir um novo funcionario
+                $controllerEndereco->inserirEndereco();
+
+                //Encaminha para a pagina de funcionario
+                
+                echo("<script>cadastrarEndereco();</script>");
+
+            break;
+
+            case "EXCLUIR":
+                //Chama o método para excluir o funcionario
+                $controllerFuncionamento->excluirFuncionamento();
+
+                //Encaminha para a pagina de funcionario
+                echo("<script>comoFunciona();</script>");
+            break;
+
+            case "BUSCAR":
+                $funcionamento = $controllerFuncionamento->buscarFuncionamento();
+
+                require_once(IMPORT_CADASTRO_FUNCIONAMENTO);
+
+            break;
+
+            case "ATUALIZAR":
+                $controllerFuncionamento->atualizarFuncionamento();
+
+                echo("<script>comoFunciona();</script>");
+            break;
+        }       
+    break;
 
         case "TERMOS":
 
@@ -201,46 +288,92 @@ if(isset($_GET["controller"])){
 
 */
 
-        case "VEICULOS":
+case "FOTO_VEICULO":
+
+//Import da controller de TERMOS
+require_once(IMPORT_FOTO_VEICULO_CONTROLLER);
         
-         require_once(IMPORT_VEICULO_CONTROLLER);
+//Instancia da controller de TERMOS
+$controllerFoto_Veiculo = new controllerFoto_Veiculo();
 
-         $controllerVeiculo = new controllerVeiculo();
+switch($modo){
+    case "INSERIR":
 
-         switch($modo){
+        $_POST['veiculo'] = $_SESSION['idVeiculo'];
+        //Chamando o método de inserir um novo TERMO
+        $controllerFoto_Veiculo->inserirFoto_Veiculo();
 
-            case "INSERIR":
-
-                $controllerVeiculo->inserirVeiculo();
-             
-                echo("<script>alert('oi');</script>");
-             break;
-
-             case "EXCLUIR":
-
-             $controllerVeiculo->excluir();
-             
-             echo("<script>banner();</script>");
-             break;    
-             
-             case "BUSCAR":
-
-             $controllerVeiculo->buscarBanner();
-             
-             
-             break;   
-
-             case "ATUALIZAR":
-
-            
-                 $controllerVeiculo->atualizar();
-                 
-                 echo("<script>banner();</script>");
-             break; 
-
-         }
-                            
+        //Encaminha para a pagina de TERMOS
+           
+        echo("<script>veiculo();</script>");
+        
         break;
+
+    case "EXCLUIR":
+        $controllerMarca->excluirMarcas();
+
+        //Encaminha para a pagina de TERMOS
+        echo("<script>marcas();</script>");
+        break;
+
+    case "BUSCAR":
+        $marca = $controllerMarca->buscarMarcas();
+
+        require_once(IMPORT_CADASTRO_MARCAS);
+        break;
+
+    case "ATUALIZAR":
+        $controllerMarca->atualizarMarcas();
+
+        echo("<script>marcas();</script>");
+        break;
+}
+break;
+
+
+
+case "VEICULOS":
+
+ require_once(IMPORT_VEICULO_CONTROLLER);
+
+ $controllerVeiculo = new controllerVeiculo();
+
+ switch($modo){
+
+    case "INSERIR":
+    
+        $idVeiculo = $controllerVeiculo->inserirVeiculo();
+
+        echo($idVeiculo);
+
+        if($erro){
+            echo(ALERT_INSERIR_VEICULO_ERRO);
+        }else{
+            echo(ALERT_INSERIR_VEICULO_SUCESSO);
+
+            echo("<script>cadastrarImagemVeiculo(". $_POST["sltCategoria"] .", " . $idVeiculo . ");</script>");
+        }
+        
+
+
+     break;
+
+
+     case "ATUALIZAR":
+
+
+    
+     $idVeiculo = $controllerVeiculo->atualizarVeiculo();
+
+     echo($idVeiculo);
+     
+
+     echo("<script>veiculo();</script>");
+     break; 
+
+ }
+                    
+break;
 
 
 
