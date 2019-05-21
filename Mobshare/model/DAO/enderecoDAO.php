@@ -26,19 +26,23 @@ class enderecoDAO{
     }
 
 //Inserir um registro no banco de dados.
-public function insert(Modelo $modelo){
-    $sql = INSERT . TABELA_MODELO . " 
-    (idMarca, nomeModelo)
+public function insert(Endereco $endereco){
+    $sql = INSERT . TABELA_ENDERECO . " 
+    (rua, numero, cidade, UF, complemento)
     VALUES (
-        '".$modelo->getIdMarca()."',
-        '".$modelo->getNomeModelo()."')";
+        '".$endereco->getRua()."',
+        '".$endereco->getNumero()."',
+        '".$endereco->getCidade()."',
+        '".$endereco->getUf()."',
+        '".$endereco->setComplemento()."')";
 
     //Abrindo conexão com o BD
     $PDO_conex = $this->conex->connectDataBase();
-
+echo($sql);
     //Executa no BD o script Insert e retorna verdadeiro/falso
     if($PDO_conex->query($sql)){
         $erro = false;
+        echo('<script>alert("Endereço cadastrado com sucesso");</script>');
     }else{
         $erro = true;
     }

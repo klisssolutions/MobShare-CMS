@@ -22,25 +22,32 @@ class controllerEndereco{
         require_once(IMPORT_ENDERECO_DAO);
     }
 
-    public function inserirCategorias(){
+    public function inserirEndereco(){
         //Instancia do DAO criado para ser usado em todos os outros métodos
-        $modeloDAO = new modeloDAO();
+        $enderecoDAO = new enderecoDAO();
         
         //Verifica qual metodo esta sendo requisitado do formulario(POST ou GET)
         if($_SERVER["REQUEST_METHOD"] == "POST"){
-            $nomeModelo = $_POST["txtModelo"];
-            $marca = $_POST["cbbMarca"];
+            $rua = $_POST["txtRua"];
+            $complemento = $_POST["txtComplemento"];
+            $numero = $_POST["txtNumber"];
+            $uf = $_POST["txtUf"];
+            $cidade = $_POST["txtCidade"];
 
             //Instancia da classe
-            $modelo = new Modelo();
+            $endereco = new Endereco();
 
             //Guardando os dados do post no objeto da classe
-            $modelo->setNomeModelo($nomeModelo);
-            $modelo->setIdMarca($marca);
+            $endereco->setRua($rua);
+            $endereco->setComplemento($complemento);
+            $endereco->setNumero($numero);
+            $endereco->setUf($uf);
+            $endereco->setCidade($cidade);
+            
 
             /* Chamada para o metodo de inserir no BD, passando como parâmetro o objeto
             marcaClass que tem todos os dados que serão inseridos no banco de dados */
-            return $modeloDAO->insert($modelo);
+            return $enderecoDAO->insert($endereco);
         }
     }
 
