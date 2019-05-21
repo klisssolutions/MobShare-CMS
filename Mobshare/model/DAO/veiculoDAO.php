@@ -109,16 +109,25 @@ class veiculoDAO{
     //Atualiza um registro no banco de dados.
     public function update(Nivel $nivel){
         $sql = UPDATE . TABELA_VEICULO . " 
-        SET nome = '".$nivel->getNome()."',
-            descricao = '".$nivel->getDescricao()."',
-            permissoes = '".$nivel->getPermissoes()."'
-        WHERE idNivel = '".$nivel->getIdNivel()."';";
+        SET cor = '".$veiculo->getCor()."',
+            altura = '".$veiculo->getAltura()."',
+            comprimento = '".$veiculo->getComprimento()."',
+            largura = '".$veiculo->getLargura()."',
+            valorHora = '".$veiculo->getValorHora()."',
+            ano = '".$veiculo->getAno()."',
+            quilometragem = '".$veiculo->getQuilometragem()."',
+            idEndereco = '".$veiculo->getIdEndereco()."',
+            idModelo = '".$veiculo->getIdModelo()."',
+            idCategoria_Veiculo = '".$veiculo->getIdCategoriaVeiculo()."'
+        WHERE idVeiculo = '".$veiculo->getIdVeiculo()."';";
 
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
-
+        echo($sql);
         //Executa no BD o script Insert e retorna verdadeiro/falso
         if($PDO_conex->query($sql)){
+            $idVeiculo = $this->selecionarUltimoInserido();
+            echo('<script>alert("Veiculo Atualizado com sucesso")</script>');
             $erro = false;
         }else{
             $erro = true;

@@ -98,9 +98,8 @@ class clienteDAO{
             categoriaCnh = '".$cliente->getCategoriaCnh()."',
             email = '".$cliente->getemail()."',
             senha = '".$cliente->getSenha()."',
-            fotoPerfil = '".$cliente->getFotoPerfil()."',
-            dataCadastro = '".$cliente->getDataCadastro()."'
-        WHERE idNivel = '".$cliente->getIdCliente()."';";
+            fotoPerfil = '".$cliente->getFotoPerfil()."'
+        WHERE idCliente = '".$cliente->getIdCliente()."';";
 
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
