@@ -32,7 +32,7 @@ class vhistorico_locacaoDAO{
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
 
-echo($sql);
+
 
         //Executa no BD o script Insert e retorna verdadeiro/falso
         if($PDO_conex->query($sql)){
