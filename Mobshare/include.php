@@ -81,6 +81,7 @@ if(!isset($incluso)){
     define("TABELA_FOTO_VEICULO", "foto_veiculo");
     define("TABELA_TERMOS", "termo");  
     define("TABELA_AVALIACAO_VEICULO", "avaliacao_veiculo");
+    define("TABELA_AVALIACAO_CLIENTE", "avaliacao_cliente");
     define("TABELA_AVALIACAO", "avaliacao");
     define("TABELA_MARCA", "marca");
     define("TABELA_MODELO","modelo");

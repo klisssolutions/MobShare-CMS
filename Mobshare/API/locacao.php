@@ -31,6 +31,13 @@ if($modo == "INSERIR"){
         "status" => $status
     );
 
+}else if($modo == "AVALIAR"){
+    $status = $controllerLocacao->receber();
+
+    $result = array(
+        "status" => $status
+    );
+
 }else if($modo == "RECEBER"){
     $status = $controllerLocacao->receber();
 

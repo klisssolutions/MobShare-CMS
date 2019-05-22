@@ -29,8 +29,9 @@ class avaliacaoDAO{
         $this->conex = new conexaoMySQL();
     }
 
-    //Inserir um registro no banco de dados.
-    public function insert(Avaliacao $avaliacao){
+    //idAvaliado é o id de quem estará sendo avaliado (veiculo ou cliente), o tipo de avaliacao será se é veiculo ou cliente
+    public function insert(Avaliacao $avaliacao, $tipoAvaliacao, $idAvaliado){
+
         $sql = INSERT . TABELA_AVALIACAO . " 
         (idAvaliacao, nota, depoimento, idLocacao)
         VALUES (
@@ -38,6 +39,47 @@ class avaliacaoDAO{
         '".$avaliacao->getNota()."',
         '".$avaliacao->getDepoimento()."',
         '".$avaliacao->getIdLocacao()."')";
+
+
+
+
+ 
+
+        //Abrindo conexão com o BD
+        $PDO_conex = $this->conex->connectDataBase();
+
+        //Executa no BD o script Insert e retorna verdadeiro/falso
+        if($PDO_conex->query($sql)){
+            $idAvaliacao = selecionarUltimoIdAvaliacao();
+
+            $erro = amarrarAvaliacao($tipoAvaliacao, $idAvaliado, $idAvaliacao);
+        }else{
+            $erro = true;
+        }
+        //Fecha a conexão com o BD
+        $this->conex->closeDataBase();
+        return $erro;
+    }
+
+
+    
+    public function amarrarAvaliacao($tipoAvaliacao, $idAvaliado, $idAvaliacao){
+
+        
+        if($tipoAvaliacao == "VEICULO"){
+            $sql = INSERT . TABELA_AVALIACAO_VEICULO . " 
+            (idVeiculo, idAvaliacao)
+            VALUES (
+            '".$idAvaliado."',    
+            '".$idAvaliacao."')";
+            
+        }else if($tipoAvaliacao == "CLIENTE"){
+            $sql = INSERT . TABELA_AVALIACAO_CLIENTE . " 
+            (idCliente, idAvaliacao)
+            VALUES (
+            '".$idAvaliado."',    
+            '".$idAvaliacao."')";
+        }
 
         //Abrindo conexão com o BD
         $PDO_conex = $this->conex->connectDataBase();
@@ -52,6 +94,27 @@ class avaliacaoDAO{
         $this->conex->closeDataBase();
         return $erro;
     }
+
+    public function selecionarUltimoIdAvaliacao(){
+        $sql = "select max(idAvaliacao) from " . TABELA_AVALIACAO;
+
+        //Abrindo conexão com o BD
+        $PDO_conex = $this->conex->connectDataBase();
+
+        //executa o script de select no bd
+        $select = $PDO_conex->query($sql);
+
+        $idAvaliacao;
+        if($rsAvalicao=$select->fetch(PDO::FETCH_ASSOC)){
+            $idAvaliacao = $rsAvalicao['idAvaliacao'];
+        }
+
+        $this->conex->closeDataBase();
+
+        return($idAvaliacao);
+    }
+
+
 
     //Deletar um registro no banco de dados.
     public function delete($id){
