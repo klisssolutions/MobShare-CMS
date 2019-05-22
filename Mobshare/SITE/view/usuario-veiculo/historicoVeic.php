@@ -16,6 +16,8 @@ $_GET["id"] = $_SESSION['idCliente']['idCliente'];
 
 $locacoes = $controllerLocacao->listarHistoricoLocacaoPorLocador();
 
+$usuario = $controllerCliente->buscarCliente();
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -73,21 +75,76 @@ $locacoes = $controllerLocacao->listarHistoricoLocacaoPorLocador();
             <div class="conteudo-usuario">
                 <div class="titulo-lista">VEICULOS</div>
             <?php
-                foreach($locacoes as $locacao):    
+                foreach($locacoes as $locacao):
+                    $data = new DateTime($locacao->getHorarioInicio());
+                    $dataInicio = date_format($data, "d/m/Y H:i");
+
+                    $data = new DateTime($locacao->getHorarioFim());
+                    $dataFim = date_format($data, "d/m/Y H:i");
+                    if($locacao->getIdCliente() == $usuario->getIdCliente()):
+                        $_GET["id"] = $locacao->getIdDono();
+                        $locador = $controllerCliente->buscarCliente();
             ?>
 
                 <div class="box-veiculo">
                     <div class="texto-modelo">
-                        <label class="negrito">Veiculo: </label><?php echo($modelo->getNomeModelo() . " " . $marca->getNomeMarca())?>
+                        <label class="negrito">Dono: </label> <?php echo($locador->getNome());?>
+                    </div>
+
+                    <div class="texto-modelo">
+                        <label class="negrito">Veiculo: </label> <?php echo($locacao->getVeiculo());?>
+                    </div>
+
+                    <div class="texto-modelo">
+                        <label class="negrito">Data Locação: </label> <?php echo($dataInicio);?>
+                    </div>
+
+                    <div class="texto-modelo">
+                        <label class="negrito">Data Devolução: </label> <?php echo($dataFim);?>
                     </div>
 
                     <div class="texto-ano">
-                        <input type="button" value="Recebido">
+                        <input type="button" value="Devolver">
                     </div>
+                    <br>
+                    <br>
+                    <br>
+
+                </div>
+                <?php
+                    else: 
+                        $_GET["id"] = $locacao->getIdCliente();
+                        $cliente = $controllerCliente->buscarCliente();
+                ?>
+
+                <div class="box-veiculo">
+                    <div class="texto-modelo">
+                        <label class="negrito">Cliente: </label> <?php echo($cliente->getNome());?>
+                    </div>
+
+                    <div class="texto-modelo">
+                        <label class="negrito">Veiculo: </label> <?php echo($locacao->getVeiculo());?>
+                    </div>
+
+                    <div class="texto-modelo">
+                        <label class="negrito">Data Locação: </label> <?php echo($dataInicio);?>
+                    </div>
+
+                    <div class="texto-modelo">
+                        <label class="negrito">Data Devolução: </label> <?php echo($dataFim);?>
+                    </div>
+
+                    <div class="texto-ano">
+                        <input type="button" value="Receber">
+                    </div>
+                    <br>
+                    <br>
+                    <br>
 
                 </div>
 
                  <?php 
+                        endif;
                     endforeach;
                  ?>
 
