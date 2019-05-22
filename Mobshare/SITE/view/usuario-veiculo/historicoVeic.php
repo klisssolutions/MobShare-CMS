@@ -102,10 +102,13 @@ $usuario = $controllerCliente->buscarCliente();
                     <div class="texto-modelo">
                         <label class="negrito">Data Devolução: </label> <?php echo($dataFim);?>
                     </div>
-
+                    <?php if (!$locacao->getDevolvido()):?>
                     <div class="texto-ano">
-                        <input type="button" value="Devolver">
+                        <a href="devolucao.php?modo=devolver&id=<?php echo($locacao->getIdLocacao());?>">
+                            <input type="button" value="Devolver">
+                        </a>
                     </div>
+                    <?php endif; ?>
                     <br>
                     <br>
                     <br>
@@ -133,10 +136,13 @@ $usuario = $controllerCliente->buscarCliente();
                     <div class="texto-modelo">
                         <label class="negrito">Data Devolução: </label> <?php echo($dataFim);?>
                     </div>
-
+                    <?php if (!$locacao->getRecebido()):?>
                     <div class="texto-ano">
-                        <input type="button" value="Receber">
+                        <a href="devolucao.php?modo=receber&id=<?php echo($locacao->getIdLocacao());?>">
+                            <input type="button" value="Receber">
+                        </a>
                     </div>
+                    <?php endif;?>
                     <br>
                     <br>
                     <br>
